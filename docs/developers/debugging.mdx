@@ -2,9 +2,9 @@
 
 ## Running the provider in debug mode
 
-Debugging CQ providers is a fairly straight forward process: 
+Debugging CQ providers is a fairly straightforward process: 
 
-First we must run provider in debug mode, to do this set the environment variable `CQ_PROVIDER_DEBUG=1`, in our IDE or terminal and execute the provider.
+First, we must run the provider in debug mode. To do this, set the environment variable `CQ_PROVIDER_DEBUG=1` in our IDE or terminal and execute the provider.
 
 The following message will appear when executing the plugin binary.
 
@@ -40,13 +40,13 @@ Once we set up `CQ_REATTACH_PROVIDERS`, we will be able to execute any command f
 
 :::tip
 
-We can now execute our provider from our favourite IDE in debug mode and put breakpoints to test and debug our provider
+We can now execute our provider from our favourite IDE in debug mode and put in breakpoints to test and debug our provider.
 
 :::
 
 ### Example
 
-In the following example we will download an existing provider, compile it and execute it in debug mode.
+In the following example, we will download an existing provider, compile it, and execute it in debug mode.
 
 ```go
 git clone https://github.com/cloudquery/cq-provider-aws.git
@@ -57,7 +57,7 @@ export CQ_PROVIDER_DEBUG=1
 //        export CQ_REATTACH_PROVIDERS=/<path_to_your_provider>/.cq_reattach
 ```
 
-After executing the provider we will get a message of how to reattach our provider when we execute the main CQ binary. 
+After executing the provider, we will get a message about how to reattach our provider when we execute the main CQ binary. 
 
 ```go
 // Path where we executed our aws provider
@@ -67,6 +67,6 @@ export CQ_REATTACH_PROVIDERS=/providers/cq-provider-aws/.cq_reattach
 
 :::info
 
-The same example can be run from the IDE to add breakpoints
+The same example can be run from the IDE to add breakpoints.
 
 :::
