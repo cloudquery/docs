@@ -1,6 +1,6 @@
 # init
 
-Generate initial config.hcl for fetch command
+Generates initial config.hcl for fetch command.
 
 ## Usage
 `cloudquery init [choose one or more providers (aws,gcp,azure,okta,...)] [flags]`
@@ -8,14 +8,14 @@ Generate initial config.hcl for fetch command
 ## Examples
 
 ```bash
-# Downloads aws provider and generates config.hcl for aws provider
+# Downloads AWS provider and generates config.hcl for AWS provider
 cloudquery init aws
 
-# Downloads aws,gcp providers and generates one config.hcl with both providers
+# Downloads AWS, GCP providers and generates one config.hcl with both providers
 cloudquery init aws gcp
 ```
 
-## Additional help topics
+## Additional Help Topics
 ```
 Use "cloudquery init options" for a list of global CLI options.
 ```
