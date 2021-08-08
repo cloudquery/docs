@@ -1,6 +1,6 @@
 # Getting Started
 
-## Download & Install
+## Download and Install
 
 You can download the precompiled binary from [releases](https://github.com/cloudquery/cloudquery/releases), or using CLI:
 
@@ -60,7 +60,7 @@ All official and approved community providers are listed at [CloudQuery Hub](htt
 
 ### Init Command
 
-The first step is to generate a `config.hcl` file that will describe which cloud provider you want to use and which resources you want cloudquery to ETL:
+The first step is to generate a `config.hcl` file that will describe which cloud provider you want to use and which resources you want CloudQuery to ETL:
 
 ```text
 cloudquery init aws
@@ -73,13 +73,13 @@ cloudquery init aws
 CloudQuery needs a PostgreSQL database (>11). You can either spawn a local one (usually good for development and local testing)
 or connect to an existing one.
 
-For local you can use the following docker command:
+For local, you can use the following docker command:
 
 ```
 docker run -p 5432:5432 -e POSTGRES_PASSWORD=pass -d postgres
 ```
 
-If you are using an existing database you will have to update the `connection` section 
+If you are using an existing database, you will have to update the `connection` section 
 in config.hcl:
 
 ```hcl
@@ -100,14 +100,14 @@ cloudquery {
 
 ### Fetch Command
 
-Once `config.hcl` is generated run the following command to fetch the resources \(you need to be authenticated - see relevant section under each provider\):
+Once `config.hcl` is generated, run the following command to fetch the resources. \(You need to be authenticated — see relevant section under each provider\):
 
 ```text
 cloudquery fetch
 # cloudquery fetch --help # Show all possible fetch flags
 ```
 
-Once your provider has fetched resources you can run the following example queries
+Once your provider has fetched resources, you can run the following example queries.
 
 ### Exploring and Running Queries
 
@@ -121,7 +121,7 @@ A few examples for AWS:
 SELECT * FROM aws_ec2_images;
 ```
 
-#### Find all public facing AWS load balancers:
+#### Find all public-facing AWS load balancers:
 
 ```sql
 SELECT * FROM aws_elbv2_load_balancers WHERE scheme = 'internet-facing';
@@ -129,14 +129,14 @@ SELECT * FROM aws_elbv2_load_balancers WHERE scheme = 'internet-facing';
 
 ### Policy Command
 
-CloudQuery Policies allows users to write security, governance, cost and compliance rules, 
+CloudQuery Policies allow users to write security, governance, cost, and compliance rules, 
 using SQL as the query layer and HCL as the logical layer.
 
-All Official and approved community policies are listed on [CloudQuery Hub](https://hub.cloudquery.io).
+All official and approved community policies are listed on [CloudQuery Hub](https://hub.cloudquery.io).
 
 #### Execute a policy
 
-All official policies are hosted at https://github.com/cloudquery-policies
+All official policies are hosted at https://github.com/cloudquery-policies.
 
 ```bash
 cloudquery policy run aws-cis-1.2.0
