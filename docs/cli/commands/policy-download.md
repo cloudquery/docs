@@ -1,6 +1,6 @@
 # policy download
 
-Download a policy from the CloudQuery Policy Hub
+Download a policy from the CloudQuery Policy Hub.
 
 ## Usage
 ```
@@ -22,7 +22,7 @@ cloudquery policy download COMMUNITY_GITHUB_ORG/aws-cis-1.2.0
 # See https://hub.cloudquery.io for additional policies.
 ```
 
-## Additional help topics
+## Additional Help Topics
 ```
 Use "cloudquery policy download options" for a list of global CLI options.
 ```
