@@ -12,7 +12,7 @@ download    Download a policy from the CloudQuery Policy Hub
 run         Executes a policy on CloudQuery database
 ```
 
-## Additional help topics
+## Additional Help Topics
 
 ```
 Use "cloudquery policy [command] --help" for more information about a command.
