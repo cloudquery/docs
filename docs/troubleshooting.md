@@ -4,20 +4,20 @@
 
 ### Discord
 
-First thing first - Feel free to join our new [Discord](https://discord.gg/2mPfFYyAtQ) !
+First things first - feel free to join our new [Discord](https://discord.gg/2mPfFYyAtQ)!
 
 ### Github Issues
 
-There are couple ways to get help for any CloudQuery related issues/questions.
+There are couple of ways to get help for any CloudQuery-related issues or questions.
 
-1. Checkout previous issues at https://github.com/cloudquery and open a new one if there is no previous one opened or resolved.
+1. Check out previous issues at https://github.com/cloudquery and open a new one if no previous one has been opened or resolved.
 
 ### Intercom Chat
 
-Our Intercom chat is available on all our public sites so feel free to drop us a line there.
+Our Intercom chat is available on all our public sites, so feel free to drop us a line there.
 
 ## Deubbing
 
 ### Logging
 
-Usually the first step that will be needed to debug/resolve an issue is to run `cloudquery` with `-v` to enable verbose logging
+Usually the first step that will be needed to debug/resolve an issue is to run `cloudquery` with `-v` to enable verbose logging.
