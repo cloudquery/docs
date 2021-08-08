@@ -1,6 +1,6 @@
 # completion
 
-Install shell completion for CloudQuery CLI
+Installs shell completion for CloudQuery CLI.
 
 ## Usage
 cloudquery completion [bash|zsh|fish|powershell]
@@ -20,8 +20,8 @@ $ cloudquery completion bash > /usr/local/etc/bash_completion.d/cloudquery
 ### Zsh
 
 ```shell
-# If shell completion is not already enabled in your environment you will need
-# to enable it.  You can execute the following once:
+# If shell completion is not already enabled in your environment, you will need
+# to enable it. You can execute the following once:
 
 $ echo "autoload -U compinit; compinit" >> ~/.zshrc
 
