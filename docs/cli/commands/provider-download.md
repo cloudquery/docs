@@ -1,6 +1,6 @@
 # provider download
 
-Downloads all providers mentioned in the configuration file.
+Downloads all providers specified in config.hcl
 
 ## Usage
 

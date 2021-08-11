@@ -1,6 +1,6 @@
 # provider
 
-Top-level command to manage providers.
+Top-level command to interact with providers.
 
 ## Usage
 
@@ -11,7 +11,7 @@ cloudquery provider [command]
 ## Available Commands:
 
 ```
-download    Download all providers mentioned in the configuration file.
+download    Downloads all providers specified in config.hcl
 ```
 
 ## Additional Help Topics
