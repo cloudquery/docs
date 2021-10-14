@@ -36,7 +36,7 @@ This block must be specified one or more times, specifying which providers and w
 
 The `cloudquery fetch` command will download all the providers with their respective version to `plugin_directory`. Once they are downloaded, CloudQuery will verify them and execute to ETL the configuration and metadata each provider supports.
 
-#### Connection Block
+### Connection Block
 
 The connection block specifies to which database you should connect via `dsn` argument.
 
@@ -53,3 +53,29 @@ Each provider has two blocks:
 :::tip
 You can have multiple providers of the same type specified here. For example, this can be useful if you want to fetch data from different accounts and you don't have cross-account access.
 :::
+
+## Environment variable substitution
+
+config.hcl supports substition of values from environment variables. This allows to extract security sensitive data (like passwords etc) or variable data (that you want to change without touching CloudQuery configuration) from configuration file and store in the environment variable. To use the feature, set an environment variable before running CLI, adding a CQ_VAR_ prefix to your desired name:
+
+    export CQ_VAR_AWS_VERSION=1.0.0
+    export CQ_VAR_ARN=some_value
+
+And use it inside config.hcl:
+
+    cloudquery {
+      provider "aws" {
+        source  = ""
+        version = "${AWS_VERSION}"
+      }
+    }
+    
+    provider "aws" {
+      configuration {
+        accounts "<YOUR ID>" {
+          role_arn = "${ARN}"
+        }
+      }
+    }
+
+Note that only environment variables starting with CQ_VAR_ are available for use in config.hcl and their prefix is removed.
