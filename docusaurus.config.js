@@ -87,21 +87,6 @@ module.exports = {
       theme: lightCodeTheme,
       additionalLanguages: ['hcl', 'powershell'],
     },
-    algolia: {
-      apiKey: '45137b4a4f04e4bf681fc7c6f1394831',
-      indexName: 'cloudquery',
-
-      // Optional: see doc section below
-      contextualSearch: true,
-
-      // Optional: see doc section below
-      appId: 'BH4D9OD16A',
-
-      // Optional: Algolia search parameters
-      searchParameters: {},
-
-      //... other Algolia params
-    },
   },
   presets: [
     [
