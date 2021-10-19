@@ -58,8 +58,9 @@ You can have multiple providers of the same type specified here. For example, th
 
 config.hcl supports substition of values from environment variables. This allows to extract security sensitive data (like passwords etc) or variable data (that you want to change without touching CloudQuery configuration) from configuration file and store in the environment variable. To use the feature, set an environment variable before running CLI, adding a CQ_VAR_ prefix to your desired name:
 
-    export CQ_VAR_AWS_VERSION=1.0.0
+    export CQ_VAR_AWS_VERSION=latest
     export CQ_VAR_ARN=some_value
+    export CQ_VAR_DSN="host=localhost user=postgres password=pass database=postgres port=5432 sslmode=disable"
 
 And use it inside config.hcl:
 
@@ -67,6 +68,10 @@ And use it inside config.hcl:
       provider "aws" {
         source  = ""
         version = "${AWS_VERSION}"
+      }
+
+      connection {
+        dsn = "${DSN}"
       }
     }
     
