@@ -4,7 +4,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
   title: 'CloudQuery Docs',
-  tagline: 'Solve compliance, security and cost challenges with SQL queries and relational tables.',
+  tagline: 'the open-source cloud asset inventory backed by SQL',
   url: 'https://docs.cloudquery.io',
   baseUrl: '/',
   onBrokenLinks: 'throw',
