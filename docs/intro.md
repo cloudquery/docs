@@ -1,6 +1,8 @@
 # Welcome to CloudQuery
 
-CloudQuery extracts the configuration and metadata of your infrastructure and transforms it into a relational SQL database. This allows you to write SQL queries for easy monitoring, governance, and security. 
+CloudQuery is the open-source cloud asset inventory backed by SQL. 
+
+CloudQuery extracts, transforms, and loads your cloud assets into normalized PostgreSQL tables. CloudQuery enables you to assess, audit, and evaluate the configurations of your cloud assets.
 
 ## Key Features
 
