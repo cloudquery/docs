@@ -42,9 +42,11 @@ This block is merely an example and there are other options. Let's go over the s
 
 The `terraform` block defines the location to your [Terraform](https://www.terraform.io/) TFState files. This block is not used if you specify the TFState file or files in the CLI when invoking `drift scan`.
 
-In the example it's apparent that we have two backends, called `local` and `s3`. The local backend, as the name would suggest, reads the files from the local filesystem. Just fill in the `files` with the list of TFState files you have.
+In the example it's apparent that we support two separate backend types, called `local` and `s3`. The local backend, as the name would suggest, reads the files from the local filesystem. Just fill in the `files` with the list of TFState files you have.
 
 If you keep the TFState in S3, switch the backend to `s3`, and use the `bucket` and `keys` fields to point to one or more S3 objects. `region` and `role_arn` are optional, and setting them is not required for simple installations.
+
+Only one of the two types of backends can be active at a time.
 
 ### Provider Blocks
 
@@ -72,8 +74,10 @@ The format for filtering resources is `<resource_type>:<ID or tags>`. Here are s
         "kms.keys:*", // Don't drift on KMS keys
         "ec2.instances:i-0e7b9c38956f77f0e", // Ignore this instance
         "ec2.instances:[Type=old_integration_test]", // Ignore all EC2 instances if they have the Type=old_integration_test tag
-    ]
+      ]
 ```
+
+If check_resources not specified (which is the default) all resources except the ones matching `ignore_resources` are checked.
 
 #### Resource Blocks
 
@@ -105,3 +109,11 @@ provider "*" {
   }
 }
 ```
+
+### Profiles
+
+Let's talk about profiles. You might have noticed the `drift-example` label in the `drift "drift-example" {` block. This is the name of the profile. It's possible to have multiple profiles defined in the config, and select one using the `--profile` flag. This can be used configure multiple accounts with different options and completely separate tfstates. If there's only a single profile defined, it's automatically selected. 
+
+:::tip
+It's possible to define multiple profiles for the same account and IaC setup, to distinguish between different ways of running drift on a single cloud configuration.
+:::
