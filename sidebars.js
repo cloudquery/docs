@@ -32,11 +32,14 @@ module.exports = {
       items: [
        'cli/getting-started',
        'cli/fetch-config-hcl',
+       'cli/drift-config-hcl',
        {
         type: 'category',
         label: 'Commands',
         items: [
           'cli/commands/completion',
+          'cli/commands/drift',
+          'cli/commands/drift-scan',
           'cli/commands/fetch',
           'cli/commands/init',
           'cli/commands/options',
@@ -53,6 +56,11 @@ module.exports = {
       type: 'category',
       label: 'Developers',
       items: ['developers/architecture', 'developers/debugging', 'developers/developing-new-provider'],
+    },
+    {
+      type: 'doc',
+      label: 'Drifting',
+      id: 'drifting',
     },
     {
       type: 'doc',
