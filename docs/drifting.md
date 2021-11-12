@@ -75,9 +75,10 @@ You will only see this if you are running drift with deep mode enabled, by eithe
 #### N Resources managed by Terraform (equal IDs)
 
 These are the resources that exist both on the TFstate file and your AWS account. Here, the potentially long resource list won’t have been printed for you, unless you ran `scan` with the `--list-managed` flag.
-N Resources managed by Terraform (equal IDs & attributes)
 
-These resources are perfectly in-sync (as far as we can tell) between your AWS account and the TFstate file. Congratulations. Again, the resource IDs won’t be printed unless you’re using the `--list-managed` flag.
+#### N Resources managed by Terraform (equal IDs & attributes)
+
+Congratulations, these resources are perfectly in-sync (as far as we can tell) between your AWS account and the TFstate file. Again, the resource IDs won’t be printed unless you’re using the `--list-managed` flag.
 
 ### Summary
 
