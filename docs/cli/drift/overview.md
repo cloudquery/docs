@@ -1,6 +1,8 @@
-# Drifting
+# Overview
 
-"Drifting" is a term used to detect infrastructure drifts, when the infra is managed by an IaC (infrastructure as code) provider such as [Terraform](https://www.terraform.io/).
+CloudQuery CLI can be used to detect and alert on IaC (Infrastructure-as-code, Terraform, pulumi, etc...) drift both locally and in the CI.
+
+**Infrastructure Drift** - When what is defined in your IaC is different from what is provisioned in your Cloud. This is a very command scenario and can happen due human error, manual changes and various other reasons. Checkout more details in our [blog](https://cloudquery.io/blog/announcing-drift-detection)
 
 ## Getting Started
 

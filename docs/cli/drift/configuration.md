@@ -1,6 +1,6 @@
-# Drift config.hcl
+# Configuration
 
-To customize drifting features, edit the `drift` block in `config.hcl`.
+To customize drifting features, edit the `drift` block in `config.hcl` (under `modules`).
 
 ## Default Block
 
@@ -103,9 +103,17 @@ provider "aws" {
 A special provider, `provider "*"` can be used to set options globally, across all providers.
 
 ```hcl
-provider "*" {
-  resource "*" {
-    deep = true // Deep mode for every resource and provider. (Essentially the same as --deep)
+modules {
+  // drift configuration block
+  drift "drift-example" {
+    // state block defines from where to access the state
+    terraform {
+      provider "*" {
+        resource "*" {
+          deep = true // Deep mode for every resource and provider. (Essentially the same as --deep)
+        }
+      }
+    }
   }
 }
 ```

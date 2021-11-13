@@ -8,10 +8,10 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs
-  defaultValue="precompiled"
+  defaultValue="homebrew"
   values={[
-    {label: 'Pre-Compiled Binaries', value: 'precompiled'},
     {label: 'Homebrew', value: 'homebrew'},
+    {label: 'Pre-Compiled Binaries', value: 'precompiled'},
     {label: 'Docker', value: 'docker'},
   ]}>
   <TabItem value="precompiled">
@@ -48,7 +48,7 @@ brew upgrade cloudquery
 
 `config.yml` should be mounted so cloudquery can read it
 
-```
+```bash
 # Dockers are hosted at github container registry https://github.com/orgs/cloudquery/packages/container/package/cloudquery
 docker pull ghcr.io/cloudquery/cloudquery:latest
 docker run -v /data:/data -it ghcr.io/cloudquery/cloudquery:latest --path /data/config.yml --dsn "host=localhost user=postgres password=pass DB.name=postgres port=5432"
@@ -58,17 +58,17 @@ docker run -v /data:/data -it ghcr.io/cloudquery/cloudquery:latest --path /data/
 
 ## Running
 
-All official and approved community providers are listed at [CloudQuery Hub](https://hub.cloudquery.io) with their respective documentation.
-
 ### Init Command
 
 The first step is to generate a `config.hcl` file that will describe which cloud provider you want to use and which resources you want CloudQuery to ETL:
 
-```text
+```bash
 cloudquery init aws
 # cloudquery init gcp aws # This will generate a config containing gcp and aws providers
 # cloudquery init --help # Show all possible auto generated configs and flags
 ```
+
+All official and approved community providers are listed at [CloudQuery Hub](https://hub.cloudquery.io) with their respective documentation.
 
 ### Spawn or Connect to a Database
 
@@ -77,7 +77,7 @@ or connect to an existing one.
 
 For local, you can use the following docker command:
 
-```
+```bash
 docker run -p 5432:5432 -e POSTGRES_PASSWORD=pass -d postgres
 ```
 
