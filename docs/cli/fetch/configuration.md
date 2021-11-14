@@ -4,7 +4,7 @@ CloudQuery just like [terraform](https://www.terraform.io/docs/language/provider
 
 This section is very similar to terraform providers section due to similar design of CloudQuery providers, but their purpose and implementation is completly different:
 
-CloudQuery providers are read only providers which extracts,transform and loads cloud assets configuration while Terraform providiers interacts with the cloud to provision assets.
+CloudQuery providers are read only providers which extracts, transforms and loads cloud assets configuration while Terraform providers interact with the cloud to provision assets.
 
 ## Configuration
 
