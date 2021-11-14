@@ -1,6 +1,6 @@
 # Configuration
 
-CloudQuery just like [terraform](https://www.terraform.io/docs/language/providers/index.html) relies on "providers" to extract,transform and load cloud assets configuration from Cloud Providers, SaaS Providers and other APIs into PostgreSQL.
+CloudQuery just like [terraform](https://www.terraform.io/docs/language/providers/index.html) relies on "providers" to extract, transform and load cloud assets configuration from Cloud Providers, SaaS Providers and other APIs into PostgreSQL.
 
 This section is very similar to terraform providers section due to similar design of CloudQuery providers, but their purpose and implementation is completly different:
 
