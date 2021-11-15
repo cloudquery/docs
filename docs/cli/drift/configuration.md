@@ -1,4 +1,4 @@
-# Drift config.hcl
+# Configuration
 
 To customize drifting features, edit the `drift` block in `config.hcl`.
 
@@ -8,7 +8,6 @@ The default block provided with `cloudquery init <provider>` looks something lik
 
 ```hcl
 # ... cloudquery and provider blocks here ...
-
 // Module Configurations
 modules {
   // drift configuration block
@@ -24,7 +23,6 @@ modules {
           role_arn = ""
       */
     }
-
     /*
       provider "aws" {
         account_ids      = ["123456789"]
