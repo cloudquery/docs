@@ -54,7 +54,14 @@ module.exports = {
           'cli/drift/configuration'
         ],
        },
-       'cli/configuration',
+       {
+        type: 'category',
+        label: 'Configuration',
+        items: [
+          'cli/configuration/overview',
+          'cli/configuration/providers'
+        ]
+       },
        {
         type: 'category',
         label: 'Commands',
