@@ -1,6 +1,6 @@
 # Overview
 
-This is an overview for the syntax and configuraiton options of CloudQuery main configuraiton file `config.hcl`.
+This is an overview for the syntax and configuration options of CloudQuery main configuration file `config.hcl`.
 
 ## HCL Overview
 
