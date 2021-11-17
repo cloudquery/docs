@@ -18,4 +18,4 @@ Providers are hosted on GitHub while [hub.cloudquery.io](https://hub.cloudquery.
 
 Currently CloudQuery Hub contains two types of providers:
 - **official** - Owned and maintained by CloudQuery team
-- **community** - Owned and maintined by either individuals or third-party vendors.
+- **community** - Owned and maintained by either individuals or third-party vendors.
