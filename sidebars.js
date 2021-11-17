@@ -76,6 +76,11 @@ module.exports = {
     },
     {
       type: 'category',
+      label: 'Deployment',
+      items: ['deployment/helm-chart'],
+    },
+    {
+      type: 'category',
       label: 'Developers',
       items: ['developers/architecture', 'developers/debugging', 'developers/developing-new-provider'],
     },
