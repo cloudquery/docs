@@ -1,11 +1,11 @@
-# provider upgrade
+# provider downgrade
 
-Upgrades one or more providers schema version based on config.hcl
+Downgrades one or more providers schema version based on config.hcl
 
 ## Usage
 
 ```
-cloudquery provider upgrade [providers,...] [flags]
+cloudquery provider downgrade [providers,...] [flags]
 ```
 
 ## Additional Help Topics

@@ -1,6 +1,6 @@
 # Overview
 
-Clouduquery is an open-source cloud asset inventory powered by SQL, as such, when providers change their schema (change/remove columns) some migrations from the previous run are required. Cloudquery uses [go-migrate](https://github.com/golang-migrate/migrate) under the hood to execute migrations on the database, see how to add them to a provider [here](./developers/migrations.md).
+Clouduquery is an open-source cloud asset inventory powered by SQL, as such, when providers change their schema (change/remove columns) some migrations from the previous run are required. CloudQuery uses [go-migrate](https://github.com/golang-migrate/migrate) under the hood to execute migrations on the database, see how to add them to a provider [here](./developers/migrations.md).
 
 
 ## Running

@@ -64,6 +64,13 @@ module.exports = {
        },
        {
         type: 'category',
+        label: 'Migrations',
+        items: [
+          'cli/migration/overview',
+        ],
+       },
+       {
+        type: 'category',
         label: 'Commands',
         items: [
           'cli/commands/completion',
@@ -89,7 +96,12 @@ module.exports = {
     {
       type: 'category',
       label: 'Developers',
-      items: ['developers/architecture', 'developers/debugging', 'developers/developing-new-provider'],
+      items: [
+        'developers/architecture', 
+        'developers/debugging', 
+        'developers/developing-new-provider',
+        'developers/migrations',
+      ],
     },
     {
       type: 'doc',
