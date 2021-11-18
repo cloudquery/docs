@@ -66,7 +66,7 @@ module.exports = {
         type: 'category',
         label: 'Migrations',
         items: [
-          'cli/migration/overview',
+          'cli/migrations/overview',
         ],
        },
        {
@@ -83,7 +83,11 @@ module.exports = {
           'cli/commands/policy-download',
           'cli/commands/policy-run',
           'cli/commands/provider',
-          'cli/commands/provider-download'
+          'cli/commands/provider-download',
+          'cli/commands/provider-build-schema',
+          'cli/commands/provider-upgrade',
+          'cli/commands/provider-downgrade',
+          'cli/commands/provider-drop',
         ]
        },   
       ],
