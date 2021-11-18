@@ -88,14 +88,14 @@ module.exports = {
       additionalLanguages: ['hcl', 'powershell'],
     },
     algolia: {
-      apiKey: '45137b4a4f04e4bf681fc7c6f1394831',
+      apiKey: '352df9e488908ea5508fcb90609a6fcc',
       indexName: 'cloudquery',
 
       // Optional: see doc section below
-      contextualSearch: true,
+      contextualSearch: false,
 
       // Optional: see doc section below
-      appId: 'BH4D9OD16A',
+      appId: 'RTT4J284TL',
 
       // Optional: Algolia search parameters
       searchParameters: {},
