@@ -1,6 +1,6 @@
 # provider build-schema
 
-Drops provider schema from database
+Builds provider schema on database
 
 ## Usage
 
