@@ -1,6 +1,6 @@
 # Overview
 
-Clouduquery is an open-source cloud asset inventory powered by SQL, as such, when providers change their schema (change/remove columns) some migrations from the previous run are required. CloudQuery uses [go-migrate](https://github.com/golang-migrate/migrate) under the hood to execute migrations on the database, see how to add them to a provider [here](./developers/migrations.md).
+CloudQuery  is an open-source cloud asset inventory powered by SQL, as such, when providers change their schema (change/remove columns) some migrations from the previous run are required. CloudQuery uses [go-migrate](https://github.com/golang-migrate/migrate) under the hood to execute migrations on the database, see how to add them to a provider [here](./developers/migrations.md).
 
 
 ## Running
@@ -23,7 +23,7 @@ cloudquery provider downgrade aws
 
 ### Drop providers schema
 
-The following command will drop a providers tables. Running cloudquery fetch after a drop command will result in a recreation of all tables.
+The following command will drop a providers tables. Running CloudQuery  fetch after a drop command will result in a recreation of all tables.
 ```bash
 cloudquery provider drop aws
 ```

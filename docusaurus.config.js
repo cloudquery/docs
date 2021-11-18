@@ -37,7 +37,7 @@ module.exports = {
         //   label: 'Docs',
         // },
         {to: 'https://cloudquery.io', label: 'Home', position: 'right'},
-        {to: 'https://cloudquery.io', label: 'Hub', position: 'right'},
+        {to: 'https://hub.cloudquery.io', label: 'Hub', position: 'right'},
         {to: 'https://cloudquery.io/blog', label: 'Blog', position: 'right'},
         {
           href: 'https://github.com/cloudquery/cloudquery',
