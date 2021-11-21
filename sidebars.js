@@ -38,14 +38,14 @@ module.exports = {
           'cli/fetch/configuration'
         ],
        },
-      //  {
-      //   type: 'category',
-      //   label: 'Policy',
-      //   items: [
-      //     'cli/policy/overview',
-      //     'cli/policy/configuration'
-      //   ],
-      //  },
+       {
+        type: 'category',
+        label: 'Policy',
+        items: [
+          'cli/policy/overview',
+          'cli/policy/configuration'
+        ],
+       },
        {
         type: 'category',
         label: 'Drift',
