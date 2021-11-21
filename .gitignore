@@ -21,3 +21,7 @@ yarn-error.log*
 
 #JetBrains
 .idea
+.cq
+config.hcl
+cloudquery.log
+cloudquery

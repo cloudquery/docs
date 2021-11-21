@@ -1,38 +1,9 @@
 # Configuration
 
-To add multiple policies, you can use the `policy` block in `config.hcl`.
+You can define the policies you want to execute (both local and remote) in your `config.hcl`.
+This can be useful when executing multiple policies and running in the CI instead of passing everything via the CLI.
 
-## Block Attributes
-| Attribute | Type | Description |
-| --------- | ---- | ----------- |
-| block label | string | The name of the policy |
-| type | string | The type of the policy |
-| source | string | The source of the policy |
-| sub_path | string | The sub path to run from |
-| version | string | The requestd version of the policy |
-
-
-## Block Types
-
-The policy block supports the following types:
-
-### hub
-
-The hub type is used to configure the policy from cloud query hub.
-
-```hcl
-policy "hub_policy_1" {
-  type = "hub"
-  source = "aws-cis-1.2.0"
-  sub_path = "cis-v1.20/aws-cis-section-2/2.1"
-  version = "v0.0.5"
-}
-```
-
-
-### remote
-
-The remote type is used to configure the policy from any VSC (github, gitlab, bitbucket, etc...).
+## Policy Block
 
 ```hcl
 policy "remote_policy_1" {
@@ -43,33 +14,11 @@ policy "remote_policy_1" {
 }
 ```
 
-### local
+The label immediately after the `policy` keyword is the name of the policy which you can later also refer to from the CLI. 
 
-The local type is used to configure the policy from a local path
+**Arguments**
+- `type` **(required)**: `remote` or `local`. `remote` will mean that `source` will point to any remote git backed policy. `local` will mean that `source` point to the local file system.
+- `source` **(required)**: The path to the policy
+- `sub_path` **(optional)**: policies can contain sub-policies (sections) that you can execute only part of them. By default it execute the whole policy and sub-policies.
+- `version` **(optional)**: if it's a git backed policy, this will point to the version that you want to execute.
 
-```hcl
-policy "local_policy_1" {
-  type = "local"
-  source = "/path/to/policy"
-  sub_path = ""
-  version = "v0.0.5"
-}
-```
-
-### inline
-
-The inline type is used to configure the policy from inline code.
-
-**Note:** The inline type is not support sub_path and version.
-
-```hcl
-policy "inline_policy_1" {
-  type = "inlne"
-  source = file("/path/to/policy.hcl")
-}
-```
-
-:::tip
-You can still run a single policy with the `policy` block.
-Just add the `--policy` flag to the command with the policy name.
-:::

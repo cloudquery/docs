@@ -43,6 +43,7 @@ module.exports = {
         label: 'Policy',
         items: [
           'cli/policy/overview',
+          'cli/policy/language',
           'cli/policy/configuration'
         ],
        },

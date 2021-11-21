@@ -6,7 +6,7 @@ CloudQuery CLI can be used to detect and alert on IaC (Infrastructure-as-code, T
 
 ## Getting Started
 
-Currently drifting between AWS and Terraform is supported. CloudQuery drift detection is currently in alpha (experimental) state, so we welcome any feedback but it’s not yet ready for production use.
+Currently drifting between AWS and Terraform is supported. CloudQuery drift detection is currently in **alpha (experimental)** state, so we welcome any feedback but it’s not yet ready for production use.
 
 ### Configuration
 
