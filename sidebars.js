@@ -123,6 +123,14 @@ module.exports = {
       id: 'troubleshooting',
     },
     {
+      type: 'category',
+      label: 'CloudQuery vs Others',
+      items: [
+        'cq_vs_others/overview',
+        'cq_vs_others/aws_config'
+      ],
+    },
+    {
       type: 'doc',
       label: 'Videos & Blogs',
       id: 'videos-and-blogs',
