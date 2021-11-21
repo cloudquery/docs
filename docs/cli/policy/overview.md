@@ -48,10 +48,11 @@ cloudquery policy run
 ```
 
 ### Results
-Scan results will look something like this:
+
+Scan results will show passed/failed queries and manual queries that just prints output without a pass/fail predicate.  
 
 ```
-📋 hub_policy_1 Results:
+📋 AWS CIS v1.3.0 Results:
 
 ⚠️ Policy finished with warnings
 
@@ -68,7 +69,18 @@ Scan results will look something like this:
 		❌  arn:aws:iam::XXXXXXXXXXXXXx:user/XXXXXXXXXXXXXx
 
 		❌  arn:aws:iam::XXXXXXXXXXXXXx:user/XXXXXXXXXXXXXXx
-	.......
+
+
+	manual 1.7  AWS Public ELBV2
+	+----------------------------+-------------------------------------------------------------------------+--------------+-----------+ 
+	|            name            |                                dns_name                                 |  account_id  |  region   | 
+	+----------------------------+-------------------------------------------------------------------------+--------------+-----------+ 
+	| apigateway-xxx-integration | xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.elb.us-east-1.amazonaws.com | xxxxxxxxxxxx | us-east-1 | 
+	+----------------------------+-------------------------------------------------------------------------+--------------+-----------+ 
+	| awseb-xxxxx-1Y07H683587FY  | xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.us-east-1.elb.amazonaws.com         | xxxxxxxxxxxx | us-east-1 | 
+	+----------------------------+-------------------------------------------------------------------------+--------------+-----------+ 
+	| elbv2-integration          | xxxxxxxxxxxxxxxxxxxxxxxxxxx.us-east-1.elb.amazonaws.com                 | xxxxxxxxxxxx | us-east-1 | 
+	+----------------------------+-------------------------------------------------------------------------+--------------+-----------+ 
 ```
 
 You can use the `--output-dir /path/to/` option to get the policies results in JSON format.
