@@ -6,3 +6,4 @@ We created comparision pages to help you understand the differences and the use-
 
 **Comparisions:**
 - [CloudQuery vs AWS Config](./aws_config)
+- [CloudQuery vs Google Cloud Asset Inventory](./google_cloud_asset_inventory)
