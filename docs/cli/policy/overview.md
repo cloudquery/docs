@@ -83,6 +83,9 @@ Scan results will show passed/failed queries and manual queries that just prints
 	+----------------------------+-------------------------------------------------------------------------+--------------+-----------+ 
 ```
 
+For every failed resource the following attributes are printed if found (in that order):
+- `id`, `identifier`, `resource_idnetifier`, `uid`, `uuid`, `arn`
+
 You can use the `--output-dir /path/to/` option to get the policies results in JSON format.
 
 ## What's next?
