@@ -128,7 +128,7 @@ module.exports = {
       label: 'CloudQuery vs Others',
       items: [
         'cq_vs_others/overview',
-        'cq_vs_others/aws_config'
+        'cq_vs_others/aws_config',
         'cq_vs_others/google_cloud_asset_inventory'
       ],
     },
