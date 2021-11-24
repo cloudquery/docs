@@ -24,7 +24,7 @@
 }
 
 :root[data-theme='light'] {
-  --ifm-color-primary: #6FDFA2;
+  --ifm-color-primary: #2EA87F;
   --ifm-color-primary-dark: rgb(33, 175, 144);
   --ifm-color-primary-darker: rgb(31, 165, 136);
   --ifm-color-primary-darkest: rgb(26, 136, 112);
@@ -46,4 +46,8 @@
 html[data-theme='dark'] .docusaurus-highlight-code-line {
   background-color: rgba(0, 0, 0, 0.3);
   font-family: 'Source Sans Pro', sans-serif;
+}
+
+a {
+  font-weight: 600;
 }
