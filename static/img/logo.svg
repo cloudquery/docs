@@ -1,1 +1,38 @@
-<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 195.51 199"><defs><style>.cls-1{fill:#688eff;}</style></defs><circle class="cls-1" cx="125.55" cy="95.07" r="16.46"/><circle class="cls-1" cx="69.97" cy="95.07" r="16.46"/><path class="cls-1" d="M40.25,117c-.06-.28-.1-.57-.18-.85A62.71,62.71,0,0,1,38,92C41.1,62.16,66.12,38.28,96.14,36.47a62.44,62.44,0,0,1,63.69,80.12c0,.14-.06.29-.1.43H196A97.75,97.75,0,1,0,4,117Z" transform="translate(-2.26 -1)"/><path class="cls-1" d="M154.68,130.48l-4.08,5.64a62.39,62.39,0,0,1-101.18,0l-4.08-5.64-25.41,25.4L23.2,160A97.61,97.61,0,0,0,142.29,187.7l5.11,5.1A24.61,24.61,0,1,0,182.2,158Z" transform="translate(-2.26 -1)"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" style="enable-background:new 0 0 512 512;" xml:space="preserve" viewBox="83.2 83 345.5 345.8">
+<style type="text/css">
+	.st0{fill:url(#SVGID_1_);}
+	.st1{fill:url(#SVGID_2_);}
+	.st2{fill:url(#SVGID_3_);}
+	.st3{fill:url(#SVGID_4_);}
+</style>
+<g>
+	<g>
+		<g>
+			<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="160.4631" y1="215.8851" x2="398.396" y2="376.9031">
+				<stop offset="0" style="stop-color:#5DCBDD"/>
+				<stop offset="0.4944" style="stop-color:#73CC93"/>
+				<stop offset="1" style="stop-color:#F4E736"/>
+			</linearGradient>
+			<path class="st0" d="M210.1,278.3c15.9,0,28.8-12.8,28.8-28.8c0-15.9-12.8-28.8-28.8-28.8c-15.9,0-28.8,12.8-28.8,28.8     C181.2,265.4,194.2,278.3,210.1,278.3z"/>
+			<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="189.3426" y1="173.2105" x2="427.2755" y2="334.2285">
+				<stop offset="0" style="stop-color:#5DCBDD"/>
+				<stop offset="0.4944" style="stop-color:#73CC93"/>
+				<stop offset="1" style="stop-color:#F4E736"/>
+			</linearGradient>
+			<path class="st1" d="M302,278.3c15.9,0,28.8-12.8,28.8-28.8c0-15.9-12.8-28.8-28.8-28.8c-16,0-28.8,12.8-28.8,28.8     C273.3,265.4,286.1,278.3,302,278.3z"/>
+			<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="125.442" y1="267.6351" x2="363.3748" y2="428.6532">
+				<stop offset="0" style="stop-color:#5DCBDD"/>
+				<stop offset="0.4944" style="stop-color:#73CC93"/>
+				<stop offset="1" style="stop-color:#F4E736"/>
+			</linearGradient>
+			<path class="st2" d="M404.5,364l-7.9-7.9l-41.9-41.9c-9.9,16.7-24,30.8-40.7,40.7c-17.1,10-37,15.9-58.2,15.9     c-21.6,0-41.8-6-59.1-16.3c-16.7-10-30.6-24.1-40.4-40.9l-41.9,41.9c11.1,15.7,24.8,29.7,40.5,40.8     c28.4,20.5,63.2,32.5,100.8,32.5c37.3,0,71.9-11.8,100.1-32l7.9,7.9c11.3,11.3,29.4,11.3,40.7,0     C415.8,393.4,415.8,375.1,404.5,364z"/>
+		</g>
+	</g>
+	<linearGradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="442.9289" y1="182.6108" x2="76.3253" y2="186.9238">
+		<stop offset="0" style="stop-color:#355AAD"/>
+		<stop offset="0.4832" style="stop-color:#119ED8"/>
+		<stop offset="1" style="stop-color:#53C29D"/>
+	</linearGradient>
+	<path class="st3" d="M426.2,227.1c-4.5-26.6-14.9-51.1-30.1-72.1c-11.3-15.7-25.1-29.4-40.8-40.5c-28.1-19.8-62.4-31.5-99.4-31.5   c-37.3,0-71.9,11.8-100.1,32c-15.7,11.1-29.5,24.9-40.7,40.7c-14.9,20.9-25.2,45.1-29.5,71.4c-1.5,9.3-2.4,18.9-2.4,28.8   c0,9.9,0.8,19.4,2.4,28.8h59.1c-2.4-9.2-3.6-18.8-3.6-28.8c0-9.9,1.3-19.6,3.6-28.8c2.6-10.4,6.8-20.3,12.3-29.5   c9.9-16.7,24-30.8,40.7-40.7c17.1-10,37-15.9,58.2-15.9c20.9,0,40.5,5.6,57.5,15.5c16.9,9.7,30.9,23.7,40.9,40.4   c5.6,9.3,9.9,19.5,12.7,30.2c2.4,9.2,3.6,18.8,3.6,28.8c0,9.9-1.3,19.6-3.6,28.8h59.3c1.5-9.3,2.4-18.9,2.4-28.8   C428.6,246,427.8,236.4,426.2,227.1z"/>
+</g>
+</svg>
