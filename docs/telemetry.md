@@ -1,6 +1,6 @@
 # Telemetry
 
-CloudQuery collects anonymous usage information about how the software is used.
+CloudQuery collects anonymized usage statistics about how the software is used.
 
 ## What is Stored
 
@@ -11,17 +11,22 @@ CloudQuery collects anonymous usage information about how the software is used.
 - Version and build date of the `cloudquery` binary you're using
 - Basic OpenTelemetry trace data about which part of the operation took how long
 
-### For identification purposes
+### For vague identification purposes
 
-- A unique user "cookie", which is a randomly generated UUID
+- A randomly generated UUID, persisted across sessions
 - A SHA1 hash of your IP address
-- Your geographical location based on the IP address
+- Your vague geographical location based on the IP address
 
-> The identification cookie is stored in the `.cq/telemetry-cookie` file. If you wish to anonymize your requests further but still keep sending us usage information, you could remove this file before every invocation (or create a directory with the same name, which also stops the cookie from getting created)
+This does not allow us to track individual users but does enable us to accurately measure user counts vs. invocation counts.
+
+:::tip
+The random ID is stored in the `.cq/telemetry-random-id` file. If you wish to anonymize your requests further but still keep sending us usage statistics, you could remove this file before every invocation (or create a directory with the same name, which also stops the file from getting created)
+:::
+
 
 ## What is NOT Stored
 
-- We don't store your IP address
+- We don't store your IP address directly
 - We don't store any of the command arguments or options (as they might contain sensitive information)
 - We don't store the contents of the error messages (as they might also contain sensitive information)
 - We don't store any credentials
