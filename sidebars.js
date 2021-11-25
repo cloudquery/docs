@@ -90,7 +90,12 @@ module.exports = {
           'cli/commands/provider-downgrade',
           'cli/commands/provider-drop',
         ]
-       },   
+       },
+       {
+         type: 'doc',
+         label: 'Telemetry',
+         id: 'cli/telemetry'
+       }
       ],
     },
     {
