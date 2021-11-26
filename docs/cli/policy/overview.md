@@ -6,7 +6,7 @@ CQ Policies enables users to codify, version and run security, compliance and co
 
 ## Key Features
 
-- **As-Code**: Get all the benefits of using "as-code" such as colleobration, re-use, version control.
+- **As-Code**: Get all the benefits of using "as-code" such as collaboration, re-use, version control.
 - **CloudQuery Hub**: [Access](https://hub.cloudquery.io) official and community CloudQuery policies which you can use as is or customize to your needs. Also, share your own policies with on GitHub and publish them on CloudQuery Hub to get feedback the community.
 
 ## Getting Started
@@ -20,7 +20,7 @@ First you need to make sure you run the [`fetch`](../fetch/overview) command and
 The following will run the policy hosted on [github.com/cloudquery-policies/aws-cis-1.2.0](https://github.com/cloudquery-policies/aws-cis-1.2.0) as the default host is GitHub.
 
 ```bash
-cloudquery run cloudquery-policies/aws-cis-1.2.0
+cloudquery policy run cloudquery-policies/aws-cis-1.2.0
 ```
 
 Other git hosting platforms can be used by passing full url, for example:

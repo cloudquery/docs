@@ -17,8 +17,8 @@ policy "remote_policy_1" {
 The label immediately after the `policy` keyword is the name of the policy which you can later also refer to from the CLI. 
 
 **Arguments**
-- `type` **(required)**: `remote` or `local`. `remote` will mean that `source` will point to any remote git backed policy. `local` will mean that `source` point to the local file system.
+- `type` **(required)**: `remote` or `local`. `remote` will mean that `source` will point to any remote git backed policy. `local` will mean that `source` points to the local file system.
 - `source` **(required)**: The path to the policy
-- `sub_path` **(optional)**: policies can contain sub-policies (sections) that you can execute only part of them. By default it execute the whole policy and sub-policies.
-- `version` **(optional)**: if it's a git backed policy, this will point to the version that you want to execute.
+- `sub_path` **(optional)**: Policies can contain sub-policies (sections) that you can execute only part of them. By default it executes the whole policy and sub-policies.
+- `version` **(optional)**: If it's a git backed policy, this will point to the version that you want to execute.
 
