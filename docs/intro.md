@@ -12,6 +12,8 @@ Create a cloud asset inventory in your own self-hosted PostgreSQL database where
 
 Visualization, analyze, monitor and alert with your current tools and worksflows such as Grafana.
 
+CloudQuery supports [TimescaleDB](https://www.timescale.com/) PostgreSQL extension, giving you full [historical snapshots](./cli/history/overview) of your cloud asset inventory.
+
 ### Search & Visibility
 
 Give developers, SREs, DevOps and security engineers a streamlined way to gain visibility and perform wide range of tasks. Such as security analytics, fleet management auditing and governance. 
