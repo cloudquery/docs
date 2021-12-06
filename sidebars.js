@@ -54,7 +54,7 @@ module.exports = {
           'cli/policy/language',
           'cli/policy/configuration'
         ],
-       },
+       }, 
        {
         type: 'category',
         label: 'Drift',

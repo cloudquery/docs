@@ -1,17 +1,17 @@
 # CloudQuery History
 
-Achieving better visibility into our cloud infrastructure is key in maintaining security, compliance, cost and operational efficiency, is why we started CloudQuery in the [first](https://www.cloudquery.io/blog/announcing-cloudquery-seed-funding) place. Maintaining a historical records of your cloud infrastructure configuration is an integral part of your cloud environment lifecycle.
+Achieving better visibility into your  cloud infrastructure is key in maintaining security, compliance, cost and operational efficiency, is why we started CloudQuery in the [first](https://www.cloudquery.io/blog/announcing-cloudquery-seed-funding) place. Maintaining historical records of your cloud infrastructure configuration is an integral part of your cloud environment lifecycle.
 
 Check the [configuration](./cli/history/configuration) section on how to set up history for your CloudQuery instance.
 
 ## Why TimescaleDB?
 
-TimescaleDB is an open-source relational database for time-series data. It uses full SQL and works as an extension to PostgreSQL, Making it a natural choice to extend CloudQuery's capabilities to support the best in class Cloud Asset Inventory.
+TimescaleDB is an open-source relational database for time-series data. It uses SQL and works as an extension to PostgreSQL, Making it a natural choice to extend CloudQuery's capabilities to support the best in class Cloud Asset Inventory.
 
 
 ### Asset Snapshot History vs Audit Logs
 
-Current native solutions like AWS CloudTrail, GCP Cloud Audit Log , Azure Activity/Resource Logs and any other SaaS services that has audit logs, records only API calls and changes. Obviously, it is advised to enable them (if not already enabled by default) as they can help with investigation & compliance. 
+Current native solutions like AWS CloudTrail, GCP Cloud Audit Log, Azure Activity/Resource Logs and any other SaaS services that has audit logs, records only API calls and changes. Obviously, it is advised to enable them (if not already enabled by default) as they can help with investigation & compliance. 
 
 Audit logs are great, although they only focus on what **changed** and not what was the **state** of your whole cloud account in a certain point in time. CloudQuery History provides full historical snapshots of your cloud asset inventory, unlocking the following benefits: 
 
