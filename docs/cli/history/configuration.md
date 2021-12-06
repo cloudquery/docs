@@ -1,4 +1,6 @@
-# Setup
+# Configuration
+
+## Setup
 
 Make sure you read our [Getting Started](https://docs.cloudquery.io/docs/getting-started) section first.
 
