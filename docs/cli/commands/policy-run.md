@@ -27,7 +27,6 @@ cloudquery policy run aws-cis-1.2.0
       --stop-on-failure   Stops the execution on the first failure
       --fail-on-violation Return non zero exit code if one of the policy is violated
       --no-results        Do not show policies results
-      --sub-path          Forces the policy run command to only execute this sub-policy/query
 ```
 
 ## Additional Help Topics
