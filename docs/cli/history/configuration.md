@@ -50,7 +50,7 @@ SELECT * FROM history.aws_iam_users
 SELECT * from aws_iam_users
 ```
 
-## Examples
+### Examples
 
 Select all S3 buckets that where fetched yesterday and don't exist today, i.e find deleted buckets.
 ```
@@ -58,14 +58,3 @@ SELECT * FROM history.aws_s3_buckets WHERE cq_fetch_date BETWEEN now() - interva
 EXCEPT
 SELECT * FROM aws_s3_buckets 
 ```
-
-
-
-# CloudQuery History
-
-Achieving better visibility into our cloud infrastructure is key in maintaining security, compliance, cost and operational efficiency, is why we started CloudQuery in the [first](https://www.cloudquery.io/blog/announcing-cloudquery-seed-funding) place. Maintaining a historical records of your cloud infrastructure configuration is an integral part of your cloud environment lifecycle.
-
-## Why TimescaleDB?
-
-TimescaleDB is an open-source relational database for time-series data. It uses full SQL and works as an extension to PostgreSQL, Making it a natural choice to extend CloudQuery's capabilities to support the best in class Cloud Asset Inventory.
-
