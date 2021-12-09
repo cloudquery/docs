@@ -6,7 +6,7 @@ CloudQuery extracts, transforms, and loads your cloud assets into normalized Pos
 
 ## Key Features & Use Cases
 
-### Cloud Asset Inventory Powered by SQL. Backed by PosgreSQL.
+### Cloud Asset Inventory Powered by SQL. Backed by PostgreSQL.
 
 Create a cloud asset inventory in your own self-hosted PostgreSQL database where you can see an aggregated view of all assets, across cloud, account and services.
 
@@ -16,7 +16,7 @@ CloudQuery supports [TimescaleDB](https://www.timescale.com/) PostgreSQL extensi
 
 ### Search & Visibility
 
-Give developers, SREs, DevOps and security engineers a streamlined way to gain visibility and perform wide range of tasks. Such as security analytics, fleet management auditing and governance. 
+Give developers, SREs, DevOps and security engineers a streamlined way to gain visibility and perform wide range of tasks. These tasks include security analytics, fleet management auditing and governance.
 
 [CloudQuery Providers](https://hub.cloudquery.io) gives you the ability to gain visibility across accounts, different cloud providers, and SaaS applications.
 
@@ -29,9 +29,9 @@ Use [CloudQuery Policies](./cli/policy/overview) to codify, version control and 
 
 ### IaC (Infrastructure-as-code) Drift Detection
 
-Ensure your cloud assets maintains it's desired state. 
+Ensure your cloud assets maintains its desired state.
 
-CloudQuery Leverages it's asset inventory to quickly detect drift against IaC (terraform, more to come) which you can run both in the CI and locally.
+CloudQuery leverages its asset inventory to quickly detect drift against IaC (Terraform, more to come) which you can run both in the CI and locally.
 
 
 ### Extensible
