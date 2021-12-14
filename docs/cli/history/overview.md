@@ -2,7 +2,7 @@
 
 Achieving better visibility into your  cloud infrastructure is key in maintaining security, compliance, cost and operational efficiency, is why we started CloudQuery in the [first](https://www.cloudquery.io/blog/announcing-cloudquery-seed-funding) place. Maintaining historical records of your cloud infrastructure configuration is an integral part of your cloud environment lifecycle.
 
-Check the [configuration](./configuration) section on how to setup history for your CloudQuery instance.
+Check the [configuration](./cli/history/configuration) section on how to setup history for your CloudQuery instance.
 
 ## Why TimescaleDB?
 
