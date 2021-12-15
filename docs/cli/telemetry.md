@@ -1,6 +1,6 @@
-# Telemetry
+# Telemetry and Crash Reporting
 
-CloudQuery collects anonymized usage statistics about how the software is used.
+CloudQuery collects anonymized usage statistics and crash reports about how the software is used. Crash reports help us iron out any issues.
 
 ## What is Stored
 
@@ -14,7 +14,7 @@ CloudQuery collects anonymized usage statistics about how the software is used.
 ### For vague identification purposes
 
 - A randomly generated UUID, persisted across sessions
-- A SHA1 hash of your IP address
+- A SHA1 hash of your: IP address, MAC addresses and hostname
 - Your vague geographical location based on the IP address
 
 This does not allow us to track individual users but does enable us to accurately measure user counts vs. invocation counts.
@@ -28,7 +28,6 @@ The random ID is stored in the `.cq/telemetry-random-id` file. If you wish to an
 
 - We don't store your IP address directly
 - We don't store any of the command arguments or options (as they might contain sensitive information)
-- We don't store the contents of the error messages (as they might also contain sensitive information)
 - We don't store any credentials
 - We don't store any logs
 
@@ -52,10 +51,6 @@ To opt out of telemetry, simply invoke `cloudquery` executable with the `--no-te
 # Set the environment variable
 export CQ_NO_TELEMETRY=1
 
-# Invoke CloudQuery. No telemetry information will be sent
+# Invoke CloudQuery. No telemetry information or crash reports will be sent
 cloudquery [operation] [arguments]
 ```
-
-## Sending Debug Info with Telemetry
-
-If you wish to send us more information, use the `--debug-telemetry` option or set the `CQ_DEBUG_TELEMETRY` environment variable. This will send the contents of the error messages (if there are any) and might help us iron out any issues.
