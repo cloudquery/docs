@@ -107,9 +107,9 @@ module.exports = {
         'developers/developing-new-provider',
         {
           type: 'category',
-          label: 'Tutorial',
+          label: 'Tutorials',
           items: [
-            'developers/tutorial/overview'
+            'developers/tutorials/creating-new-provider'
           ],
         },
         'developers/migrations',
