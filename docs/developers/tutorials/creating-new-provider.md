@@ -33,7 +33,7 @@ module github.com/your_org_or_user/cq-provider-github
 
 The provider name is the name you will use when you will call `cloudquery init provider_name`.
 
-Change `reosurces.go`:
+Change `resources.go`:
 ```go
 func Provider() *provider.Provider {
 	return &provider.Provider{
