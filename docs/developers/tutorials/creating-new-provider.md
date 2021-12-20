@@ -44,7 +44,7 @@ This completed step in this tutorial at [cq-provider-github/tree/tutorial-step-1
 
 ### Choose Go API Client
 
-Usually, each provider will use one Go Client to interact with the service. As we need to load the data to relational database we will go with [google/go-github](https://github.com/google/go-github) that implements all GitHub RestAPIs.
+Usually, each provider will use one Go Client to interact with the service. As we need to load the data to relational database, we will go with [google/go-github](https://github.com/google/go-github) that implements all GitHub RestAPIs.
 
 Install `go-github`
 ```
