@@ -105,14 +105,14 @@ module.exports = {
         'developers/architecture', 
         'developers/debugging', 
         'developers/developing-new-provider',
-        {
-          type: 'category',
-          label: 'Tutorials',
-          items: [
-            'developers/tutorials/creating-new-provider'
-          ],
-        },
         'developers/migrations',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Tutorials',
+      items: [
+        'tutorials/creating-new-provider'
       ],
     },
     {
