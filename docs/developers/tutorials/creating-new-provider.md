@@ -142,7 +142,7 @@ Now we are set to implement our first resource which will extract, transform and
 Our first resource will be GitHub organizations which is available via [List API](https://pkg.go.dev/github.com/google/go-github/v41/github#RepositoriesService.List).
 
 
-For every resource you need to create a new file under `resources/` and implement a function that returns `*schema.Table`. Here is a snippet:
+For every resource you need to create a new file under `resources/` and implement a function that returns `*schema.Table`. Here is a [snippet](https://github.com/cloudquery/cq-provider-github/tree/tutorial-step-3):
 
 
 ```go
