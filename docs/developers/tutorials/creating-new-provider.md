@@ -60,7 +60,7 @@ In our case, to initialize an [authenticated](https://github.com/google/go-githu
 `client/config.go`
 ```go
 type Config struct {
-    // Add this LINE:
+    // ADD THIS LINE:
 	GitHubToken string `hcl:"github_token,optional"`
 
 	// resources that user asked to fetch
