@@ -137,7 +137,7 @@ In this case we first check if the token is available in `GITHUB_TOKEN` and if n
 
 ### Adding a Resource
 
-Now we are set to implement our first resource which will extract,transform and load configuration from GitHub to PostgreSQL.
+Now we are set to implement our first resource which will extract, transform and load configuration from GitHub to PostgreSQL.
 
 Our first resource will be GitHub organizations which is available via [List API](https://pkg.go.dev/github.com/google/go-github/v41/github#RepositoriesService.List).
 
