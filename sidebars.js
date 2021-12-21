@@ -120,10 +120,11 @@ module.exports = {
       type: 'category',
       label: 'Developers',
       items: [
-        'developers/architecture', 
-        'developers/debugging', 
+        'developers/architecture',
+        'developers/debugging',
         'developers/developing-new-provider',
         'developers/migrations',
+        'developers/sdk/overview',
       ],
     },
     {
