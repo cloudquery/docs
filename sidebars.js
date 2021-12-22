@@ -146,11 +146,6 @@ module.exports = {
                 },
                 {
                     type: 'category',
-                    label: 'Resource',
-                    items: ['developers/sdk/resource/overview'],
-                },
-                {
-                    type: 'category',
                     label: 'Resolver',
                     items: ['developers/sdk/resolver/overview'],
                 },
