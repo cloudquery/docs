@@ -1,8 +1,16 @@
 # Overview
 
-Resolvers are functions to fetch resources from the source (the cloud provider).
+Resolvers are functions to fetch resources from the source (the cloud provider) or look up / convert between structs.
 
-These are the main types of resolvers.
+## TableResolver
+
+This is the main type of resolver:
+
+```go
+type TableResolver func(ctx context.Context, meta ClientMeta, parent *Resource, res chan interface{}) error
+```
+
+Example:
 
 ```go
 func fetchDemoResources(ctx context.Context, meta schema.ClientMeta, parent *schema.Resource, res chan interface{}) error {
@@ -14,22 +22,37 @@ func fetchDemoResources(ctx context.Context, meta schema.ClientMeta, parent *sch
 }
 ```
 
-## Utility Resolvers
+## ColumnResolver
 
-Utility resolvers take this a step further and provide ready-made solutions on converting data from one data structure to another, ready to be saved in tables.
+These types of resolvers are called for each row received in TableResolver's data fetch.
 
-Some resolvers convert one type to another (parsing date fields, ip addresses and so on) and some look up data inside inner structs of a resource, or from the parent.
-
-Examples:
 ```go
-// Few examples of look-up helper resolvers
-func PathResolver(path string) ColumnResolver // PathResolver resolves a field in the Resource.Item
-func ParentIdResolver(_ context.Context, _ ClientMeta, r *Resource, c Column) error // ParentPathResolver resolves a field from the parent
-
-// Few examples of type converting resolvers
-func IntResolver(path string) ColumnResolver // IntResolver tries to cast value into int
-func DateResolver(path string, rfcs ...string) ColumnResolver // DateResolver resolves the different date formats (ISODate - 2011-10-05T14:48:00.000Z is default) into *time.Time
-func IPAddressResolver(path string) ColumnResolver // IPAddressResolver resolves the ip string value and returns net.IP
+type ColumnResolver func(ctx context.Context, meta ClientMeta, resource *Resource, c Column) error
 ```
 
-Discover more resolvers [in the repository](https://github.com/cloudquery/cq-provider-sdk/blob/main/provider/schema/resolvers.go).
+A ColumnResolver works by extracting data for the given `Column` from the given `Resource`, and setting it in the `Resource` using `resource.Set()`:
+
+```go
+func (r *Resource) Set(key string, value interface{}) error {
+```
+
+They usually go like:
+```go
+func resolveDynamodbTableKeySchema(ctx context.Context, meta schema.ClientMeta, resource *schema.Resource, c schema.Column) error {
+	r := resource.Item.(*types.TableDescription)
+	
+	value := marshalKeySchema(r.KeySchema)
+	
+	return resource.Set(c.Name, value)
+}
+```
+
+This way, the value for the column `c` is extracted from the resource, marshalled, and set.
+
+## PostResourceResolver
+
+This optional resolver is called after all columns have been resolved, and before resource is inserted to database.
+
+```go
+type RowResolver func(ctx context.Context, meta ClientMeta, resource *Resource) error
+```

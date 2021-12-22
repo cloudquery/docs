@@ -9,7 +9,7 @@ The core idea of the SDK is to allow developing a provider in a straightforward 
 
 - **Provider** structs are the core component of the SDK that require the implementor to only set a list all available resources, configuration of it's client and it's config. The provider structs implements the CQProvider Interface allowing the user to just implement his resources and configure function.
 - **Table** is the main building block in the SDK provider schema, these tables are passed to the Provider to define what resources the provider supports. [Tables](https://github.com/cloudquery/cq-provider-sdk/blob/main/provider/schema/table.go) define their columns, relations (which are also tables). Each table has a resolver function that is called by the SDK with the client that was configured early by the user implementation.
-- **Resolvers** are functions to fetch resource metadata from the cloud provider, look up values inside structures, or simply do conversion between data structures.
+- **Resolvers** are functions to fetch resource metadata from the cloud provider, look up values inside structs, or simply do conversion between them.
 
 ## Getting Started
 

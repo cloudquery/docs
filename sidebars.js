@@ -132,7 +132,9 @@ module.exports = {
                 {
                     type: 'category',
                     label: 'Provider',
-                    items: ['developers/sdk/provider/overview'],
+                    items: [
+                        'developers/sdk/provider/overview',
+                    ],
                 },
                 {
                     type: 'category',
@@ -147,7 +149,10 @@ module.exports = {
                 {
                     type: 'category',
                     label: 'Resolver',
-                    items: ['developers/sdk/resolver/overview'],
+                    items: [
+                        'developers/sdk/resolver/overview',
+                        'developers/sdk/resolver/utility-resolvers',
+                    ],
                 },
             ],
         },
