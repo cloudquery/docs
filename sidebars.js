@@ -124,7 +124,33 @@ module.exports = {
         'developers/debugging',
         'developers/developing-new-provider',
         'developers/migrations',
-        'developers/sdk/overview',
+        {
+            type: 'category',
+            label: 'SDK',
+            items: [
+                'developers/sdk/overview',
+                {
+                    type: 'category',
+                    label: 'Provider',
+                    items: ['developers/sdk/provider/overview'],
+                },
+                {
+                    type: 'category',
+                    label: 'Table',
+                    items: ['developers/sdk/table/overview'],
+                },
+                {
+                    type: 'category',
+                    label: 'Resource',
+                    items: ['developers/sdk/resource/overview'],
+                },
+                {
+                    type: 'category',
+                    label: 'Resolver',
+                    items: ['developers/sdk/resolver/overview'],
+                },
+            ],
+        },
       ],
     },
     {
