@@ -137,7 +137,10 @@ module.exports = {
                 {
                     type: 'category',
                     label: 'Table',
-                    items: ['developers/sdk/table/overview'],
+                    items: [
+                        'developers/sdk/table/overview',
+                        'developers/sdk/table/column-types',
+                    ],
                 },
                 {
                     type: 'category',
