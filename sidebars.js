@@ -140,6 +140,8 @@ module.exports = {
                     items: [
                         'developers/sdk/table/overview',
                         'developers/sdk/table/column-types',
+                        'developers/sdk/table/primary-key',
+                        'developers/sdk/table/multiplexer-and-deletefilter',
                     ],
                 },
                 {
