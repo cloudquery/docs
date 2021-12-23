@@ -1,10 +1,10 @@
-# Resolvers
+# Fetch Resolvers
 
-Resolvers are functions to fetch resources from the source (the cloud provider) or look up / convert between structs.
+Fetch resolvers are functions to fetch resources from the source (the cloud provider).
 
 ## TableResolver
 
-This is the main type of resolver:
+This is the main type of fetch resolver:
 
 ```go
 type TableResolver func(ctx context.Context, meta ClientMeta, parent *Resource, res chan interface{}) error

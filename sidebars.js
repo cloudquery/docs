@@ -144,7 +144,7 @@ module.exports = {
                         'developers/sdk/table/column-types',
                         'developers/sdk/table/primary-key',
                         'developers/sdk/table/multiplexer-and-deletefilter',
-                        'developers/sdk/table/resolvers',
+                        'developers/sdk/table/fetch-resolvers',
                         'developers/sdk/table/column-resolvers',
                     ],
                 },
