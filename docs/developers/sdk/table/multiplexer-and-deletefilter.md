@@ -29,7 +29,7 @@ func AccountMultiplex(meta schema.ClientMeta) []schema.ClientMeta {
 
 DeleteFilter defines how to remove a certain type of resource from the database, by returning a list of key/value pairs to match when truncating that resource from the database.
 
-Again, this one from the [AWS Provider](https://github.com/cloudquery/cq-provider-aws/blob/main/client/filters.go) returns an `account_id=<THE_ACCOUNT_ID>` pair, by reading the Account ID from the given client.
+Again, this one from the [AWS Provider](https://github.com/cloudquery/cq-provider-aws/blob/main/client/filters.go) returns an `account_id=<THE_ACCOUNT_ID>` pair, by reading the Account ID from the given `*Client`.
 
 ```go
 func DeleteAccountFilter(meta schema.ClientMeta, _ *schema.Resource) []interface{} {
@@ -37,3 +37,7 @@ func DeleteAccountFilter(meta schema.ClientMeta, _ *schema.Resource) []interface
 	return []interface{}{"account_id", client.AccountID}
 }
 ```
+
+:::tip
+DeleteFilter is always a _mirror_ of your Multiplexer.
+:::
