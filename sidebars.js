@@ -123,7 +123,6 @@ module.exports = {
         'developers/architecture',
         'developers/debugging',
         'developers/developing-new-provider',
-        'developers/migrations',
         {
             type: 'category',
             label: 'SDK',
@@ -148,6 +147,7 @@ module.exports = {
                         'developers/sdk/table/column-resolvers',
                     ],
                 },
+                'developers/sdk/migrations',
             ],
         },
       ],

@@ -1,7 +1,7 @@
 # Overview
 
-CloudQuery SDK enables building CloudQuery providers which allows CloudQuery's users to **E**xtract/**L**oad/**T**ransform existing and popular service providers as well as custom in-house solutions into a SQL database.
-It was developed to allow easy creation for providers, and reduce boilerplate code when developing them.
+**The CloudQuery SDK** enables building CloudQuery providers which allows CloudQuery's users to **E**xtract/**T**ransform/**L**oad existing and popular service providers as well as custom in-house solutions into a SQL database.
+It was developed to allow easy creation for providers and reduce boilerplate code when developing them.
 
 The core idea of the SDK is to allow developing a provider in a straightforward manner, while allowing the user free control in fetching the data to be inserted.
 
