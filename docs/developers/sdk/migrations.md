@@ -1,6 +1,6 @@
 # Migrations
 
-This is an advanced section describing implementing migrations for a CloudQuery Provider. Before reading this section make sure you have read the [developing new provider](./developers/developing-new-provider.md) guide first.
+This is an advanced section describing implementing migrations for a CloudQuery Provider. Before reading this section make sure you have read the [developing new provider](../developing-new-provider.md) guide first.
 
 Since CloudQuery is backed by a SQL database, providers consistently change between versions and can create breaking changes. Migrations is a classic approach to support changes without rebuilding the database. Under the hood CloudQuery uses [go-migrate](https://github.com/golang-migrate/migrate).
 
