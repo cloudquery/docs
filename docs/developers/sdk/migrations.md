@@ -20,7 +20,7 @@ var (
 		Configure:       client.Configure,
 		ErrorClassifier: client.ErrorClassifier,
 		*Migrations:      myMigrations,
-        ResourceS: map[string]*schema.Table{
+        Resources: map[string]*schema.Table{
             "myresource": ResourceTable()
         }
 }

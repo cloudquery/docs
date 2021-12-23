@@ -133,6 +133,8 @@ module.exports = {
                     label: 'Provider',
                     items: [
                         'developers/sdk/provider/overview',
+                        'developers/sdk/provider/configuration',
+                        'developers/sdk/provider/error-classifier',
                     ],
                 },
                 {
