@@ -22,7 +22,9 @@ For each table, these columns are automatically added:
 | `meta` | Holds CQ internal metadata |
 | `cq_fetch_date` | Timestamp for the fetch, used in the history feature |
 
+:::tip
 If no PKs are defined, the `cq_id` column becomes the default Primary Key.
+:::
 
 # Relation Tables
 
