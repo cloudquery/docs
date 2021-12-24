@@ -12,6 +12,8 @@ It's an optional feature to be configured in the provider:
 
 This way a specific error from a [Fetch Resolver](../table/fetch-resolvers) can be classified with a severity level and type, to be reported differently to the user.
 
+If a given `error` already satisfies the `diag.Diagnostic` interface, it will not get passed through the ErrorClassifier.  
+
 :::tip
 The error classifier is not able to ignore errors. Ignoring errors should be done at a [Table](../table/overview) level, using an `IgnoreErrorFunc`.
 :::

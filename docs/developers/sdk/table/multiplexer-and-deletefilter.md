@@ -25,7 +25,7 @@ func AccountMultiplex(meta schema.ClientMeta) []schema.ClientMeta {
 }
 ```
 
-# DeleteFilter
+## DeleteFilter
 
 DeleteFilter defines how to remove a certain type of resource from the database, by returning a list of key/value pairs to match when truncating that resource from the database.
 

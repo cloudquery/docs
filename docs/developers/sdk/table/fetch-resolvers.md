@@ -11,7 +11,7 @@ type TableResolver func(ctx context.Context, meta ClientMeta, parent *Resource, 
 ```
 
 `TableResolver` allows you to access the cloud resource using the given passed `*Client` and fetch all resources of that type. Finally, you send the fetch items into the passed `res` channel argument.
-The `TableResolver` is very flexible allowing you to define you pagination logic or any other logic for that matter, and pass the results to channel.
+The `TableResolver` is very flexible allowing you to define your own pagination logic or any other logic for that matter, and pass the results to the channel.
 
 :::tip
 The collector in the SDK is slice-aware, so if you have a slice of resources, you can just push the slice as a whole, without iterating.
@@ -35,4 +35,31 @@ This optional resolver is called after all columns have been resolved, and befor
 
 ```go
 type RowResolver func(ctx context.Context, meta ClientMeta, resource *Resource) error
+```
+
+Here's an example from the AWS Provider's [SNS Topics resource](https://github.com/cloudquery/cq-provider-aws/blob/006d963/resources/sns_topics.go), getting SNS topic attributes in one go and setting various fields:
+
+```go
+func resolveTopicAttributes(ctx context.Context, meta schema.ClientMeta, resource *schema.Resource) error {
+	topic, ok := resource.Item.(types.Topic)
+	
+	// ...
+
+	output, err := svc.GetTopicAttributes(ctx, &params, func(o *sns.Options) {
+		o.Region = c.Region
+	})
+
+	// ...
+
+	// Set all attributes
+	if err := resource.Set("subscriptions_confirmed", cast.ToInt(output.Attributes["SubscriptionsConfirmed"])); err != nil {
+		return err
+	}
+	if err := resource.Set("subscriptions_deleted", cast.ToInt(output.Attributes["SubscriptionsDeleted"])); err != nil {
+		return err
+	}
+	// ... More attributes are set here ...
+
+	return nil
+}
 ```

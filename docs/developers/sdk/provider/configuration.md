@@ -26,6 +26,8 @@ type Provider struct {
 	// ...internal fields...
 ```
 
+(Full definition [in repository](https://github.com/cloudquery/cq-provider-sdk/blob/main/provider/provider.go))
+
 When creating a provider instance, the SDK decodes the configuration (from the user) into the data structure returned from the `Config` method.
 
 ```go
