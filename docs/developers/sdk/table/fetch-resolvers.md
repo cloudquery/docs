@@ -10,7 +10,8 @@ This is the main type of fetch resolver:
 type TableResolver func(ctx context.Context, meta ClientMeta, parent *Resource, res chan interface{}) error
 ```
 
-The thing to do in a `TableResolver` is to access the cloud resource using the given `*Client` and query all resources of that type. Then push every item into the given `chan`.
+`TableResolver` allows you to access the cloud resource using the given passed `*Client` and fetch all resources of that type. Finally, you send the fetch items into the passed `res` channel argument.
+The `TableResolver` is very flexible allowing you to define you pagination logic or any other logic for that matter, and pass the results to channel.
 
 :::tip
 The collector in the SDK is slice-aware, so if you have a slice of resources, you can just push the slice as a whole, without iterating.
