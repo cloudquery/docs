@@ -4,7 +4,7 @@
 
 ## Multiplexer
 
-A multiplexer get a client and returns a bunch of clients:
+A multiplexer receives a client and returns an array of clients to execute in parallel:
 
 ```go
 func(meta ClientMeta) []ClientMeta
