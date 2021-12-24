@@ -1,6 +1,6 @@
 # Fetch Resolvers
 
-Fetch resolvers are functions to fetch resources from the source (the cloud provider).
+Fetch resolvers are functions to fetch resources from the source (a cloud provider for example).
 
 ## TableResolver
 
