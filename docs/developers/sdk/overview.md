@@ -1,9 +1,9 @@
 # Overview
 
-**The CloudQuery SDK** enables building CloudQuery providers which allows CloudQuery's users to **E**xtract/**T**ransform/**L**oad existing and popular service providers as well as custom in-house solutions into a SQL database.
-It was developed to allow easy creation for providers and reduce boilerplate code when developing them.
+**The CloudQuery SDK** enables building CloudQuery providers which allows CloudQuery's users to **E**xtract/**T**ransform/**L**oad existing and popular service providers APIs as well as custom in-house solutions into a SQL database.
+It was developed to allow easy creation for providers and reduce boilerplate code when developing them, letting developers focus only on the **E**xtract while the SDK will take care of the rest. 
 
-The core idea of the SDK is to allow developing a provider in a straightforward manner, while allowing the user free control in fetching the data to be inserted.
+The core idea of the SDK is to allow for developers developing a provider in a straightforward manner, while allowing the user free control in fetching the data to be inserted.
 
 ## Key Concepts
 
@@ -19,4 +19,4 @@ Take a look at the [CloudQuery Architecture](../architecture) and [Developing a 
 
 To debug a provider see the [Debugging](../debugging) section.
 
-The SDK also provides a [testing](https://github.com/cloudquery/cq-provider-sdk/tree/main/provider/testing) package/helper to minimize the boilerplate needed to test your provider.
+The SDK also provides a [testing](./testing) package/helper to minimize the boilerplate needed to test your provider.

@@ -150,6 +150,7 @@ module.exports = {
                     ],
                 },
                 'developers/sdk/migrations',
+                'developers/sdk/testing',
             ],
         },
       ],
