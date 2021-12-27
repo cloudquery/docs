@@ -31,7 +31,7 @@ module github.com/your_org_or_user/cq-provider-github
 
 ### Update Provider Name
 
-The provider name is the name you will use when you will call `cloudquery init provider_name`.
+The provider name is the name you will use when you will call `cloudquery init [provider]`.
 
 Change `resources.go`:
 ```go

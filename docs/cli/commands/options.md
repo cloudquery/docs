@@ -5,7 +5,7 @@ Prints global options and can be passed to any commands
 ## Global Flags
 
 ```text
-      --config string               path to configuration file. can be generated with 'gen config' command (env: CQ_CONFIG_PATH) (default "./config.hcl")
+      --config string               path to configuration file. can be generated with 'init [provider]' command (env: CQ_CONFIG_PATH) (default "./config.hcl")
       --dsn string                  database connection string (env: CQ_DSN) (example: 'host=localhost user=postgres password=pass DB.name=postgres port=5432')
       --no-verify                   NoVerify is true registry won't verify the plugins
       --plugin-dir string           Directory to save and load CloudQuery plugins from (env: CQ_PLUGIN_DIR) (default "./.cq/providers")

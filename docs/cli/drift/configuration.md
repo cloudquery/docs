@@ -4,7 +4,7 @@ To customize drifting features, edit the `drift` block in `config.hcl`.
 
 ## Default Block
 
-The default block provided with `cloudquery init <provider>` looks something like:
+The default block provided with `cloudquery init [provider]` looks something like:
 
 ```hcl
 # ... cloudquery and provider blocks here ...

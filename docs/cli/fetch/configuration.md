@@ -22,4 +22,4 @@ provider "aws" {
 }
 ```
 
-Default configuration for a specific provider can always be generated via `cloudquery init provider`
+Default configuration for a specific provider can always be generated via `cloudquery init [provider]`

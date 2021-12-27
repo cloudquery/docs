@@ -51,7 +51,7 @@ type Config struct {
 }
 
 
-// Pass example to cloudquery when cloudqueyr init <provider> will be called
+// Pass example to cloudquery when cloudqueyr init [provider] will be called
 func (c Config) Example() string {
     return `configuration {
     
@@ -209,4 +209,4 @@ Essentially, for each resource that you support, you just need to define two thi
 
 ## Publishing a provider
 
-To publish a provider so that it can be downloaded and added via the [`cloudquery init <provider>`](/docs/cli/commands/provider) command you'll need to [raise an issue](https://github.com/cloudquery/cloudquery/issues) with the relevant details so that we can add it to our registry.
+To publish a provider so that it can be downloaded and added via the [`cloudquery init [provider]`](/docs/cli/commands/provider) command you'll need to [raise an issue](https://github.com/cloudquery/cloudquery/issues) with the relevant details so that we can add it to our registry.
