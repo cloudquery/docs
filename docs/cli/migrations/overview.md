@@ -31,4 +31,4 @@ cloudquery provider drop aws
 
 ## Fetch Auto upgrade
 
-Cloudquery automatically attempts to upgrade providers when fetch is executed, this action can be disabled by passing the `--skip-schema-upgrade` flag.
+CloudQuery automatically attempts to upgrade providers when fetch is executed, this action can be disabled by passing the `--skip-schema-upgrade` flag.
