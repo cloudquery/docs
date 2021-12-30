@@ -65,14 +65,6 @@ module.exports = {
        },
        {
         type: 'category',
-        label: 'Configuration',
-        items: [
-          'cli/configuration/overview',
-          'cli/configuration/providers'
-        ]
-       },
-       {
-        type: 'category',
         label: 'Migrations',
         items: [
           'cli/migrations/overview',
@@ -111,6 +103,14 @@ module.exports = {
        }
       ],
     },
+      {
+          type: 'category',
+          label: 'Configuration',
+          items: [
+              'configuration/overview',
+              'configuration/providers'
+          ]
+      },
     {
       type: 'category',
       label: 'Deployment',
