@@ -2,7 +2,7 @@
 
 Testing your provider is key in ensuring quality of your provider and developer experiance for future contributors that can easily test their changes against the tests.
 
-CloudQuery SDK provides utility test function to help test each resource and verify it's output using snapshot testing.
+CloudQuery SDK provides utility test function to help test each resource and verify it's output.
 
 ## Requirements
 
@@ -10,31 +10,48 @@ The testing framework provided by CloudQuery SDK is essentially an end-to-end (i
 
 ## How Resource Tests work
 
-As mentioned earlier resource testing is using something called snapshot testing. This means the following occurs in each test:
+There are two main goals to CloudQuery testing framework:
+
+- Check that the extract(fetch) functioanality is defined correctly and works without errors against real infrastructures.
+- Check the schema definition and all columns resolvers that are defined correctly and the data exists after a successful fetch.
+
+Here is the flow of each test:
+
 - The resource table and all it's children tables are delted from PostgreSQL to work with clean data.
 - CloudQuery SDK is fetching the resource, transforming and loading it into PostgreSQL.
-- For each resource table (and it's children) CloudQuery is reading all the rows and with and compares it with a saved snapshot file.
-    - If the result is equal the tests pass.
-    - If not, the tests fail, print the diff and write to a snapshot file with `.tmp` the new result (so you can compare offline).
-    - If snapshot file doesn't exist the tests fail and write the snapshot file.
+- For each resource table (and it's children) CloudQuery is reading all the rows and checking that 
+    - Each table has at least one row available unless `IgnoreInTests` is defined in the `Table`.
+    - Each column has data which means the default or custom column resolver worked (unless skipped with `IgnoreInTests` on the `Column`).
 
 ## ResourceTest and ResourceTestCase
 
 Each resource can be tested end-to-end with `ResourceTest` function. Here is an example
 
 ```go
-"github.com/cloudquery/cq-provider-sdk/provider/testing"
+func AWSTestHelper(t *testing.T) {
+	cfg := `
+	aws_debug = false
+	`
 
-func TestMyResource(t *testing.T) {
-    cfg := `
-    // your provider configuration, if needed
-    `
-    providertest.ResourceTest(t, testing.ResourceTestCase{
-		ProviderCreator: resources.Provider,
-		Table:           resources.MyResource(),
-		Config:          cfg,
-		SnapshotsDir:    "./snapshots",
+	providertest.TestResource(t, providertest.ResourceTestCase{
+		Provider: &provider.Provider{
+			Name:      "aws_test_provider",
+			Version:   "development",
+			Configure: Configure,
+			Config: func() provider.Config {
+				return &Config{}
+			},
+			ResourceMap: map[string]*schema.Table{
+				"test_resource": MyResource(),
+			},
+		},
+		Table:         table,
+		Config:        cfg,
 	})
 }
 ```
+
+## Useful Resources
+
+- CloudQuery official [cq-provider-aws](https://github.com/cloudquery/cq-provider-aws/blob/main/client/testing.go) as an example.
 
