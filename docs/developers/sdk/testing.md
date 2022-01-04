@@ -15,7 +15,7 @@ There are two main goals to CloudQuery testing framework:
 - Check that the extract(fetch) functioanality is defined correctly and works without errors against real infrastructures.
 - Check the schema definition and all columns resolvers that are defined correctly and the data exists after a successful fetch.
 
-Here is the flow of each test:
+### Test flow execution:
 
 - The resource table and all it's children tables are delted from PostgreSQL to work with clean data.
 - CloudQuery SDK is fetching the resource, transforming and loading it into PostgreSQL.
