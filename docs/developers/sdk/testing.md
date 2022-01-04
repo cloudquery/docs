@@ -1,6 +1,6 @@
 # Testing
 
-Testing your provider is key in ensuring quality of your provider and developer experiance for future contributors that can easily test their changes against the tests.
+Testing providers is key factor in ensuring the quality of your provider and developer experience, so future contributors can easily test their changes against.
 
 CloudQuery SDK provides utility test function to help test each resource and verify it's output.
 
