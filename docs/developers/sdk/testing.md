@@ -18,7 +18,7 @@ There are two main goals to CloudQuery testing framework:
 ### Test flow execution:
 
 - The resource table and all it's children tables are deleted from PostgreSQL to work with a clean state.
-- CloudQuery SDK is fetching the resource, transforming and loading it into PostgreSQL.
+- CloudQuery SDK fetches the resource, transforms and loads it into PostgreSQL.
 - For each resource table (and it's children) CloudQuery reads all the rows and checks that 
     - Each table has at least one row available unless `IgnoreInTests` is defined in the `Table`.
     - Each column has data which means the default or custom column resolver worked (unless skipped with `IgnoreInTests` on the `Column`).
