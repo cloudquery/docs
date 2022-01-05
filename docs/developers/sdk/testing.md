@@ -25,7 +25,7 @@ There are two main goals to CloudQuery testing framework:
 
 ## ResourceTest and ResourceTestCase
 
-Each resource can be tested end-to-end with `ResourceTest` function. Here is an example
+Each resource can be tested end-to-end with `ResourceTest` function. Here is an example:
 
 ```go
 func AWSTestHelper(t *testing.T) {
