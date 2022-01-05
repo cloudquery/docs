@@ -2,7 +2,7 @@
 
 Testing providers is key factor in ensuring the quality of your provider and developer experience, so future contributors can easily test their changes against.
 
-CloudQuery SDK provides utility test function to help test each resource and verify it's output.
+CloudQuery SDK provides a utility test function to help you test each resource and verify it's output.
 
 ## Requirements
 
