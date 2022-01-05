@@ -15,37 +15,55 @@ First you need to make sure you run the [`fetch`](../fetch/overview) command and
 
 [CloudQuery policies](./language) can be stored on GitHub or locally and published on [CloudQuery Hub](https://hub.cloudquery.io) for easy discovery and documentation.
 
-### Running Git Backed Policy
+### Running Policies
 
-The following will run the policy hosted on [github.com/cloudquery-policies/aws-cis-1.2.0](https://github.com/cloudquery-policies/aws-cis-1.2.0) as the default host is GitHub.
-
-```bash
-cloudquery policy run cloudquery-policies/aws-cis-1.2.0
-```
-
-Other git hosting platforms can be used by passing full url, for example:
+The following will run the policy hosted on [github.com/cloudquery-policies/aws](https://github.com/cloudquery-policies/aws) as the default host is GitHub.
 
 ```bash
-cloudquery policy download https://gitlab.com/<COMMUNITY_ORG>/<POLICY_NAME>.git
+cloudquery policy run github.com/cloudquery-policies/aws
 ```
 
-### Running local policy
+Cloudquery will always download the latest tag of the policy if no specific tag/commit/branch is defined, you can set a specific branch using `@` or `?ref=<tag/branch/commit-hash>` to your `source` url. Examples:
 
-To run a policy that is hosted locally you will need to add the following block to your `config.hcl`:
+```bash
+cloudquery policy run github.com/cloudquery-policies/aws@v0.1.0
+```
+
+```bash
+cloudquery policy run github.com/cloudquery-policies/aws?ref=v0.1.0
+```
+
+To run policies from other sources check the following [page](/sources).
+
+#### Running sub-policies
+
+Some policies are built as packs and only specific sub-policies are relevant for us, we can specificy sub-policies with `//` path dominator in our `source` argument.
+
+```bash
+cloudquery policy run github.com/cloudquery-policies/aws//cis_v1.2.0
+```
+
+You can also run a specific check for example if we want to run a iam check in cis_v1.2.0:
+
+```bash
+cloudquery policy run github.com/cloudquery-policies/aws//cis_v1.2.0/1/1.9
+```
+
+Will run the `1.9` check under section 1 policy of cis v1.2.0.
+
+
+### Policy configuration
+
+To add policies to your `config.hcl` you can simply add `policy` blocks, you an either add inline policies or point to a policy by `source`.
 
 ```hcl
-policy "my-policy" {
-  type = "local"
-  source = "/path/to/policy"
-  version = "v0.0.5"
+# ... CloudQuery and provider blocks here ...
+// Policy Configurations
+policy "aws-cis" {
+  source = "github.com/cloudquery-policies/aws//cis_v1.2.0"
 }
 ```
 
-Then run the following command:
-
-```bash
-cloudquery policy run
-```
 
 ### Results
 
@@ -91,4 +109,4 @@ You can use the `--output-dir /path/to/` option to get the policies results in J
 ## What's next?
 
 - [Learn](./language) how to write policy.
-- [Learn](./configuration) how to configure and run multiple policies.
+- [Learn](./sources) how to run policies from different sources.

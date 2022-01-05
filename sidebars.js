@@ -52,7 +52,7 @@ module.exports = {
         items: [
           'cli/policy/overview',
           'cli/policy/language',
-          'cli/policy/configuration'
+          'cli/policy/sources',
         ],
        }, 
        {
