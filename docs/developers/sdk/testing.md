@@ -6,7 +6,7 @@ CloudQuery SDK provides a utility test function to help you test each resource a
 
 ## Requirements
 
-The testing framework provided by CloudQuery SDK are essentially an end-to-end (integration) tests. This means you will need a real test account and real resources in place. It is suggested to create those test resources with any IaC tool (Terraform, Pulumi, etc...).
+The testing framework provided by CloudQuery SDK are essentially end-to-end (integration) tests. This means you will need a real test account and real resources in place. It is suggested to create those test resources with any IaC tool (Terraform, Pulumi, etc...).
 
 ## How Resource Tests work
 
