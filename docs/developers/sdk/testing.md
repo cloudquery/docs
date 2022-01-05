@@ -13,7 +13,7 @@ The testing framework provided by CloudQuery SDK are essentially end-to-end (int
 There are two main goals to CloudQuery testing framework:
 
 - Check that the extract(fetch) functioanality is defined correctly and works without errors against real infrastructures.
-- Check the schema definition and all columns resolvers that are defined correctly and the data exists after a successful fetch.
+- Check the schema definition and all column resolvers are defined correctly, the data exists after a successful fetch.
 
 ### Test flow execution:
 
