@@ -33,7 +33,7 @@ cloudquery policy run github.com/cloudquery-policies/aws@v0.1.0
 cloudquery policy run github.com/cloudquery-policies/aws?ref=v0.1.0
 ```
 
-To run policies from other sources check the following [page](/sources).
+To run policies from other sources check the following [page](./sources).
 
 #### Running sub-policies
 
