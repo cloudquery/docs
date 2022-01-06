@@ -1,4 +1,4 @@
-# Policy Sources
+# Sources
 
 You can define the policies you want to execute (both local and remote) in your `config.hcl` or policy block using the `source` attribute. This can be useful when executing multiple policies and running in the CI .
 
@@ -32,6 +32,7 @@ policy "aws" {
   source = "aws"
 }
 ```
+
 ## GitHub
 
 CloudQuery will recognize prefixed github.com URLs and interpret them automatically as Git repository sources.
@@ -41,6 +42,7 @@ policy "aws" {
   source = "github.com/cloudquery-policies/aws"
 }
 ```
+
 The above will clone the repository with HTTPS, To clone using SSH, use the following form: `git@github.com:cloudquery-policies/aws.git"
 
 ### Generic Git Repository
@@ -63,7 +65,7 @@ Use SSH to access private Git repositories from automated systems because it all
 
 ### Selecting a Revision
 
-By default, CloudQuery will clone the latest tagged version of the policy. You can override this using the `ref` argument. The value of the `ref` argument can by any reference accepted by the `git checkout` command, such as as commit hash, tag name or branch. 
+By default, CloudQuery will clone the latest tagged version of the policy. You can override this using the `ref` or `@` query parameter. The value of the `ref` or `@` parameter can by any reference accepted by the `git checkout` command, such as as commit hash, tag name or branch. 
 
 ```hcl
 policy "aws-with-tag" {
@@ -72,6 +74,11 @@ policy "aws-with-tag" {
 
 policy "aws-with-commit-hash" {
   source = "github.com/cloudquery-policies/aws.git?ref=96886a4"
+}
+
+
+policy "aws-@-version" {
+  source = "github.com/cloudquery-policies/aws@v0.1.0"
 }
 ```
 
