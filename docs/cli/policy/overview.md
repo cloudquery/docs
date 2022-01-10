@@ -66,7 +66,7 @@ policy "aws-cis" {
 
 #### Running local-policies
 
-To run a local policy uses the [local source](./source#local) you can set the policy in your `config.hcl` or pass the policy file path when executing `policy run` command as follows:
+To run a local policy uses the [local source](./sources#local) you can set the policy in your `config.hcl` or pass the policy file path when executing `policy run` command as follows:
 
 ```bash
 cloudquery policy run path\to\policy
