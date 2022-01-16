@@ -149,7 +149,16 @@ module.exports = {
                         'developers/sdk/table/column-resolvers',
                     ],
                 },
-                'developers/sdk/migrations',
+                {
+                    type: 'category',
+                    label: 'Migrations',
+                    items: [
+                        'developers/sdk/migrations/overview',
+                        'developers/sdk/migrations/migration-tool',
+                        'developers/sdk/migrations/generating-initial-migrations',
+                        'developers/sdk/migrations/generating-upgrade-migrations',
+                    ],
+                },
                 'developers/sdk/testing',
             ],
         },

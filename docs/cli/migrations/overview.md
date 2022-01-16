@@ -1,6 +1,6 @@
 # Overview
 
-CloudQuery  is an open-source cloud asset inventory powered by SQL, as such, when providers change their schema (change/remove columns) some migrations from the previous run are required. CloudQuery uses [go-migrate](https://github.com/golang-migrate/migrate) under the hood to execute migrations on the database, see how to add them to a provider [here](./developers/sdk/migrations.md).
+CloudQuery  is an open-source cloud asset inventory powered by SQL, as such, when providers change their schema (change/remove columns) some migrations from the previous run are required. CloudQuery uses [go-migrate](https://github.com/golang-migrate/migrate) under the hood to execute migrations on the database, see how to add them to a provider [here](./developers/sdk/migrations/overview.md).
 
 
 ## Running

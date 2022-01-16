@@ -16,10 +16,10 @@ func DemoResource() *schema.Table {
 
 For each table, these columns are automatically added:
 
-| Column Name | Description |
-| ----------- | ----------- |
-| `cq_id` | The identifier for relations |
-| `meta` | Holds CQ internal metadata |
+| Column Name     | Description |
+|-----------------| ----------- |
+| `cq_id`         | The identifier for relations |
+| `cq_meta`       | Holds CQ internal metadata |
 | `cq_fetch_date` | Timestamp for the fetch, used in the history feature |
 
 :::tip
