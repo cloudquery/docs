@@ -10,12 +10,12 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/path-to/your-provider/resources/provider" // <--- CHANGE THIS to your package name for provider
+	"github.com/path-to/your-provider/resources" // <--- CHANGE THIS to your package name for provider
 	"github.com/cloudquery/cq-provider-sdk/migration"
 )
 
 func main() {
-	if err := migration.Run(context.Background(), provider.Provider(), ""); err != nil {
+	if err := migration.Run(context.Background(), resources.Provider(), ""); err != nil {
 		fmt.Fprintf(os.Stderr, "Error: %s\n", err.Error())
 		os.Exit(1)
 	}
