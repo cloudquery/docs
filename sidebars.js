@@ -156,6 +156,7 @@ module.exports = {
                         'developers/sdk/migrations/overview',
                         'developers/sdk/migrations/migration-tool',
                         'developers/sdk/migrations/generating-migrations',
+                        'developers/sdk/migrations/testing',
                     ],
                 },
                 'developers/sdk/testing',
