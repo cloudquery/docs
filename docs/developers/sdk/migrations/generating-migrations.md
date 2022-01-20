@@ -36,6 +36,10 @@ The DSN should point to the _latest released version_ (`v0.0.1` in this example)
 It will then compare changes with the `schema.Table` definitions in the current code, and generate upgrade (and downgrade) files per dialect.
 
 :::tip
+It should be possible to generate the migrations for TimescaleDB in vanilla PostgreSQL due to protocol compatibility, by replacing `postgres://` with `tsdb://` in the DSN and still pointing it to your PostgreSQL installation.
+:::
+
+:::note
 Upgrade migrations are not perfect. Always check the generated files before releasing.
 :::
 

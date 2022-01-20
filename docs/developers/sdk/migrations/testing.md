@@ -38,7 +38,7 @@ All provider tables in the specified DB catalog will be dropped before and after
 To test multiple dialects, run the test multiple times each time with a different DSN value specific to the dialect you wish to test.
 
 :::tip
-It's possible to test the migrations of TimescaleDB dialect in vanilla PostgreSQL due to protocol compatibility, by replacing `postgres://` with `tsdb://` in the DSN.
+It's possible to test the migrations of TimescaleDB dialect in vanilla PostgreSQL due to protocol compatibility, by replacing `postgres://` with `tsdb://` in the DSN and still pointing it to your PostgreSQL installation.
 :::
 
 **It's recommended to always test all migrations for all dialects.**
