@@ -100,7 +100,12 @@ module.exports = {
          type: 'doc',
          label: 'Telemetry',
          id: 'cli/telemetry'
-       }
+       },
+       {
+        type: 'doc',
+        label: 'Rate Limiting',
+        id: 'cli/rate_limiting'
+      }
       ],
     },
       {
