@@ -18,7 +18,7 @@ var (
 func Provider() *provider.Provider {
 	return &provider.Provider{
 		Name:            "docs-provider",
-		Version:         "1.0.0",
+		Version:         "0.0.1",
 		Configure:       client.Configure,
 		Migrations:      migrationFiles, // <-- Add this to your provider struct
 		Resources: map[string]*schema.Table{
