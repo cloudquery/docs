@@ -35,6 +35,8 @@ Tool options are:
         Path to migrations directory (default "./resources/provider/migrations")
   -prefix string
         Prefix for files (default "unreleased")
+  -schema string
+        Schema to compare tables from in upgrade mode (default "public")
 ```
 
 The tool has two running modes:
