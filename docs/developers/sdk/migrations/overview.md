@@ -12,17 +12,22 @@ The CloudQuery SDK allows to easily send a list of embedded SQL migration files 
 ```go
 var (
 	//go:embed migrations/*/*.sql
-	myMigrations embed.FS
+	migrationFiles embed.FS
 )
 
-&provider.Provider{
+func Provider() *provider.Provider {
+	return &provider.Provider{
 		Name:            "docs-provider",
+		Version:         "1.0.0",
 		Configure:       client.Configure,
-		ErrorClassifier: client.ErrorClassifier,
-		*Migrations:      myMigrations,
-        Resources: map[string]*schema.Table{
-            "myresource": ResourceTable()
-        }
+		Migrations:      migrationFiles, // <-- Add this to your provider struct
+		Resources: map[string]*schema.Table{
+			"myresource": MyResourceTable(),
+		},
+		Config: func() provider.Config {
+			return &client.Config{}
+		},
+	}
 }
 ```
 
