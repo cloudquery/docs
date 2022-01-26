@@ -9,8 +9,7 @@ Since CloudQuery is backed by a SQL database, providers consistently change betw
 
 The CloudQuery SDK allows to easily send a list of embedded SQL migration files from a provider to the core, we are required to only add the following to our provider struct:
 
-```go 
-
+```go
 var (
 	//go:embed migrations/*/*.sql
 	myMigrations embed.FS
@@ -26,6 +25,8 @@ var (
         }
 }
 ```
+
+See it in action [in the template.](https://github.com/cloudquery/cq-provider-template/blob/main/resources/provider/provider.go)
 
 ## Migrations Filesystem
 
