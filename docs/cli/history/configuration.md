@@ -41,7 +41,7 @@ The history block in our `config.hcl` allows us to configure our history prefere
 
 
 ```
-cloudquery 
+cloudquery {
   # history block configuration makes cloudquery run in history mode
   history {
     // Save data retention for 7 days
