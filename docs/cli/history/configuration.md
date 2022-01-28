@@ -19,7 +19,7 @@ docker run -d --name timescaledb -p 5432:5432 -e POSTGRES_PASSWORD=pass timescal
 
 #### DSN Format
 
-Using TimescaleDB the DSN format used in config.hcl needs to be in the URI format and it must start with `tsdb://`, as such:
+Using TimescaleDB, the DSN format used in `config.hcl` needs to be in the URI format and it must start with `tsdb://`, as such:
 
 ```
 cloudquery {
