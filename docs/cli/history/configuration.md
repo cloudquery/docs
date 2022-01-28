@@ -17,6 +17,22 @@ docker run -d --name timescaledb -p 5432:5432 -e POSTGRES_PASSWORD=pass timescal
 
 ### Configuration
 
+#### DSN Format
+
+Using TimescaleDB the DSN format used in config.hcl needs to be in the URI format and it must start with `tsdb://`, as such:
+
+```
+cloudquery {
+    connection {
+        dsn = "tsdb://user:pass@localhost:5432/yourdb?sslmode=disable"
+    }
+}
+```
+
+This way CloudQuery knows you're pointing to a timescaledb instance in the DSN.
+
+#### History Settings
+
 The history block in our `config.hcl` allows us to configure our history preferences. Currently we have the following options:
 
 - **Retention** [Optional]: defines the retention policy of your data and how long it should exist in days, by default is 7 day. 
