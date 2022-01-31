@@ -61,7 +61,7 @@ CloudQuery will create a new schema called `history` which holds full historical
 
 ```SQL
 
--- Will select all historical fetches of historical fetches of aws_iam_users
+-- Will select all historical fetches of aws_iam_users
 SELECT * FROM history.aws_iam_users
 
 -- Will select only the latest fetch of aws_iam_users
