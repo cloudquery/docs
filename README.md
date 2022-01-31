@@ -4,6 +4,10 @@ This repo contains all documentation on [https://docs.cloudquery.io](https://doc
 
 Contributions are welcome!
 
+## Prerequisites
+
+- [node.js](https://nodejs.org/en/) needs to be installed on your machine.
+
 ## Installation
 
 This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
