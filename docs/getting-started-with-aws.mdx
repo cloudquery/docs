@@ -1,0 +1,264 @@
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Getting Started with AWS
+
+## Download and Install
+
+You can download the precompiled binary from [releases](https://github.com/cloudquery/cloudquery/releases), or using CLI:
+
+<Tabs
+  defaultValue="linux"
+  values={[
+    {label: 'Linux', value: 'linux'},
+    {label: 'OSX', value: 'osx'},
+    {label: 'Windows', value: 'windows'},
+  ]}>
+
+<TabItem value="linux">
+
+<Tabs
+defaultValue="precompiled_x86_64"
+values={[
+    {label: 'Precompiled Binaries (x86_64)', value: 'precompiled_x86_64'},
+    {label: 'Precopmiled Binaries (arm64)', value: 'precompiled_arm64'}
+]}>
+
+<TabItem value="precompiled_x86_64">
+
+```bash
+curl -L https://github.com/cloudquery/cloudquery/releases/latest/download/cloudquery_linux_x86_64 -o cloudquery
+chmod a+x cloudquery
+```
+
+</TabItem>
+
+<TabItem value="precompiled_arm64">
+
+```bash
+curl -L https://github.com/cloudquery/cloudquery/releases/latest/download/cloudquery_linux_arm64 -o cloudquery
+chmod a+x cloudquery
+```
+
+</TabItem>
+
+</Tabs>
+
+</TabItem>
+
+<TabItem value="osx">
+<Tabs
+defaultValue="homebrew"
+values={[
+    {label: 'Homebrew', value: 'homebrew'},
+    {label: 'Precompiled Binaries (x86_64)', value: 'precompiled_x86_64'},
+    {label: 'Precopmiled Binaries (arm64)', value: 'precompiled_arm64'}
+]}>
+
+<TabItem value="homebrew">
+
+```bash
+brew install cloudquery/tap/cloudquery
+
+# After initial install you can upgrade the version via:
+# brew upgrade cloudquery
+```
+</TabItem>
+
+<TabItem value="precompiled_x86_64">
+
+```bash
+curl -L https://github.com/cloudquery/cloudquery/releases/latest/download/cloudquery_darwin_x86_64 -o cloudquery
+chmod a+x cloudquery
+```
+
+</TabItem>
+
+<TabItem value="precompiled_arm64">
+
+```bash
+curl -L https://github.com/cloudquery/cloudquery/releases/latest/download/cloudquery_darwin_arm64 -o cloudquery
+chmod a+x cloudquery
+```
+
+</TabItem>
+
+</Tabs>
+
+</TabItem>
+
+<TabItem value="windows">
+
+<Tabs
+defaultValue="precompiled_x86_64"
+values={[
+    {label: 'Precompiled Binaries (x86_64)', value: 'precompiled_x86_64'},
+]}>
+
+<TabItem value="precompiled_x86_64">
+
+```bash
+curl -L https://github.com/cloudquery/cloudquery/releases/latest/download/cloudquery_windows_x86_64 -o cloudquery
+```
+
+</TabItem>
+
+</Tabs>
+
+</TabItem>
+
+</Tabs>
+
+## Running
+
+### Init command
+
+The first step is to generate a `config.hcl` file that will describe which cloud provider you want to use and which resources you want CloudQuery to ETL:
+
+```bash
+cloudquery init aws
+
+# cloudquery init gcp aws # This will generate a config containing gcp and aws providers
+# cloudquery init --help # Show all possible auto generated configs and flags
+```
+
+All official and approved community providers are listed at [CloudQuery Hub](https://hub.cloudquery.io) with their respective documentation.
+
+### Spawn or connect to a Database
+
+CloudQuery needs a PostgreSQL database (>11). You can either spawn a local one (usually good for development and local testing)
+or connect to an existing one.
+
+<Tabs
+  defaultValue="local_db"
+  values={[
+    {label: 'Spawn a Local Database with Docker', value: 'local_db'},
+    {label: 'Connect to an Existing Database', value: 'existing_db'},
+  ]}>
+
+<TabItem value='local_db'>
+
+By default, cloudquery will try to connect to the database `postgres` on `localhost:5432` with username `postgres` and 
+password `pass`. You can easily create such a local postgres instance with:
+
+```bash
+docker run -p 5432:5432 -e POSTGRES_PASSWORD=pass -d postgres
+```
+
+If you are running postgres at a different location or with different credentials, you need to edit `config.hcl` - 
+see the `Connect to an Existing Database` section.
+
+</TabItem>
+
+<TabItem value='existing_db'>
+
+CloudQuery connects to the postgres database that is defined in the `config.hcl`'s `connection` section.
+Edit this section to configure the location and credentials of your postgres database.
+
+```hcl
+cloudquery {
+  plugin_directory = "./cq/providers"
+  policy_directory = "./cq/policies"
+
+  provider "aws" {
+    source  = ""
+    version = "latest"
+  }
+
+  connection {
+    dsn = "host=localhost user=postgres password=pass database=postgres port=5432"
+  }
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+### Authenticate with AWS
+
+CloudQuery needs to be authenticated with your AWS account in order to `fetch` information about your cloud setup.
+You can use any of the following options (You can find more info on authenticating with AWS [here](https://aws.github.io/aws-sdk-go-v2/docs/configuring-sdk/#specifying-credentials)):
+
+<Tabs
+  defaultValue="environemnt_variables"
+  values={[
+    {label: 'Environment Variables', value: 'environemnt_variables'},
+    {label: 'Shared Configuration Files (aws configure)', value: 'shared_configuration_files'},
+  ]}>
+
+<TabItem value='environemnt_variables'>
+
+CloudQuery can use the credentials from the `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, and 
+`AWS_SESSION_TOKEN` environment variables. You can find the values for these variables in your 
+AWS-SSO console. 
+
+CloudQuery can also use the `AWS_PROFILE` environment variable.
+
+:::info
+`AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, `AWS_SESSION_TOKEN` credentials are short-lived by default - remember to take this 
+into account and export them again as necessary.
+:::
+
+</TabItem>
+
+<TabItem value='shared_configuration_files'>
+CloudQuery can use shared configuration files (via `aws configure`):
+
+- CloudQuery defaults to the credentials file under .aws folder that is placed in the home folder on your computer.
+- CloudQuery defaults to config file under .aws folder that is placed in the home folder on your computer.
+- CloudQuery is able to use SSO credentials stored in the ~/.aws/ directory.
+
+</TabItem>
+
+</Tabs>
+
+### Fetch Command
+
+Once `config.hcl` is generated and you are authenticated with AWS, run the following command to fetch the resources.
+
+```bash
+cloudquery fetch
+# cloudquery fetch --help # Show all possible fetch flags
+```
+
+
+
+### Exploring and Running Queries
+
+Once CloudQuery fetched the resources, you can explore your cloud infrastructure with SQL!
+
+```bash
+psql "postgres://postgres:pass@localhost:5432/postgres?sslmode=disable"
+```
+
+Schema and tables for AWS are available in [CloudQuery Hub](https://hub.cloudquery.io/providers/cloudquery/aws/latest/schema).
+
+A few example queries for AWS:
+
+#### List ec2\_images:
+
+```sql
+SELECT * FROM aws_ec2_images;
+```
+
+#### Find all public-facing AWS load balancers:
+
+```sql
+SELECT * FROM aws_elbv2_load_balancers WHERE scheme = 'internet-facing';
+```
+
+### Policy Command
+
+CloudQuery Policies allow users to write security, governance, cost, and compliance rules, 
+using SQL as the query layer and HCL as the logical layer.
+
+All official and approved community policies are listed on [CloudQuery Hub](https://hub.cloudquery.io/policies/cloudquery/aws/latest).
+
+#### Execute a policy
+
+All official policies are hosted at https://github.com/cloudquery-policies.
+
+```bash
+cloudquery policy run aws//cis_v1.2.0
+```

@@ -24,7 +24,12 @@ module.exports = {
     {
       type: 'doc',
       label: 'Getting Started',
-      id: 'getting-started',
+      id: 'getting-started'
+    },
+    {
+      type: 'doc',
+      label: 'Getting Started with AWS',
+      id: 'getting-started-with-aws'
     },
     {
       type: 'category',
