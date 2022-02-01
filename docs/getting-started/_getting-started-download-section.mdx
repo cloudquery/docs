@@ -1,0 +1,117 @@
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+## Download and Install
+
+You can download the precompiled binary from [releases](https://github.com/cloudquery/cloudquery/releases), or using CLI:
+
+<Tabs
+  defaultValue="linux"
+  values={[
+    {label: 'Linux', value: 'linux'},
+    {label: 'OSX', value: 'osx'},
+    {label: 'Windows', value: 'windows'},
+  ]}>
+
+<TabItem value="linux">
+
+<Tabs
+defaultValue="precompiled_x86_64"
+values={[
+    {label: 'Precompiled Binaries (x86_64)', value: 'precompiled_x86_64'},
+    {label: 'Precompiled Binaries (arm64)', value: 'precompiled_arm64'}
+]}>
+
+<TabItem value="precompiled_x86_64">
+
+```bash
+curl -L https://github.com/cloudquery/cloudquery/releases/latest/download/cloudquery_linux_x86_64 -o cloudquery
+chmod a+x cloudquery
+```
+
+</TabItem>
+
+<TabItem value="precompiled_arm64">
+
+```bash
+curl -L https://github.com/cloudquery/cloudquery/releases/latest/download/cloudquery_linux_arm64 -o cloudquery
+chmod a+x cloudquery
+```
+
+</TabItem>
+
+</Tabs>
+
+</TabItem>
+
+<TabItem value="osx">
+<Tabs
+defaultValue="homebrew"
+values={[
+    {label: 'Homebrew', value: 'homebrew'},
+    {label: 'Precompiled Binaries (x86_64)', value: 'precompiled_x86_64'},
+    {label: 'Precompiled Binaries (arm64)', value: 'precompiled_arm64'}
+]}>
+
+<TabItem value="homebrew">
+
+```bash
+brew install cloudquery/tap/cloudquery
+
+# After initial install you can upgrade the version via:
+# brew upgrade cloudquery
+```
+</TabItem>
+
+<TabItem value="precompiled_x86_64">
+
+```bash
+curl -L https://github.com/cloudquery/cloudquery/releases/latest/download/cloudquery_darwin_x86_64 -o cloudquery
+chmod a+x cloudquery
+```
+
+</TabItem>
+
+<TabItem value="precompiled_arm64">
+
+```bash
+curl -L https://github.com/cloudquery/cloudquery/releases/latest/download/cloudquery_darwin_arm64 -o cloudquery
+chmod a+x cloudquery
+```
+
+</TabItem>
+
+</Tabs>
+
+</TabItem>
+
+<TabItem value="windows">
+
+<Tabs
+defaultValue="precompiled_cmd"
+values={[
+    {label: 'Precompiled Binaries (CMD)', value: 'precompiled_cmd'},
+    {label: 'Precompiled Binaries (PowerShell)', value: 'precompiled_powershell'},
+]}>
+
+<TabItem value="precompiled_cmd">
+
+```bash
+curl -L https://github.com/cloudquery/cloudquery/releases/latest/download/cloudquery_windows_x86_64.exe -o cloudquery.exe
+```
+
+</TabItem>
+
+<TabItem value="precompiled_powershell">
+
+```PowerShell
+Invoke-WebRequest https://github.com/cloudquery/cloudquery/releases/latest/download/cloudquery_windows_x86_64.exe -o cloudquery.exe
+```
+
+</TabItem>
+
+</Tabs>
+
+</TabItem>
+
+</Tabs>

@@ -1,6 +1,6 @@
 # Docker
 
-It is possible to use CloudQuery in an isolated container, you can pull the relevant image with the docker commands shown on [getting started](../getting-started) guide.
+It is possible to use CloudQuery in an isolated container, you can pull the relevant image with the docker commands shown on [getting started](../getting-started/getting-started-with-aws) guide.
 
 ## Configuration
 

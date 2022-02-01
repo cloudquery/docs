@@ -1,0 +1,48 @@
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+### Spawn or connect to a Database
+
+CloudQuery needs a PostgreSQL database (>11). You can either spawn a local one (usually good for development and local testing)
+or connect to an existing one.
+
+<Tabs
+  defaultValue="local_db"
+  values={[
+    {label: 'Spawn a Local Database with Docker', value: 'local_db'},
+    {label: 'Connect to an Existing Database', value: 'existing_db'},
+  ]}>
+
+<TabItem value='local_db'>
+
+By default, cloudquery will try to connect to the database `postgres` on `localhost:5432` with username `postgres` and 
+password `pass`. [After installing docker](https://www.docker.com/get-started), you can create such a local postgres instance with:
+
+```bash
+docker run -p 5432:5432 -e POSTGRES_PASSWORD=pass -d postgres
+```
+
+If you are running postgres at a different location or with different credentials, you need to edit `config.hcl` - 
+see the `Connect to an Existing Database` section.
+
+</TabItem>
+
+<TabItem value='existing_db'>
+
+CloudQuery connects to the postgres database that is defined in the `config.hcl`'s `connection` section.
+Edit this section to configure the location and credentials of your postgres database.
+
+```hcl title=config.hcl
+cloudquery {
+  ...
+  ...
+
+  connection {
+    dsn = "host=localhost user=postgres password=pass database=postgres port=5432"
+  }
+}
+```
+
+</TabItem>
+
+</Tabs>

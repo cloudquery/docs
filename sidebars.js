@@ -22,9 +22,12 @@ module.exports = {
       id: 'intro',
     },
     {
-      type: 'doc',
+      type: 'category',
       label: 'Getting Started',
-      id: 'getting-started',
+      items: [
+        'getting-started/getting-started-with-aws',
+        'getting-started/getting-started-with-gcp',
+      ],
     },
     {
       type: 'category',
