@@ -8,8 +8,7 @@ Prints global options and can be passed to any commands
       --config string               path to configuration file. can be generated with 'init [provider]' command (env: CQ_CONFIG_PATH) (default "./config.hcl")
       --dsn string                  database connection string (env: CQ_DSN) (example: 'host=localhost user=postgres password=pass DB.name=postgres port=5432')
       --no-verify                   NoVerify is true registry won't verify the plugins
-      --plugin-dir string           Directory to save and load CloudQuery plugins from (env: CQ_PLUGIN_DIR) (default "./.cq/providers")
-      --policy-dir string           Directory to save and load CloudQuery policies from (env: CQ_POLICY_DIR) (default "./.cq/policies")
+      --data-dir string             Directory to save and load CloudQuery persistent data to (env: CQ_DATA_DIR) (default "./.cq")
       --reattach-providers string   Path to reattach unmanaged plugins, mostly used for testing purposes (env: CQ_REATTACH_PROVIDERS)
       --skip-build-tables           Skip building tables on run, this should only be true if tables already exist.
 ```

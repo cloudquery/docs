@@ -21,7 +21,7 @@ If you are running Docker on an ARM Apple device and you see a segmentation faul
 
 ## Caching
 
-Due to the way `cloudquery` is [architected](../developers/architecture) it downloads all the components to interact with providers and policies. This means that with a docker container it runs the download step each state as the local cache is lost between executions. To avoid this we recommend mounting a volume to cache the data and configuring `cloudquery` to use this via the `--plugin-dir` and `--policy-dir` optional flags. An example of this would be:
+Due to the way `cloudquery` is [architected](../developers/architecture) it downloads all the components to interact with providers and policies. This means that with a docker container it runs the download step each state as the local cache is lost between executions. To avoid this we recommend mounting a volume to cache the data and configuring `cloudquery` to use this via the `--data-dir` optional flag. An example of this would be:
 
 ```docker
 docker run \
@@ -29,8 +29,7 @@ docker run \
   -v <PATH TO CONFIG>/config.hcl:/config/config.hcl \
   ghcr.io/cloudquery/cloudquery:latest \
   fetch --config /config/config.hcl \
-    --plugin-dir /cache/.cq/providers \
-    --policy-dir /cache/.cq/policies
+    --data-dir /cache/.cq
 ```
 
 :::note
@@ -63,8 +62,7 @@ docker run \
   -v <PATH TO CONFIG>/config.hcl:/config/config.hcl \
   ghcr.io/cloudquery/cloudquery:latest \
   policy download aws-cis-1.2.0 --config /config/config.hcl
-    --plugin-dir /data/.cq/providers \
-    --policy-dir /data/.cq/policies
+    --data-dir /data/.cq
 ```
 
 To check for the specific options for `cloudquery policy download` please consult the [command page](commands/policy-download).
@@ -89,8 +87,7 @@ docker run \
   -v <PATH TO CONFIG>/config.hcl:/config/config.hcl \
   ghcr.io/cloudquery/cloudquery:latest \
   policy run --config /config/config.hcl \
-    --plugin-dir /data/.cq/providers \
-    --policy-dir /data/.cq/policies
+    --data-dir /data/.cq
 ```
 
 To check for the specific options for `cloudquery policy run` please consult the [command page](commands/policy-run).
