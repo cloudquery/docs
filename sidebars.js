@@ -27,6 +27,7 @@ module.exports = {
       items: [
         'getting-started/getting-started-with-aws',
         'getting-started/getting-started-with-gcp',
+        'getting-started/getting-started-with-azure',
       ],
     },
     {
