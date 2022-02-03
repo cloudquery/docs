@@ -112,7 +112,7 @@ aws_access_key_id = <YOUR_ACCESS_KEY_ID>
 aws_secret_access_key = <YOUR_SECRET_ACCESS_KEY>
 ```
 
-You can also specify credentials for a different profile, and instruct cloudquery to use the credentials from this profile using the `AWS_PROFILE` environment variable.
+You can also specify credentials for a different profile, and instruct cloudquery to use the credentials from this profile instead of the default one.
 
 For example:
 
@@ -122,10 +122,24 @@ aws_access_key_id = <YOUR_ACCESS_KEY_ID>
 aws_secret_access_key = <YOUR_SECRET_ACCESS_KEY>
 ```
 
-and (on Linux/OSX)
+Then, you can either export the `AWS_PROFILE` environment variable:
 
 ```bash
 export AWS_PROFILE=myprofile
+```
+
+or, configure your desired profile in the `local_profile` field of your CloudQuery `config.hcl`:
+
+```hcl title="config.hcl"
+provider "aws" {
+  configuration {
+    accounts "<account_alias>" {
+      local_profile = "myprofile"
+    }
+    ...
+  }
+  ...
+}
 ```
 
 </TabItem>
