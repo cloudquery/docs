@@ -110,7 +110,7 @@ provider "*" {
 
 ### Profiles
 
-Let's talk about profiles. You might have noticed the `drift-example` label in the `drift "drift-example" {` block. This is the name of the profile. It's possible to have multiple profiles defined in the config, and select one using the `--profile` flag. This can be used configure multiple accounts with different options and completely separate tfstates. If there's only a single profile defined, it's automatically selected. 
+Let's talk about profiles. You might have noticed the `drift-example` label in the `drift "drift-example" {` block. This is the name of the profile. It's possible to have multiple profiles defined in the config, and select one using the `--profile` flag. This can be used to configure multiple accounts with different options and completely separate tfstates. If there's only a single profile defined, it's automatically selected. 
 
 :::tip
 It's possible to define multiple profiles for the same account and IaC setup, to distinguish between different ways of running drift on a single cloud configuration.

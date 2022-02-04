@@ -6,8 +6,8 @@ CQ Policies enables users to codify, version and run security, compliance and co
 
 ## Key Features
 
-- **As-Code**: Get all the benefits of using "as-code" such as collaboration, re-use, version control.
-- **CloudQuery Hub**: [Access](https://hub.cloudquery.io) official and community CloudQuery policies which you can use as is or customize to your needs. Also, share your own policies with on GitHub and publish them on CloudQuery Hub to get feedback the community.
+- **As-Code**: Get all the benefits of using "as-code" such as collaboration, reuse, and version control.
+- **CloudQuery Hub**: [Access](https://hub.cloudquery.io) official and community CloudQuery policies that you can use as-is or customize to your needs. Also, share your own policies on GitHub and publish them on CloudQuery Hub to get feedback from the community.
 
 ## Getting Started
 
@@ -43,18 +43,18 @@ Some policies are built as packs and only specific sub-policies are relevant for
 cloudquery policy run github.com/cloudquery-policies/aws//cis_v1.2.0
 ```
 
-You can also run a specific check for example if we want to run a iam check in cis_v1.2.0:
+You can also run a specific check - for example if we want to run a IAM check in cis_v1.2.0:
 
 ```bash
 cloudquery policy run github.com/cloudquery-policies/aws//cis_v1.2.0/1/1.9
 ```
 
-Will run the `1.9` check under section 1 policy of cis v1.2.0.
+will run the `1.9` check under section 1 policy of cis v1.2.0.
 
 
 ### Policy configuration
 
-To add policies to your `config.hcl` you can simply add `policy` blocks, you an either add inline policies or point to a policy by `source`.
+To add policies to your `config.hcl` you can simply add `policy` blocks, you can either add inline policies or point to a policy by `source`.
 
 ```hcl
 # ... CloudQuery and provider blocks here ...
@@ -66,18 +66,18 @@ policy "aws-cis" {
 
 #### Running local-policies
 
-To run a local policy uses the [local source](./sources#local) you can set the policy in your `config.hcl` or pass the policy file path when executing `policy run` command as follows:
+To run a local policy that uses the [local source](./sources#local) you can set the policy in your `config.hcl` or pass the policy file path when executing `policy run` command as follows:
 
 ```bash
 cloudquery policy run path\to\policy
 ```
 
-You can use either a relative path or an absolute path, if you are configuring the local policy in your `config.hcl` it is advised to use relative paths as absolute will tend to couple your configuration to the filesystem layout of a particular computer.
+You can use either a relative path or an absolute path. If you are configuring the local policy in your `config.hcl` it is advised to use relative paths, as absolute paths tend to couple your configuration to the filesystem layout of a particular computer.
 
 
 ### Results
 
-Scan results will show passed/failed queries and manual queries that just prints output without a pass/fail predicate.  
+Scan results will show passed/failed queries and manual queries that just print output without a pass/fail predicate.  
 
 ```
 📋 AWS CIS v1.3.0 Results:

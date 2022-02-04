@@ -1,6 +1,6 @@
 # policy download
 
-Download a policy from the CloudQuery Policy Hub.
+Downloads a policy from the CloudQuery Policy Hub.
 
 ## Usage
 ```

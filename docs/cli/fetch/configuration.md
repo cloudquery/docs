@@ -1,18 +1,18 @@
 # Configuration
 
-CloudQuery just like [terraform](https://www.terraform.io/docs/language/providers/index.html) relies on "providers" to extract, transform and load cloud assets configuration from Cloud Providers, SaaS Providers and other APIs into PostgreSQL.
+CloudQuery, just like [terraform](https://www.terraform.io/docs/language/providers/index.html), relies on "providers" to extract, transform and load cloud assets configuration from Cloud Providers, SaaS Providers and other APIs into PostgreSQL.
 
-This section is very similar to terraform providers section due to similar design of CloudQuery providers, but their purpose and implementation is completely different:
+This section is very similar to the terraform providers section due to the similar design of CloudQuery providers, but their purpose and implementation is completely different:
 
-CloudQuery providers are read only providers which extracts, transforms and loads cloud assets configuration while Terraform providers interact with the cloud to provision assets.
+CloudQuery providers are read-only providers that extract, transform and load cloud assets configuration while Terraform providers interact with the cloud to provision assets.
 
 ## Configuration
 
-Each provider is configured by a `provider "provider_name"` which can include general options and set of `resources` this provider will extract data from.
+Each provider is configured by a `provider "provider_name"` that can include general options, and a set of `resources` this provider will extract data from.
 
-Each provider CloudQuery support can be found on [hub.cloudquery.io](https://hub.cloudquery.io).
+Each provider CloudQuery supports can be found on [hub.cloudquery.io](https://hub.cloudquery.io).
 
-Each provider defines set of relational tables that can be also found on the [hub](https://hub.cloudquery.io/providers/cloudquery/aws/latest).
+Each provider defines a set of relational tables that can also be found on the [hub](https://hub.cloudquery.io/providers/cloudquery/aws/latest).
 
 Inside the cloudquery main block you need to add
 

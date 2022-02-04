@@ -2,7 +2,7 @@
 
 This is an advanced section describing the inner workings and design of CloudQuery. \(It might be useful when developing new providers\).
 
-CloudQuery has a pluggable architecture and is using the [go-plugin](https://github.com/hashicorp/go-plugin) to load, run, and communicate between providers via gRPC. To develop a new provider for CloudQuery, you don’t need to understand the inner workings of go-plugin as those are abstracted away [cq-provider-sdk](https://github.com/cloudquery/cq-provider-sdk).
+CloudQuery has a pluggable architecture and uses the [go-plugin](https://github.com/hashicorp/go-plugin) to load, run, and communicate between providers via gRPC. To develop a new provider for CloudQuery, you don’t need to understand the inner workings of go-plugin, as those are abstracted away by [cq-provider-sdk](https://github.com/cloudquery/cq-provider-sdk).
 
 ![cloudquery high-level architecture](/img/cloudquery-architecture.png)
 

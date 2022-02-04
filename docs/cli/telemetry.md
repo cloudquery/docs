@@ -1,6 +1,6 @@
 # Telemetry and Crash Reporting
 
-CloudQuery collects anonymized usage statistics and crash reports about how the software is used. Crash reports help us iron out any issues.
+CloudQuery collects anonymized usage statistics and crash reports. Crash reports help us iron out any issues.
 
 ## What is Stored
 
@@ -33,7 +33,7 @@ The random ID is stored in the `.cq/telemetry-random-id` file. If you wish to an
 
 ## Inspecting Telemetry Contents
 
-To check what kind of data is collected, invoke `cloudquery` executable with the `--inspect-telemetry` option. This will stop sending telemetry information and write it to a local file in the current directory, `cq-telemetry.txt`. You can then inspect file contents and decide whether to opt-out or not.
+To check what kind of data is collected, invoke the `cloudquery` executable with the `--inspect-telemetry` option. This will stop sending telemetry information and write it to a local file in the current directory, `cq-telemetry.txt`. You can then inspect file contents and decide whether to opt-out or not.
 
 ```bash
 # Invoke CloudQuery

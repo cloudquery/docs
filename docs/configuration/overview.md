@@ -1,6 +1,6 @@
 # Overview
 
-This is an overview for the syntax and configuration options of CloudQuery main configuration file `config.hcl`.
+This is an overview of the syntax and configuration options of CloudQuery's main configuration file `config.hcl`.
 
 ## HCL Overview
 
@@ -35,7 +35,7 @@ The provider block must be specified one or more times, and should be first spec
 Each provider has two blocks: 
 
 * `configuration` - The arguments are different from provider to provider and their documentation can be found in [CloudQuery Hub](https://hub.cloudquery.io).
-* `resources` - All resources that this provider supports and can fetch configuration and meta-data from.
+* `resources` - All resources that this provider supports and can fetch configuration and metadata from.
 
 
 :::tip
@@ -44,13 +44,13 @@ You can have multiple providers of the same type specified here. For example, th
 
 ## Environment variable substitution
 
-config.hcl supports substition of values from environment variables. This allows to extract security sensitive data (like passwords etc) or variable data (that you want to change without touching CloudQuery configuration) from configuration file and store in the environment variable. To use the feature, set an environment variable before running CLI, adding a CQ_VAR_ prefix to your desired name:
+`config.hcl` supports substition of values from environment variables. This allows to extract security sensitive data (like passwords etc) or variable data (that you want to change without touching CloudQuery configuration) from configuration file and store in the environment variable. To use the feature, set an environment variable before running CLI, adding a `CQ_VAR` prefix to your desired name:
 
     export CQ_VAR_AWS_VERSION=latest
     export CQ_VAR_ARN=some_value
     export CQ_VAR_DSN="host=localhost user=postgres password=pass database=postgres port=5432 sslmode=disable"
 
-And use it inside config.hcl:
+And use it inside `config.hcl`:
 
     cloudquery {
       provider "aws" {
@@ -71,4 +71,4 @@ And use it inside config.hcl:
       }
     }
 
-Note that only environment variables starting with CQ_VAR_ are available for use in config.hcl and their prefix is removed.
+Note that only environment variables starting with `CQ_VAR` are available for use in `config.hcl`, and their prefix is removed.

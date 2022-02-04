@@ -43,7 +43,7 @@ policy "aws" {
 }
 ```
 
-The above will clone the repository with HTTPS, To clone using SSH, use the following form: `git@github.com:cloudquery-policies/aws.git"
+The above will clone the repository with HTTPS. To clone using SSH, use the following form: `git@github.com:cloudquery-policies/aws.git"
 
 ### Generic Git Repository
 Arbitrary Git repositories can be used by prefixing the address with the special `git::` prefix. After this prefix, any valid Git URL can be specified to select one of the protocols supported by Git.
@@ -65,7 +65,7 @@ Use SSH to access private Git repositories from automated systems because it all
 
 ### Selecting a Revision
 
-By default, CloudQuery will clone the latest tagged version of the policy. You can override this using the `ref` or `@` query parameter. The value of the `ref` or `@` parameter can by any reference accepted by the `git checkout` command, such as as commit hash, tag name or branch. 
+By default, CloudQuery will clone the latest tagged version of the policy. You can override this using the `ref` or `@` query parameter. The value of the `ref` or `@` parameter can be any reference accepted by the `git checkout` command, such as as commit hash, tag name or branch. 
 
 ```hcl
 policy "aws-with-tag" {

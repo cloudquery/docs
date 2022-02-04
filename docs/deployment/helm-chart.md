@@ -2,7 +2,7 @@
 
 The Helm chart deploys a CloudQuery fetch CronJob and everything required to execute it.
 
-The chart source can be found here [github.com/cloudquery/helm-charts](https://github.com/cloudquery/helm-charts)
+The chart source can be found here [github.com/cloudquery/helm-charts](https://github.com/cloudquery/helm-charts).
 
 ## Install CloudQuery on a Kubernetes cluster
 
@@ -13,9 +13,9 @@ The chart source can be found here [github.com/cloudquery/helm-charts](https://g
 
 ### Prerequisites
 
-* system configured to access a kubernetes cluster
-* [Helm v3](https://helm.sh) installed and able to access the cluster
-* PostgreSQL database (>11) (e.g. self hosted, via Helm, CloudSQL, RDS, etc.)
+* system configured to access a kubernetes cluster.
+* [Helm v3](https://helm.sh) installed and able to access the cluster.
+* PostgreSQL database (>11) (e.g. self hosted, via Helm, CloudSQL, RDS, etc.).
 
 ### Download Helm Chart Dependencies
 
@@ -84,8 +84,7 @@ Run helm installation:
 ### Adjust the CronJob frequency
 
 The default is every day at midnight.
-More information regarding cronjob schedules can be found here:
-[crontab.guru](https://crontab.guru/#0_0_*_*_*)
+More information regarding cronjob schedules can be found here: [crontab.guru](https://crontab.guru/#0_0_*_*_*).
 
 Include this block in the override file:
 

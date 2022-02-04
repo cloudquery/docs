@@ -1,8 +1,8 @@
 # Providers
 
-CloudQuery has a pluggable architecture and relies on plugins called "providers" which are responsible to extract and transform configuration from cloud-providers, SaaS apps, and other APIs.
+CloudQuery has a pluggable architecture and relies on plugins called "providers" which are responsible for extracting and transforming configuration from cloud-providers, SaaS apps, and other APIs.
 
-> If you are familiar with Terraform we use the [same pluggable architecture](https://www.terraform.io/docs/language/providers/index.html). CloudQuery providers focus on extracting & transforming configuration from infrastructure, instead of provisioning it.
+> If you are familiar with Terraform, we use the [same pluggable architecture](https://www.terraform.io/docs/language/providers/index.html). CloudQuery providers focus on extracting & transforming configuration from infrastructure, instead of provisioning it.
 
 ## Capabilities
 

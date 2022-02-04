@@ -1,6 +1,6 @@
 # Language
 
-CloudQuery Policy codifies set of rules (checks) with SQL.
+CloudQuery Policy codifies a set of rules (checks) with SQL.
 
 CloudQuery Policy uses a simple configuration layer where HCL is served as the logical layer and SQL as the business/query layer.
 
@@ -8,7 +8,7 @@ CloudQuery Policy uses a simple configuration layer where HCL is served as the l
 
 Building CloudQuery policies is very simple allowing us to combine multiple policies from different `sources`, create `views` to simplify our `checks`, use `file` function to reuse policies etc'. In this section we will go over a simple policy structure, as always we recommend checking out existing policies in [cloudquery-policies](https://github.com/cloudquery-policies)
 
-Every policy starts with a `policy` block a policy block consists of `views`, `checks` or more `policies` or a pointer to another `policy` with the `source` attribute.
+Every policy starts with a `policy` block. A policy block consists of `views`, `checks`, more `policies`, or a pointer to another `policy` with the `source` attribute.
 
 ### Configuration Example
 
@@ -28,13 +28,13 @@ policy "test-policy" {
 }
 ```
 
-::: tip 
+:::tip 
 You can use the file(../relative/path/to/file) in your repo to point to query files or documentation files to make your policy cleaner and more reusable.
 :::
 
 ### Policy block
 
-The policy block is the top-level block that defines a CQ policy. The block label is the the policy name which can then be refenced by the CLI.
+The policy block is the top-level block that defines a CQ policy. The block label is the the policy name that can then be refenced by the CLI.
 
 #### Arguments:
 - `title` - Policy title description, usually a single line defining the policy in a human readable format.
@@ -46,14 +46,14 @@ This block defines the required providers needed to execute this policy.
 
 ### Check block
 
-This is the basic building block which defines a rule by running an SQL query.
+This is the basic building block that defines a rule by running an SQL query.
 
 #### Arguments:
 - `title` - **(required)** Check title description, usually a single line defining the query in a human readable format.
 - `doc` - **(optional)** check documentation readme.
 - `query` **(required)** - The SQL query to execute.
 - `type` **(optional, default: automatic)** - Whether this check is `Manual` and requires human interaction to be verified or `Automatic` and is verfied by the query alone.
-- `expect_output` **(optional, default: false)** - If set to `true` this policy expects results (so the check will return `PASS`). `false` by default meaning if the query returns result the check will return `FAIL`. 
+- `expect_output` **(optional, default: false)** - If set to `true` this policy expects results (so the check will return `PASS`). It is `false` by default, meaning that if the query returns results the check will return `FAIL`. 
 
 ### View block
 
@@ -63,7 +63,7 @@ This is the basic building block which defines a rule by running an SQL query.
   }
 ```
 
-This blocks creates a view (if doesn't exist) from a given query. This is useful when other queries relies on complex joins that you can write once and then just reference a specific view. 
+This blocks creates a view from a given query (if it doesn't exist already). This is useful when other queries rely on complex joins that you can write once and then just reference a specific view. 
 
 **Label** - name of the created view which you can later reference in `check` blocks.
 
