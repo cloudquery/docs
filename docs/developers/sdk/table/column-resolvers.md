@@ -35,6 +35,10 @@ Examples:
 ```go
 // Few examples of look-up helper resolvers
 func PathResolver(path string) ColumnResolver // PathResolver resolves a field in the Resource.Item
+// ParentResourceFieldResolver resolves a field from the parent's resource, the value is expected to be set, if name isn't set the field will be set to null
+func ParentResourceFieldResolver(name string) ColumnResolver 
+// ParentPathResolver resolves a field from the parent
+func ParentPathResolver(path string) ColumnResolver
 func ParentIdResolver(_ context.Context, _ ClientMeta, r *Resource, c Column) error // ParentPathResolver resolves a field from the parent
 
 // Few examples of type converting resolvers
