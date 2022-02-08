@@ -19,7 +19,7 @@ By default, cloudquery will try to connect to the database `postgres` on `localh
 password `pass`. [After installing docker](https://www.docker.com/get-started), you can create such a local postgres instance with:
 
 ```bash
-docker run -p 5432:5432 -e POSTGRES_PASSWORD=pass -d postgres
+docker run --name cloudquery_postgres -p 5432:5432 -e POSTGRES_PASSWORD=pass -d postgres
 ```
 
 If you are running postgres at a different location or with different credentials, you need to edit `config.hcl` - 

@@ -3,6 +3,7 @@ import TabItem from '@theme/TabItem';
 import DownloadSection from './_getting-started-download-section.mdx'
 import SpawnSection from './_getting-started-spawn-section.mdx'
 import ReadonlyTip from './_getting-started-readonly-tip.mdx'
+import ExploreSection from './_getting-started-explore-section.mdx'
 
 # Getting Started with AWS
 
@@ -165,11 +166,7 @@ cloudquery fetch
 
 ### Exploring and Running Queries
 
-Once CloudQuery fetched the resources, you can explore your cloud infrastructure with SQL!
-
-```bash
-psql "postgres://postgres:pass@localhost:5432/postgres?sslmode=disable"
-```
+<ExploreSection/>
 
 Schema and tables for AWS are available in [CloudQuery Hub](https://hub.cloudquery.io/providers/cloudquery/aws/latest/schema).
 
