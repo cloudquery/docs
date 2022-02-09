@@ -1,0 +1,154 @@
+# Views
+
+CloudQuery policies support creating SQL Views, that can be accessed in all the queries (`checks`) in your policies.
+This allows us to reuse code between different SQL queries.
+
+For this tutorial, We'll write a policy that finds all AWS EC2 instances that have unrestricted 
+outbound access to the internet (or more specifically, all EC2 instances that have a security group that allows
+unrestricted access to the internet). This example is inspired by our 
+[public egress policy](https://github.com/cloudquery-policies/aws/tree/main/public_egress) that we released
+in response to the [log4j vulnerability](https://www.govcert.ch/blog/zero-day-exploit-targeting-popular-java-library-log4j).
+You can read more about the log4j vulnerability and the `public_egress` poicy in [this blog post](https://www.cloudquery.io/blog/aws-log4j-and-finding-unrestricted-outbound-access).
+Using a *view* in this policy allows us to reduce the query complexity (this is especially useful if multiple
+queries use the same view).
+
+A quick reminder that a policy is a directory with a `policy.hcl` file at its root.
+Let's create such a directory now:
+
+```bash
+mkdir my_ec2_public_egress_policy
+```
+
+And in it, let's create a `policy.hcl` file:
+
+```hcl title="my_ec2_public_egress_policy/policy.hcl"
+policy "my-ec2-public-egress-policy" {
+  title = "Find EC2 instances with outbound access to the internet"
+
+  configuration {
+    provider "aws" {
+      version = ">= 0.10.0"
+    }
+  }
+
+  view "aws_security_group_egress_rules" {
+    title = "AWS Security Group Egress Rules"
+
+    query = <<ENDOFQUERY
+    WITH sg_rules_ports AS (
+        SELECT
+            sg.account_id,
+            sg.region,
+            sg.group_name,
+            sg.arn,
+            sg.id,
+            p.from_port,
+            p.to_port,
+            p.ip_protocol,
+            p.cq_id AS permission_id
+        FROM aws_ec2_security_groups sg
+            LEFT JOIN
+                aws_ec2_security_group_ip_permissions p ON
+                    sg.cq_id = p.security_group_cq_id
+        WHERE p.permission_type = 'egress'
+    )
+    SELECT sgs.*,
+        r.cidr AS ip
+    FROM sg_rules_ports sgs
+        LEFT JOIN
+            aws_ec2_security_group_ip_permission_ip_ranges r ON
+                sgs.permission_id = r.security_group_ip_permission_cq_id
+
+    ENDOFQUERY
+  }
+
+  check "ec2-instances-with-unrestricted-outbound-access" {
+    type = "manual"
+    title = "Find all ec2 instances that have unrestricted access to the internet via a security group"
+    query = <<ENDOFQUERY
+    -- Find all AWS instances that have a security group that allows unrestricted egress
+    SELECT id,
+        region,
+        account_id,
+        vpc_id
+    FROM aws_ec2_instances
+    WHERE cq_id IN
+    -- 	Find all instances that have egress rule that allows access to all ip addresses
+    (SELECT instance_cq_id
+        FROM aws_ec2_instance_security_groups
+            JOIN aws_security_group_egress_rules ON group_id = id
+        WHERE (ip = '0.0.0.0/0' OR ip = '::/0'))
+    ENDOFQUERY
+  }
+}
+```
+
+We can then run this policy with
+
+```bash
+cloudquery policy run ./my_ec2_public_egress_policy
+```
+
+And we will get a list of all EC2 instances that allow unrestricted outbound access to the internet.
+
+We will not go over everything that is happening in these queries, but some points to note are:
+- After a `view` is defined, it can be used in any `check` query in the policy.
+- A `view` is defined with a standard `SELECT` query, and other queries can then `SELECT` from this view
+  exactly as if it were a standard SQL table.
+- The name of the `view` is what appears right after the `view` word, and before the open-curly-bracket.
+  This name will be used by the other queries to access the view. In our example, this is `aws_security_group_egress_rules`.
+- The queries are using the [heredoc](https://www.terraform.io/language/expressions/strings#heredoc-strings) format for multiline strings.
+
+## Referencing a View in a Separate File
+
+Just like with the queries in `check` blocks, we can reference a file instead of inlining the SQL query directly
+in the `view`'s `query` field.
+
+For our example, we can have a separate `aws_security_group_egress_rules_view.sql` file, and reference it from
+`policy.hcl`:
+
+```hcl title="my_ec2_public_egress_policy/policy.hcl"
+policy "my-ec2-public-egress-policy" { 
+    ...
+
+    view "aws_security_group_egress_rules" {
+        title = "AWS Security Group Egress Rules"
+        query = file("./aws_security_group_egress_rules_view.sql")
+    }
+
+    ...
+}
+```
+
+and in the `aws_security_group_egress_rules_view.sql` file:
+
+```sql title="my_ec2_public_egress_policy/aws_security_group_egress_rules_view.sql"
+WITH sg_rules_ports AS (
+    SELECT
+        sg.account_id,
+        sg.region,
+        sg.group_name,
+        sg.arn,
+        sg.id,
+        p.from_port,
+        p.to_port,
+        p.ip_protocol,
+        p.cq_id AS permission_id
+    FROM aws_ec2_security_groups sg
+        LEFT JOIN
+            aws_ec2_security_group_ip_permissions p ON
+                sg.cq_id = p.security_group_cq_id
+    WHERE p.permission_type = 'egress'
+)
+SELECT sgs.*,
+    r.cidr AS ip
+FROM sg_rules_ports sgs
+    LEFT JOIN
+        aws_ec2_security_group_ip_permission_ip_ranges r ON
+            sgs.permission_id = r.security_group_ip_permission_cq_id
+```
+
+:::tip
+It is recommended to use relative paths ("./some-path", "../some-path", etc.) to reference files for queries and views.
+Using absolute-paths tends to couple the path to your specific machine, and cause errors down the road.
+:::

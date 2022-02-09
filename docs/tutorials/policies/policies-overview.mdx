@@ -1,0 +1,120 @@
+# Policies Overview
+
+## Prerequisites
+
+This tutorial uses examples from an AWS deployment. To start, follow our 
+[Getting Started with AWS](https://docs.cloudquery.io/docs/getting-started/getting-started-with-aws) guide
+to install cloudquery, authenticate with AWS, and `fetch` your cloud deployment into a PostgreSQL database.
+If you are using a different cloud provider, you can see our 
+[Getting Started with GCP](https://docs.cloudquery.io/docs/getting-started/getting-started-with-gcp) and 
+[Getting Started with Azure](https://docs.cloudquery.io/docs/getting-started/getting-started-with-azure) guides, 
+and try to follow along.
+
+## Overview
+
+CloudQuery allows you to use SQL to check various conditions about your cloud depoyment. 
+For instance, the following SQL query allows you to test whether you have any AWS EC2 instances that were stopped
+more than 30 days ago, but were not deleted.
+
+```SQL
+SELECT account_id, region, id
+FROM aws_ec2_instances
+WHERE state_name = 'stopped'
+      AND NOW() - state_transition_reason_time >
+      INTERVAL '30' DAY
+```
+
+CloudQuery Policies allow you to run prewritten queries (and sets of queries) with `cloudquery policy run`.
+
+The CloudQuery team and community already implemented many different policies for many different providers.
+Among them are the [AWS CIS Benchmark](https://www.cisecurity.org/benchmark/amazon_web_services), 
+the [PCI DSS](https://www.pcisecuritystandards.org/), and 
+the [AWS Foundational Security Best Practices](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-fsbp.html).
+
+You can find the full list of existing policies on
+
+- [CloudQuery Hub](https://hub.cloudquery.io/) ([AWS](https://hub.cloudquery.io/policies/cloudquery/aws/latest/policies),
+[GCP](https://hub.cloudquery.io/policies/cloudquery/gcp/latest/policies), [Azure](https://hub.cloudquery.io/policies/cloudquery/azure/latest/policies))
+- [Our GitHub](https://github.com/cloudquery-policies) ([AWS](https://github.com/cloudquery-policies/aws), 
+[GCP](https://github.com/cloudquery-policies/gcp), [Azure](https://github.com/cloudquery-policies/azure))
+
+- Or, from the command line, with :
+  ```bash
+  cloudquery policy describe aws # you can replace `aws` with `gcp`, `azure`, or another provider.
+  ```
+
+For instance, you can run the previous query (that is taken from our 
+[AWS Foundational Security Best Practices](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-fsbp.html) 
+policy) with 
+
+```bash
+cloudquery policy run aws//foundational_security/ec2/EC2.4
+```
+
+that will return a pass/fail result, and, if the check failed, the `id`s of the offending resources.
+
+```text title="policy run result examples"
+📋 aws Results:
+
+⚠️ Policy finished with warnings
+
+        ❌  EC2.4  Stopped EC2 instances should be removed after a specified time period  failed
+                ❌  i-XXXXXXXXXXXX
+```
+
+You can get a `.json` report instead if you use the `--output-dir` flag:
+
+```bash
+cloudquery policy run aws//foundational_security/ec2/EC2.4 --output-dir /path/to/output_dir
+```
+
+which will create a `.json` file at the `output_dir` directory, that will look like:
+
+```json
+{
+  "PolicyName": "aws",
+  "ExecutionTime": "2022-02-10T11:21:57.256407+02:00",
+  "Passed": false,
+  "Results": [
+    {
+      "name": "EC2.4",
+      "description": "Stopped EC2 instances should be removed after a specified time period",
+      "result_headers": [
+        "account_id",
+        "region",
+        "id"
+      ],
+      "result_rows": [
+        [
+          "XXXXXXXXXXXXXX",
+          "us-east-1",
+          "i-XXXXXXXXXXXX"
+        ]
+      ],
+      "type": "automatic",
+      "check_passed": false
+    }
+  ],
+  "Error": "",
+  "LoadedPolicies": null
+}
+```
+
+You can also run the entire Foundational Security policy with:
+
+```bash
+cloudquery policy run aws//foundational_security
+```
+
+or just the EC2 section with:
+```bash
+cloudquery policy run aws//foundational_security/ec2
+```
+
+:::info
+Cloudquery Policies are consisted of SQL queries that are executed against the PostgreSQL database configured in
+your `config.hcl` file. This means that before running policies, you must run `cloudquery fetch` to populate this
+database with information from your cloud.
+:::
+
+Keep reading on the next page to learn how to write your own CloudQuery policies.

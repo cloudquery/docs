@@ -177,6 +177,16 @@ module.exports = {
       type: 'category',
       label: 'Tutorials',
       items: [
+        {
+          type: 'category',
+          label: 'Writing Your Own Policies',
+          items: [
+            'tutorials/policies/policies-overview',
+            'tutorials/policies/writing-your-first-policy',
+            'tutorials/policies/views',
+            'tutorials/policies/subpolicies',
+          ],
+        },
         'tutorials/creating-new-provider'
       ],
     },

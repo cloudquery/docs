@@ -1,0 +1,196 @@
+# Writing Your First Policy
+
+A CloudQuery policy is a directory, that contains a `policy.hcl` file at its root.
+
+So, for your first policy, create a `my_first_policy` directory:
+
+```bash
+mkdir my_first_policy
+```
+
+And, in it, create a `policy.hcl` file:
+
+```hcl title='my_first_policy/policy.hcl'
+policy "my-first-policy" {
+  title = "My First CloudQuery Policy"
+
+  configuration {
+    provider "aws" {
+      version = ">= 0.10.0"
+    }
+  }
+
+  check "old-stopped-ec2-instances" {
+    title = "Stopped EC2 instances should be removed after a specified time period"
+    query = "SELECT account_id, region, id FROM aws_ec2_instances WHERE state_name = 'stopped' AND NOW() - state_transition_reason_time > INTERVAL '30' DAY"
+    expect_output = false
+  }
+}
+```
+
+and run it with
+```bash
+cloudquery policy run ./my_first_policy
+```
+
+:::caution Important
+Due to the fact that the `cloudquery policy run` also supports running policies from [our official github](https://github.com/cloudquery-policies),
+to run policies from the local filesystem, you **must** specify a path beginning with `./` or `../` -
+absolute pats will not work**
+:::
+
+Let's go over the structure of this `policy.hcl` file:
+- At the root is the `policy` block, followed by its label.
+- The `title` is a human readable description of the policy.
+- The `configuration` block defines which CloudQuery providers are required to run this policy.
+  For instance, if you are querying aws tables, you must have an `aws` provider block in your `configuration`.
+  - The `version` field of the `provider` block is a string describing which version of the CloudQuery provider to use.
+  - You can have multiple `providers` in this section, if your policy queries several different clouds.
+- Next, the `check` block describes the "core" of the policy - which checks to run. 
+  You can have as many `checks` here as you'd like, and they will all run when you run the policy.
+  - each `check` block must have a name (before the open-curly-bracke).
+  - `title` (mandatory, string): a human-readable description of the `check`.
+  - `query` (mandatory, string): The SQL query to run.
+     -  the `hcl` format doesn't support multi-line strings for double-quoted strings. For multiline strings, you 
+        need to use the [heredoc](https://www.terraform.io/language/expressions/strings#heredoc-strings) format. 
+        For the above example, it would look like:
+        ```hcl
+        check "old-stopped-ec2-instances" {
+        title = "Stopped EC2 instances should be removed after a specified time period"
+        query = <<ENDOFQUERY
+          SELECT account_id, region, id
+          FROM aws_ec2_instances
+          WHERE state_name = 'stopped'
+            AND NOW() - state_transition_reason_time >
+            INTERVAL '30' DAY
+          ENDOFQUERY
+        expect_output = false
+        }
+        ```
+  - `expect_output` (optional, boolean): each `check` in a policy returns a Pass/Fail result, according to whether the query
+    returned any results. When `expect_output` is `false` (the default), the `check` expects the query results to be empty.
+    When `expect_output` is `true`, the `check` expects the query results to contain at least one row.
+
+## Manual Checks
+
+By default, policy `check`s are Pass/Fail, depending on whether the query returns result or not
+(and the value of `expect_output`). But sometimes you'd like to see all the results from the query (i.e. all rows)
+rather than just an empty/non-empty indication. For this purpose, you can use the `manual` check type.
+
+For instance, in the above example, if we wanted the policy to return all the results from our query, we would use
+
+```hcl title="policy.hcl"
+policy "my-first-policy" {
+    ...
+    ...
+    check "old-stopped-ec2-instances" {
+        type = "manual"
+        title = "Stopped EC2 instances should be removed after a specified time period"
+        query = "SELECT account_id, region, id FROM aws_ec2_instances WHERE state_name = 'stopped' AND NOW() - state_transition_reason_time > INTERVAL '30' DAY"
+    }
+}
+```
+
+Running the policy with 
+
+```bash
+cloudquery policy run ./my_first_policy
+```
+
+Will now print the results of the query in tabular form, similar to:
+
+```
+📋 my-first-policy Results:
+
+⚠️ Policy finished with warnings
+
+        ⚠️  old-stopped-ec2-instances  Stopped EC2 instances should be removed after a specified time period  manual
+                  +--------------+-----------+---------------------+
+                  |  account_id  |  region   |         id          |
+                  +--------------+-----------+---------------------+
+                  | XXXXXXXXXXXX | us-east-1 | i-XXXXXXXXXXXXXXXXX |
+                  +--------------+-----------+---------------------+
+                  | XXXXXXXXXXXX | us-east-1 | i-XXXXXXXXXXXXXXXXX |
+                  +--------------+-----------+---------------------+
+```
+
+or, if results are outputted to a `.json` file (the `--output-dir` flag)
+
+```json
+{
+  "PolicyName": "my-first-policy",
+  "ExecutionTime": "2022-02-10T13:09:31.442841+02:00",
+  "Passed": false,
+  "Results": [
+    {
+      "name": "old-stopped-ec2-instances",
+      "description": "Stopped EC2 instances should be removed after a specified time period",
+      "result_headers": [
+        "account_id",
+        "region",
+        "id"
+      ],
+      "result_rows": [
+        [
+          "XXXXXXXXXXXX",
+          "us-east-1",
+          "i-XXXXXXXXXXXXXXXXX"
+        ],
+        [
+          "XXXXXXXXXXXX",
+          "us-east-1",
+          "i-XXXXXXXXXXXXXXXXX"
+        ]
+      ],
+      "type": "manual",
+      "check_passed": false
+    }
+  ],
+  "Error": "",
+  "LoadedPolicies": null
+}
+```
+
+- The `type` field must be either `"manual"` or `"automatic"` (`"automatic"` by default).
+  - `"automatic"` means that the check will return a PASS/FAIL result, according to `expect_output`
+  - `"manual"` means that the check will print a table with the results of the query, rather than a PASS/FAIL indication.
+
+A policy can have any combination of `"automatic"` and `"manual"` checks.
+
+## Referencing a Query in a Separate File
+
+Up to now, we inlined our SQL queries in the `policy.hcl` file. CloudQuery also provides the option to
+instead reference an SQL file that contains the file with the `file()` directive. 
+For our `my_first_policy` example, we can use this in the following way:
+
+```hcl title="my_first_policy/policy.hcl"
+policy "my-first-policy" {
+  title = "My First CloudQuery Policy"
+
+  configuration {
+    provider "aws" {
+      version = ">= 0.10.0"
+    }
+  }
+
+  check "old-stopped-ec2-instances" {
+    title = "Stopped EC2 instances should be removed after a specified time period"
+    query = file("./old_stopped_ec2_instances.sql")
+    expect_output = false
+  }
+}
+```
+
+And an additional `old_stopped_ec2_instances.sql` file:
+
+```sql title="my_first_policy/old_stopped_ec2_instances.sql"
+SELECT account_id, region, id 
+    FROM aws_ec2_instances 
+    WHERE state_name = 'stopped' 
+        AND NOW() - state_transition_reason_time > INTERVAL '30' DAY
+```
+
+:::tip
+It is recommended to use relative paths ("./some-path", "../some-path", etc.) to reference files for queries.
+Using absolute-paths tends to couple the path to your specific machine, and cause errors down the road.
+:::
