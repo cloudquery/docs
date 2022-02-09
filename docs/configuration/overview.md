@@ -17,7 +17,7 @@ cloudquery {
   # policy_directory = "./cq/policies"
 
   connection {
-    dsn = "host=localhost user=postgres password=pass database=postgres port=5432 sslmode=disable"
+    dsn = "postgres://postgres:pass@localhost:5432/postgres?sslmode=disable"
   } 
 }
 ```
@@ -48,7 +48,7 @@ You can have multiple providers of the same type specified here. For example, th
 
     export CQ_VAR_AWS_VERSION=latest
     export CQ_VAR_ARN=some_value
-    export CQ_VAR_DSN="host=localhost user=postgres password=pass database=postgres port=5432 sslmode=disable"
+    export CQ_VAR_DSN="postgres://postgres:pass@localhost:5432/postgres?sslmode=disable"
 
 And use it inside `config.hcl`:
 

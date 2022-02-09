@@ -6,7 +6,7 @@ Prints global options and can be passed to any commands
 
 ```text
       --config string               path to configuration file. can be generated with 'init [provider]' command (env: CQ_CONFIG_PATH) (default "./config.hcl")
-      --dsn string                  database connection string (env: CQ_DSN) (example: 'host=localhost user=postgres password=pass DB.name=postgres port=5432')
+      --dsn string                  database connection string (env: CQ_DSN) (example: 'postgres://postgres:pass@localhost:5432/postgres')
       --no-verify                   NoVerify is true registry won't verify the plugins
       --data-dir string             Directory to save and load CloudQuery persistent data to (env: CQ_DATA_DIR) (default "./.cq")
       --reattach-providers string   Path to reattach unmanaged plugins, mostly used for testing purposes (env: CQ_REATTACH_PROVIDERS)
