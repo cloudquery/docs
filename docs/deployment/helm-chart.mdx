@@ -23,8 +23,9 @@ cd helm-charts
 
 ## Setting up GKE or EKS
 
-If you don't have a kubernetes cluster already, we provider a few terraform examples that can help you spawn one.
-You can use the following terraforms as is, fine-tune them and/or incorporate them into your existing IaC.
+If you don't have a kubernetes cluster already, we provide a few terraform examples that can help you spawn one.
+You can use the following terraforms as is, fine-tune them and/or incorporate them into your existing 
+infrastructure-as-code.
 
 <Tabs
   defaultValue="eks"
@@ -56,7 +57,7 @@ terraform apply
 
   <TabItem value="gke">
 
-  Run the following commands to provision GKE Cluster.
+  Run the following commands to provision a GKE Cluster.
 
 ```bash
 cd terraform/gcp
@@ -65,7 +66,7 @@ cp terraform.tfvars.example terraform.tfvars
 # specify required variables in terraform.tfvars
 terraform apply
 ```
-  Once the GKE is provisioned run the following commands to authenticate the `kubectl` with the above cluster.
+  Once the GKE is provisioned run the following command to authenticate the `kubectl` with the above cluster.
 
 ```bash
 gcloud container clusters get-credentials cloudquery --zone <YOUR_ZONE>
@@ -83,8 +84,8 @@ helm dependencies update
 ```
  
 CloudQuery can be configured to run with various dependencies.
-
-The suggested way is to use your own external database (potentially managed RDS, GCP CloudSQL) but you can also spawn together with the helm chart.
+The suggested way is to use your own external database (potentially a managed RDS or GCP CloudSQL) but you can 
+also spawn a PostgreSQL database together with the helm chart.
 
 #### Installing CloudQuery without PostgreSQL
 
@@ -95,7 +96,7 @@ Following are the minimum steps you need to do before running `helm install`:
 In `values.yaml`:
 * Update `envRenderSecret:CQ_DSN` to point to your external database.
 * Add any additional envirmoent variables under `envRenderSecret` needed for CloudQuery to authenticate with your CloudProvider.
-* Update `schedule` with the required scheduled you want CloudQuery to run (https://crontab.guru/).
+* Update `schedule` with the required schedule you want CloudQuery to run (https://crontab.guru/).
 
 To install just run:
 
@@ -125,7 +126,7 @@ NOTES:
 
 #### Installing CloudQuery with PostgreSQL
 
-In addition to the steps defined in the previou section you need to do the following before running `helm install cloudquery .`
+In addition to the steps defined in the previous section you need to do the following before running `helm install cloudquery .`
 
 In `values.yaml`
 * Update `postgresql.enabled` to `true`
