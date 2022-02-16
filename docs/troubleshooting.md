@@ -18,6 +18,6 @@ Our Intercom chat is available on all our public sites, so feel free to drop us 
 
 ## Debugging
 
-### Logging
+### Verbose Logging
 
 Usually the first step that will be needed to debug/resolve an issue is to run `cloudquery` with `-v` to enable verbose logging.
