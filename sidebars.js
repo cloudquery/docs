@@ -171,6 +171,13 @@ module.exports = {
                 'developers/sdk/testing',
             ],
         },
+        {
+          type: 'category',
+          label: 'Tutorials',
+          items: [
+            'developers/tutorials/creating-new-provider'
+          ]
+        },
       ],
     },
     {
@@ -187,7 +194,6 @@ module.exports = {
             'tutorials/policies/subpolicies',
           ],
         },
-        'tutorials/creating-new-provider'
       ],
     },
     {
