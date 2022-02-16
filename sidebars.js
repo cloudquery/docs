@@ -208,6 +208,11 @@ module.exports = {
     },
     {
       type: 'doc',
+      label: 'FAQ',
+      id: 'faq'
+    },
+    {
+      type: 'doc',
       label: 'Troubleshooting',
       id: 'troubleshooting',
     },
