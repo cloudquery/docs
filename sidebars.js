@@ -32,6 +32,22 @@ module.exports = {
     },
     {
       type: 'category',
+      label: 'Tutorials',
+      items: [
+        {
+          type: 'category',
+          label: 'Writing Your Own Policies',
+          items: [
+            'tutorials/policies/policies-overview',
+            'tutorials/policies/writing-your-first-policy',
+            'tutorials/policies/views',
+            'tutorials/policies/subpolicies',
+          ],
+        },
+      ],
+    },
+    {
+      type: 'category',
       label: 'CLI',
       items: [
        {
@@ -171,23 +187,13 @@ module.exports = {
                 'developers/sdk/testing',
             ],
         },
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Tutorials',
-      items: [
         {
           type: 'category',
-          label: 'Writing Your Own Policies',
+          label: 'Tutorials',
           items: [
-            'tutorials/policies/policies-overview',
-            'tutorials/policies/writing-your-first-policy',
-            'tutorials/policies/views',
-            'tutorials/policies/subpolicies',
-          ],
+            'developers/tutorials/creating-new-provider'
+          ]
         },
-        'tutorials/creating-new-provider'
       ],
     },
     {
