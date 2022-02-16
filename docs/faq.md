@@ -4,7 +4,7 @@
 
 No. CloudQuery only access meta-data and configuration data. It never pulls data from your application databases or cloud storage files.
 
-### What is "//"? How is it different from "/" and where should it go?
+### What is "//"? How is it different from "/" and where should it go? {#what-is-double-slash}
 
 The `//` indicator is used when specifying a subpolicy/subquery for `cloudquery policy run`. It is an idiosyncrasy of the way the `cloudquery` CLI works - it separates the "path to the policy" from the "path to the subpolicy (in the policy)". It must always appear **right after the root policy**.
 
