@@ -13,7 +13,6 @@ Examples:
   cloudquery fetch
 
 Flags:
-  -d, --disable-delete        disable pre-fetch fetch delete
       --fail-on-error         CloudQuery should return a failure error code if provider has any error
   -h, --help                  help for fetch
       --skip-schema-upgrade   skip schema upgrade of provider fetch, disabling this flag might cause issues
