@@ -41,7 +41,7 @@ infrastructure-as-code.
 ```bash
 cd terraform/aws
 terraform init
-cp terraform.tfvars.sample terraform.tfvars
+cp terraform.tfvars.example terraform.tfvars
 # specify required variables in terraform.tfvars
 terraform apply
 ```
@@ -50,7 +50,7 @@ terraform apply
 
   ```bash
     aws sts get-caller-identity
-    aws eks update-kubeconfig --region <YOUR_REGION> --name cloudquery
+    aws eks update-kubeconfig --region <YOUR_REGION> --name cloudquery-eks
   ```
 
   </TabItem>
