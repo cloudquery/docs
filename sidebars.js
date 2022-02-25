@@ -146,7 +146,11 @@ module.exports = {
       label: 'Developers',
       items: [
         'developers/architecture',
-        'developers/debugging',
+        {
+          type: 'doc',
+          label: 'Debugging a Provider',
+          id: 'developers/debugging'
+        },
         'developers/developing-new-provider',
         {
             type: 'category',
