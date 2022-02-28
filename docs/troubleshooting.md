@@ -34,3 +34,9 @@ cloudquery policy run aws//foundational_security/ec2
 ```
 
 [Read more in the FAQ](faq#what-is-double-slash).
+
+### I am trying to run a (local) policy with "cloudquery policy run", but am getting a "failed to detect policy in hub: failed to detect url '/Users/john/... "
+
+When running local policies on your device, you must specify **relative** paths (starting with `./` or `../`).
+Currently, you can't specify absolute paths to your policies. This is an idiosyncrasy that
+stems from the fact that `cloudquery policy run` can either run local policies on your device, or policies from [Cloudquery Hub](https://hub.cloudquery.io/).
