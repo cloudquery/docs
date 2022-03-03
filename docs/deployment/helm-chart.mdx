@@ -3,15 +3,22 @@ import TabItem from '@theme/TabItem';
 
 # Helm Chart
 
-The Helm chart deploys a CloudQuery fetch CronJob and everything required to execute it.
+The Helm chart deploys a CloudQuery fetch CronJob on kubernetes and everything required to execute it.
+You can either configure CloudQuery to 'fetch' into your own PostgreSQL database (e.g self-hosted, RDS, CloudSQL, etc..), or use the helm chart
+to set up a PostgreSQL instance in you kubernetes cluster.
+
+:::info
+You should use a PostgreSQL version >11.
+:::
 
 The chart source can be found here [github.com/cloudquery/helm-charts](https://github.com/cloudquery/helm-charts).
 
 ## Prerequisites
 
-* System configured to access a kubernetes cluster.
-* [Helm v3](https://helm.sh) installed and able to access the cluster.
-* PostgreSQL database (>11) (e.g. self hosted, via Helm, CloudSQL, RDS, etc.).
+* [kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl) installed.
+* [Helm v3](https://helm.sh) installed.
+
+## Clone the Helm Chart Repository
 
 Clone the [cloudquery/helm-charts](https://github.com/cloudquery/helm-charts) (all commands in this tutorial will asume
 it's downloaded and you are at the root directory).
@@ -21,11 +28,17 @@ git clone https://github.com/cloudquery/helm-charts.git
 cd helm-charts
 ```
 
-## Setting up GKE or EKS
+## [If you don't have one] Set up an EKS or GKE cluster
 
 If you don't have a kubernetes cluster already, we provide a few terraform examples that can help you spawn one.
 You can use the following terraforms as is, fine-tune them and/or incorporate them into your existing 
-infrastructure-as-code.
+infrastructure-as-code. 
+
+- First, [make sure that terraform is installed](https://learn.hashicorp.com/tutorials/terraform/install-cli).
+- Terraform needs to be authenticated with your cloud provider (e.g. by exporting environment variables before
+  running `terraform apply`).
+  - [AWS instructions](https://registry.terraform.io/providers/hashicorp/aws/latest/docs#authentication).
+  - [GCP instructions](https://registry.terraform.io/providers/hashicorp/google/latest/docs/guides/provider_reference#authentication)
 
 <Tabs
   defaultValue="eks"
@@ -33,10 +46,10 @@ infrastructure-as-code.
     {label: 'EKS', value: 'eks'},
     {label: 'GKE', value: 'gke'},
   ]}>
-  <TabItem value="eks">
+<TabItem value="eks">
 
-  Run the following commands to provision an EKS cluster with managed nodes (**CloudQuery currently is not supported on Fargate nodes**).
-  **Please note:** EKS can take 15-25 min to provision, see [aws github issue](https://github.com/aws/containers-roadmap/issues/1227).
+Run the following commands to provision an EKS cluster with managed nodes (**CloudQuery currently is not supported on Fargate nodes**).
+**Please note:** EKS can take 15-25 min to provision, see [aws github issue](https://github.com/aws/containers-roadmap/issues/1227).
 
 ```bash
 cd terraform/aws
@@ -46,18 +59,24 @@ cp terraform.tfvars.example terraform.tfvars
 terraform apply
 ```
 
-  Once the EKS is provisioned run the following commands to authenticate the `kubectl` with the above cluster.
+Once the EKS is provisioned run the following commands to authenticate the `kubectl` with the above cluster.
 
-  ```bash
-    aws sts get-caller-identity
-    aws eks update-kubeconfig --region <YOUR_REGION> --name cloudquery-eks
-  ```
+```bash
+  aws eks update-kubeconfig --region <YOUR_REGION> --name cloudquery-eks
+```
 
-  </TabItem>
+:::caution Troubleshooting
 
-  <TabItem value="gke">
+There is an [open issue](https://github.com/aws/aws-cli/issues/4843) in `aws` CLI that can cause `update-kubeconfig` to fail.
+You can work around this issue by deleting `~/.kube` and re-running the command.
 
-  Run the following commands to provision a GKE Cluster.
+:::
+
+</TabItem>
+
+<TabItem value="gke">
+
+Run the following commands to provision a GKE Cluster.
 
 ```bash
 cd terraform/gcp
@@ -66,16 +85,22 @@ cp terraform.tfvars.example terraform.tfvars
 # specify required variables in terraform.tfvars
 terraform apply
 ```
-  Once the GKE is provisioned run the following command to authenticate the `kubectl` with the above cluster.
+Once the GKE is provisioned run the following command to authenticate the `kubectl` with the above cluster.
 
 ```bash
 gcloud container clusters get-credentials cloudquery --zone <YOUR_ZONE>
 ```
-  </TabItem>
+</TabItem>
 </Tabs>
 
-
 ## Installing CloudQuery Helm Chart
+
+:::info
+
+To install a helm chart, your kubectl needs to be configured to access your kubernetes cluster. If you followed
+the steps above, you should be good to go! If not, you might need to call `aws eks update-kubeconfig` or `gcloud container clusters get-credentials`.
+
+:::
 
 First, download Helm dependencies:
 
@@ -94,8 +119,8 @@ Following are the minimum steps you need to do before running `helm install`:
 * Edit the `config.hcl` file to define what and how you want cloudquery to fetch the information.
 
 In `values.yaml`:
-* Update `envRenderSecret:CQ_DSN` to point to your external database.
-* Add any additional envirmoent variables under `envRenderSecret` needed for CloudQuery to authenticate with your CloudProvider.
+* Update `envRenderSecret:CQ_VAR_DSN` to point to your external database.
+* Add any additional envirmoent variables under `envRenderSecret` needed for CloudQuery to authenticate with your cloud provider.
 * Update `schedule` with the required schedule you want CloudQuery to run (https://crontab.guru/).
 
 To install just run:
