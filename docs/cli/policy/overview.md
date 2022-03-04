@@ -37,7 +37,7 @@ To run policies from other sources check the following [page](./sources).
 
 #### Running sub-policies
 
-Some policies are built as packs and only specific sub-policies are relevant for us, we can specificy sub-policies with `//` path dominator in our `source` argument.
+Some policies are built as packs and only specific sub-policies are relevant for us, we can specify sub-policies with `//` path dominator in our `source` argument.
 
 ```bash
 cloudquery policy run github.com/cloudquery-policies/aws//cis_v1.2.0
@@ -112,7 +112,7 @@ Scan results will show passed/failed queries and manual queries that just print 
 ```
 
 For every failed resource the following attributes are printed if found (in that order):
-- `id`, `identifier`, `resource_idnetifier`, `uid`, `uuid`, `arn`
+- `id`, `identifier`, `resource_identifier`, `uid`, `uuid`, `arn`
 
 You can use the `--output-dir /path/to/` option to get the policies results in JSON format.
 

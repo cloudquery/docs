@@ -44,7 +44,7 @@ You can have multiple providers of the same type specified here. For example, th
 
 ## Environment variable substitution
 
-`config.hcl` supports substition of values from environment variables. This allows to extract security sensitive data (like passwords etc) or variable data (that you want to change without touching CloudQuery configuration) from configuration file and store in the environment variable. To use the feature, set an environment variable before running CLI, adding a `CQ_VAR` prefix to your desired name:
+`config.hcl` supports substitution of values from environment variables. This allows to extract security sensitive data (like passwords etc) or variable data (that you want to change without touching CloudQuery configuration) from configuration file and store in the environment variable. To use the feature, set an environment variable before running CLI, adding a `CQ_VAR` prefix to your desired name:
 
     export CQ_VAR_AWS_VERSION=latest
     export CQ_VAR_ARN=some_value
