@@ -1,6 +1,6 @@
 # Overview
 
-CloudQuery CLI can be used to detect and alert on IaC (Infrastructure-as-code, Terraform, pulumi, etc...) drift both locally and in the CI.
+CloudQuery CLI can be used to detect and alert on IaC (Infrastructure-as-code, Terraform, Pulumi, etc...) drift both locally and in the CI.
 
 > **Infrastructure Drift** - When what is defined in your IaC is different from what is provisioned in your Cloud. This is a very common scenario and can happen due to human error, manual changes and various other reasons. Check out more details in our [blog](https://cloudquery.io/blog/announcing-drift-detection)
 
@@ -21,7 +21,7 @@ This command will generate a `config.hcl` file in the current directory. You don
 
 If you dive deeper into this file, you can:
 
- - Limit fetching of resources (specify which endpoints to hit while reading your cloud installation) and set up API backoffs.
+ - Limit fetching of resources (specify which endpoints to hit while reading your cloud installation) and configure API retry logic.
  - Specify which resources to drift on, or ignore specific resources (based on resource type, tags, type + ID, or type + tags).
  - Filter by AWS Account ID while drifting (if you happen to keep multiple accounts in a single database, and you have only some that are managed by Terraform).
  - Specify a “permanent” list of Terraform tfstate files, using S3 or local backends. This way you don’t need to specify a tfstate file every time you drift.
