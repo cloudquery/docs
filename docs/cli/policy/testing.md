@@ -31,7 +31,7 @@ Prior to committing to remote repository:
 
 validate that there is no sensitive information (account IDs, credentials or PII) in the csv
 
-``   `bash
+``` bash
 go run tools/find-sensitive-strings.go
 ```
 
