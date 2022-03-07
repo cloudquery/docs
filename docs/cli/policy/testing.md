@@ -16,9 +16,18 @@ In order to continue to rely on policies we need to ensure that we are able to h
 a snapshot is a partial copy of the database as it relates to a specific policy. This means that all relevant tables are exported to a local directory in order to be able to consistently replicate a specific scenario
 
 
+### Setting up a Snapshot
+
+To ensure that you are grabbing real data you will want to configure your resource to be in a specific configuration (can either be in a passing or failing). Once it is ready run
+
+``` bash
+cloudquery fetch
+```
+
+This will ensure that the database you are about to snapshot will have valid data
 
 
-###  Store Snapshot:
+### Storing a Snapshot
 
 `cloudquery policy snapshot <selector/to/specific/check> <output/directory>`
 
@@ -37,7 +46,7 @@ go run tools/find-sensitive-strings.go
 :::
 
 
-### Running tests:
+### Running tests
 
 
 The test running utility takes a relative or absolute path to a policy and a path to a directory where test snapshots are stored. The path of the test matches the selector for a corresponding check in the policy. If the results of the check do not match the expected results the test run will end immediately
