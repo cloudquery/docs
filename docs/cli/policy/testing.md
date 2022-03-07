@@ -1,0 +1,51 @@
+
+## Testing Policies
+
+In order to continue to rely on policies we need to ensure that we are able to handle edge cases as well as any changes do not result in a regression. To do that the most common way is to have a suite of test cases and ensure the output matches the expected output for specific inputs
+
+### High level overview of Policy Testing:
+
+1. Create specific resources in provider that should lead to a known outcome of a check
+2. Store configuration in database (`cloudquery fetch`)
+3. Store database configuration and known good output of check in local filesystem
+4. Confirm that control is still valid by ensuring that each configuration case continues to generate the same output
+
+
+### What is a snapshot?
+
+a snapshot is a partial copy of the database as it relates to a specific policy. This means that all relevant tables are exported to a local directory in order to be able to consistently replicate a specific scenario
+
+
+
+
+###  Store Snapshot:
+
+`cloudquery policy snapshot <selector/to/specific/check> <output/directory>`
+
+#### Example:
+`cloudquery policy snapshot ../aws//foundational_security/apigateway/ApiGateway.2 test/snapshot-data`
+
+
+
+Prior to committing to remote repository:
+```bash
+go run tools/find-sensitive-strings.go
+```
+
+
+
+### Running tests:
+
+
+The test running utility takes a relative or absolute path to a policy and a path to a directory where test snapshots are stored. The path of the test matches the selector for a corresponding check in the policy. If the results of the check do not match the expected results the test run will end immediately
+
+*Note: At this time it is not possible to run only a single test, you have to run all tests in the entire directory
+
+
+`cloudquery policy test <selector/to/root/policy> <output/directory>`
+
+#### Example:
+``` bash
+cloudquery policy test ../aws test/snapshot-data
+```
+
