@@ -28,7 +28,10 @@ a snapshot is a partial copy of the database as it relates to a specific policy.
 
 
 Prior to committing to remote repository:
-```bash
+
+validate that there is no sensitive information (account IDs, credentials or PII) in the csv
+
+``   `bash
 go run tools/find-sensitive-strings.go
 ```
 
