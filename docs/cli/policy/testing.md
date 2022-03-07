@@ -26,7 +26,7 @@ a snapshot is a partial copy of the database as it relates to a specific policy.
 `cloudquery policy snapshot ../aws//foundational_security/apigateway/ApiGateway.2 test/snapshot-data`
 
 
-
+:::caution
 Prior to committing to remote repository:
 
 validate that there is no sensitive information (account IDs, credentials or PII) in the csv
@@ -34,7 +34,7 @@ validate that there is no sensitive information (account IDs, credentials or PII
 ``` bash
 go run tools/find-sensitive-strings.go
 ```
-
+:::
 
 
 ### Running tests:
