@@ -1,6 +1,6 @@
 # Rate Limiting
 
-You can configure CloudQuery to limit the amount of resources fetched in parallel, to prevent the remote provider API from being overwhelemed by too many requests.
+You can configure CloudQuery to limit the amount of resources fetched in parallel, to prevent the remote provider API from being overwhelmed by too many requests.
 
 CloudQuery currently allows setting `max_parallel_resource_fetch_limit` to limit how many resources are fetched simultaneously. This flag can be added to any
 provider block as following:

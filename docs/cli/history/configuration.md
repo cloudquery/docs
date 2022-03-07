@@ -6,13 +6,13 @@ Make sure you read our [Getting Started](https://docs.cloudquery.io/docs/getting
 
 ### Installation
 
-CloudQuery History needs a a PostgreSQL instance with TimescaleDB extension installed or a TimescaleDB instance (version >= 12). You can either spawn a local one (usually good for development and local testing)
+CloudQuery History needs a a PostgreSQL (version >= 11) instance with TimescaleDB extension (version >= 2.6) installed or a TimescaleDB instance (version >= 12). You can either spawn a local one (usually good for development and local testing)
 or connect to an existing one. For more install options of TimescaleDB see their [guide](https://docs.timescale.com/timescaledb/latest/how-to-guides/install-timescaledb/).
 
 For local, you can use the following docker command:
 
 ```bash
-docker run -d --name timescaledb -p 5432:5432 -e POSTGRES_PASSWORD=pass timescale/timescaledb:latest-pg12
+docker run -d --name localTimeScaleDB -p 5432:5432 -e POSTGRES_PASSWORD=pass timescale/timescaledb:latest-pg12
 ```
 
 ### Configuration
@@ -24,7 +24,7 @@ Using TimescaleDB, the DSN format used in `config.hcl` needs to be in the URI fo
 ```
 cloudquery {
     connection {
-        dsn = "tsdb://user:pass@localhost:5432/yourdb?sslmode=disable"
+        dsn = "tsdb://user:pass@localhost:5432/localTimeScaleDB?sslmode=disable"
     }
 }
 ```

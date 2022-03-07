@@ -2,7 +2,7 @@
 
 Let's continue with our example, and imagine we now have a policy with a lot of checks we'd like to run against
 our cloud deployment 
-(All example queries are taken from our [AWS Foundational Securtiy Best Practices policy](https://github.com/cloudquery-policies/aws/tree/main/foundational_security)):
+(All example queries are taken from our [AWS Foundational Security Best Practices policy](https://github.com/cloudquery-policies/aws/tree/main/foundational_security)):
 
 ```hcl title="my_second_policy/policy.hcl"
 policy "my_second_policy" {
@@ -66,7 +66,7 @@ policy "my_second_policy" {
 }
 ```
 
-We will create two more files in our `my_sceond_policy` directory: `ec2_subpolicy.hcl` and `efs_subpolicy.hcl`:
+We will create two more files in our `my_second_policy` directory: `ec2_subpolicy.hcl` and `efs_subpolicy.hcl`:
 
 ```hcl title="my_second_policy/ec2_subpolicy.hcl"
 policy "ec2" {
@@ -116,7 +116,7 @@ policy "efs"{
 }
 ```
 
-We can then run our sub-policies separately with the following cmmands (`./my_second_policy` is the path to the `my_second_policy_directory`):
+We can then run our sub-policies separately with the following commands (`./my_second_policy` is the path to the `my_second_policy_directory`):
 ```bash
 cloudquery policy run ./my_second_policy//ec2
 
@@ -154,5 +154,5 @@ cloudquery policy run aws//foundational_security
 
 :::tip Summary
 When calling `cloudquery policy run`, the `//` separator separates the "path to the root policy" from
-the "path to the subpolicy/subquery". It should always appear **after the root poicy**.
+the "path to the subpolicy/subquery". It should always appear **after the root policy**.
 :::

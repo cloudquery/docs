@@ -48,7 +48,7 @@ Let's go over the structure of this `policy.hcl` file:
   - You can have multiple `providers` in this section, if your policy queries several different clouds.
 - Next, the `check` block describes the "core" of the policy - which checks to run. 
   You can have as many `checks` here as you'd like, and they will all run when you run the policy.
-  - each `check` block must have a name (before the open-curly-bracke).
+  - each `check` block must have a name (before the open-curly-bracket).
   - `title` (mandatory, string): a human-readable description of the `check`.
   - `query` (mandatory, string): The SQL query to run.
      -  the `hcl` format doesn't support multi-line strings for double-quoted strings. For multiline strings, you 

@@ -10,7 +10,7 @@ CloudQuery extracts, transforms, and loads your cloud assets into normalized Pos
 
 Create a cloud asset inventory in your own self-hosted PostgreSQL database where you can see an aggregated view of all assets - across clouds, accounts and services.
 
-Visualize, analyze, monitor and alert with your current tools and worksflows such as Grafana.
+Visualize, analyze, monitor and alert with your current tools and workflows such as Grafana.
 
 CloudQuery supports the [TimescaleDB](https://www.timescale.com/) PostgreSQL extension, giving you full [historical snapshots](./cli/history/overview) of your cloud asset inventory.
 
