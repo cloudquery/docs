@@ -1,5 +1,4 @@
-
-## Testing Policies
+# Testing Policies
 
 In order to continue to rely on policies we need to ensure that we are able to handle edge cases as well as any changes do not result in a regression. To do that the most common way is to have a suite of test cases and ensure the output matches the expected output for specific inputs
 
