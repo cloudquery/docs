@@ -8,7 +8,7 @@ It's possible to read a configuration value from the filesystem using the `file(
       }
 
       connection {
-            dsn = file("dsn.txt")
+          dsn = file("dsn.txt")
         }
     }
 
