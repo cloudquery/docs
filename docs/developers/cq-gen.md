@@ -135,4 +135,4 @@ The cq-gen command is used to generate `schema.Table` from given source (go, pro
 
 ## Configuration 
 
-For full documenation on how to use cq-gen and all the available configuration options please check it's [repo](https://github.com/cloudquery/cq-gen#configuration).
+For full documenation on how to use cq-gen and all the available configuration options please check [the repository](https://github.com/cloudquery/cq-gen#configuration).
