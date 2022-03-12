@@ -44,6 +44,12 @@ module.exports = {
             'tutorials/policies/subpolicies',
           ],
         },
+        {
+          type: 'doc',
+          label: 'Fetching From Multiple AWS Accounts With AssumeRole',
+          id: 'tutorials/assume_role',
+        },
+        
       ],
     },
     {
