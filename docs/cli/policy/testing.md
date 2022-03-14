@@ -4,26 +4,26 @@ In order to continue to rely on policies we need to ensure that we are able to h
 
 ### High level overview of Policy Testing:
 
-1. Create specific resources in provider that should lead to a known outcome of a check
-2. Store configuration in database (`cloudquery fetch`)
-3. Store database configuration and known good output of check in local filesystem
-4. Confirm that control is still valid by ensuring that each configuration case continues to generate the same output
+1. Create specific resources in provider that should lead to a known outcome of a check.
+2. Store configuration in database (`cloudquery fetch`).
+3. Store database configuration and known good output of check in local filesystem.
+4. Confirm that control is still valid by ensuring that each configuration case continues to generate the same output.
 
 
 ### What is a snapshot?
 
-a snapshot is a partial copy of the database as it relates to a specific policy. This means that all relevant tables are exported to a local directory in order to be able to consistently replicate a specific scenario
+a snapshot is a partial copy of the database as it relates to a specific policy. This means that all relevant tables are exported to a local directory in order to be able to consistently replicate a specific scenario.
 
 
 ### Setting up a Snapshot
 
-To ensure that you are grabbing real data you will want to configure your resource to be in a specific configuration (can either be in a passing or failing). Once it is ready run
+To ensure that you are grabbing real data you will want to configure your resource to be in a specific configuration (can either be in a passing or failing). Once it is ready run:
 
 ``` bash
 cloudquery fetch
 ```
 
-This will ensure that the database you are about to snapshot will have valid data
+This will ensure that the database you are about to snapshot will have valid data.
 
 
 ### Storing a Snapshot
@@ -35,12 +35,12 @@ This will ensure that the database you are about to snapshot will have valid dat
 
 
 :::caution
-Prior to committing to remote repository:
-
+Prior to committing to a public repository:
 validate that there is no sensitive information (account IDs, credentials or PII) in the csv
 
+When working with the [cloudquery-policies/aws](https://github.com/cloudquery-policies/aws/blob/main/tools/find-sensitive-strings.go) repo you can use the script found in the tooling directory:
 ``` bash
-go run tools/find-sensitive-strings.go
+go run tools/find-sensitive-strings.go 
 ```
 :::
 
