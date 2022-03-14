@@ -36,7 +36,7 @@ The DSN should point to the _latest released version_ (`v0.0.1` in this example)
 It will then compare changes with the `schema.Table` definitions in the current code, and generate upgrade (and downgrade) files per dialect.
 
 :::tip
-It should be possible to generate upgrade migrations for TimescaleDB in vanilla PostgreSQL due to protocol compatibility, just by enabling `-fake-tsdb` flag and still pointing it to your PostgreSQL installation.
+It should be possible to generate upgrade migrations for TimescaleDB in vanilla PostgreSQL due to protocol compatibility, just by enabling the `-fake-tsdb` flag and still pointing it to your PostgreSQL installation.
 :::
 
 If you need to modify the migration files, see go-migrates guide on how to write migrations for postgres [here](https://github.com/golang-migrate/migrate/blob/master/database/postgres/TUTORIAL.md).
