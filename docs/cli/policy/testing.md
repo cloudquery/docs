@@ -53,6 +53,14 @@ The test running utility takes a relative or absolute path to a policy and a pat
 *Note: At this time it is not possible to run only a single test, you have to run all tests in the entire directory
 
 
+:::caution
+Do not run tests against a production database as the testing processes is destructive in terms of truncating tables and dropping foreign keys.
+
+We recommend spinning up a local postgres instance on docker and then deleting the instance after the test run
+:::
+
+
+
 `cloudquery policy test <selector/to/root/policy> <output/directory>`
 
 #### Example:
