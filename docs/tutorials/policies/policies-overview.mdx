@@ -12,7 +12,7 @@ and try to follow along.
 
 ## Overview
 
-CloudQuery allows you to use SQL to check various conditions about your cloud depoyment. 
+CloudQuery allows you to use SQL to check various conditions about your cloud deployment. 
 For instance, the following SQL query allows you to test whether you have any AWS EC2 instances that were stopped
 more than 30 days ago, but were not deleted.
 
@@ -24,7 +24,7 @@ WHERE state_name = 'stopped'
       INTERVAL '30' DAY
 ```
 
-CloudQuery Policies allow you to run prewritten queries (and sets of queries) with `cloudquery policy run`.
+CloudQuery Policies allow you to run pre-written queries (and sets of queries) with `cloudquery policy run`.
 
 The CloudQuery team and community already implemented many different policies for many different providers.
 Among them are the [AWS CIS Benchmark](https://www.cisecurity.org/benchmark/amazon_web_services), 

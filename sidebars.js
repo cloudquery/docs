@@ -134,6 +134,8 @@ module.exports = {
           label: 'Configuration',
           items: [
               'configuration/overview',
+              'configuration/environment-variable-substitution',
+              'configuration/file-backed-variable-values',
               'configuration/providers'
           ]
       },

@@ -34,7 +34,7 @@ You can use the file(../relative/path/to/file) in your repo to point to query fi
 
 ### Policy block
 
-The policy block is the top-level block that defines a CQ policy. The block label is the the policy name that can then be refenced by the CLI.
+The policy block is the top-level block that defines a CQ policy. The block label is the the policy name that can then be referenced by the CLI.
 
 #### Arguments:
 - `title` - Policy title description, usually a single line defining the policy in a human readable format.
@@ -52,7 +52,7 @@ This is the basic building block that defines a rule by running an SQL query.
 - `title` - **(required)** Check title description, usually a single line defining the query in a human readable format.
 - `doc` - **(optional)** check documentation readme.
 - `query` **(required)** - The SQL query to execute.
-- `type` **(optional, default: automatic)** - Whether this check is `Manual` and requires human interaction to be verified or `Automatic` and is verfied by the query alone.
+- `type` **(optional, default: automatic)** - Whether this check is `Manual` and requires human interaction to be verified or `Automatic` and is verified by the query alone.
 - `expect_output` **(optional, default: false)** - If set to `true` this policy expects results (so the check will return `PASS`). It is `false` by default, meaning that if the query returns results the check will return `FAIL`. 
 
 ### View block

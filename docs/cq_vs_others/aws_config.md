@@ -4,14 +4,14 @@ AWS Config is the native AWS asset inventory provided by AWS.
 
 **Key Differences:**
 - **Resource Types**: CloudQuery [supports](https://hub.cloudquery.io) more than 250 types of resources while AWS Config currently supports about 120 types of resources (tables). Being an open-source project you can easily add the missing resources without being blocked by a vendor.
-- **Vanilla PostgreSQL**: CloudQuery uses vanilla PostgreSQL which makes it play nicely with the whole SQL eco-system and gives you the ability to re-use other tools like Grafan/BI. AWS Config is using a propietry subset of SQL and database and thus doesn't give you the ability to re-use other tools easily.
-- **Cloud Agnostic**: CloudQuery gives you the ability to assess, audit and monior [multi-cloud and SaaS infrastructure](https://hub.cloudquery.io).
+- **Vanilla PostgreSQL**: CloudQuery uses vanilla PostgreSQL which makes it play nicely with the whole SQL eco-system and gives you the ability to re-use other tools like Grafana/BI. AWS Config is using a proprietary subset of SQL and database and thus doesn't give you the ability to re-use other tools easily.
+- **Cloud Agnostic**: CloudQuery gives you the ability to assess, audit and monitor [multi-cloud and SaaS infrastructure](https://hub.cloudquery.io).
 - **Pricing**: CloudQuery is open-source and thus you will pay only for the hosting of your PostgreSQL (you can use RDS, or any other managed version) and the compute for running [CQ binary](../deployment/helm-chart). AWS Config charges both per item recorded and rule evaluated.
 - **Limits**: See limits section below. AWS Config has a lot of soft and hard limit (that cannot be increased). CloudQuery doesn't impose any of those limits and is bound mainly by the PostgreSQL instance and compute.
-- **Policy Langauge**: CQ uses an HCL configuration with SQL as the query engine to define rules. AWS Config uses json/yaml and subset SQL as the query engine.
+- **Policy Language**: CQ uses an HCL configuration with SQL as the query engine to define rules. AWS Config uses json/yaml and subset SQL as the query engine.
 
 
-## Limits Comparision
+## Limits Comparison
 
 This will only list hard limits as soft limits can be increased (though it is not documented what is their max limit). Some limits are quite serious for large accounts (especially around number of rules/policies).
 

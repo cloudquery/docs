@@ -20,7 +20,7 @@ The chart source can be found here [github.com/cloudquery/helm-charts](https://g
 
 ## Clone the Helm Chart Repository
 
-Clone the [cloudquery/helm-charts](https://github.com/cloudquery/helm-charts) (all commands in this tutorial will asume
+Clone the [cloudquery/helm-charts](https://github.com/cloudquery/helm-charts) (all commands in this tutorial will assume
 it's downloaded and you are at the root directory).
 
 ```bash
@@ -31,7 +31,7 @@ cd helm-charts
 ## [If you don't have one] Set up an EKS or GKE cluster
 
 If you don't have a kubernetes cluster already, we provide a few terraform examples that can help you spawn one.
-You can use the following terraforms as is, fine-tune them and/or incorporate them into your existing 
+You can use the following terraform as is, fine-tune them and/or incorporate them into your existing 
 infrastructure-as-code. 
 
 - First, [make sure that terraform is installed](https://learn.hashicorp.com/tutorials/terraform/install-cli).
@@ -120,7 +120,7 @@ Following are the minimum steps you need to do before running `helm install`:
 
 In `values.yaml`:
 * Update `envRenderSecret:CQ_VAR_DSN` to point to your external database.
-* Add any additional envirmoent variables under `envRenderSecret` needed for CloudQuery to authenticate with your cloud provider.
+* Add any additional environment variables under `envRenderSecret` needed for CloudQuery to authenticate with your cloud provider.
 * Update `schedule` with the required schedule you want CloudQuery to run (https://crontab.guru/).
 
 To install just run:
@@ -147,6 +147,7 @@ NOTES:
    kubectl logs -f jobs/{JOB NAME}
 4. To exec to the admin container with cloudquery binary for debugging purposes run:
    kubectl exec -it deployment/cloudquery-admin -- /bin/sh
+   # You can install psql in the admin-container with "apk --update add postgresql-client"
 ```
 
 #### Installing CloudQuery with PostgreSQL

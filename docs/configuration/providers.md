@@ -6,7 +6,7 @@ CloudQuery has a pluggable architecture and relies on plugins called "providers"
 
 ## Capabilities
 
-The core responsability of a provider is to define resources and tables.
+The core responsibility of a provider is to define resources and tables.
 
 Every resource can define one or more tables this resource configuration is transformed to.
 

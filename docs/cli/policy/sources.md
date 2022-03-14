@@ -52,11 +52,11 @@ For example, to use HTTPS or SSH:
 
 ```hcl
 policy "aws" {
-  source = "git::httsp://github.com/cloudquery-policies/aws.git"
+  source = "git::https://github.com/cloudquery-policies/aws.git"
 }
 ```
 
-Git repositories are cloned using the `git clone` command, so it will respect any local Git credentials that were already set in your system. To access private Git repoistories, configure your git with the suitable credentials for that repository.
+Git repositories are cloned using the `git clone` command, so it will respect any local Git credentials that were already set in your system. To access private Git repositories, configure your git with the suitable credentials for that repository.
 
 
 :::tip 

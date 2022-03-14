@@ -30,10 +30,10 @@ All official and approved community providers are listed at [CloudQuery Hub](htt
 
 CloudQuery needs to be authenticated with your Azure account in order to `fetch` information about your cloud setup.
 
-You will need to create a [service principle](https://docs.microsoft.com/en-us/azure/active-directory/develop/app-objects-and-service-principals) 
+You will need to create a [service principal](https://docs.microsoft.com/en-us/azure/active-directory/develop/app-objects-and-service-principals) 
 for CloudQuery to use:
 
-#### Creating a service principle
+#### Creating a service principal
 
 First, install the [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli) (`az`).
 
@@ -43,7 +43,7 @@ Then, login with the Azure CLI:
 az login
 ```
 
-Then, create the service-principle cloudquery will use to access your cloud deployment
+Then, create the service principal cloudquery will use to access your cloud deployment
 
 :::caution Warning
 The output of `az ad sp create-for-rbac` contains credentials that you must protect - Make sure to handle 
