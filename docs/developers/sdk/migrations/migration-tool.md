@@ -28,7 +28,9 @@ Tool options are:
   -dialect string
         Dialect to generate initial migrations (empty: all)
   -dsn string
-        DSN to compare changes against in upgrade mode
+        DSN to compare changes against (upgrade mode)
+  -fake-tsdb
+        Run in TSDB mode without TSDB (upgrade mode)
   -full
         Generate initial migrations (prefix will be 'init')
   -path string
@@ -36,7 +38,7 @@ Tool options are:
   -prefix string
         Prefix for files (default "unreleased")
   -schema string
-        Schema to compare tables from in upgrade mode (default "public")
+        Schema to compare tables from (upgrade mode) (default "public")
 ```
 
 The tool has two running modes:
