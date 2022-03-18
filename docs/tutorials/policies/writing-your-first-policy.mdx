@@ -33,12 +33,6 @@ and run it with
 cloudquery policy run ./my_first_policy
 ```
 
-:::caution Important
-Due to the fact that the `cloudquery policy run` also supports running policies from [our official github](https://github.com/cloudquery-policies),
-to run policies from the local filesystem, you **must** specify a path beginning with `./` or `../` -
-absolute pats will not work**
-:::
-
 Let's go over the structure of this `policy.hcl` file:
 - At the root is the `policy` block, followed by its label.
 - The `title` is a human readable description of the policy.
