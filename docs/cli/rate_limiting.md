@@ -14,12 +14,27 @@ provider "aws" {
   resources = [
     "*"
   ]
-  // enables partial fetching, allowing for any failures to not stop full resource pull
-  enable_partial_fetch = true
   // Limit provider to fetch only 5 resources at a given time
   max_parallel_resource_fetch_limit = 5
 }
 ```
+
+Another global setting is `max_goroutines` by default cloudquery sets this limit based on the current machine's specs based on the number of available cores. This flag can be added to any provider block to override the default cloudquery set limit.
+
+```hcl
+provider "aws" {
+  configuration {
+    aws_debug = false
+  }
+  // list of resources to fetch
+  resources = [
+    "*"
+  ]
+  // Limit cloudquery to limit maximum spwaned goroutines for fetching to 5000.
+  max_goroutines = 5000
+}
+```
+
 
 :::tip
 
