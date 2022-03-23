@@ -200,11 +200,7 @@ module.exports = {
                 'developers/sdk/testing',
             ],
         },
-        {
-          type: 'cq-gen',
-          label: 'Generate resources with cq-gen',
-          id: 'developers/cq-gen'
-        },
+        "developers/cq-gen",
         {
           type: 'category',
           label: 'Tutorials',
