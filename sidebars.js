@@ -201,6 +201,11 @@ module.exports = {
             ],
         },
         {
+          type: 'cq-gen',
+          label: 'Generate resources with cq-gen',
+          id: 'developers/cq-gen'
+        },
+        {
           type: 'category',
           label: 'Tutorials',
           items: [
