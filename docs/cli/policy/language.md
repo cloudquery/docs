@@ -65,6 +65,11 @@ This is the basic building block that defines a rule by running an SQL query.
 
 This blocks creates a view from a given query (if it doesn't exist already). This is useful when other queries rely on complex joins that you can write once and then just reference a specific view. 
 
+:::tip
+Views are scoped to the (sub)policies they are defined in.  i.e. you cannot reference a view defined in parent
+or child subpolicies. To avoid code duplication when reusing views, it is recommended to use `query = file("./path_to_view.sql")`.
+:::
+
 **Label** - name of the created view which you can later reference in `check` blocks.
 
 #### Arguments:
