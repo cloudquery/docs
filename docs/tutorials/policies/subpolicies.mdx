@@ -156,3 +156,39 @@ cloudquery policy run aws//foundational_security
 When calling `cloudquery policy run`, the `//` separator separates the "path to the root policy" from
 the "path to the subpolicy/subquery". It should always appear **after the root policy**.
 :::
+
+## Views and Subpolicies
+
+Views are scoped to the (sub)policies they are defined in.  i.e. you cannot reference a view defined in parent
+or child subpolicies. To avoid code duplication when reusing views, it is recommended to use `query = file("./path_to_view.sql")` . For example:
+
+```hcl
+policy "some-policy"{
+    title = "Some Policy"
+
+    configuration {
+        ...
+    }
+
+    policy "subpolicy-1" {
+        view "someview"{
+            title = "Some View"
+            query = file("./path_to_some_view.sql")
+        }
+
+        # checks using "someview" go here
+        ...
+    }
+
+    policy "subpolicy-2" {
+        view "someview"{
+            title = "Some View"
+            query = file("./path_to_some_view.sql")
+        }
+
+        # checks using "someview" go here
+        ...
+    }
+
+}
+```
