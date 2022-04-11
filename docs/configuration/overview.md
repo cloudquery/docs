@@ -18,6 +18,10 @@ cloudquery {
 
   connection {
     dsn = "postgres://postgres:pass@localhost:5432/postgres?sslmode=disable"
+
+    # If you're using history mode (timescaledb), the dsn needs to start with 'tdsb://'.
+    # Read more at https://docs.cloudquery.io/docs/cli/history/overview/
+    # dsn = "tsdb://postgres:pass@localhost:5432/postgres?sslmode=disable"
   } 
 }
 ```
