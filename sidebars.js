@@ -200,6 +200,7 @@ module.exports = {
                 'developers/sdk/testing',
             ],
         },
+        "developers/cq-gen",
         {
           type: 'category',
           label: 'Tutorials',

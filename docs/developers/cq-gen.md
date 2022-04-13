@@ -1,4 +1,4 @@
-# Generating resources with cq-gen
+# Generating resources
 
 Adding resources to a provider can sometimes be a tidous task, some resources can have more than hundreds of fields and relations, and adding them all can
 take a very long time. To remedy this issue, the [cq-gen](https://github.com/cloudquery/cq-gen) project was created. cq-gen allows to easily generate more of the boilerplate code for resources from common specs such as go code, openapi specs, protobuf, and graphql. 
