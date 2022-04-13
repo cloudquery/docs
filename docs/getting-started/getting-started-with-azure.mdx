@@ -30,6 +30,28 @@ All official and approved community providers are listed at [CloudQuery Hub](htt
 
 CloudQuery needs to be authenticated with your Azure account in order to `fetch` information about your cloud setup.
 
+You can either authenticate with `az login` (when running cloudquery locally), or by using a "service principal"
+ and exporting environment variables (appropriate for automated deployments).
+
+<Tabs
+  defaultValue="az_login"
+  values={[
+    {label: 'az login', value: 'az_login'},
+    {label: 'Service Principal', value: 'service_principal'}
+  ]}>
+
+<TabItem value="az_login">
+
+First, install the [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli) (`az`).
+Then, login with the Azure CLI:
+```bash
+az login
+```
+
+</TabItem>
+
+<TabItem value="service_principal">
+
 You will need to create a [service principal](https://docs.microsoft.com/en-us/azure/active-directory/develop/app-objects-and-service-principals) 
 for CloudQuery to use:
 
@@ -171,6 +193,9 @@ $Env:AZURE_SUBSCRIPTION_ID=$Env:SUBSCRIPTION_ID
 
 </TabItem>
 
+</Tabs>
+
+</TabItem>
 </Tabs>
 
 ### Fetch Command
