@@ -4,7 +4,7 @@ Provider structs are the core component of the SDK that require the implementor 
 
 ## Example
 
-If we look at the example provider definition [in the template](https://github.com/cloudquery/cq-provider-template/blob/main/resources/provider.go):
+If we look at the example provider definition [in the template](https://github.com/cloudquery/cq-provider-template/blob/main/resources/provider/provider.go):
 
 ```go
 var (
