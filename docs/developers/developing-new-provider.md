@@ -14,18 +14,22 @@ Here is a template project from which you can create your own [https://github.co
 
 We will go through the files in the template and explain each part that you need to implement.
 
-#### **resources/provider.go**
+#### **resources/provider/provider.go**
 
 ```go
-func Plugin() *plugin.Provider {
-	return &plugin.Provider{
-		Name:      "your_provider_name",
-		Configure: provider.Configure,
+func Provider() *provider.Provider {
+	return &provider.Provider{
+		Version: Version,
+		// CHANGEME: Change to your provider name
+		Name:      "YourProviderName",
+		Configure: client.Configure,
 		ResourceMap: map[string]*schema.Table{
-			"resource_name": resources.ResourceName(),
+			// CHANGEME: place here all supported resources
+			"demo_resource": resources.DemoResource(),
 		},
+		Migrations: providerMigrations,
 		Config: func() provider.Config {
-			return &provider.Config{}
+			return &client.Config{}
 		},
 	}
 
@@ -51,7 +55,7 @@ type Config struct {
 }
 
 
-// Pass example to cloudquery when cloudqueyr init [provider] will be called
+// Pass example to cloudquery when cloudquery init [provider] will be called
 func (c Config) Example() string {
     return `configuration {
     
@@ -71,7 +75,7 @@ func (c Config) Example() string {
 
 Here you define the "hcl block" configuration that the user can pass to your provider. This config is parsed and populated by the SDK so you don’t need to deal with HCL marshaling/unmarshalling. The populated config object is passed to **provider.Configure** function in **client.go.**.
 
-**provider/client.go**
+**client/client.go**
 
 ```go
 type Client struct {
