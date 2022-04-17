@@ -116,6 +116,7 @@ module.exports = {
           'cli/commands/provider-upgrade',
           'cli/commands/provider-downgrade',
           'cli/commands/provider-drop',
+          'cli/commands/provider-purge',
         ]
        },
        {
