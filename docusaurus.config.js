@@ -22,6 +22,7 @@ module.exports = {
     colorMode: {
       // "light" | "dark"
       defaultMode: 'dark',
+      respectPrefersColorScheme: true,
     },
     navbar: {
       title: 'CloudQuery Docs',
