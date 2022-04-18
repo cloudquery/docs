@@ -41,16 +41,20 @@ func PathResolver(path string) ColumnResolver
 func ParentResourceFieldResolver(name string) ColumnResolver 
 // ParentPathResolver resolves a field from the parent
 func ParentPathResolver(path string) ColumnResolver
-// ParentPathResolver resolves a field from the parent
+// ParentIdResolver resolves the cq_id from the parent
 func ParentIdResolver(_ context.Context, _ ClientMeta, r *Resource, c Column) error 
 
 // Few examples of type converting resolvers
-func IntResolver(path string) ColumnResolver // IntResolver tries to cast value into int
-func DateResolver(path string, rfcs ...string) ColumnResolver // DateResolver resolves the different date formats (ISODate - 2011-10-05T14:48:00.000Z is default) into *time.Time
-func IPAddressResolver(path string) ColumnResolver // IPAddressResolver resolves the ip string value and returns net.IP
+
+// IntResolver tries to cast value into int
+func IntResolver(path string) ColumnResolver
+// DateResolver resolves the different date formats (ISODate - 2011-10-05T14:48:00.000Z is default) into *time.Time
+func DateResolver(path string, rfcs ...string) ColumnResolver
+// IPAddressResolver resolves the ip string value and returns net.IP
+func IPAddressResolver(path string) ColumnResolver
 ```
 
-Notice how most examples return an _inline function_ built to resolve according to the given parameters (e.g. `PathResolver` will return an fn that resolves for the given `path`) except for the `ParentIdResolver`, which is a static `ColumnResolver`.
+Notice how most examples return an _inline function_ built to resolve according to the given parameters (e.g. `PathResolver` will return a function that resolves for the given `path`) except for the `ParentIdResolver`, which is a static `ColumnResolver`.
 
 :::tip
 Discover more ready-made utility resolvers [in the repository](https://github.com/cloudquery/cq-provider-sdk/blob/main/provider/schema/resolvers.go).
