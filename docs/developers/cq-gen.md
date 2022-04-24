@@ -82,6 +82,8 @@ resource "aws" "cloudformation" "stacks" {
 To execute this configuration we will run our cq-gen tool with the following command:
 
 ```bash
+# cq-gen has to run from the directory of the `gen.hcl` file
+cd resources/services/<service-name>
 cq-gen --resource stacks --domain cloudformation --config gen.hcl
 ```
 
