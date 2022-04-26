@@ -6,12 +6,17 @@ take a very long time. To remedy this issue, the [cq-gen](https://github.com/clo
 
 ## Set up cq-gen in your provider project
 
+Ensure that you're using `go` version `1.17` by running `go version`. The `cq-gen` tool doesn't support newer versions of `go` yet.
+
 if you haven't created a provider use this command to create a project or alternatively use our [template](https://github.com/cloudquery/cq-provider-template) repo as a base.
 ```bash
 mkdir cq-my-provider
 cd cq-my-provider
 
 go mod init github.com/[username]/[cq-my-provider]
+
+# install the `cq-gen` binary under your go path
+go install github.com/cloudquery/cq-gen
 ```
 
 Next, create a tools.go file and add cq-gen as a tool dependency for your module.
@@ -77,6 +82,8 @@ resource "aws" "cloudformation" "stacks" {
 To execute this configuration we will run our cq-gen tool with the following command:
 
 ```bash
+# cq-gen has to run from the directory of the `gen.hcl` file
+cd resources/services/<service-name>
 cq-gen --resource stacks --domain cloudformation --config gen.hcl
 ```
 
