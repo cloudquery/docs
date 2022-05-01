@@ -55,24 +55,28 @@ go run tools/migrations/main.go -prefix 1_v0.0.1 -full
 
 ## Upgrade Mode
 
-To run the tool in the upgrade mode, run it with the `-dsn` option, pointing to the _latest released version_ of the database.
+To run the tool in the upgrade mode, run it with the `-dsn` option, pointing to the _to be released version_ of the database.
 It will then compare changes with the `schema.Table` definitions in the current code and generate upgrade migrations.
-
 On each run, the tool creates one setup ("up") and one tear down ("down") migration **for the given dialect** in the `resources/provider/migrations/` directory.
 
-```
-go run tools/migrations/main.go -prefix 2_v0.0.2 -dsn 'postgres://user:pass@localhost:5432/your-db?sslmode=disable'
-```
+A good way to ensure you run the migration tool on the latest changes is:
+
+1. Ensure your local version of the provider repo is synced with the latest changes from the GitHub provider repo. See more on how to do it [here](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork)
+2. Drop any existing database data and schema by running `cloudquery provider drop <provider>`. ⚠️ This is destructive and will remove all existing provider data
+3. Set up your provider in debugging mode. See how do to it [here](/docs/developers/debugging#example)
+4. Run `cloudquery provider upgrade <provider>` (in debug mode as configured in step 3) to migrate to the latest provider version
+5. Run `go run tools/migrations/main.go -prefix 2_v0.0.2 -dsn 'postgres://user:pass@localhost:5432/<your-db>?sslmode=disable'` to generate new migrations for PostgreSQL
+6. Run `go run tools/migrations/main.go -prefix 2_v0.0.2 -fake-tsdb -dsn 'postgres://user:pass@localhost:5432/<your-db>?sslmode=disable'` to generate new migrations for TimescaleDB
 
 :::tip
-To generate a complete suite of migrations for every dialect, you should run the upgrade mode multiple times, each time pointing to different dialect DSNs.
+The prefix format is `<order-migrations-are-applied>.<release-version>`. `order-migrations-are-applied` should always be an increment of the current migration order, and `release-version` should be the release this migration belongs too, usually the next expected release
 :::
 
 ## Dialect URL Schemes
 
 Dialects are detected using the URI scheme in the DSN.
 
-| Dialect | Dialect ID | Scheme         |
-|:--------|:-----------|:---------------|
-| PostgreSQL | postgres | postgres://    |
-| TimescaleDB| timescale | timescale://   |
+| Dialect     | Dialect ID | Scheme       |
+| :---------- | :--------- | :----------- |
+| PostgreSQL  | postgres   | postgres://  |
+| TimescaleDB | timescale  | timescale:// |
