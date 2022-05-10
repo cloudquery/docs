@@ -7,14 +7,16 @@ CloudQuery collects anonymized usage statistics and crash reports. Crash reports
 - Which operation (fetch, policy, drift, ...) was executed
 - How long the operation took and whether it succeeded
 - Whether you're running CloudQuery in a CI environment
+- CloudQuery version used, build-date and commit id
 - Installed CloudQuery providers on your system along with their versions
 - Version and build date of the `cloudquery` binary you're using
-- Basic OpenTelemetry trace data about which part of the operation took how long
+- Basic data about which part of the operation took (fetch duration, resource fetch duration, etc')
 
 ### For vague identification purposes
 
 - A randomly generated UUID, persisted across sessions
-- A SHA1 hash of your: IP address, MAC addresses and hostname
+- A SHA1 hash of your: IP address, MAC addresses, Configuration and hostname
+- Your Postgres database instance id, this is a unique generated ID created by your database.
 - Your vague geographical location based on the IP address
 
 This does not allow us to track individual users but does enable us to accurately measure user counts vs. invocation counts.
@@ -33,14 +35,11 @@ The random ID is stored in the `.cq/telemetry-random-id` file. If you wish to an
 
 ## Inspecting Telemetry Contents
 
-To check what kind of data is collected, invoke the `cloudquery` executable with the `--inspect-telemetry` option. This will stop sending telemetry information and write it to a local file in the current directory, `cq-telemetry.txt`. You can then inspect file contents and decide whether to opt-out or not.
+To check what kind of data is collected, invoke the `cloudquery` executable with the `--inspect-telemetry` option. This will stop sending telemetry information and write it data to the log file, by default it should be in `cloudquery.log`. You can then inspect anyalytics log event contents and decide whether to opt-out or not.
 
 ```bash
 # Invoke CloudQuery
 cloudquery --inspect-telemetry [operation] [arguments]
-
-# Inspect telemetry output
-cat cq-telemetry.txt | less
 ```
 
 ## Opting out of Telemetry
