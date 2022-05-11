@@ -25,6 +25,10 @@ This does not allow us to track individual users but does enable us to accuratel
 The random ID is stored in the `.cq/telemetry-random-id` file. If you wish to anonymize your requests further but still keep sending us usage statistics, you could remove this file before every invocation (or create a directory with the same name, which also stops the file from getting created)
 :::
 
+### Collector
+
+- We use the [rudder](https://www.rudderstack.com/) collector to send usage analytics.
+
 
 ## What is NOT Stored
 
