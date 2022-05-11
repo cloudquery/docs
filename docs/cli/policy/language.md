@@ -10,11 +10,16 @@ Building CloudQuery policies is very simple allowing us to combine multiple poli
 
 Every policy starts with a `policy` block. A policy block consists of `views`, `checks`, more `policies`, or a pointer to another `policy` with the `source` attribute.
 
+:::tip 
+You can validate your policy using the `policy validate` command, which will return diagnostics on your policy and any errors.
+:::
+
 ### Configuration Example
 
 ```hcl
 policy "test-policy" {
   description = "This is a test policy"
+  identifiers = ["id"]
   configuration {
     provider "aws" {
       version = ">= 1.0"
@@ -23,7 +28,7 @@ policy "test-policy" {
 
   check "top-level-query" {
     description = "Top Level Query"
-    query = "SELECT * FROM test_policy_table WHERE name LIKE 'peter'"
+    query = "SELECT id as id, 'This is a Peter` as cq_reason FROM test_policy_table WHERE name LIKE 'peter'"
   }
 }
 ```
@@ -39,6 +44,7 @@ The policy block is the top-level block that defines a CQ policy. The block labe
 #### Arguments:
 - `title` - Policy title description, usually a single line defining the policy in a human readable format.
 - `doc` - **(optional)** policy documentation readme.
+- `identifiers` - **(optional)** unique identifiers we want all checks to return on query result, will override parent policy identifiers if they exist.
 
 ### Configuration block
 
@@ -54,6 +60,7 @@ This is the basic building block that defines a rule by running an SQL query.
 - `query` **(required)** - The SQL query to execute.
 - `type` **(optional, default: automatic)** - Whether this check is `Manual` and requires human interaction to be verified or `Automatic` and is verified by the query alone.
 - `expect_output` **(optional, default: false)** - If set to `true` this policy expects results (so the check will return `PASS`). It is `false` by default, meaning that if the query returns results the check will return `FAIL`. 
+- `reason` **(optional)** - reason to add to check output, uses `go template` markup language i.e you can access columns return from the query using `{{.<column_name>}}` notation. This will override a `cq_reason` returned from the query.
 
 ### View block
 
