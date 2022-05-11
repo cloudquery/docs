@@ -19,9 +19,25 @@ docker run -d --name localTimeScaleDB -p 5432:5432 -e POSTGRES_PASSWORD=pass tim
 
 #### DSN Format
 
-Using TimescaleDB, the DSN format used in `config.hcl` needs to be in the URI format and it must start with `tsdb://`, as such:
+Using TimescaleDB, the `type` parameter in `connection` block of `config.hcl` should be set to `tsdb`.
 
+```hcl
+cloudquery {
+    connection {
+        type = "tsdb"
+        username = "user"
+        password = "pass"
+        host = "localhost"
+        port = 5432
+        database = "localTimeScaleDB"
+        sslmode = "disable"
+    }
+}
 ```
+
+Alternatively if using the URI DSN format, you can start it with `tsdb://`, as such:
+
+```hcl
 cloudquery {
     connection {
         dsn = "tsdb://user:pass@localhost:5432/localTimeScaleDB?sslmode=disable"
@@ -29,7 +45,7 @@ cloudquery {
 }
 ```
 
-This way CloudQuery knows you're pointing to a timescaledb instance in the DSN.
+This way CloudQuery knows you're pointing to a TimescaleDB instance in the connection block.
 
 #### History Settings
 

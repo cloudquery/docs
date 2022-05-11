@@ -17,11 +17,20 @@ cloudquery {
   # policy_directory = "./cq/policies"
 
   connection {
-    dsn = "postgres://postgres:pass@localhost:5432/postgres?sslmode=disable"
+    type = "postgres"
+    username = "postgres"
+    password = "pass"
+    host = "localhost"
+    port = 5432
+    database = "postgres"
+    sslmode = "disable"
 
-    # If you're using history mode (timescaledb), the dsn needs to start with 'tdsb://'.
+    # old format
+    # dsn = "postgres://postgres:pass@localhost:5432/postgres?sslmode=disable"
+
+    # If you're using history mode (timescaledb), type must be set to 'tsdb'.
     # Read more at https://docs.cloudquery.io/docs/cli/history/overview/
-    # dsn = "tsdb://postgres:pass@localhost:5432/postgres?sslmode=disable"
+    # type = "tsdb"
   } 
 }
 ```
