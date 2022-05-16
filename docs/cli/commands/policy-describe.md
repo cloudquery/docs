@@ -4,13 +4,17 @@ Describe a CloudQuery Policy.
 
 ## Usage
 ```
-cloudquery policy run [flags]
+# Describe official policy
+cloudquery policy describe aws
 
-# Download & Run the policies defined in your config file
-cloudquery policy run
+# The following will be the same as above
+# Official policies are hosted here: https://github.com/cloudquery-policies
+cloudquery policy describe aws//cis-1.2.0
 
-# Run a specific policy which is not defined in your config file
-cloudquery policy run aws//cis_v1.2.0
+# Describe community policy
+cloudquery policy describe github.com/COMMUNITY_GITHUB_ORG/aws
+
+# See https://hub.cloudquery.io for additional policies.
 
 ```
 
