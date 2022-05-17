@@ -1,7 +1,7 @@
 # Generating resources
 
-Adding resources to a provider can sometimes be a tidous task, some resources can have more than hundreds of fields and relations, and adding them all can
-take a very long time. To remedy this issue, the [cq-gen](https://github.com/cloudquery/cq-gen) project was created. cq-gen allows to easily generate more of the boilerplate code for resources from common specs such as go code, openapi specs, protobuf, and graphql. 
+Adding resources to a provider can sometimes be a tedious task, some resources can have more than hundreds of fields and relations, and adding them all can
+take a long time. To remedy this issue, the [cq-gen](https://github.com/cloudquery/cq-gen) project was created. cq-gen allows to easily generate more of the boilerplate code for resources from common specs such as go code, openapi specs, protobuf, and graphql. 
 
 
 ## Set up cq-gen in your provider project
@@ -125,10 +125,10 @@ func Stacks() *schema.Table {
 				Type:        schema.TypeString,
                 		Resolver:    client.ResolveAWSRegion,
 			},
-            ... # shortned for sake for readability
+            ... # shortened for sake for readability
 ```
 
-As you can see above the function defenition, cq-gen, added a `//go:generate` command to help regenerate easily with `go generate`.
+As you can see above the function definition, cq-gen, added a `//go:generate` command to help regenerate easily with `go generate`.
 
 ## Flags
 
@@ -142,4 +142,4 @@ The cq-gen command is used to generate `schema.Table` from given source (go, pro
 
 ## Configuration 
 
-For full documenation on how to use cq-gen and all the available configuration options please check [the repository](https://github.com/cloudquery/cq-gen#configuration).
+For full documentation on how to use cq-gen and all the available configuration options please check [the repository](https://github.com/cloudquery/cq-gen#configuration).

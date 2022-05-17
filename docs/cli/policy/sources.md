@@ -65,7 +65,7 @@ Use SSH to access private Git repositories from automated systems because it all
 
 ### Selecting a Revision
 
-By default, CloudQuery will clone the latest tagged version of the policy. You can override this using the `ref` or `@` query parameter. The value of the `ref` or `@` parameter can be any reference accepted by the `git checkout` command, such as as commit hash, tag name or branch. 
+By default, CloudQuery will clone the latest tagged version of the policy. You can override this using the `ref` or `@` query parameter. The value of the `ref` or `@` parameter can be any reference accepted by the `git checkout` command, such as commit hash, tag name or branch. 
 
 ```hcl
 policy "aws-with-tag" {

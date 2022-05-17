@@ -23,7 +23,7 @@ The following will run the policy hosted on [github.com/cloudquery-policies/aws]
 cloudquery policy run github.com/cloudquery-policies/aws
 ```
 
-Cloudquery will always download the latest tag of the policy if no specific tag/commit/branch is defined, you can set a specific branch using `@` or `?ref=<tag/branch/commit-hash>` to your `source` url. Examples:
+CloudQuery will always download the latest tag of the policy if no specific tag/commit/branch is defined, you can set a specific branch using `@` or `?ref=<tag/branch/commit-hash>` to your `source` URL. Examples:
 
 ```bash
 cloudquery policy run github.com/cloudquery-policies/aws@v0.1.0
