@@ -20,7 +20,7 @@ It is worth mentioning here that the `cloudquery` CLI also supports running poli
 described above - separating the "path to the policy" from the "path inside the policy". In case of running
 policies from github, it helps the `cloudquery` CLI to know which repo to clone.
 
-So, to run the `foundational_security` **subpolicy** in the the `aws` **policy**, we run.
+So, to run the `foundational_security` **subpolicy** in the `aws` **policy**, we run.
 
 ```bash
 cloudquery policy run aws//foundational_security

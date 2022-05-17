@@ -8,7 +8,7 @@ AWS Config is the native AWS asset inventory provided by AWS.
 - **Cloud Agnostic**: CloudQuery gives you the ability to assess, audit and monitor [multi-cloud and SaaS infrastructure](https://hub.cloudquery.io).
 - **Pricing**: CloudQuery is open-source and thus you will pay only for the hosting of your PostgreSQL (you can use RDS, or any other managed version) and the compute for running [CQ binary](../deployment/helm-chart). AWS Config charges both per item recorded and rule evaluated.
 - **Limits**: See limits section below. AWS Config has a lot of soft and hard limit (that cannot be increased). CloudQuery doesn't impose any of those limits and is bound mainly by the PostgreSQL instance and compute.
-- **Policy Language**: CQ uses an HCL configuration with SQL as the query engine to define rules. AWS Config uses json/yaml and subset SQL as the query engine.
+- **Policy Language**: CQ uses an HCL configuration with SQL as the query engine to define rules. AWS Config uses JSON/YAML and subset SQL as the query engine.
 
 
 ## Limits Comparison

@@ -58,4 +58,4 @@ timescale/3_v0.1.0.up.sql
 timescale/3_v0.1.0.down.sql
 ```
 
-Fortunately there's a way to automatically generate most migrations from resource definitions...
+Fortunately there's a way to automatically generate most migrations from resource definitions.

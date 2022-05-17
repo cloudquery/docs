@@ -29,7 +29,7 @@ This way, the value for the column `c` is extracted from the resource, marshalle
 
 Utility Resolvers provide solutions on converting data from one data structure to another, ready to be saved in tables. These are always of type `ColumnResolver`.
 
-Some resolvers convert one type to another (parsing date fields, ip addresses and so on) and some look up data inside inner structs of a resource, or from the parent.
+Some resolvers convert one type to another (parsing date fields, IP addresses and so on) and some look up data inside inner structs of a resource, or from the parent.
 
 Examples:
 ```go

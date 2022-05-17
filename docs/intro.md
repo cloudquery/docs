@@ -34,7 +34,7 @@ Ensure your cloud assets maintain their desired state.
 CloudQuery leverages its asset inventory to quickly detect drift against IaC (Terraform, more to come) which you can run both in the CI and locally.
 
 
-### Extensible
+### Extendable
 
-CloudQuery is an open-source and extensible framework. All official and approved community providers and policies are listed in [CloudQuery Hub](https://hub.cloudquery.io). See [Developing a New Provider](./developers/developing-new-provider.md).
+CloudQuery is an open-source and extendable framework. All official and approved community providers and policies are listed in [CloudQuery Hub](https://hub.cloudquery.io). See [Developing a New Provider](./developers/developing-new-provider.md).
 

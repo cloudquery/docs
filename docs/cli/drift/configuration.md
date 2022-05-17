@@ -48,7 +48,7 @@ Only one of the two types of backends can be active at a time.
 
 ### Provider Blocks
 
-Each cloud provider has its own block in the drift configuration. In these blocks resources can be ignored or allowlisted, account IDs can be limited, and resource matching rules can be tweaked. Let's go over them.
+Each cloud provider has its own block in the drift configuration. In these blocks resources can be ignored or allowed, account IDs can be limited, and resource matching rules can be tweaked. Let's go over them.
 
 #### Account IDs
 

@@ -11,7 +11,7 @@ type TableResolver func(ctx context.Context, meta ClientMeta, parent *Resource, 
 ```
 
 `TableResolver` allows you to access the cloud resource using the given passed `*Client` and fetch all resources of that type. Finally, you send the fetch items into the passed `res` channel argument.
-The `TableResolver` is very flexible allowing you to define your own pagination logic or any other logic for that matter, and pass the results to the channel.
+The `TableResolver` is flexible allowing you to define your own pagination logic or any other logic for that matter, and pass the results to the channel.
 
 :::tip
 The collector in the SDK is slice-aware, so if you have a slice of resources, you can just push the slice as a whole, without iterating.
