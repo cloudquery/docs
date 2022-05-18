@@ -54,8 +54,3 @@ func AWSTestHelper(t *testing.T) {
 ## Useful Resources
 
 - CloudQuery official [cq-provider-aws](https://github.com/cloudquery/cq-provider-aws/blob/main/client/testing.go) as an example.
-
-## Testing Migrations
-
-[Learn](./migrations/testing) how to automatically test migrations.
-

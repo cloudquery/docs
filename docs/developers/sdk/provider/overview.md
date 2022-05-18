@@ -7,11 +7,6 @@ Provider structs are the core component of the SDK that require the implementor 
 If we look at the example provider definition [in the template](https://github.com/cloudquery/cq-provider-template/blob/main/resources/provider/provider.go):
 
 ```go
-var (
-	//go:embed migrations/*/*.sql
-	providerMigrations embed.FS
-)
-
 func Provider() *provider.Provider {
 	return &provider.Provider{
 		// CHANGEME: Change to your provider name
@@ -21,7 +16,6 @@ func Provider() *provider.Provider {
 			// CHANGEME: Place here all supported resources
 			"demo_resource": DemoResource(),
 		},
-		Migrations: providerMigrations,
 		Config: func() provider.Config {
 			return &client.Config{}
 		},
