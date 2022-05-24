@@ -27,7 +27,6 @@ func Provider() *provider.Provider {
 			// CHANGEME: place here all supported resources
 			"demo_resource": resources.DemoResource(),
 		},
-		Migrations: providerMigrations,
 		Config: func() provider.Config {
 			return &client.Config{}
 		},
