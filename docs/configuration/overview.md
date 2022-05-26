@@ -27,10 +27,6 @@ cloudquery {
 
     # old format
     # dsn = "postgres://postgres:pass@localhost:5432/postgres?sslmode=disable"
-
-    # If you're using history mode (timescaledb), type must be set to 'tsdb'.
-    # Read more at https://docs.cloudquery.io/docs/cli/history/overview/
-    # type = "tsdb"
   } 
 }
 ```
