@@ -17,5 +17,7 @@ jobs:
         continue-on-error: true
         with:
           files: '["docs", "README.md"]'
+          filter_mode: nofilter
+          level: warning
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
