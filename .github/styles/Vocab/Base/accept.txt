@@ -51,6 +51,7 @@ CIS
 cron
 exfiltrate
 exploitability
+Exploitability
 Lightsail
 Grafana
 CloudFormation
