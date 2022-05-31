@@ -8,7 +8,7 @@ take a long time. To remedy this issue, the [cq-gen](https://github.com/cloudque
 
 Ensure that you're using `go` version `1.17` by running `go version`. The `cq-gen` tool doesn't support newer versions of `go` yet.
 
-if you haven't created a provider use this command to create a project or alternatively use our [template](https://github.com/cloudquery/cq-provider-template) repo as a base.
+if you haven't created a provider use this command to create a project or alternatively use our [template](https://github.com/cloudquery/cq-provider-template) repository as a base.
 ```bash
 mkdir cq-my-provider
 cd cq-my-provider
@@ -40,7 +40,7 @@ go mod tidy
 
 ## Running cq-gen for the first time.
 
-To run cq-gen you must first create a resource hcl config. As an example we will create the aws cloudformation [stacks](https://pkg.go.dev/github.com/aws/aws-sdk-go-v2/service/cloudformation@v1.20.0/types#Stack)
+To run `cq-gen` you must first create a resource hcl config. As an example we will create the AWS CloudFormation [stacks](https://pkg.go.dev/github.com/aws/aws-sdk-go-v2/service/cloudformation@v1.20.0/types#Stack)
 
 ```hcl
 service = "aws"
