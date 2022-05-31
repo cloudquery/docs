@@ -6,9 +6,7 @@ take a long time. To remedy this issue, the [cq-gen](https://github.com/cloudque
 
 ## Set up cq-gen in your provider project
 
-Ensure that you're using `go` version `1.17` by running `go version`. The `cq-gen` tool doesn't support newer versions of `go` yet.
-
-if you haven't created a provider use this command to create a project or alternatively use our [template](https://github.com/cloudquery/cq-provider-template) repository as a base.
+If you haven't created a provider use this command to create a project or alternatively use our [template](https://github.com/cloudquery/cq-provider-template) repository as a base.
 ```bash
 mkdir cq-my-provider
 cd cq-my-provider
