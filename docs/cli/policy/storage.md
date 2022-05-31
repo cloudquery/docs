@@ -31,11 +31,11 @@ Holds information about the source of the policy and high level metrics about th
 | Name        | Type           | Description  |
 | ------------- | ------------- | -----  |
 |execution_id|uuid|(FK)|
-|execution_timestamp|timestamp|{{column.Description}}|
-|name|text|{{column.Description}}|
-|selector|text|{{column.Description}}|
-|description|text|{{column.Description}}|
-|status|text|{{column.Description}}|
-|raw_results|jsonb|{{column.Description}}|
-|error|text|{{column.Description}}|
+|execution_timestamp|timestamp|Timestamp at which the check run began|
+|name|text|Name of check|
+|selector|text|Path that fully defines the check within a specific policy |
+|description|text|Description of the check|
+|status|text|Final status of the check|
+|raw_results|jsonb|Raw output of the results returned by the check|
+|error|text|Any errors that occurred during the execution of the check|
   
