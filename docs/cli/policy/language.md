@@ -29,7 +29,7 @@ policy "test-policy" {
 ```
 
 :::tip 
-You can use the file(../relative/path/to/file) in your repo to point to query files or documentation files to make your policy cleaner and more reusable.
+You can use the file(../relative/path/to/file) in your repository to point to query files or documentation files to make your policy cleaner and more reusable.
 :::
 
 ### Policy block

@@ -1,6 +1,6 @@
 # CloudQuery Documentation
 
-This repo contains all documentation on [https://docs.cloudquery.io](https://docs.cloudquery.io).
+This repository contains all documentation on [https://docs.cloudquery.io](https://docs.cloudquery.io).
 
 Contributions are welcome!
 

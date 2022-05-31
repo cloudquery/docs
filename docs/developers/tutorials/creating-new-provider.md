@@ -6,7 +6,7 @@ In this tutorial, you will build a new CloudQuery Provider that will interact wi
 
 The best way to bootstrap a new provider is to use the [cq-provider-template](https://github.com/cloudquery/cq-provider-template).
 
-You can either click `Use this template` in GitHub UI or clone the repo and reinitialize the git (as you don't need the template history).
+You can either click `Use this template` in GitHub UI or clone the repository and reinitialize the git (as you don't need the template history).
 
 ```bash
 git clone https://github.com/cloudquery/cq-provider-template cq-provider-github

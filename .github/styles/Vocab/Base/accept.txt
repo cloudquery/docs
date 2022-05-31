@@ -1,4 +1,3 @@
-repo
 github
 cloudquery
 CloudQuery
@@ -15,7 +14,6 @@ Config
 openapi
 Docusaurus
 protobuf
-cloudformation
 Pulumi
 postgres
 Postgres
@@ -51,3 +49,16 @@ GraphQL
 subquery
 CIS
 cron
+exfiltrate
+exploitability
+Lightsail
+Grafana
+CloudFormation
+Okta
+browsable
+boldstart
+Yandex
+queryable
+Cybersecurity
+performant
+subnet
