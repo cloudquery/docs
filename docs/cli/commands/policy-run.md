@@ -17,9 +17,11 @@ cloudquery policy run aws//cis_v1.2.0
 ## Flags
 
 ```
-  -h, --help              Help for run
-      --output-dir        Generates a new file for each policy at the given dir with the output
-      --no-results        Do not show policies results
+  -h, --help                    help for run
+      --disable-fetch-check     Disable checking if a respective fetch happened before running policies
+      --enable-db-persistence   Enable storage of policy output in database
+      --no-results              Do not show policies results
+      --output-dir string       Generates a new file for each policy at the given dir with the output      
 ```
 
 ## Additional Help Topics
