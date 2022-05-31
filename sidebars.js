@@ -71,6 +71,7 @@ module.exports = {
           'cli/policy/overview',
           'cli/policy/language',
           'cli/policy/sources',
+          'cli/policy/storage',
           'cli/policy/testing',
         ],
        }, 
