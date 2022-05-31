@@ -84,31 +84,40 @@ Scan results will show passed/failed queries and manual queries that just print 
 
 ⚠️ Policy finished with warnings
 
-	✓   1.1  AWS CIS 1.1 Avoid the use of 'root' account. Show used in last 30 days (Scored)                                               passed
+Starting policies run...
 
-	✓   1.2  AWS CIS 1.2 Ensure MFA is enabled for all IAM users that have a console password (Scored)                                     passed
+✓ policy "aws" -  policy run complete -     4s [==============================================================|  Finished Checks: 39/39
 
-	❌  1.3  AWS CIS 1.3 Ensure credentials unused for 90 days or greater are disabled (Scored)                                            failed
-		❌  arn:aws:iam::XXXXXXXXXXXXXx:user/XXXXXXXXXXXXXx
+📋 aws//cis_v1.2.0 Results:
 
-		❌  arn:aws:iam::XXXXXXXXXXXXXx:user/XXXXXXXXXXXXXx
+⚠️ Policy finished with violations
 
-	❌  1.4  AWS CIS 1.4 Ensure access keys are rotated every 90 days or less                                                              failed
-		❌  arn:aws:iam::XXXXXXXXXXXXXx:user/XXXXXXXXXXXXXx
+Passed: Policy 1.1 - Avoid the use of 'root' account. Show used in last 30 days (Scored)
 
-		❌  arn:aws:iam::XXXXXXXXXXXXXx:user/XXXXXXXXXXXXXXx
+Failed: Policy 1.2 - Ensure MFA is enabled for all IAM users that have a console password (Scored)
+
+  STATUS    | ACCOUNT ID   | REASON                         | ARN                                      | PASSWORD LAST USED            | USER NAME | MFA ACTIVE
+------------+--------------+--------------------------------+------------------------------------------+-------------------------------+-----------+-------------
+  Violation | 615xxxxxxxxx | MFA is disabled for user       | arn:aws:iam::615xxxxxxxxx:user/test-user | 2022-04-07 18:31:35 +0000 UTC | test-user | false
+            |              | test-user                      |                                          |                               |           |
+------------+--------------+--------------------------------+------------------------------------------+-------------------------------+-----------+-------------
+                                                                                                                                         TOTAL:    | 1
+                                                                                                                                       ------------+-------------
 
 
-	manual 1.7  AWS Public ELBV2
-	+----------------------------+-------------------------------------------------------------------------+--------------+-----------+ 
-	|            name            |                                dns_name                                 |  account_id  |  region   | 
-	+----------------------------+-------------------------------------------------------------------------+--------------+-----------+ 
-	| apigateway-xxx-integration | xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.elb.us-east-1.amazonaws.com | xxxxxxxxxxxx | us-east-1 | 
-	+----------------------------+-------------------------------------------------------------------------+--------------+-----------+ 
-	| awseb-xxxxx-1Y07H683587FY  | xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.us-east-1.elb.amazonaws.com         | xxxxxxxxxxxx | us-east-1 | 
-	+----------------------------+-------------------------------------------------------------------------+--------------+-----------+ 
-	| elbv2-integration          | xxxxxxxxxxxxxxxxxxxxxxxxxxx.us-east-1.elb.amazonaws.com                 | xxxxxxxxxxxx | us-east-1 | 
-	+----------------------------+-------------------------------------------------------------------------+--------------+-----------+ 
+Passed: Policy 1.3 - Ensure credentials unused for 90 days or greater are disabled (Scored)
+
+Passed: Policy 1.4 - Ensure access keys are rotated every 90 days or less
+
+Failed: Policy 1.5 -  Ensure IAM password policy requires at least one uppercase letter
+
+  STATUS    | ACCOUNT ID   | REASON
+------------+--------------+---------------------------------
+  Violation | 615xxxxxxxxx | Require uppercase in password
+            |              | policy is not set to true
+------------+--------------+---------------------------------
+              TOTAL:       | 1
+            ---------------+---------------------------------
 ```
 
 For every failed resource the following attributes are printed if found (in that order):
