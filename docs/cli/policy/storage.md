@@ -5,7 +5,9 @@ Users can store the results of a `cloudquery policy run` invocation directly in 
 
 ## Table Schema
 
-### Table: policy_executions
+All results are stored in the `cloudquery` schema within the postgres database.
+
+### Table: `cloudquery.policy_executions`
 Holds information about the source of the policy and high level metrics about the execution run 
 #### Columns
 | Name        | Type           | Description  |
@@ -25,7 +27,7 @@ Holds information about the source of the policy and high level metrics about th
 
 
 
-### Table: check_results
+### Table: `cloudquery.check_results`
 Holds information about the source of the policy and high level metrics about the execution run 
 #### Columns
 | Name        | Type           | Description  |
