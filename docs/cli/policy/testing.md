@@ -36,9 +36,9 @@ This will ensure that the database you are about to snapshot will have valid dat
 
 :::caution
 Prior to committing to a public repository:
-validate that there is no sensitive information (account IDs, credentials or PII) in the csv
+validate that there is no sensitive information (account IDs, credentials or PII) in the CSV
 
-When working with the [cloudquery-policies/aws](https://github.com/cloudquery-policies/aws/blob/main/tools/find-sensitive-strings.go) repo you can use the script found in the tooling directory:
+When working with the [cloudquery-policies/aws](https://github.com/cloudquery-policies/aws/blob/main/tools/find-sensitive-strings.go) repository you can use the script found in the tooling directory:
 ``` bash
 go run tools/find-sensitive-strings.go 
 ```

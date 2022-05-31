@@ -18,9 +18,9 @@ cloudquery policy run ./my_policy//ec2/old-stopped-ec2-instances
 It is worth mentioning here that the `cloudquery` CLI also supports running policies from 
 [our official github](https://github.com/cloudquery-policies). The `//` separator serves the same function 
 described above - separating the "path to the policy" from the "path inside the policy". In case of running
-policies from github, it helps the `cloudquery` CLI to know which repo to clone.
+policies from github, it helps the `cloudquery` CLI to know which repository to clone.
 
-So, to run the `foundational_security` **subpolicy** in the the `aws` **policy**, we run.
+So, to run the `foundational_security` **subpolicy** in the `aws` **policy**, we run.
 
 ```bash
 cloudquery policy run aws//foundational_security

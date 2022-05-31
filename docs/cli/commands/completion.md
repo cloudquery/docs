@@ -43,12 +43,12 @@ $ cloudquery completion fish | source
 $ cloudquery completion fish > ~/.config/fish/completions/cloudquery.fish
 ```
 
-### Powershell
+### PowerShell
 
 ```powershell
 PS> cloudquery completion powershell | Out-String | Invoke-Expression
 
 # To load completions for every new session, run:
 PS> cloudquery completion powershell > cloudquery.ps1
-# and source this file from your powershell profile.
+# and source this file from your PowerShell profile.
 ```

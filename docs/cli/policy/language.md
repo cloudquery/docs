@@ -6,7 +6,7 @@ CloudQuery Policy uses a simple configuration layer where HCL is served as the l
 
 ## Building Policies
 
-Building CloudQuery policies is very simple allowing us to combine multiple policies from different `sources`, create `views` to simplify our `checks`, use `file` function to reuse policies etc'. In this section we will go over a simple policy structure, as always we recommend checking out existing policies in [cloudquery-policies](https://github.com/cloudquery-policies)
+Building CloudQuery policies is simple allowing us to combine multiple policies from different `sources`, create `views` to simplify our `checks`, use `file` function to reuse policies etc'. In this section we will go over a simple policy structure, as always we recommend checking out existing policies in [cloudquery-policies](https://github.com/cloudquery-policies)
 
 Every policy starts with a `policy` block. A policy block consists of `views`, `checks`, more `policies`, or a pointer to another `policy` with the `source` attribute.
 
@@ -34,12 +34,12 @@ policy "test-policy" {
 ```
 
 :::tip 
-You can use the file(../relative/path/to/file) in your repo to point to query files or documentation files to make your policy cleaner and more reusable.
+You can use the file(../relative/path/to/file) in your repository to point to query files or documentation files to make your policy cleaner and more reusable.
 :::
 
 ### Policy block
 
-The policy block is the top-level block that defines a CQ policy. The block label is the the policy name that can then be referenced by the CLI.
+The policy block is the top-level block that defines a CQ policy. The block label is the policy name that can then be referenced by the CLI.
 
 #### Arguments:
 - `title` - Policy title description, usually a single line defining the policy in a human readable format.

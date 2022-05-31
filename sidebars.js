@@ -66,14 +66,6 @@ module.exports = {
        },
        {
         type: 'category',
-        label: 'History',
-        items: [
-          'cli/history/overview',
-          'cli/history/configuration',
-        ],
-       },
-       {
-        type: 'category',
         label: 'Policy',
         items: [
           'cli/policy/overview',
@@ -190,16 +182,6 @@ module.exports = {
                         'developers/sdk/table/column-resolvers',
                     ],
                 },
-                {
-                    type: 'category',
-                    label: 'Migrations',
-                    items: [
-                        'developers/sdk/migrations/overview',
-                        'developers/sdk/migrations/migration-tool',
-                        'developers/sdk/migrations/generating-migrations',
-                        'developers/sdk/migrations/testing',
-                    ],
-                },
                 'developers/sdk/testing',
             ],
         },
@@ -239,7 +221,8 @@ module.exports = {
       items: [
         'cq_vs_others/overview',
         'cq_vs_others/aws_config',
-        'cq_vs_others/google_cloud_asset_inventory'
+        'cq_vs_others/google_cloud_asset_inventory',
+        'cq_vs_others/cspms'
       ],
     },
     {

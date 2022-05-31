@@ -8,7 +8,7 @@ CloudQuery uses a HCL file as the primary means of configuration, you can execut
 
 ```docker
 docker run \
-  -v <PATH TO CONFIG>/config.hcl:/config/config.hcl \
+  -v <ABSOLUTE PATH TO CONFIG>/config.hcl:/config/config.hcl \
   ghcr.io/cloudquery/cloudquery:latest \
   fetch --config /config/config.hcl
 ```

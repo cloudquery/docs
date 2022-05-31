@@ -6,7 +6,7 @@ In this tutorial, you will build a new CloudQuery Provider that will interact wi
 
 The best way to bootstrap a new provider is to use the [cq-provider-template](https://github.com/cloudquery/cq-provider-template).
 
-You can either click `Use this template` in GitHub UI or clone the repo and reinitialize the git (as you don't need the template history).
+You can either click `Use this template` in GitHub UI or clone the repository and reinitialize the git (as you don't need the template history).
 
 ```bash
 git clone https://github.com/cloudquery/cq-provider-template cq-provider-github
@@ -131,7 +131,7 @@ func Configure(logger hclog.Logger, config interface{}) (schema.ClientMeta, erro
 
 Configure is called once before starting an operation such as `fetch`. This is usually the place where you need to parse the user `configuration` and initialize the API Client.
 
-In this case we first check if the token is available in `GITHUB_TOKEN` and if not we read what is available in the the parsed configuration. 
+In this case we first check if the token is available in `GITHUB_TOKEN` and if not we read what is available in the parsed configuration. 
 
 [cq-provider-github/tree/tutorial-step-2](https://github.com/cloudquery/cq-provider-github/tree/tutorial-step-2)
 

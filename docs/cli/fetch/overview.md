@@ -33,7 +33,13 @@ cloudquery {
   }
 
   connection {
-    dsn = "postgres://postgres:pass@localhost:5432/postgres"
+    type = "postgres"
+    username = "postgres"
+    password = "pass"
+    host = "localhost"
+    port = 5432
+    database = "postgres"
+    # sslmode = "disable"
   }
 }
 ```
