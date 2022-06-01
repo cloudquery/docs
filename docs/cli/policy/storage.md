@@ -5,6 +5,7 @@
 Store the results of a `cloudquery policy run` invocation directly in the Postgres Database that holds the configuration data. This enables users to unlock more downstream workflows like monitoring security results in your favorite BI tool and alerting.
 
 To enable storing the policy results:
+
     1. Use the `--enable-db-persistence` flag when invoking the 
         ```
             $ cloudquery policy run <policy-name> --enable-db-persistence` 
