@@ -63,3 +63,6 @@ queryable
 Cybersecurity
 performant
 subnet
+uuid
+jsonb
+UUID
