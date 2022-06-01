@@ -65,3 +65,4 @@ performant
 subnet
 uuid
 jsonb
+UUID
