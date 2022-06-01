@@ -6,11 +6,11 @@ Store the results of a `cloudquery policy run` invocation directly in the Postgr
 
 To enable storing the policy results:
 
-1. Use the `--enable-db-persistence` flag when invoking the 
+1. Use the `--enable-db-persistence` flag when invoking
     ```
         $ cloudquery policy run <policy-name> --enable-db-persistence` 
     ```
-2. You can add a `policy` block to your existing cloudquery block in order to specify what to do with the policy results
+2. Add a `policy` block to your existing cloudquery block in order to specify what to do with the policy results
     ```hcl
     cloudquery {
         policy {
