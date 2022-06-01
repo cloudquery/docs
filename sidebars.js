@@ -141,9 +141,9 @@ module.exports = {
           ]
       },
     {
-      type: 'category',
+      type: 'doc',
       label: 'Deployment',
-      items: ['deployment/helm-chart'],
+      id: 'deployment',
     },
     {
       type: 'category',
