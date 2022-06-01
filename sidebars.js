@@ -139,9 +139,9 @@ module.exports = {
           ]
       },
     {
-      type: 'category',
+      type: 'doc',
       label: 'Deployment',
-      id: 'deployment'
+      id: 'deployment',
     },
     {
       type: 'category',
