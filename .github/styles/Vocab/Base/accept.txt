@@ -66,3 +66,7 @@ subnet
 uuid
 jsonb
 UUID
+Metabase
+Datastore
+datastore
+Walkthrough
