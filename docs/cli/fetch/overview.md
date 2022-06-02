@@ -6,7 +6,7 @@ Fetch command is the core command for CloudQuery. It extracts the configuration 
 
 ### Spawn or connection to PostgreSQL database
 
-CloudQuery needs a PostgreSQL database (>11). You can either spawn a local one (usually good for development and local testing)
+CloudQuery needs a PostgreSQL database (>=10). You can either spawn a local one (usually good for development and local testing)
 or connect to an existing one.
 
 For local, you can use the following docker command:
