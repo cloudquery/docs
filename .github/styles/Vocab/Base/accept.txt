@@ -69,4 +69,7 @@ UUID
 Metabase
 Datastore
 datastore
+datasource
+Datasource
 Walkthrough
+walkthrough
