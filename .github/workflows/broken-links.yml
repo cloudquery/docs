@@ -11,6 +11,16 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
+      - uses: actions/checkout@v3
+
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "lts/*"
+          cache: "npm"
+      - name: Install dependencies
+        run: npm ci
+
       - name: Get commit sha
         id: commit-sha
         run: |
@@ -27,8 +37,7 @@ jobs:
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
           project: "docs"
           commitHash: ${{ steps.commit-sha.outputs.sha }}
+
       - name: Check for broken links
-        uses: ScholliYT/Broken-Links-Crawler-Action@v3
-        with:
-          website_url: "${{ steps.cf-pages.outputs.url }}"
-          verbose: "true"
+        run: |
+          npx broken-link-checker -r -v https://docs.cloudquery.io/docs/intro/
