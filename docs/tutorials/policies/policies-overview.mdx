@@ -62,42 +62,12 @@ that will return a pass/fail result, and, if the check failed, the `id`s of the 
                 ❌  i-XXXXXXXXXXXX
 ```
 
-You can get a `.json` report instead if you use the `--output-dir` flag:
+You can get a `.json` report instead if you use the `--output-dir` flag, or, you can get the policy results written to your postgreSQL database with `--enable-db-persistence`.
+You can find the schema for the postgreSQL policy results [here](https://docs.cloudquery.io/docs/cli/policy/storage).
 
 ```bash
 cloudquery policy run aws//foundational_security/ec2/EC2.4 --output-dir /path/to/output_dir
-```
-
-which will create a `.json` file at the `output_dir` directory, that will look like:
-
-```json
-{
-  "PolicyName": "aws",
-  "ExecutionTime": "2022-02-10T11:21:57.256407+02:00",
-  "Passed": false,
-  "Results": [
-    {
-      "name": "EC2.4",
-      "description": "Stopped EC2 instances should be removed after a specified time period",
-      "result_headers": [
-        "account_id",
-        "region",
-        "id"
-      ],
-      "result_rows": [
-        [
-          "XXXXXXXXXXXXXX",
-          "us-east-1",
-          "i-XXXXXXXXXXXX"
-        ]
-      ],
-      "type": "automatic",
-      "check_passed": false
-    }
-  ],
-  "Error": "",
-  "LoadedPolicies": null
-}
+cloudquery policy run aws//foundational_security/ec2/EC2.4  --enable-db-persistence
 ```
 
 You can also run the entire Foundational Security policy with:
