@@ -50,7 +50,7 @@ Usually, each provider will use one Go Client to interact with the service. As w
 
 Install `go-github`
 
-```sh
+```bash
 go get github.com/google/go-github/v40
 ```
 
