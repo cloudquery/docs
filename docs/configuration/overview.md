@@ -12,9 +12,6 @@ The `cloudquery` block must be specified exactly once per `config.hcl`. This usu
 
 ```hcl
 cloudquery {
-  # plugin_directory = "./cq/providers"
-  # policy_directory = "./cq/policies"
-
   connection {
     type = "postgres"
     username = "postgres"
@@ -30,11 +27,9 @@ cloudquery {
 }
 ```
 
-### Properties
+### Arguments
 
 * **`connection`** (required) - defines the connections details to your PostgreSQL database.
-* **`plugin_directory`** (optional) - directory where CloudQuery will download provider plugins.
-* **`policy_directory`** (optional) - directory where CloudQuery will download policies.
 
 ## Provider Block
 
