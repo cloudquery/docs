@@ -4,7 +4,7 @@ Top-level command to interact with providers.
 
 ## Usage
 
-```
+```text
 cloudquery provider [command]
 
 Examples:
@@ -25,9 +25,9 @@ Examples:
   cloudquery provider build-schema aws
 ```
 
-## Available Commands:
+## Available Commands
 
-```
+```text
 build-schema Builds provider schema on database
 downgrade    Downgrades one or more providers schema version based on config.hcl
 download     Downloads all providers specified in config.hcl.
@@ -37,7 +37,7 @@ upgrade      Upgrades one or more providers schema version based on config.hcl
 
 ## Additional Help Topics
 
-```
+```text
 Use "cloudquery provider [command] --help" for more information about a command.
 Use "cloudquery options" for a list of global CLI options.
 ```

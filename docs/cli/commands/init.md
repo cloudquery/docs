@@ -3,6 +3,7 @@
 Generates initial `config.hcl` for fetch command.
 
 ## Usage
+
 `cloudquery init [choose one or more providers (aws,gcp,azure,okta,...)] [flags]`
 
 ## Examples
@@ -16,6 +17,7 @@ cloudquery init aws gcp
 ```
 
 ## Additional Help Topics
-```
+
+```text
 Use "cloudquery init options" for a list of global CLI options.
 ```

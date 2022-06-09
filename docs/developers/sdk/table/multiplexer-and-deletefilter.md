@@ -1,6 +1,6 @@
 # Multiplexer and DeleteFilter
 
-`Multiplex` and `DeleteFilter` options are defined in the [schema.Table](https://github.com/cloudquery/cq-provider-sdk/blob/main/provider/schema/table.go) entry, per resource type. 
+`Multiplex` and `DeleteFilter` options are defined in the [schema.Table](https://github.com/cloudquery/cq-provider-sdk/blob/main/provider/schema/table.go) entry, per resource type.
 
 ## Multiplexer
 

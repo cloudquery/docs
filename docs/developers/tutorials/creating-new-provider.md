@@ -22,7 +22,8 @@ Initial commit for this tutorial is at [cloudquery/cq-provider-github/tree/195f]
 There are a few places where you will need to update the template stubs (you can also `grep` or search for `CHANGEME` comment in the code):
 
 `go.mod`, `main.go`
-```
+
+```ini
 module github.com/cloudquery/cq-provider-template
 # Change to 
 module github.com/your_org_or_user/cq-provider-github
@@ -34,6 +35,7 @@ module github.com/your_org_or_user/cq-provider-github
 The provider name is the name you will use when you will call `cloudquery init [provider]`.
 
 Change `resources.go`:
+
 ```go
 func Provider() *provider.Provider {
 	return &provider.Provider{
@@ -47,7 +49,8 @@ This completed step in this tutorial at [cq-provider-github/tree/tutorial-step-1
 Usually, each provider will use one Go Client to interact with the service. As we need to load the data to relational database, we will go with [google/go-github](https://github.com/google/go-github) that implements all GitHub RestAPIs.
 
 Install `go-github`
-```
+
+```bash
 go get github.com/google/go-github/v40
 ```
 
@@ -58,6 +61,7 @@ Each provider defines set of `required` or `optional` arguments that can be pass
 In our case, to initialize an [authenticated](https://github.com/google/go-github#authentication) GitHub API client you will need an AccessToken provided by the user.
 
 `client/config.go`
+
 ```go
 type Config struct {
     // ADD THIS LINE:
@@ -131,7 +135,7 @@ func Configure(logger hclog.Logger, config interface{}) (schema.ClientMeta, erro
 
 Configure is called once before starting an operation such as `fetch`. This is usually the place where you need to parse the user `configuration` and initialize the API Client.
 
-In this case we first check if the token is available in `GITHUB_TOKEN` and if not we read what is available in the parsed configuration. 
+In this case we first check if the token is available in `GITHUB_TOKEN` and if not we read what is available in the parsed configuration.
 
 [cq-provider-github/tree/tutorial-step-2](https://github.com/cloudquery/cq-provider-github/tree/tutorial-step-2)
 
@@ -141,9 +145,7 @@ Now we are set to implement our first resource which will extract, transform and
 
 Our first resource will be GitHub organizations which is available via [List API](https://pkg.go.dev/github.com/google/go-github/v41/github#RepositoriesService.List).
 
-
 For every resource you need to create a new file under `resources/` and implement a function that returns `*schema.Table`. Here is a [snippet](https://github.com/cloudquery/cq-provider-github/tree/tutorial-step-3):
-
 
 ```go
 func Repositories() *schema.Table {

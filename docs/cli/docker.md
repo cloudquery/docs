@@ -48,6 +48,7 @@ docker run \
   ghcr.io/cloudquery/cloudquery:latest \
   fetch --config /config/config.hcl
 ```
+
 :::note
 The docker container is set to be verbose by default, which produces a lot of console logs. This is by design.
 :::

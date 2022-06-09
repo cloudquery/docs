@@ -1,6 +1,6 @@
 # FAQ
 
-### Does CloudQuery access any application data in my cloud?
+## Does CloudQuery access any application data in my cloud?
 
 No. CloudQuery only access meta-data and configuration data. It never pulls data from your application databases or cloud storage files.
 
@@ -15,8 +15,8 @@ to run the `old-stopped-ec2-instances` query in the `ec2` subpolicy, I would use
 cloudquery policy run ./my_policy//ec2/old-stopped-ec2-instances
 ```
 
-It is worth mentioning here that the `cloudquery` CLI also supports running policies from 
-[our official github](https://github.com/cloudquery-policies). The `//` separator serves the same function 
+It is worth mentioning here that the `cloudquery` CLI also supports running policies from
+[our official github](https://github.com/cloudquery-policies). The `//` separator serves the same function
 described above - separating the "path to the policy" from the "path inside the policy". In case of running
 policies from github, it helps the `cloudquery` CLI to know which repository to clone.
 

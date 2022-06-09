@@ -35,7 +35,6 @@ provider "aws" {
 }
 ```
 
-
 :::tip
 
 Some providers allow for more precise rate limiting and retry and backoff mechanisms. the AWS provider for example allows such [controls](https://hub.cloudquery.io/providers/cloudquery/aws/latest). Make sure to check

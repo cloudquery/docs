@@ -12,7 +12,7 @@ func DemoResource() *schema.Table {
 // ...
 ```
 
-# Default Columns
+## Default Columns
 
 For each table, these columns are automatically added:
 
@@ -26,7 +26,7 @@ For each table, these columns are automatically added:
 If no PKs are defined, the `cq_id` column becomes the default Primary Key.
 :::
 
-# Relation Tables
+## Relation Tables
 
 The `Relations` key in every `schema.Table` is used to define new tables related to the main table. Every non top-level table (defined in `Relations`) should (probably) have a `<parent>_cq_id` column:
 
@@ -40,5 +40,3 @@ The `Relations` key in every `schema.Table` is used to define new tables related
 ```
 
 with a suitable `Type`, and the resolver should be set to `schema.ParentIdResolver`.
-
-

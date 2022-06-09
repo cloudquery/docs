@@ -8,11 +8,10 @@
 
 ## Blogs
 
-You can find all our blog posts at https://www.cloudquery.io/blog, but we highlight a few key posts below:
+You can find all our blog posts at <https://www.cloudquery.io/blog>, but we highlight a few key posts below:
 
 * [Continuous AWS IAM Security Best Practices](https://www.cloudquery.io/blog/continuous-aws-iam-security-best-practices)
 
 * [How to Run AWS CIS Benchmark with CloudQuery](https://www.cloudquery.io/blog/how-to-aws-cis-compliance)
 
 * [Introducing CloudQuery SDK](https://www.cloudquery.io/blog/introducing-cloudquery-sdk)
-

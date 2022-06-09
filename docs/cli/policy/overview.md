@@ -51,7 +51,6 @@ cloudquery policy run github.com/cloudquery-policies/aws//cis_v1.2.0/1/1.9
 
 will run the `1.9` check under section 1 policy of cis v1.2.0.
 
-
 ### Policy configuration
 
 To add policies to your `config.hcl` you can simply add `policy` blocks, you can either add inline policies or point to a policy by `source`.
@@ -74,12 +73,11 @@ cloudquery policy run path\to\policy
 
 You can use either a relative path or an absolute path. If you are configuring the local policy in your `config.hcl` it is advised to use relative paths, as absolute paths tend to couple your configuration to the filesystem layout of a particular computer.
 
-
 ### Results
 
 Scan results will show passed/failed queries and manual queries that just print output without a pass/fail predicate.  
 
-```
+```bash
 📋 AWS CIS v1.3.0 Results:
 
 ⚠️ Policy finished with warnings
@@ -121,6 +119,7 @@ Failed: Policy 1.5 -  Ensure IAM password policy requires at least one uppercase
 ```
 
 For every failed resource the following attributes are printed if found (in that order):
+
 - `id`, `identifier`, `resource_identifier`, `uid`, `uuid`, `arn`
 
 You can use the `--output-dir /path/to/` option to get the policies results in JSON format.

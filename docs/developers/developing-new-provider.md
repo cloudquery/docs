@@ -4,7 +4,7 @@ This section will go through what is needed to develop you own provider for Clou
 
 Before continuing, it is recommended to get familiar with [CloudQuery architecture](architecture.md).
 
-CloudQuery providers utilize `cq-provider-sdk`, which abstracts most of the TL \(in ETL, extract-transform-load\). So, as a developer, you will only have to implement the \("E" in "ETL"\) initializing, authentication, and fetching of the data via the third-party APIs — the SDK will take care of transforming the data and loading it into the database. Also, your provider will get support out-of-the-box for new features and things like other database support as cloudquery-core progresses. 
+CloudQuery providers utilize `cq-provider-sdk`, which abstracts most of the TL \(in ETL, extract-transform-load\). So, as a developer, you will only have to implement the \("E" in "ETL"\) initializing, authentication, and fetching of the data via the third-party APIs — the SDK will take care of transforming the data and loading it into the database. Also, your provider will get support out-of-the-box for new features and things like other database support as cloudquery-core progresses.
 
 Also see [full tutorial here](./tutorials/creating-new-provider.md).
 
@@ -14,7 +14,7 @@ Here is a template project from which you can create your own [https://github.co
 
 We will go through the files in the template and explain each part that you need to implement.
 
-#### **resources/provider/provider.go**
+### **resources/provider/provider.go**
 
 ```go
 func Provider() *provider.Provider {
@@ -37,7 +37,7 @@ func Provider() *provider.Provider {
 
 In this file, everything is already set up for you and you only need to change `Name` to match your provider name and add new resources to `ResourceMap` as you implement them and add them to your provider.
 
-**client/config.go**
+`client/config.go`
 
 ```go
 package client
@@ -72,9 +72,9 @@ func (c Config) Example() string {
 }
 ```
 
-Here you define the "hcl block" configuration that the user can pass to your provider. This config is parsed and populated by the SDK so you don’t need to deal with HCL marshaling/unmarshalling. The populated config object is passed to **provider.Configure** function in **client.go.**.
+Here you define the "hcl block" configuration that the user can pass to your provider. This config is parsed and populated by the SDK so you don’t need to deal with HCL marshaling/unmarshalling. The populated config object is passed to `provider.Configure` function in `client.go`.
 
-**client/client.go**
+`client/client.go`
 
 ```go
 type Client struct {
@@ -102,9 +102,9 @@ func Configure(logger hclog.Logger, providerConfig interface{}) (schema.ClientMe
 }
 ```
 
-This function is called before fetching any resources. The provider has a chance to read the top-level configuration, init and authenticate all needed third-party clients, and return your initialized object that will be passed to each one of your fetchers. 
+This function is called before fetching any resources. The provider has a chance to read the top-level configuration, init and authenticate all needed third-party clients, and return your initialized object that will be passed to each one of your fetchers.
 
-**resources/demo\_resources.go**
+`resources/demo_resources.go`
 
 In this directory, you will create a new file for each resource. Each resource may contain one or more related tables. See documentation inline.
 
@@ -206,8 +206,8 @@ func customColumnResolver(ctx context.Context, meta schema.ClientMeta, resource 
 
 Essentially, for each resource that you support, you just need to define two things:
 
-* The schema - how the table will look in the database - column names and types. 
-* Implement the main table resolver function that will fetch the data from the third-party SDK and pass it to the SDK. 
+* The schema - how the table will look in the database - column names and types.
+* Implement the main table resolver function that will fetch the data from the third-party SDK and pass it to the SDK.
   * The SDK will automatically read the data and insert it into the table column using a default naming convention. The default naming convention is to CamelCase; in other words, if a column-name is `some_name`, the field name in the struct that you pass to the SDK should be: `SomeName`. If you want a different name or logic, you can implement a column resolver.
 
 ## Publishing a provider

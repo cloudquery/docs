@@ -29,7 +29,6 @@ The random ID is stored in the `.cq/telemetry-random-id` file. If you wish to an
 
 - We use the [rudder](https://www.rudderstack.com/) collector to send usage analytics.
 
-
 ## What is NOT Stored
 
 - We don't store your IP address directly

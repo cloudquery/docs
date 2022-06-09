@@ -13,6 +13,7 @@ func (r *Resource) Set(key string, value interface{}) error {
 ```
 
 They usually go like:
+
 ```go
 func resolveDynamodbTableKeySchema(ctx context.Context, meta schema.ClientMeta, resource *schema.Resource, c schema.Column) error {
 	r := resource.Item.(*types.TableDescription)
@@ -32,6 +33,7 @@ Utility Resolvers provide solutions on converting data from one data structure t
 Some resolvers convert one type to another (parsing date fields, IP addresses and so on) and some look up data inside inner structs of a resource, or from the parent.
 
 Examples:
+
 ```go
 // Few examples of look-up helper resolvers:
 

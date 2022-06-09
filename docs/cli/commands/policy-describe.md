@@ -3,7 +3,8 @@
 Describe a CloudQuery Policy.
 
 ## Usage
-```
+
+```bash
 # Describe official policy
 cloudquery policy describe aws
 
@@ -15,18 +16,18 @@ cloudquery policy describe aws//cis-1.2.0
 cloudquery policy describe github.com/COMMUNITY_GITHUB_ORG/aws
 
 # See https://hub.cloudquery.io for additional policies.
-
 ```
 
 ## Flags
 
-```
+```text
   -h, --help              Help for run
       --output-dir        Generates a new file for each policy at the given dir with the output
       --no-results        Do not show policies results
 ```
 
 ## Additional Help Topics
-```
+
+```text
 Use "cloudquery policy run options" for a list of global CLI options.
 ```

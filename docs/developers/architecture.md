@@ -8,14 +8,14 @@ CloudQuery has a pluggable architecture and uses the [go-plugin](https://github.
 
 Similarly to any application utilizing the [go-plugin](https://github.com/hashicorp/go-plugin) framework, CloudQuery is split into [CloudQuery Core](https://github.com/cloudquery/cloudquery) and [CloudQuery Providers](https://github.com/orgs/cloudquery/repositories?language=&q=cloudquery-provider&sort=&type=).
 
-### CloudQuery Core Responsibilities
+## CloudQuery Core Responsibilities
 
 * Main entry point and CLI for the user.
 * Reading CloudQuery configuration.
 * Downloading, verifying, and running providers.
 * Running policy packs.
 
-### CloudQuery Provider Responsibilities
+## CloudQuery Provider Responsibilities
 
 * Intended to be run only by cloudquery-core.
 * Communicates with cloudquery-core over gRPC to receive commands and actions.

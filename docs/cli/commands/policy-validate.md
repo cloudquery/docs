@@ -3,7 +3,8 @@
 Validates a policy and returns diagnostics to the user.
 
 ## Usage
-```
+
+```bash
   # Validate policy
   cloudquery policy validate aws
 
@@ -20,11 +21,12 @@ Validates a policy and returns diagnostics to the user.
 
 ## Flags
 
-```
+```text
   -h, --help              Help for describe
 ```
 
 ## Additional Help Topics
-```
+
+```text
 Use "cloudquery policy run options" for a list of global CLI options.
 ```
