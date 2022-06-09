@@ -8,7 +8,7 @@ Primary keys are defined in the `schema.Table` definition:
 func DemoResource() *schema.Table {
     return &schema.Table{
 // ...
-		Options:      schema.TableCreationOptions{PrimaryKeys: []string{"account_id", "id"}},
+  Options:      schema.TableCreationOptions{PrimaryKeys: []string{"account_id", "id"}},
 // ...
 ```
 
@@ -40,5 +40,3 @@ The `Relations` key in every `schema.Table` is used to define new tables related
 ```
 
 with a suitable `Type`, and the resolver should be set to `schema.ParentIdResolver`.
-
-

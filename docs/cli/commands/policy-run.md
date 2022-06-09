@@ -3,6 +3,7 @@
 Executes a policy on CloudQuery database.
 
 ## Usage
+
 ```
 cloudquery policy run [flags]
 
@@ -25,6 +26,7 @@ cloudquery policy run aws//cis_v1.2.0
 ```
 
 ## Additional Help Topics
+
 ```
 Use "cloudquery policy run options" for a list of global CLI options.
 ```

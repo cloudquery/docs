@@ -3,11 +3,13 @@
 Scan for drifts in infrastructure-as-code.
 
 ## Usage
+
 ```
 cloudquery drift scan [state files...] [flags]
 ```
 
 ## Flags
+
 ```
       --debug            Show debug output
       --deep             Force deep mode
@@ -19,6 +21,7 @@ cloudquery drift scan [state files...] [flags]
 ```
 
 ## Additional Help Topics
+
 ```
 Use "cloudquery options" for a list of global CLI options.
 ```

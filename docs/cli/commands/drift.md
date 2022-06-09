@@ -8,7 +8,8 @@ Top-level command to detect drifts in infrastructure-as-code.
 cloudquery drift [command]
 ```
 
-## Available Commands:
+## Available Commands
+
 ```
 scan        Scan for drifts
 ```

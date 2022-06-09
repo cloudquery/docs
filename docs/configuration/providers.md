@@ -17,5 +17,6 @@ Every provider can also support additional optional capabilities like [drift](..
 Providers are hosted on GitHub while [hub.cloudquery.io](https://hub.cloudquery.io) serves as a central registry for discovery, validation & verification.
 
 Currently CloudQuery Hub contains two types of providers:
+
 - **official** - Owned and maintained by CloudQuery team
 - **community** - Owned and maintained by either individuals or third-party vendors.

@@ -7,5 +7,5 @@ We also provide two terraform modules to spin-up the infrastructure - k8s cluste
 Follow the examples in the terraform modules and/or the helm chart on how to deploy and configure CloudQuery to run periodically in the cloud.
 
 * [terraform-gcp-cloudquery](https://github.com/cloudquery/terraform-gcp-cloudquery): Deploys GKE + Cloud SQL + CloudQuery Helm.
-* [terraform-aws-cloudquery](https://github.com/cloudquery/terraform-aws-cloudquery): Deploy EKS + Aurora RDS + 
+* [terraform-aws-cloudquery](https://github.com/cloudquery/terraform-aws-cloudquery): Deploy EKS + Aurora RDS +
 Currently the suggested way is to deploy.

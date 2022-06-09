@@ -8,7 +8,8 @@ Top-level command to download and execute CloudQuery Policies.
 cloudquery policy [command]
 ```
 
-## Available Commands:
+## Available Commands
+
 ```
 describe    Describe CloudQuery policy
 download    Download a policy from the CloudQuery Policy Hub

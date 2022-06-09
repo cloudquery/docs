@@ -4,26 +4,26 @@ Table is the main building block in the SDK provider schema, these tables are pa
 
 ```go
 type Table struct {
-	// Name of table
-	Name string
-	// table description
-	Description string
-	// Columns are the set of fields that are part of this table
-	Columns []Column
-	// Relations are a set of related tables defines
-	Relations []*Table
-	// Resolver is the main entry point to fetching table data and
-	Resolver TableResolver
-	// Ignore errors checks if returned error from table resolver should be ignored.
-	IgnoreError IgnoreErrorFunc
-	// Multiplex returns re-purposed meta clients. The sdk will execute the table with each of them
-	Multiplex func(meta ClientMeta) []ClientMeta
-	// DeleteFilter returns a list of key/value pairs to add when truncating this table's data from the database.
-	DeleteFilter func(meta ClientMeta, parent *Resource) []interface{}
-	// Post resource resolver is called after all columns have been resolved, and before resource is inserted to database.
-	PostResourceResolver RowResolver
-	// Options allow modification of how the table is defined when created
-	Options TableCreationOptions
+ // Name of table
+ Name string
+ // table description
+ Description string
+ // Columns are the set of fields that are part of this table
+ Columns []Column
+ // Relations are a set of related tables defines
+ Relations []*Table
+ // Resolver is the main entry point to fetching table data and
+ Resolver TableResolver
+ // Ignore errors checks if returned error from table resolver should be ignored.
+ IgnoreError IgnoreErrorFunc
+ // Multiplex returns re-purposed meta clients. The sdk will execute the table with each of them
+ Multiplex func(meta ClientMeta) []ClientMeta
+ // DeleteFilter returns a list of key/value pairs to add when truncating this table's data from the database.
+ DeleteFilter func(meta ClientMeta, parent *Resource) []interface{}
+ // Post resource resolver is called after all columns have been resolved, and before resource is inserted to database.
+ PostResourceResolver RowResolver
+ // Options allow modification of how the table is defined when created
+ Options TableCreationOptions
 }
 ```
 
@@ -35,34 +35,34 @@ If we look at the example resource/table definition [in the template](https://gi
 
 ```go
 func DemoResource() *schema.Table {
-	return &schema.Table{
-		Name:     "demo_table",
-		Resolver: fetchDemoResources,
+ return &schema.Table{
+  Name:     "demo_table",
+  Resolver: fetchDemoResources,
 
-		Columns: []schema.Column{
-			{
-				Name:        "account_id",
-				Type:        schema.TypeString,
-				Description: "Description of the column to appear in the generated documentation",
-				//Resolver: provider.ResolveAWSAccount,
-			},
-			{
-				Name: "region",
-				Type: schema.TypeString,
-				//Resolver: fetchS3BucketLocation,
-			},
-			{
-				Name: "creation_date",
-				Type: schema.TypeTimestamp,
-			},
-			{
-				Name:     "name",
-				Type:     schema.TypeString,
-				Resolver: schema.PathResolver("other_name_in_struct"),
-			},
-		},
-		
-		...
+  Columns: []schema.Column{
+   {
+    Name:        "account_id",
+    Type:        schema.TypeString,
+    Description: "Description of the column to appear in the generated documentation",
+    //Resolver: provider.ResolveAWSAccount,
+   },
+   {
+    Name: "region",
+    Type: schema.TypeString,
+    //Resolver: fetchS3BucketLocation,
+   },
+   {
+    Name: "creation_date",
+    Type: schema.TypeTimestamp,
+   },
+   {
+    Name:     "name",
+    Type:     schema.TypeString,
+    Resolver: schema.PathResolver("other_name_in_struct"),
+   },
+  },
+  
+  ...
 ```
 
 Here, we define a table with its columns and metadata.

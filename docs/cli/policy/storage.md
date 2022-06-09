@@ -27,7 +27,9 @@ All results are stored in the `cloudquery` schema within the postgres database.
 ### Table: `cloudquery.policy_executions`
 
 Holds information about the source of the policy and high level metrics about the execution run
+
 #### Columns
+
 | Name        | Type           | Description  |
 | ------------- | ------------- | -----  |
 |`id`|`uuid`|Unique identifier for policy run|
@@ -45,6 +47,7 @@ Holds information about the source of the policy and high level metrics about th
 ### Table: `cloudquery.check_results`
 
 Holds information about the source of the policy and high level metrics about the execution run
+
 #### Columns
 
 | Name        | Type           | Description  |

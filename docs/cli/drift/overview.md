@@ -21,12 +21,12 @@ This command will generate a `config.hcl` file in the current directory. You don
 
 If you dive deeper into this file, you can:
 
- - Limit fetching of resources (specify which endpoints to hit while reading your cloud installation) and configure API retry logic.
- - Specify which resources to drift on, or ignore specific resources (based on resource type, tags, type + ID, or type + tags).
- - Filter by AWS Account ID while drifting (if you happen to keep multiple accounts in a single database, and you have only some that are managed by Terraform).
- - Specify a “permanent” list of Terraform tfstate files, using S3 or local backends. This way you don’t need to specify a tfstate file every time you drift.
- - Turn deep mode on or off per resource type.
- - Customize how resources are matched between the cloud provider and TFState.
+- Limit fetching of resources (specify which endpoints to hit while reading your cloud installation) and configure API retry logic.
+- Specify which resources to drift on, or ignore specific resources (based on resource type, tags, type + ID, or type + tags).
+- Filter by AWS Account ID while drifting (if you happen to keep multiple accounts in a single database, and you have only some that are managed by Terraform).
+- Specify a “permanent” list of Terraform tfstate files, using S3 or local backends. This way you don’t need to specify a tfstate file every time you drift.
+- Turn deep mode on or off per resource type.
+- Customize how resources are matched between the cloud provider and TFState.
 
 ### Running
 
@@ -43,6 +43,7 @@ cloudquery drift scan /path/to/the/tfstate/file.tfstate
 ```
 
 ### Results
+
 Scan results will look something like this:
 
 ```

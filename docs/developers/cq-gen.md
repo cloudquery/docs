@@ -1,12 +1,12 @@
 # Generating resources
 
 Adding resources to a provider can sometimes be a tedious task, some resources can have more than hundreds of fields and relations, and adding them all can
-take a long time. To remedy this issue, the [cq-gen](https://github.com/cloudquery/cq-gen) project was created. cq-gen allows to easily generate more of the boilerplate code for resources from common specs such as go code, openapi specs, protobuf, and graphql. 
-
+take a long time. To remedy this issue, the [cq-gen](https://github.com/cloudquery/cq-gen) project was created. cq-gen allows to easily generate more of the boilerplate code for resources from common specs such as go code, openapi specs, protobuf, and graphql.
 
 ## Set up cq-gen in your provider project
 
 If you haven't created a provider use this command to create a project or alternatively use our [template](https://github.com/cloudquery/cq-provider-template) repository as a base.
+
 ```bash
 mkdir cq-my-provider
 cd cq-my-provider
@@ -19,14 +19,13 @@ go install github.com/cloudquery/cq-gen
 
 Next, create a tools.go file and add cq-gen as a tool dependency for your module.
 
-
 ```go
 //go:build tools
 
 package tools
 
 import (
-	_ "github.com/cloudquery/cq-gen"
+ _ "github.com/cloudquery/cq-gen"
 )
 ```
 
@@ -36,7 +35,7 @@ To automatically add the dependency to your go.mod run:
 go mod tidy
 ```
 
-## Running cq-gen for the first time.
+## Running cq-gen for the first time
 
 To run `cq-gen` you must first create a resource hcl config. As an example we will create the AWS CloudFormation [stacks](https://pkg.go.dev/github.com/aws/aws-sdk-go-v2/service/cloudformation@v1.20.0/types#Stack)
 
@@ -75,6 +74,7 @@ resource "aws" "cloudformation" "stacks" {
 
 }
 ```
+
 *Note: we will call this file stacks.hcl
 
 To execute this configuration we will run our cq-gen tool with the following command:
@@ -91,38 +91,38 @@ The command above will generate the following code:
 package cloudformation
 
 import (
-	"context"
+ "context"
 
-	"github.com/aws/aws-sdk-go-v2/aws"
-	"github.com/aws/aws-sdk-go-v2/service/cloudformation"
-	"github.com/aws/aws-sdk-go-v2/service/cloudformation/types"
-	"github.com/cloudquery/cq-provider-aws/client"
-	"github.com/cloudquery/cq-provider-sdk/provider/schema"
+ "github.com/aws/aws-sdk-go-v2/aws"
+ "github.com/aws/aws-sdk-go-v2/service/cloudformation"
+ "github.com/aws/aws-sdk-go-v2/service/cloudformation/types"
+ "github.com/cloudquery/cq-provider-aws/client"
+ "github.com/cloudquery/cq-provider-sdk/provider/schema"
 )
 
 //go:generate cq-gen --resource stacks --config gen.hcl --output .
 func Stacks() *schema.Table {
-	return &schema.Table{
-		Name:         "aws_cloudformation_stacks",
-		Description:  "The Stack data type.",
-		Resolver:     fetchCloudformationStacks,
-		Multiplex:    client.ServiceAccountRegionMultiplexer("cloudformation"),
-		IgnoreError:  client.IgnoreAccessDeniedServiceDisabled,
-		DeleteFilter: client.DeleteAccountRegionFilter,
-		Options:      schema.TableCreationOptions{PrimaryKeys: []string{"id"}},
-		Columns: []schema.Column{
-			{
-				Name:        "account_id",
-				Description: "The AWS Account ID of the resource.",
-				Type:        schema.TypeString,
-				Resolver:    client.ResolveAWSAccount,
-			},
-			{
-				Name:        "region",
-				Description: "The AWS Region of the resource.",
-				Type:        schema.TypeString,
-                		Resolver:    client.ResolveAWSRegion,
-			},
+ return &schema.Table{
+  Name:         "aws_cloudformation_stacks",
+  Description:  "The Stack data type.",
+  Resolver:     fetchCloudformationStacks,
+  Multiplex:    client.ServiceAccountRegionMultiplexer("cloudformation"),
+  IgnoreError:  client.IgnoreAccessDeniedServiceDisabled,
+  DeleteFilter: client.DeleteAccountRegionFilter,
+  Options:      schema.TableCreationOptions{PrimaryKeys: []string{"id"}},
+  Columns: []schema.Column{
+   {
+    Name:        "account_id",
+    Description: "The AWS Account ID of the resource.",
+    Type:        schema.TypeString,
+    Resolver:    client.ResolveAWSAccount,
+   },
+   {
+    Name:        "region",
+    Description: "The AWS Region of the resource.",
+    Type:        schema.TypeString,
+                  Resolver:    client.ResolveAWSRegion,
+   },
             ... # shortened for sake for readability
 ```
 
@@ -134,10 +134,9 @@ The cq-gen command is used to generate `schema.Table` from given source (go, pro
 
 * `-output`: which directory to write the resulting source code.
 * `-resource`: the name of the resource to generate as defined in the hcl.
-* `-domain`: the domain of the resource to generate as defined in the hcl. 
+* `-domain`: the domain of the resource to generate as defined in the hcl.
 * `-config`: the path to the configuration file of cq-gen on how to generate the resource.
 
-
-## Configuration 
+## Configuration
 
 For full documentation on how to use cq-gen and all the available configuration options please check [the repository](https://github.com/cloudquery/cq-gen#configuration).

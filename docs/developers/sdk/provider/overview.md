@@ -8,18 +8,18 @@ If we look at the example provider definition [in the template](https://github.c
 
 ```go
 func Provider() *provider.Provider {
-	return &provider.Provider{
-		// CHANGEME: Change to your provider name
-		Name:      "YourProviderName",
-		Configure: client.Configure,
-		ResourceMap: map[string]*schema.Table{
-			// CHANGEME: Place here all supported resources
-			"demo_resource": DemoResource(),
-		},
-		Config: func() provider.Config {
-			return &client.Config{}
-		},
-	}
+ return &provider.Provider{
+  // CHANGEME: Change to your provider name
+  Name:      "YourProviderName",
+  Configure: client.Configure,
+  ResourceMap: map[string]*schema.Table{
+   // CHANGEME: Place here all supported resources
+   "demo_resource": DemoResource(),
+  },
+  Config: func() provider.Config {
+   return &client.Config{}
+  },
+ }
 
 }
 ```

@@ -3,6 +3,7 @@
 AWS Config is the native AWS asset inventory provided by AWS.
 
 **Key Differences:**
+
 - **Resource Types**: CloudQuery [supports](https://hub.cloudquery.io) more than 250 types of resources while AWS Config currently supports about 120 types of resources (tables). Being an open-source project you can easily add the missing resources without being blocked by a vendor.
 - **Vanilla PostgreSQL**: CloudQuery uses vanilla PostgreSQL which makes it play nicely with the whole SQL eco-system and gives you the ability to re-use other tools like Grafana/BI. AWS Config is using a proprietary subset of SQL and database and thus doesn't give you the ability to re-use other tools easily.
 - **Cloud Agnostic**: CloudQuery gives you the ability to assess, audit and monitor [multi-cloud and SaaS infrastructure](https://hub.cloudquery.io).
@@ -10,12 +11,11 @@ AWS Config is the native AWS asset inventory provided by AWS.
 - **Limits**: See limits section below. AWS Config has a lot of soft and hard limit (that cannot be increased). CloudQuery doesn't impose any of those limits and is bound mainly by the PostgreSQL instance and compute.
 - **Policy Language**: CQ uses an HCL configuration with SQL as the query engine to define rules. AWS Config uses JSON/YAML and subset SQL as the query engine.
 
-
 ## Limits Comparison
 
 This will only list hard limits as soft limits can be increased (though it is not documented what is their max limit). Some limits are quite serious for large accounts (especially around number of rules/policies).
 
-| Limit       | AWS Config  | CloudQuery  | 
+| Limit       | AWS Config  | CloudQuery  |
 | ----------- | ----------- | ----------- |
 | Max Accounts| 10000       | No Limit |
 | Maximum number of conformance packs per account (CQ Policies)   | 50        | No Limit  |

@@ -1,6 +1,6 @@
 # Multiplexer and DeleteFilter
 
-`Multiplex` and `DeleteFilter` options are defined in the [schema.Table](https://github.com/cloudquery/cq-provider-sdk/blob/main/provider/schema/table.go) entry, per resource type. 
+`Multiplex` and `DeleteFilter` options are defined in the [schema.Table](https://github.com/cloudquery/cq-provider-sdk/blob/main/provider/schema/table.go) entry, per resource type.
 
 ## Multiplexer
 
@@ -16,12 +16,12 @@ For instance this one from the [AWS Provider](https://github.com/cloudquery/cq-p
 
 ```go
 func AccountMultiplex(meta schema.ClientMeta) []schema.ClientMeta {
-	var l = make([]schema.ClientMeta, 0)
-	client := meta.(*Client)
-	for accountID := range client.ServicesManager.services {
-		l = append(l, client.withAccountID(accountID))
-	}
-	return l
+ var l = make([]schema.ClientMeta, 0)
+ client := meta.(*Client)
+ for accountID := range client.ServicesManager.services {
+  l = append(l, client.withAccountID(accountID))
+ }
+ return l
 }
 ```
 
@@ -33,8 +33,8 @@ Again, this one from the [AWS Provider](https://github.com/cloudquery/cq-provide
 
 ```go
 func DeleteAccountFilter(meta schema.ClientMeta, _ *schema.Resource) []interface{} {
-	client := meta.(*Client)
-	return []interface{}{"account_id", client.AccountID}
+ client := meta.(*Client)
+ return []interface{}{"account_id", client.AccountID}
 }
 ```
 

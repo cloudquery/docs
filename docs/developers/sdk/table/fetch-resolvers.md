@@ -21,11 +21,11 @@ Here's an example from the [provider template](https://github.com/cloudquery/cq-
 
 ```go
 func fetchDemoResources(ctx context.Context, meta schema.ClientMeta, parent *schema.Resource, res chan interface{}) error {
-	c := meta.(*client.Client)
-	_ = c
-	// Fetch using the third party client and put the result in res
-	// res <- c.ThirdPartyClient.getData()
-	return nil
+ c := meta.(*client.Client)
+ _ = c
+ // Fetch using the third party client and put the result in res
+ // res <- c.ThirdPartyClient.getData()
+ return nil
 }
 ```
 
@@ -41,25 +41,25 @@ Here's an example from the AWS Provider's [SNS Topics resource](https://github.c
 
 ```go
 func resolveTopicAttributes(ctx context.Context, meta schema.ClientMeta, resource *schema.Resource) error {
-	topic, ok := resource.Item.(types.Topic)
-	
-	// ...
+ topic, ok := resource.Item.(types.Topic)
+ 
+ // ...
 
-	output, err := svc.GetTopicAttributes(ctx, &params, func(o *sns.Options) {
-		o.Region = c.Region
-	})
+ output, err := svc.GetTopicAttributes(ctx, &params, func(o *sns.Options) {
+  o.Region = c.Region
+ })
 
-	// ...
+ // ...
 
-	// Set all attributes
-	if err := resource.Set("subscriptions_confirmed", cast.ToInt(output.Attributes["SubscriptionsConfirmed"])); err != nil {
-		return err
-	}
-	if err := resource.Set("subscriptions_deleted", cast.ToInt(output.Attributes["SubscriptionsDeleted"])); err != nil {
-		return err
-	}
-	// ... More attributes are set here ...
+ // Set all attributes
+ if err := resource.Set("subscriptions_confirmed", cast.ToInt(output.Attributes["SubscriptionsConfirmed"])); err != nil {
+  return err
+ }
+ if err := resource.Set("subscriptions_deleted", cast.ToInt(output.Attributes["SubscriptionsDeleted"])); err != nil {
+  return err
+ }
+ // ... More attributes are set here ...
 
-	return nil
+ return nil
 }
 ```

@@ -25,7 +25,7 @@ Examples:
   cloudquery provider build-schema aws
 ```
 
-## Available Commands:
+## Available Commands
 
 ```
 build-schema Builds provider schema on database

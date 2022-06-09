@@ -3,6 +3,7 @@
 Describe a CloudQuery Policy.
 
 ## Usage
+
 ```
 # Describe official policy
 cloudquery policy describe aws
@@ -27,6 +28,7 @@ cloudquery policy describe github.com/COMMUNITY_GITHUB_ORG/aws
 ```
 
 ## Additional Help Topics
+
 ```
 Use "cloudquery policy run options" for a list of global CLI options.
 ```

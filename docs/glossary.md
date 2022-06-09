@@ -24,7 +24,7 @@ SQL query, usually targeting the CloudQuery database.
 
 CloudQuery Provider is a plugin responsible for extracting information/configuration from a specific cloud infrastructure provider SaaS application or literally anything else that is accessible via API (Rest, GRPC, GraphQL).
 
-Currently, all providers are listed in https://hub.cloudquery.io.
+Currently, all providers are listed in <https://hub.cloudquery.io>.
 
 Developing new provider
 
