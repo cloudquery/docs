@@ -87,7 +87,7 @@ cq-gen --resource stacks --domain cloudformation --config gen.hcl
 
 The command above will generate the following code:
 
-```
+```go
 package cloudformation
 
 import (

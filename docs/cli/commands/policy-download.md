@@ -4,13 +4,13 @@ Downloads a policy from the CloudQuery Policy Hub.
 
 ## Usage
 
-```
+```bash
 cloudquery policy download POLICY_REPO [flags]
 ```
 
 ## Examples
 
-```
+```bash
 # Download official policy
 cloudquery policy download aws
 
@@ -26,6 +26,6 @@ cloudquery policy download github.com/COMMUNITY_GITHUB_ORG/aws
 
 ## Additional Help Topics
 
-```
+```text
 Use "cloudquery policy download options" for a list of global CLI options.
 ```

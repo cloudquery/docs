@@ -14,7 +14,7 @@ Here is a template project from which you can create your own [https://github.co
 
 We will go through the files in the template and explain each part that you need to implement.
 
-#### **resources/provider/provider.go**
+### **resources/provider/provider.go**
 
 ```go
 func Provider() *provider.Provider {
@@ -37,7 +37,7 @@ func Provider() *provider.Provider {
 
 In this file, everything is already set up for you and you only need to change `Name` to match your provider name and add new resources to `ResourceMap` as you implement them and add them to your provider.
 
-**client/config.go**
+`client/config.go`
 
 ```go
 package client
@@ -72,9 +72,9 @@ func (c Config) Example() string {
 }
 ```
 
-Here you define the "hcl block" configuration that the user can pass to your provider. This config is parsed and populated by the SDK so you don’t need to deal with HCL marshaling/unmarshalling. The populated config object is passed to **provider.Configure** function in **client.go.**.
+Here you define the "hcl block" configuration that the user can pass to your provider. This config is parsed and populated by the SDK so you don’t need to deal with HCL marshaling/unmarshalling. The populated config object is passed to `provider.Configure` function in `client.go`.
 
-**client/client.go**
+`client/client.go`
 
 ```go
 type Client struct {
@@ -104,7 +104,7 @@ func Configure(logger hclog.Logger, providerConfig interface{}) (schema.ClientMe
 
 This function is called before fetching any resources. The provider has a chance to read the top-level configuration, init and authenticate all needed third-party clients, and return your initialized object that will be passed to each one of your fetchers.
 
-**resources/demo\_resources.go**
+`resources/demo_resources.go`
 
 In this directory, you will create a new file for each resource. Each resource may contain one or more related tables. See documentation inline.
 

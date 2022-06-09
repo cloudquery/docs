@@ -12,7 +12,7 @@ Policy `source` supports loading from a number of different source types, as lis
 
 Local path references allow for running local policies or while developing new policies.
 
-```
+```hcl
 policy "local" {
   source = "./path/to/policy/directory"
 }
@@ -26,7 +26,7 @@ Local paths are linked to your policy directory, via symlink, so any changes in 
 
 The CloudQuery Hub lists available policy packs, which can be download by giving the policy name found there.
 
-```
+```hcl
 policy "aws" {
   source = "aws"
 }

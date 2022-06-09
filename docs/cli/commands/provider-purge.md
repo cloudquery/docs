@@ -4,7 +4,7 @@ Remove stale resources from one or more providers in database
 
 ## Usage
 
-```
+```text
 Usage:
 cloudquery provider purge [provider] [flags]
 
@@ -16,6 +16,6 @@ Flags:
 
 ## Additional Help Topics
 
-```
+```text
 Use "cloudquery options" for a list of global CLI options.
 ```

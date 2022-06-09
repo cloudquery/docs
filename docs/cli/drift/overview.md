@@ -46,7 +46,7 @@ cloudquery drift scan /path/to/the/tfstate/file.tfstate
 
 Scan results will look something like this:
 
-```
+```bash
 === DRIFT RESULTS  ===
 5 Resources not managed by Terraform
 aws:ec2.ebs_volumes:

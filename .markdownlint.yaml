@@ -1,2 +1,6 @@
 MD013:
-  line_length: 400
+  line_length: 500
+MD010:
+  code_blocks: false
+MD024:
+  siblings_only: true

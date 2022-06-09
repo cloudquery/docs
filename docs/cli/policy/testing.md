@@ -2,7 +2,7 @@
 
 In order to continue to rely on policies we need to ensure that we are able to handle edge cases and make sure any changes do not result in a regression. To do that the most common way is to have a suite of test cases and ensure the output matches the expected output for specific inputs.
 
-### High level overview of Policy Testing
+## High level overview of Policy Testing
 
 1. Create specific resources in provider that should lead to a known outcome of a check.
 2. Store configuration in database (`cloudquery fetch`).

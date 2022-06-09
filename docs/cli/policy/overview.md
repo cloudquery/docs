@@ -77,7 +77,7 @@ You can use either a relative path or an absolute path. If you are configuring t
 
 Scan results will show passed/failed queries and manual queries that just print output without a pass/fail predicate.  
 
-```
+```bash
 📋 AWS CIS v1.3.0 Results:
 
 ⚠️ Policy finished with warnings

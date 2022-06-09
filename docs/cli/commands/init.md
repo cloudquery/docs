@@ -18,6 +18,6 @@ cloudquery init aws gcp
 
 ## Additional Help Topics
 
-```
+```text
 Use "cloudquery init options" for a list of global CLI options.
 ```

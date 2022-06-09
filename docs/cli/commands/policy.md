@@ -10,7 +10,7 @@ cloudquery policy [command]
 
 ## Available Commands
 
-```
+```text
 describe    Describe CloudQuery policy
 download    Download a policy from the CloudQuery Policy Hub
 run         Executes a policy on CloudQuery database
@@ -21,7 +21,7 @@ validate    Validate policy for any issues and diagnostics
 
 ## Additional Help Topics
 
-```
+```text
 Use "cloudquery policy [command] --help" for more information about a command.
 Use "cloudquery policy options" for a list of global CLI options.
 ```

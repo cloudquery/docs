@@ -23,7 +23,7 @@ There are a few places where you will need to update the template stubs (you can
 
 `go.mod`, `main.go`
 
-```
+```ini
 module github.com/cloudquery/cq-provider-template
 # Change to 
 module github.com/your_org_or_user/cq-provider-github
@@ -38,8 +38,8 @@ Change `resources.go`:
 
 ```go
 func Provider() *provider.Provider {
- return &provider.Provider{
-  Name:      "github",
+	return &provider.Provider{
+		Name:      "github",
 ```
 
 This completed step in this tutorial at [cq-provider-github/tree/tutorial-step-1](https://github.com/cloudquery/cq-provider-github/tree/tutorial-step-1)
@@ -50,7 +50,7 @@ Usually, each provider will use one Go Client to interact with the service. As w
 
 Install `go-github`
 
-```
+```sh
 go get github.com/google/go-github/v40
 ```
 
@@ -65,19 +65,19 @@ In our case, to initialize an [authenticated](https://github.com/google/go-githu
 ```go
 type Config struct {
     // ADD THIS LINE:
- GitHubToken string `hcl:"github_token,optional"`
+	GitHubToken string `hcl:"github_token,optional"`
 
- // resources that user asked to fetch
- // each resource can have optional additional configurations
- Resources []struct {
-  Name  string
-  Other map[string]interface{} `hcl:",inline"`
- }
+	// resources that user asked to fetch
+	// each resource can have optional additional configurations
+	Resources []struct {
+		Name  string
+		Other map[string]interface{} `hcl:",inline"`
+	}
 }
 func (c Config) Example() string {
- return `configuration {
+	return `configuration {
     // Add this line    
- // api_key = ${your_env_variable}
+	// api_key = ${your_env_variable}
     // api_key = static_api_key
 }
 `
@@ -93,43 +93,43 @@ Following the example in [go-github](https://github.com/google/go-github#authent
 
 ```go
 type Client struct {
- // This is a client that you need to create and initialize in Configure
- // It will be passed for each resource fetcher.
- logger hclog.Logger
+	// This is a client that you need to create and initialize in Configure
+	// It will be passed for each resource fetcher.
+	logger hclog.Logger
 
     // Add this line
- GithubClient *github.Client
+	GithubClient *github.Client
 }
 
 func (c *Client) Logger() hclog.Logger {
- return c.logger
+	return c.logger
 }
 
 func Configure(logger hclog.Logger, config interface{}) (schema.ClientMeta, error) {
- providerConfig := config.(*Config)
+	providerConfig := config.(*Config)
     // Start Snippet
- ctx := context.Background()
- token, exists := os.LookupEnv("GITHUB_TOKEN")
- if !exists {
-  token = providerConfig.GitHubToken
- }
- ts := oauth2.StaticTokenSource(
-  &oauth2.Token{AccessToken: token},
- )
- tc := oauth2.NewClient(ctx, ts)
- githubClient := github.NewClient(tc)
+	ctx := context.Background()
+	token, exists := os.LookupEnv("GITHUB_TOKEN")
+	if !exists {
+		token = providerConfig.GitHubToken
+	}
+	ts := oauth2.StaticTokenSource(
+		&oauth2.Token{AccessToken: token},
+	)
+	tc := oauth2.NewClient(ctx, ts)
+	githubClient := github.NewClient(tc)
     // End Snippet
 
- // Init your client and 3rd party clients using the user's configuration
- // passed by the SDK providerConfig
- client := Client{
-  logger: logger,
-  // Add this line: pass the initialized third pard client
-  GithubClient: githubClient,
- }
+	// Init your client and 3rd party clients using the user's configuration
+	// passed by the SDK providerConfig
+	client := Client{
+		logger: logger,
+		// Add this line: pass the initialized third pard client
+		GithubClient: githubClient,
+	}
 
- // Return the initialized client and it will be passed to your resources
- return &client, nil
+	// Return the initialized client and it will be passed to your resources
+	return &client, nil
 }
 ```
 
@@ -149,41 +149,41 @@ For every resource you need to create a new file under `resources/` and implemen
 
 ```go
 func Repositories() *schema.Table {
- return &schema.Table{
-  Name:     "repositories",
-  Resolver: fetchRepositories,
-  Options: schema.TableCreationOptions{PrimaryKeys: []string{"id"}},
-  Columns: []schema.Column{
-   {
-    Name:     "id",
-    Type:     schema.TypeBigInt,
-    Resolver: schema.PathResolver("ID"),
-   },
-   {
-    Name:     "node_id",
-    Type:     schema.TypeString,
-    Resolver: schema.PathResolver("node_id"),
-   },
-   {
-    Name: "name",
-    Type: schema.TypeString,
-   },
-   {
-    Name: "full_name",
-    Type: schema.TypeString,
-   },
-   ...
+	return &schema.Table{
+		Name:     "repositories",
+		Resolver: fetchRepositories,
+		Options: schema.TableCreationOptions{PrimaryKeys: []string{"id"}},
+		Columns: []schema.Column{
+			{
+				Name:     "id",
+				Type:     schema.TypeBigInt,
+				Resolver: schema.PathResolver("ID"),
+			},
+			{
+				Name:     "node_id",
+				Type:     schema.TypeString,
+				Resolver: schema.PathResolver("node_id"),
+			},
+			{
+				Name: "name",
+				Type: schema.TypeString,
+			},
+			{
+				Name: "full_name",
+				Type: schema.TypeString,
+			},
+			...
 
 func fetchRepositories(ctx context.Context, meta schema.ClientMeta, parent *schema.Resource, res chan interface{}) error {
- c := meta.(*client.Client)
- opts := github.RepositoryListOptions{}
- repositories, response, err := c.GithubClient.Repositories.List(ctx, "cloudquery", &opts)
- if err != nil {
-  return err
- }
- _ = response
- res <- repositories
- return nil
+	c := meta.(*client.Client)
+	opts := github.RepositoryListOptions{}
+	repositories, response, err := c.GithubClient.Repositories.List(ctx, "cloudquery", &opts)
+	if err != nil {
+		return err
+	}
+	_ = response
+	res <- repositories
+	return nil
 }
 ```
 
