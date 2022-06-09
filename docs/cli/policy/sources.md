@@ -1,6 +1,7 @@
 # Sources
 
 When running a policy with `cloudquery policy run`, you can choose from several options, including a remote policy (cloudquery-hub or github), or
+a local policy in your filesystem.
 
 ## Hub
 
