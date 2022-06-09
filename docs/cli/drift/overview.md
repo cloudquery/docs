@@ -92,7 +92,7 @@ Congratulations, these resources are perfectly in-sync (as far as we can tell) b
 
 The Summary block will show a breakdown of number of resources per category, plus a coverage percentage which is calculated using the formula:
 
-> (number_of_resources_managed_by_terraform / total_number_of_resources) * 100
+> `(number_of_resources_managed_by_terraform / total_number_of_resources) * 100`
 
 Simply put, what’s not covered are the ones that were either missing from your TFstate file (extra resources on cloud) or missing on your AWS account (extra resources on TFstate)
 

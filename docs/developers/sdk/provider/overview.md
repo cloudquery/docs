@@ -24,5 +24,5 @@ func Provider() *provider.Provider {
 }
 ```
 
-Here a new provider struct is defined, which has an empty config and just one resource (the "demo_resource").
+Here a new provider `struct` is defined, which has an empty configuration and just one resource (the `demo_resource`).
 The `DemoResource()` function would be in its own file, `demo_resource.go`, and would define a whole resource and also contain the fetcher functions/resolvers.

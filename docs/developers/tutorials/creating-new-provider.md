@@ -187,11 +187,10 @@ func fetchRepositories(ctx context.Context, meta schema.ClientMeta, parent *sche
 
 The key things here are the table definition and the `fetchRepositories` function.
 
-Each table defines list of columns and their type. CloudQuery SDK by default reads the value from the corresponding [Repository](https://pkg.go.dev/github.com/google/go-github/v41/github#Repository) struct by turning CamelCase fields into snake_case. If a custom transformation is needed, you can use `schema.PathResolver`.
+Each table defines list of columns and their type. CloudQuery SDK by default reads the value from the corresponding [Repository](https://pkg.go.dev/github.com/google/go-github/v41/github#Repository) `struct` by turning CamelCase fields into `snake_case`. If a custom transformation is needed, you can use `schema.PathResolver`.
 
 The third piece of this Tutorial is at [cloudquery/cq-provider-github/tree/tutorial-step-3](https://github.com/cloudquery/cq-provider-github/tree/tutorial-step-3).
 
 To run this in debug mode while you develop, checkout [debugging a provider](https://docs.cloudquery.io/docs/developers/debugging)
 
 Congratulations! This is it, you have your first custom provider!
-
