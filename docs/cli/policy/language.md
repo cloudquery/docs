@@ -85,3 +85,32 @@ or child subpolicies. To avoid code duplication when reusing views, it is recomm
 
 - `title` **(Required)** - View title description, usually a single line defining the view in a human readable format..
 - `query` **(Required)** - The query used to create the view.
+
+### Sources
+
+To import a policy from a different place, you can use the `source` argument of the `policy` block.
+For instance:
+
+```hcl
+policy "my-policy" {
+  configuration {
+    provider "aws" {
+      version = ">= 0.10.0"
+    }
+  }
+  
+  policy "local" {
+    source = "./path-to-local-policy-dir"
+  }
+
+  policy "aws_from_cloudquery_hub" {
+    source = "aws"
+  }
+}
+```
+
+You can find a reference of all allowed sources [here](https://docs.cloudquery.io/docs/cli/policy/sources).
+
+:::important
+If you define the `source` attribute in your policy, adding more views/checks/policy blocks is not allowed.
+:::

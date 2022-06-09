@@ -17,7 +17,7 @@ First you need to make sure you run the [`fetch`](../fetch/overview) command and
 
 ### Running Policies
 
-The following will run the policy hosted on [github.com/cloudquery-policies/aws](https://github.com/cloudquery-policies/aws) as the default host is GitHub.
+The following will run the policy hosted on [github.com/cloudquery-policies/aws](https://github.com/cloudquery-policies/aws).
 
 ```bash
 cloudquery policy run github.com/cloudquery-policies/aws
@@ -51,27 +51,20 @@ cloudquery policy run github.com/cloudquery-policies/aws//cis_v1.2.0/1/1.9
 
 will run the `1.9` check under section 1 policy of cis v1.2.0.
 
-### Policy configuration
-
-To add policies to your `config.hcl` you can simply add `policy` blocks, you can either add inline policies or point to a policy by `source`.
-
-```hcl
-# ... CloudQuery and provider blocks here ...
-// Policy Configurations
-policy "aws-cis" {
-  source = "github.com/cloudquery-policies/aws//cis_v1.2.0"
-}
-```
-
 #### Running local-policies
 
-To run a local policy that uses the [local source](./sources#local) you can set the policy in your `config.hcl` or pass the policy file path when executing `policy run` command as follows:
+To run a policy that's located on your local filesystem, you can pass the path to the policy as the argument to `policy run`.
 
 ```bash
 cloudquery policy run path\to\policy
 ```
 
-You can use either a relative path or an absolute path. If you are configuring the local policy in your `config.hcl` it is advised to use relative paths, as absolute paths tend to couple your configuration to the filesystem layout of a particular computer.
+You can use either a relative path or an absolute path.
+
+:::tip important
+When specifying a local policy, you must specify the path to a **directory**.
+This directory must contain a valid policy file named `policy.hcl`. See also the [tutorial](https://docs.cloudquery.io/docs/tutorials/policies/writing-your-first-policy/) on local policies.
+:::
 
 ### Results
 
@@ -117,10 +110,6 @@ Failed: Policy 1.5 -  Ensure IAM password policy requires at least one uppercase
               TOTAL:       | 1
             ---------------+---------------------------------
 ```
-
-For every failed resource the following attributes are printed if found (in that order):
-
-- `id`, `identifier`, `resource_identifier`, `uid`, `uuid`, `arn`
 
 You can use the `--output-dir /path/to/` option to get the policies results in JSON format.
 
