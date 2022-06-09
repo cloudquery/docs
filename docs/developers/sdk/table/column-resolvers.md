@@ -16,11 +16,11 @@ They usually go like:
 
 ```go
 func resolveDynamodbTableKeySchema(ctx context.Context, meta schema.ClientMeta, resource *schema.Resource, c schema.Column) error {
- r := resource.Item.(*types.TableDescription)
- 
- value := marshalKeySchema(r.KeySchema)
- 
- return resource.Set(c.Name, value)
+	r := resource.Item.(*types.TableDescription)
+	
+	value := marshalKeySchema(r.KeySchema)
+	
+	return resource.Set(c.Name, value)
 }
 ```
 

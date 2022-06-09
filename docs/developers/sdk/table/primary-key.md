@@ -8,7 +8,7 @@ Primary keys are defined in the `schema.Table` definition:
 func DemoResource() *schema.Table {
     return &schema.Table{
 // ...
-  Options:      schema.TableCreationOptions{PrimaryKeys: []string{"account_id", "id"}},
+		Options:      schema.TableCreationOptions{PrimaryKeys: []string{"account_id", "id"}},
 // ...
 ```
 

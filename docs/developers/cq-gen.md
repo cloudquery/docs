@@ -25,7 +25,7 @@ Next, create a tools.go file and add cq-gen as a tool dependency for your module
 package tools
 
 import (
- _ "github.com/cloudquery/cq-gen"
+	_ "github.com/cloudquery/cq-gen"
 )
 ```
 
@@ -91,38 +91,38 @@ The command above will generate the following code:
 package cloudformation
 
 import (
- "context"
+	"context"
 
- "github.com/aws/aws-sdk-go-v2/aws"
- "github.com/aws/aws-sdk-go-v2/service/cloudformation"
- "github.com/aws/aws-sdk-go-v2/service/cloudformation/types"
- "github.com/cloudquery/cq-provider-aws/client"
- "github.com/cloudquery/cq-provider-sdk/provider/schema"
+	"github.com/aws/aws-sdk-go-v2/aws"
+	"github.com/aws/aws-sdk-go-v2/service/cloudformation"
+	"github.com/aws/aws-sdk-go-v2/service/cloudformation/types"
+	"github.com/cloudquery/cq-provider-aws/client"
+	"github.com/cloudquery/cq-provider-sdk/provider/schema"
 )
 
 //go:generate cq-gen --resource stacks --config gen.hcl --output .
 func Stacks() *schema.Table {
- return &schema.Table{
-  Name:         "aws_cloudformation_stacks",
-  Description:  "The Stack data type.",
-  Resolver:     fetchCloudformationStacks,
-  Multiplex:    client.ServiceAccountRegionMultiplexer("cloudformation"),
-  IgnoreError:  client.IgnoreAccessDeniedServiceDisabled,
-  DeleteFilter: client.DeleteAccountRegionFilter,
-  Options:      schema.TableCreationOptions{PrimaryKeys: []string{"id"}},
-  Columns: []schema.Column{
-   {
-    Name:        "account_id",
-    Description: "The AWS Account ID of the resource.",
-    Type:        schema.TypeString,
-    Resolver:    client.ResolveAWSAccount,
-   },
-   {
-    Name:        "region",
-    Description: "The AWS Region of the resource.",
-    Type:        schema.TypeString,
-                  Resolver:    client.ResolveAWSRegion,
-   },
+	return &schema.Table{
+		Name:         "aws_cloudformation_stacks",
+		Description:  "The Stack data type.",
+		Resolver:     fetchCloudformationStacks,
+		Multiplex:    client.ServiceAccountRegionMultiplexer("cloudformation"),
+		IgnoreError:  client.IgnoreAccessDeniedServiceDisabled,
+		DeleteFilter: client.DeleteAccountRegionFilter,
+		Options:      schema.TableCreationOptions{PrimaryKeys: []string{"id"}},
+		Columns: []schema.Column{
+			{
+				Name:        "account_id",
+				Description: "The AWS Account ID of the resource.",
+				Type:        schema.TypeString,
+				Resolver:    client.ResolveAWSAccount,
+			},
+			{
+				Name:        "region",
+				Description: "The AWS Region of the resource.",
+				Type:        schema.TypeString,
+                		Resolver:    client.ResolveAWSRegion,
+			},
             ... # shortened for sake for readability
 ```
 

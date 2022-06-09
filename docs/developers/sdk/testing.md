@@ -29,25 +29,25 @@ Each resource can be tested end-to-end with `ResourceTest` function. Here is an 
 
 ```go
 func AWSTestHelper(t *testing.T) {
- cfg := `
- aws_debug = false
- `
+	cfg := `
+	aws_debug = false
+	`
 
- providertest.TestResource(t, providertest.ResourceTestCase{
-  Provider: &provider.Provider{
-   Name:      "aws_test_provider",
-   Version:   "development",
-   Configure: Configure,
-   Config: func() provider.Config {
-    return &Config{}
-   },
-   ResourceMap: map[string]*schema.Table{
-    "test_resource": MyResource(),
-   },
-  },
-  Table:         table,
-  Config:        cfg,
- })
+	providertest.TestResource(t, providertest.ResourceTestCase{
+		Provider: &provider.Provider{
+			Name:      "aws_test_provider",
+			Version:   "development",
+			Configure: Configure,
+			Config: func() provider.Config {
+				return &Config{}
+			},
+			ResourceMap: map[string]*schema.Table{
+				"test_resource": MyResource(),
+			},
+		},
+		Table:         table,
+		Config:        cfg,
+	})
 }
 ```
 

@@ -18,19 +18,19 @@ We will go through the files in the template and explain each part that you need
 
 ```go
 func Provider() *provider.Provider {
- return &provider.Provider{
-  Version: Version,
-  // CHANGEME: Change to your provider name
-  Name:      "YourProviderName",
-  Configure: client.Configure,
-  ResourceMap: map[string]*schema.Table{
-   // CHANGEME: place here all supported resources
-   "demo_resource": resources.DemoResource(),
-  },
-  Config: func() provider.Config {
-   return &client.Config{}
-  },
- }
+	return &provider.Provider{
+		Version: Version,
+		// CHANGEME: Change to your provider name
+		Name:      "YourProviderName",
+		Configure: client.Configure,
+		ResourceMap: map[string]*schema.Table{
+			// CHANGEME: place here all supported resources
+			"demo_resource": resources.DemoResource(),
+		},
+		Config: func() provider.Config {
+			return &client.Config{}
+		},
+	}
 
 }
 ```
@@ -58,14 +58,14 @@ type Config struct {
 func (c Config) Example() string {
     return `configuration {
     
- // Optional. create multiple blocks of accounts the provider will run
+	// Optional. create multiple blocks of accounts the provider will run
   // account {
- // name = <Name attribute>
- // }
- 
- // Optional. Some field we decided to add
- user = "cloudquery"
- // Optional. Enable Provider SDK debug logging.
+	// name = <Name attribute>
+	// }
+	
+	// Optional. Some field we decided to add
+	user = "cloudquery"
+	// Optional. Enable Provider SDK debug logging.
    debug = false  
 }
 `
@@ -78,27 +78,27 @@ Here you define the "hcl block" configuration that the user can pass to your pro
 
 ```go
 type Client struct {
- // This is a client that you need to create and initialize in Configure
- // It will be passed for each resource fetcher.
- logger     hclog.Logger
+	// This is a client that you need to create and initialize in Configure
+	// It will be passed for each resource fetcher.
+	logger     hclog.Logger
 }
 
 func (c *Client) Logger() hclog.Logger {
- return c.logger
+	return c.logger
 }
 
 
 func Configure(logger hclog.Logger, providerConfig interface{}) (schema.ClientMeta, error) {
- providerConfig := config.(*Config)
+	providerConfig := config.(*Config)
 
- // Init your client and 3rd party clients using the user's configuration
- // passed by the SDK
- client := Client{
-  logger:   logger,
- }
+	// Init your client and 3rd party clients using the user's configuration
+	// passed by the SDK
+	client := Client{
+		logger:   logger,
+	}
 
- // Return the initialized client and it will be passed to your resources
- return &client, nil
+	// Return the initialized client and it will be passed to your resources
+	return &client, nil
 }
 ```
 
@@ -112,78 +112,78 @@ In this directory, you will create a new file for each resource. Each resource m
 package resources
 
 import (
- "context"
- "github.com/cloudquery/cq-provider-sdk/plugin/schema"
- "github.com/cloudquery/cq-provider-template/client"
+	"context"
+	"github.com/cloudquery/cq-provider-sdk/plugin/schema"
+	"github.com/cloudquery/cq-provider-template/client"
 )
 
 func DemoResource() *schema.Table {
- return &schema.Table{
-  // Required. Table Name
-  Name:         "provider_demo_resources",
-  // Required. Fetch data for table. See fetchDemoResources
-  Resolver:     fetchDemoResources,
-  // Optional. DeleteFilter returns a list of key/value pairs to add when truncating this table's data from the database.
-  // DeleteFilter: nil, // func(meta ClientMeta) []interface{}
+	return &schema.Table{
+		// Required. Table Name
+		Name:         "provider_demo_resources",
+		// Required. Fetch data for table. See fetchDemoResources
+		Resolver:     fetchDemoResources,
+		// Optional. DeleteFilter returns a list of key/value pairs to add when truncating this table's data from the database.
+		// DeleteFilter: nil, // func(meta ClientMeta) []interface{}
 
-  // Optional. Returns re-purposed meta clients. The SDK will execute the table with each of them. Useful if you want to execute for different accounts, etc...
-  // Multiplex:    nil, // func(meta ClientMeta) []ClientMeta
+		// Optional. Returns re-purposed meta clients. The SDK will execute the table with each of them. Useful if you want to execute for different accounts, etc...
+		// Multiplex:    nil, // func(meta ClientMeta) []ClientMeta
 
-  // Optional. Checks if returned error from table resolver should be ignored. If it returns true, the SDK will ignore and continue instead of aborting.
-  // IgnoreError:  nil, // IgnoreErrorFunc func(err error) bool
+		// Optional. Checks if returned error from table resolver should be ignored. If it returns true, the SDK will ignore and continue instead of aborting.
+		// IgnoreError:  nil, // IgnoreErrorFunc func(err error) bool
 
-  // Optional. Post resource resolver is called after all columns have been resolved, and before resource is inserted to database.
-  // PostResourceResolver: nil, // RowResolver func(ctx context.Context, meta ClientMeta, resource *Resource) error
+		// Optional. Post resource resolver is called after all columns have been resolved, and before resource is inserted to database.
+		// PostResourceResolver: nil, // RowResolver func(ctx context.Context, meta ClientMeta, resource *Resource) error
 
 
-  Columns: []schema.Column{
-   {
-    Name:     "account_id",
-    Type:     schema.TypeString,
-    // Optional. You can have a special column resolver if the column name doesn't match the name or it's just an additional
-    //  column that needs to get the data from somewhere else.
-    Resolver: customColumnResolver,
-   },
-   {
-    Name:     "region",
-    Type:     schema.TypeString,
-   },
-   {
-    Name: "creation_date",
-    Type: schema.TypeTimestamp,
-   },
-   {
-    Name: "name",
-    Type: schema.TypeString,
-    // schema.PathResolver is a utility function that gets the data from a different name in the struct.
-    // Resolver: schema.PathResolver("other_name_in_struct"),
-   },
-  },
-  // A table can have relations
-  //Relations: []*schema.Table{
-  // {
-  //  Name:     "provider_demo_resource_children",
-  //  Resolver: fetchDemoResourceChildren,
-  //  Columns: []schema.Column{
-  //   {
-  //    Name:     "bucket_id",
-  //    Type:     schema.TypeUUID,
-  //    Resolver: schema.ParentIdResolver,
-  //   },
-  //   {
-  //    Name:     "resource_id",
-  //    Type:     schema.TypeString,
-  //    Resolver: schema.PathResolver("Grantee.ID"),
-  //   },
-  //   {
-  //    Name:     "type",
-  //    Type:     schema.TypeString,
-  //    Resolver: schema.PathResolver("Grantee.Type"),
-  //   },
-  //  },
-  // },
-  //},
- }
+		Columns: []schema.Column{
+			{
+				Name:     "account_id",
+				Type:     schema.TypeString,
+				// Optional. You can have a special column resolver if the column name doesn't match the name or it's just an additional
+				//  column that needs to get the data from somewhere else.
+				Resolver: customColumnResolver,
+			},
+			{
+				Name:     "region",
+				Type:     schema.TypeString,
+			},
+			{
+				Name: "creation_date",
+				Type: schema.TypeTimestamp,
+			},
+			{
+				Name: "name",
+				Type: schema.TypeString,
+				// schema.PathResolver is a utility function that gets the data from a different name in the struct.
+				// Resolver: schema.PathResolver("other_name_in_struct"),
+			},
+		},
+		// A table can have relations
+		//Relations: []*schema.Table{
+		//	{
+		//		Name:     "provider_demo_resource_children",
+		//		Resolver: fetchDemoResourceChildren,
+		//		Columns: []schema.Column{
+		//			{
+		//				Name:     "bucket_id",
+		//				Type:     schema.TypeUUID,
+		//				Resolver: schema.ParentIdResolver,
+		//			},
+		//			{
+		//				Name:     "resource_id",
+		//				Type:     schema.TypeString,
+		//				Resolver: schema.PathResolver("Grantee.ID"),
+		//			},
+		//			{
+		//				Name:     "type",
+		//				Type:     schema.TypeString,
+		//				Resolver: schema.PathResolver("Grantee.Type"),
+		//			},
+		//		},
+		//	},
+		//},
+	}
 }
 
 
@@ -191,16 +191,16 @@ func DemoResource() *schema.Table {
 //                                               Table Resolver Functions
 // ====================================================================================================================
 func fetchDemoResources(ctx context.Context, meta schema.ClientMeta, parent *schema.Resource, res chan interface{}) error {
- c := meta.(*client.Client)
- _ = c
- // Fetch using the third party client and put the result in res
- // res <- c.ThirdPartyClient.getDat()
- return nil
+	c := meta.(*client.Client)
+	_ = c
+	// Fetch using the third party client and put the result in res
+	// res <- c.ThirdPartyClient.getDat()
+	return nil
 }
 
 func customColumnResolver(ctx context.Context, meta schema.ClientMeta, resource *schema.Resource, c schema.Column) error {
- resource.Set("column_name", "value")
- return nil
+	resource.Set("column_name", "value")
+	return nil
 }
 ```
 
