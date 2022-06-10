@@ -13,12 +13,12 @@ module.exports = {
   organizationName: 'cloudquery', // Usually your GitHub org/user name.
   projectName: 'cq-docs', // Usually your repo name.
   themeConfig: {
-//     gtag: {
-//       // You can also use your "G-" Measurement ID here.
-//       trackingID: 'G-48CC3FJ195',
-//       // Optional fields.
-//       anonymizeIP: true, // Should IPs be anonymized?
-//     },
+    gtag: {
+      // You can also use your "G-" Measurement ID here.
+      trackingID: 'G-48CC3FJ195',
+      // Optional fields.
+      anonymizeIP: true, // Should IPs be anonymized?
+    },
     colorMode: {
       // "light" | "dark"
       defaultMode: 'dark',
@@ -128,10 +128,6 @@ module.exports = {
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
-        gtag: {
-          trackingID: 'G-226F0LR9KE',
-          anonymizeIP: true,
-          },
         }
       ]
   ],
