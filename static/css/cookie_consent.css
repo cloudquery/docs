@@ -1,0 +1,341 @@
+.ch2-theme-simple .ch2-dialog.ch2-visible {
+    width: 100%;
+    background: #171c24;
+    color: #a8adb3;
+    padding: 20px;
+    max-width: 340px;
+    bottom: 15px;
+    right: 15px;
+    font-family: 'Source Code Pro', monospace;
+    border: 1px solid #8a8a8a;
+  }
+  
+  .ch2-dialog-content p {
+    font-size: 0.75rem;
+  }
+  .ch2-dialog-content p:first-child {
+    margin-bottom: 1px;
+    border-bottom: 1px dashed #8a8a8a;
+    padding-bottom: 15px;
+  }
+  .ch2-dialog-content p:not(:first-child):not(:last-child),
+  .ch2-dialog-actions {
+    border-top: 1px dashed #8a8a8a;
+    padding-top: 15px;
+  }
+  
+  .ch2-dialog-content p:last-child {
+    margin-bottom: 1px;
+    border-bottom: 1px dashed #8a8a8a;
+    padding-bottom: 15px;
+  }
+  .ch2-learn-more {
+    color: #fff;
+    border-bottom: 1px solid #fff;
+  }
+  
+  .ch2-dialog-actions > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .ch2-dialog-actions .ch2-btn,
+  .ch2-settings-actions .ch2-btn {
+    width: 145px;
+    padding: 10px;
+    color: #00ffa9;
+    border: 1px solid #00ffa9;
+    background: transparent;
+    cursor: pointer;
+  }
+  
+  .ch2-dialog-actions .ch2-btn:hover,
+  .ch2-settings-actions .ch2-btn:hover {
+    color: #fff;
+  }
+  
+  .ch2-dialog-actions .ch2-btn-text {
+    margin: 15px auto 0 auto;
+    border: none;
+    border-bottom: 1px solid;
+    padding: 0;
+    width: auto;
+    cursor: pointer;
+  }
+  .ch2-dialog-actions .ch2-btn-text:hover {
+    border: none;
+    border-bottom: 1px solid;
+  }
+  .ch2-dialog-actions button,
+  .ch2-settings-actions button {
+    font-family: 'Source Code Pro', monospace;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  
+  @media (pointer: none) {
+    .ch2-dialog-actions button {
+      cursor: auto;
+    }
+  }
+  
+  @media screen and (max-width: 420px) {
+    .ch2-theme-simple .ch2-dialog.ch2-visible {
+      max-width: 100%;
+      right: 0;
+      bottom: 0;
+      border: none;
+      border-top: 1px solid #8a8a8a;
+    }
+  }
+  
+  @media screen and (max-width: 380px) {
+    .ch2-dialog-actions > div {
+      flex-direction: column;
+    }
+    .ch2-dialog-actions .ch2-btn:not(.ch2-btn-text) {
+      width: 100%;
+    }
+    .ch2-dialog-actions .ch2-btn {
+      margin-bottom: 1rem;
+    }
+  }
+  
+  /* SETTINGS DIALOG*/
+  .ch2-settings.ch2-visible {
+    width: 100%;
+    background: #171c24;
+    color: #a8adb3;
+    padding: 20px;
+    max-width: 494px;
+    font-family: 'Source Code Pro', monospace;
+    border: 1px solid #8a8a8a;
+    max-height: 100vh;
+    overflow-y: auto;
+  }
+  .ch2-settings.ch2-visible p {
+    font-size: 0.75rem;
+    line-height: 16px;
+  }
+  
+  .ch2-dialog-content p:first-child > strong,
+  .ch2-settings-header p > strong {
+    font-weight: 400;
+    color: #fff;
+    font-size: 1rem;
+  }
+  .ch2-settings-tab-container > p,
+  .ch2-settings-declaration > p {
+    display: inline;
+  }
+  .ch2-settings-tab-container > p:last-of-type,
+  .ch2-settings-declaration > p:last-of-type {
+    margin-left: 0.5rem;
+  }
+  
+  .ch2-settings-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  
+  /* switch style*/
+  .ch2-switch {
+    margin-right: 20px;
+  }
+  .ch2-switch input {
+    opacity: 0;
+    position: absolute;
+    display: block !important;
+  }
+  .ch2-switch input + label {
+    overflow: hidden;
+    white-space: nowrap;
+    display: block !important;
+    min-height: auto !important;
+    padding: 0 !important;
+    border: 1px solid #8a8a8a;
+  }
+  .ch2-style-light .ch2-switch input:checked + label,
+  .ch2-style-dark .ch2-switch input:checked + label {
+    background: #fff;
+    border: 1px solid #fff;
+  }
+  .ch2-switch input:checked + label:before {
+    left: 15px;
+  }
+  
+  .ch2-switch input:disabled + label {
+    background: #8a8a8a !important;
+    border: 1px solid #8a8a8a !important;
+  }
+  .ch2-switch label:before {
+    background-color: #fff;
+  }
+  .ch2-switch input:checked + label:before {
+    background-color: #000;
+  }
+  .ch2-switch label:before {
+    content: '\20' !important;
+    display: block !important;
+    width: 12px !important;
+    height: 12px !important;
+    border-radius: 100% !important;
+    position: relative !important;
+    top: 2px !important;
+    left: 3px;
+    border: 0 !important;
+    padding: 0 !important;
+    transition: left 0.3s ease-out;
+  }
+  .ch2-switch label {
+    display: block;
+    width: 30px;
+    height: 18px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  /**/
+  
+  .ch2-settings-options {
+    margin-top: 1rem;
+  }
+  
+  .ch2-settings-option-details p:first-child > strong {
+    font-weight: 400;
+    color: #fff;
+  }
+  
+  .ch2-settings-option {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: 25px;
+    position: relative;
+  }
+  
+  .ch2-settings-header {
+    margin-bottom: 2px;
+    border-bottom: 1px dashed #8a8a8a;
+    padding-bottom: 1rem;
+  }
+  
+  .ch2-settings-content {
+    padding-top: 1rem;
+    height: auto !important;
+    overflow: initial !important;
+    margin-bottom: 2px;
+    border-bottom: 1px dashed #8a8a8a;
+    padding-bottom: 1rem;
+    overflow-y: auto;
+  }
+  .ch2-settings-actions {
+    border-top: 1px dashed #8a8a8a;
+    padding-top: 1rem;
+  }
+  
+  /* TABS*/
+  .ch2-settings-tabs {
+    font-size: 12px;
+    border-top: 1px dashed #8a8a8a;
+    padding-top: 16px;
+  }
+  .ch2-settings-tabs ul {
+    display: flex;
+    width: 100%;
+    list-style: none;
+    margin: 0;
+    border-bottom: 1px dashed #8a8a8a;
+    padding: 0.5rem 1rem;
+  }
+  .ch2-select-tab {
+    color: #8a8a8a;
+    padding: 0.5rem 1rem;
+    border: 1px dashed transparent;
+    border-bottom: 2px dashed transparent;
+    top: 1px;
+    background: transparent;
+    white-space: nowrap;
+  }
+  .active > .ch2-select-tab {
+    color: #fff;
+    border: 1px dashed #8a8a8a;
+    border-bottom: 2px solid #171c24;
+    background: #171c24;
+  }
+  /**/
+  
+  /*TABLE*/
+  .ch2-settings-options .ch2-declaration-category {
+    margin-top: 0.75rem;
+  }
+  .ch2-settings-options .ch2-declaration-category:not(:last-child) {
+    border-bottom: 1px dashed #8a8a8a;
+  }
+  .ch2-declaration-category table {
+    font-size: 12px;
+    margin-top: 0.75rem;
+  }
+  .ch2-declaration-category table th {
+    text-align: left;
+  }
+  .ch2-declaration-category table td > p {
+    padding: 0.5rem 0;
+    font-style: italic;
+  }
+  /**/
+  
+  .ch2-settings-header a {
+    float: right;
+    display: block !important;
+    width: 32px;
+    height: 32px;
+    margin-top: 8px;
+    transition: all 0.3s ease;
+  }
+  .ch2-settings-header a::before,
+  .ch2-settings-header a::after {
+    border-bottom: 2px solid #8a8a8a;
+    position: relative;
+    content: '\20';
+    display: block;
+    width: 24px;
+    left: 8px;
+  }
+  .ch2-settings-header a::before {
+    transform: rotate(-45deg);
+    top: 0px;
+  }
+  .ch2-settings-header a::after {
+    transform: rotate(45deg);
+    top: -2px;
+  }
+  .ch2-settings-header a:hover::before,
+  .ch2-settings-header a:hover::after {
+    border-color: #fff;
+  }
+  
+  @media (max-width: 800px) {
+    .ch2-settings.ch2-visible {
+      top: 50%;
+      left: 50%;
+      bottom: initial;
+      transform: translate(-50%, -50%);
+    }
+  }
+  @media (max-width: 600px) {
+    .ch2-settings.ch2-visible {
+      top: initial;
+      left: 0;
+      bottom: 0;
+      transform: initial;
+      height: 100%;
+      max-height: 100vh;
+      overflow-y: scroll;
+    }
+    .ch2-settings-tabs ul {
+      padding: 0.5rem 0;
+    }
+  }
+  

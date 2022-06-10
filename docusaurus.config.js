@@ -78,6 +78,11 @@ module.exports = {
               label: 'GitHub',
               href: 'https://github.com/cloudquery/cloudquery',
             },
+            {
+              html: `<a href="javascript:window.cookiehub.openSettings();" class="footer__link-item">
+                      Manage Cookie
+                    </a>`,
+            },
           ],
         },
       ],
@@ -123,7 +128,26 @@ module.exports = {
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
-      },
-    ],
+        gtag: {
+          trackingID: 'G-226F0LR9KE',
+          anonymizeIP: true,
+          },
+        }
+      ]
+  ],
+  stylesheets: [
+    {
+      href: '/css/cookie_consent.css',
+    },
+  ],
+  scripts: [
+    {
+      src: 'https://cookiehub.net/c2/a2beec98.js',
+      async: false,
+    },
+    {
+      src: '/js/loadCookieHub.js',
+      async: false,
+    },
   ],
 };
