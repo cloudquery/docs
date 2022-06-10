@@ -78,6 +78,11 @@ module.exports = {
               label: 'GitHub',
               href: 'https://github.com/cloudquery/cloudquery',
             },
+            {
+              html: `<a href="javascript:window.cookiehub.openSettings();" class="footer__link-item">
+                      Manage Cookie
+                    </a>`,
+            },
           ],
         },
       ],
