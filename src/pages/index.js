@@ -1,8 +1,6 @@
 import React from "react";
 import { Redirect } from "react-router-dom";
 
-var a = 1;
-
 export default function Home() {
   return (
     <Redirect to="/docs/intro" />
