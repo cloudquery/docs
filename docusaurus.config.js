@@ -13,12 +13,6 @@ module.exports = {
   organizationName: 'cloudquery', // Usually your GitHub org/user name.
   projectName: 'cq-docs', // Usually your repo name.
   themeConfig: {
-    // gtag: {
-    //   // You can also use your "G-" Measurement ID here.
-    //   trackingID: 'G-48CC3FJ195',
-    //   // Optional fields.
-    //   anonymizeIP: true, // Should IPs be anonymized?
-    // },
     colorMode: {
       // "light" | "dark"
       defaultMode: 'dark',
@@ -145,6 +139,7 @@ module.exports = {
       src: '/js/loadCookieHub.js',
       async: false,
     },
+    //CookieHub script must be loaded before gtag script for consent management
     {
       src: 'https://www.googletagmanager.com/gtag/js?id=G-48CC3FJ195',
       async: true,
