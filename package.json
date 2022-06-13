@@ -12,7 +12,8 @@
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
-    "lint:markdown": "markdownlint docs README.md --ignore node_modules"
+    "lint:markdown": "markdownlint docs README.md --ignore node_modules",
+    "lint:js": "eslint src"
   },
   "dependencies": {
     "@docusaurus/core": "2.0.0-beta.4",
@@ -42,6 +43,9 @@
     ]
   },
   "devDependencies": {
+    "@docusaurus/eslint-plugin": "^2.0.0-beta.21",
+    "eslint": "^8.17.0",
+    "eslint-plugin-react": "^7.30.0",
     "markdownlint-cli": "^0.31.1"
   }
 }

@@ -1,0 +1,55 @@
+name: Lint
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  lint-markdown:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Git checkout
+        uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "lts/*"
+          cache: npm
+      - uses: xt0rted/markdownlint-problem-matcher@v1
+      - name: Install dependencies
+        run: npm ci
+      - name: Lint markdown
+        run: npm run lint:markdown
+  lint-js:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Git checkout
+        uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "lts/*"
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Lint JS
+        run: npm run lint:js -- --output-file eslint_report.json --format json
+        continue-on-error: true
+      - name: Annotate Code Linting Results
+        uses: ataylorme/eslint-annotate-action@f92355332c64bc5c2d474cc6555edcb1315fdd12
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          fail-on-warning: true
+  lint-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Git checkout
+        uses: actions/checkout@v3
+      - name: Vale
+        uses: errata-ai/vale-action@v2
+        continue-on-error: true
+        with:
+          files: '["docs", "README.md"]'
+          filter_mode: nofilter
+          level: warning
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
