@@ -14,7 +14,6 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: "lts/*"
-          cache: npm
       - uses: xt0rted/markdownlint-problem-matcher@v1
       - name: Install dependencies
         run: npm ci
@@ -28,7 +27,6 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: "lts/*"
-          cache: npm
       - name: Install dependencies
         run: npm ci
       - name: Lint JS
