@@ -16,7 +16,7 @@ CloudQuery allows you to use SQL to check various conditions about your cloud de
 For instance, the following SQL query allows you to test whether you have any AWS EC2 instances that were stopped
 more than 30 days ago, but were not deleted.
 
-```SQL
+```sql
 SELECT account_id, region, id
 FROM aws_ec2_instances
 WHERE state_name = 'stopped'
