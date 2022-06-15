@@ -12,6 +12,7 @@ module.exports = {
   favicon: 'img/favicon.ico',
   organizationName: 'cloudquery', // Usually your GitHub org/user name.
   projectName: 'cq-docs', // Usually your repo name.
+  trailingSlash: false, // keep URLs without slash at the end, example https://docs.cloudquery.io/docs/intro
   themeConfig: {
     colorMode: {
       // "light" | "dark"
