@@ -6,7 +6,7 @@ To enable storing the policy results:
 
 1. Use the `--enable-db-persistence` flag when invoking
 
-    ```sh
+    ```bash
     cloudquery policy run <policy-name> --enable-db-persistence` 
     ```
 
