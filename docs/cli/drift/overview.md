@@ -2,7 +2,7 @@
 
 CloudQuery CLI can be used to detect and alert on IaC (Infrastructure-as-code, Terraform, Pulumi, etc.) drift both locally and in the CI.
 
-> **Infrastructure Drift** - When what is defined in your IaC is different from what is provisioned in your Cloud. This is a common scenario and can happen due to human error, manual changes and various other reasons. Check out more details in our [blog](https://cloudquery.io/blog/announcing-drift-detection)
+> **Infrastructure Drift** - When what is defined in your IaC is different from what is provisioned in your Cloud. This is a common scenario and can happen due to human error, manual changes and various other reasons. Check out more details in our [blog](https://www.cloudquery.io/blog/announcing-drift-detection)
 
 ## Getting Started
 
