@@ -24,9 +24,6 @@ in config.hcl:
 
 ```hcl
 cloudquery {
-  plugin_directory = "./cq/providers"
-  policy_directory = "./cq/policies"
-
   provider "aws" {
     source  = ""
     version = "latest"
