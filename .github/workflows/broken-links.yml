@@ -40,4 +40,4 @@ jobs:
 
       - name: Check for broken links
         run: |
-          npx broken-link-checker -f -r -v -o --exclude linkedin --filter-level 3 https://docs.cloudquery.io/docs/intro/
+          npx broken-link-checker -f -r -v -o --exclude linkedin --exclude "cloudquery.io/discord" --filter-level 3 https://docs.cloudquery.io/docs/intro
