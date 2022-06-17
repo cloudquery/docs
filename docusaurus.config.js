@@ -12,6 +12,7 @@ module.exports = {
   favicon: 'img/favicon.ico',
   organizationName: 'cloudquery', // Usually your GitHub org/user name.
   projectName: 'cq-docs', // Usually your repo name.
+  trailingSlash: false, // keep URLs without slash at the end, example https://docs.cloudquery.io/docs/intro
   themeConfig: {
     colorMode: {
       // "light" | "dark"
@@ -31,9 +32,9 @@ module.exports = {
         //   position: 'left',
         //   label: 'Docs',
         // },
-        {to: 'https://cloudquery.io', label: 'Home', position: 'right'},
+        {to: 'https://www.cloudquery.io', label: 'Home', position: 'right'},
         {to: 'https://hub.cloudquery.io', label: 'Hub', position: 'right'},
-        {to: 'https://cloudquery.io/blog', label: 'Blog', position: 'right'},
+        {to: 'https://www.cloudquery.io/blog', label: 'Blog', position: 'right'},
         {
           href: 'https://github.com/cloudquery/cloudquery',
           label: 'GitHub',
@@ -49,7 +50,7 @@ module.exports = {
           items: [
             {
               label: 'Discord',
-              href: 'https://cloudquery.io/discord',
+              href: 'https://www.cloudquery.io/discord',
             },
             {
               label: 'Twitter',
@@ -66,7 +67,7 @@ module.exports = {
           items: [
             {
               label: 'Blog',
-              to: 'https://cloudquery.io/blog',
+              to: 'https://www.cloudquery.io/blog',
             },
             {
               label: 'GitHub',
