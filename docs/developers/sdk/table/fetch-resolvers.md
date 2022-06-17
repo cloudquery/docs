@@ -17,7 +17,7 @@ The `TableResolver` is flexible allowing you to define your own pagination logic
 The collector in the SDK is slice-aware, so if you have a slice of resources, you can just push the slice as a whole, without iterating.
 :::
 
-Here's an example from the [provider template](https://github.com/cloudquery/cq-provider-template/blob/main/resources/demo_resource.go):
+Here's an example from the [provider template](https://github.com/cloudquery/cq-provider-template/blob/main/resources/services/demo/resource.go):
 
 ```go
 func fetchDemoResources(ctx context.Context, meta schema.ClientMeta, parent *schema.Resource, res chan interface{}) error {
