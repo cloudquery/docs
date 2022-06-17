@@ -31,38 +31,40 @@ Check [the repository](https://github.com/cloudquery/cq-provider-sdk/blob/main/p
 
 ## Example
 
-If we look at the example resource/table definition [in the template](https://github.com/cloudquery/cq-provider-template/blob/main/resources/demo_resource.go):
+If we look at the example resource/table definition [in the template](https://github.com/cloudquery/cq-provider-template/blob/main/resources/services/demo/resource.go):
 
 ```go
-func DemoResource() *schema.Table {
+func Resources() *schema.Table {
 	return &schema.Table{
-		Name:     "demo_table",
-		Resolver: fetchDemoResources,
-
+		Name:     "demo_domain_resource",
+		Resolver: fetchDomainResources,
 		Columns: []schema.Column{
 			{
 				Name:        "account_id",
+				Description: "The AWS Account ID of the resource.",
 				Type:        schema.TypeString,
-				Description: "Description of the column to appear in the generated documentation",
-				//Resolver: provider.ResolveAWSAccount,
+				Resolver:    ResolverPath("AccountId"),
 			},
 			{
-				Name: "region",
-				Type: schema.TypeString,
-				//Resolver: fetchS3BucketLocation,
+				Name:        "region",
+				Description: "The AWS Region of the resource.",
+				Type:        schema.TypeString,
+				Resolver:    Resolver,
 			},
 			{
-				Name: "creation_date",
-				Type: schema.TypeTimestamp,
+				Name:        "name",
+				Description: "The name of demo resource",
+				Type:        schema.TypeString,
 			},
 			{
-				Name:     "name",
-				Type:     schema.TypeString,
-				Resolver: schema.PathResolver("other_name_in_struct"),
+				Name:        "create_date",
+				Description: "Creation time of the resource",
+				Type:        schema.TypeTimestamp,
+				Resolver:    schema.PathResolver("Metadata.CreateDate"),
 			},
 		},
-		
-		...
+	}
+}
 ```
 
 Here, we define a table with its columns and metadata.
