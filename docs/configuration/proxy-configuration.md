@@ -6,6 +6,7 @@ Example:
 
 ```bash
 export HTTPS_PROXY=http://example.com:3128/proxy
+export HTTP_PROXY=http://example.com:3128/proxy
 cloudquery fetch 
 ```
 
