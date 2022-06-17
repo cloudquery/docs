@@ -2,7 +2,7 @@
 
 Cloudquery uses standard environment variables for proxy configuration. It allows to run traffic through a proxy server. To configure a proxy for https requests set `HTTPS_PROXY` environment variable. For http requests set `HTTP_PROXY` environment variable.
 
-Example: 
+Example:
 
 ```bash
 export HTTPS_PROXY=http://example.com:3128/proxy
