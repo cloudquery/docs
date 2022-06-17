@@ -1,6 +1,6 @@
 # Proxy settings
 
-Cloudquery uses standard environment variables for proxy configuration. It allows to run traffic through a proxy server. To configure a proxy for https requests set `HTTPS_PROXY` environment variable. For http requests set `HTTP_PROXY` environment variable.
+Proxy can be set using standard environment variables for proxy configuration. It allows to run cloudquery traffic through a proxy server. To configure a proxy for https requests set `HTTPS_PROXY` environment variable. For http requests set `HTTP_PROXY` environment variable.
 
 Example:
 
