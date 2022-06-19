@@ -11,5 +11,5 @@ cloudquery fetch
 ```
 
 :::tip
-`HTTPS` in `HTTPS_PROXY` variable name means that it is a proxy for `https` requests, not the type of proxy, so value can start with `http://`.
+`HTTPS` in `HTTPS_PROXY` variable name means that it is a proxy for HTTPS requests, and not the protocol of the proxy, so its value can start with `http://`.
 :::
