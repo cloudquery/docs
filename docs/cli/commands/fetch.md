@@ -14,7 +14,6 @@ Examples:
   cloudquery fetch
 
 Flags:
-      --fail-on-error         CloudQuery should return a failure error code if provider has any error
   -h, --help                  help for fetch
       --skip-schema-upgrade   skip schema upgrade of provider fetch, disabling this flag might cause issues
 ```
