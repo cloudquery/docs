@@ -35,10 +35,17 @@ cloudquery {
 
 The provider block must be specified one or more times, and should be first specified in the `cloudquery` block.
 
-Each provider has two blocks:
+Each provider has the following blocks that can be set:
 
 * `configuration` - The arguments are different from provider to provider and their documentation can be found in [CloudQuery Hub](https://hub.cloudquery.io).
-* `resources` - All resources that this provider supports and can fetch configuration and metadata from.
+
+* `resources` - A list of resources to fetch configuration and metadata for. You can specify all supported resources by providing `*` as the first value.
+* `alias` **(Optional)** - A unique identifier for the provider so that you can have multiple instances for the same provider
+<!-- * `env` **(Optional)** -  -->
+* `max_goroutines` **(Optional)** - The maximum number Go routines created by cloudquery for the purpose of parallel resource fetching. This is useful for providers that have low concurrency thresholds and for compute resources that have minimal memory and CPU available. Value must be an integer greater than 0. Default behavior is that CloudQuery will attempt to use all resources available but will try and factor in CPU and File descriptor limitations.
+* `max_parallel_resource_fetch_limit` **(Optional)** - The maximum number of resources that are attempted to be fetched in parallel. This is useful for providers that have low concurrency thresholds and for compute resources that have minimal memory and CPU available Value must be an integer greater than 0. Default behavior is CloudQuery will attempt to fetch as many resources in parallel as possible.
+* `resource_timeout` **(Optional)** - The number of seconds that CloudQuery will spend fetching any single resource. Value must be an integer greater than 0. Default behavior is unlimited timeout.
+* `skip_resources` **(Optional)** - A list of resources that should be explicitly skipped. This can help if you are using a `*` or dynamically generating the `resources` value.
 
 :::tip
 You can have multiple providers of the same type specified here. For example, this can be useful if you want to fetch data from different accounts and you don't have cross-account access.

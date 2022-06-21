@@ -138,7 +138,8 @@ module.exports = {
               'configuration/overview',
               'configuration/environment-variable-substitution',
               'configuration/file-backed-variable-values',
-              'configuration/providers'
+              'configuration/providers',
+              'configuration/proxy-configuration'
           ]
       },
     {

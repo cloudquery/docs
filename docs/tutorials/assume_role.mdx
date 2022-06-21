@@ -63,7 +63,7 @@ First, create a file named `trust_policy.json` (replace `<SourceAccountUserArn>`
 
 You will have to run the `aws cli` commands here twice: first for `TargetAccountA` and then for `TargetAccountB`.
 i.e., between running these commands, you will need to change your `AWS_ACCESS_KEY_*` environment variables, 
-`AWS_PROFILE` environment variabler, or similar.
+`AWS_PROFILE` environment variable, or similar.
 
 ```bash title="AWS CLI commands for TargetAccountA"
 aws iam create-role --role-name CloudQueryFetchRole --assume-role-policy-document file://trust_policy.json
@@ -75,14 +75,14 @@ aws iam create-role --role-name CloudQueryFetchRole --assume-role-policy-documen
 
 ## Grant permissions to the roles in the target accounts
 
-The roles in your target account will need to have permissions to read your cloud configuation.
+The roles in your target account will need to have permissions to read your cloud configuration.
 
 :::info
 CloudQuery requires only *read* permissions (we will never make any changes to your cloud setup). 
 Attaching the `ReadOnlyAccess` policy to the user/role CloudQuery is running as should work for the most part, 
 but you can fine-tune it even more to have read-only access for the specific set of resources that you want 
 CloudQuery to fetch. 
-[See also this blogpost](https://alestic.com/2015/10/aws-iam-readonly-too-permissive/).
+[See also this blog post](https://alestic.com/2015/10/aws-iam-readonly-too-permissive/).
 :::
 
 ```bash title="AWS CLI commands for TargetAccountA"
@@ -120,7 +120,7 @@ Authenticate your AWS-CLI to access `SourceAccount`, and then run:
 aws iam create-policy --policy-name AllowAssumeRoleIntoTargetAccounts --policy-document file://allow_assume_role_into_target_accounts.json
 ```
 
-Next, attach the `AllowAssumeRoleIntoTargetAccounts` policy to the user CloudQuery will run as (replace `<SourceAccountUserName>` and `<SourceAcocountId>`):
+Next, attach the `AllowAssumeRoleIntoTargetAccounts` policy to the user CloudQuery will run as (replace `<SourceAccountUserName>` and `<SourceAccountId>`):
 
 ```bash title="AWS CLI Commands for SourceAccount"
 aws iam attach-user-policy --user-name <SourceAccountUserName> --policy-arn "arn:aws:iam::<SourceAccountId>:policy/AllowAssumeRoleIntoTargetAccounts"
@@ -168,7 +168,7 @@ provider "aws" {
 
 :::caution Warning
 
-`accounts` is a confusing name - the block should really be named `account`. Each `accounts` represents a **single** acount
+`accounts` is a confusing name - the block should really be named `account`. Each `accounts` represents a **single** account
 to assume-role into, and you can have as many `accounts` blocks as you'd like.
 
 :::

@@ -63,7 +63,7 @@ You can use either a relative path or an absolute path.
 
 :::tip important
 When specifying a local policy, you must specify the path to a **directory**.
-This directory must contain a valid policy file named `policy.hcl`. See also the [tutorial](https://docs.cloudquery.io/docs/tutorials/policies/writing-your-first-policy/) on local policies.
+This directory must contain a valid policy file named `policy.hcl`. See also the [tutorial](https://docs.cloudquery.io/docs/tutorials/policies/writing-your-first-policy) on local policies.
 :::
 
 ### Results
