@@ -39,7 +39,6 @@ Each provider has the following blocks that can be set:
 
 * `configuration` - The arguments are different from provider to provider and their documentation can be found in [CloudQuery Hub](https://hub.cloudquery.io).
 
-
 * `resources` - A list of resources to to fetch configuration and metadata for. You can specify all supported resources by providing `*` as the first value 
 * `alias` **(Optional)** - A unique identifier for the provider so that you can have multiple instances for the same provider 
 <!-- * `env` **(Optional)** -  -->
