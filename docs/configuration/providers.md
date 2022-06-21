@@ -10,7 +10,6 @@ The core responsibility of a provider is to define resources and tables.
 
 Every resource can define one or more tables this resource configuration is transformed to.
 
-
 ## Hosting
 
 Providers are hosted on GitHub while [hub.cloudquery.io](https://hub.cloudquery.io) serves as a central registry for discovery, validation & verification.
