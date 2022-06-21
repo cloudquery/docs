@@ -74,6 +74,14 @@ module.exports = {
           'cli/policy/storage',
           'cli/policy/testing',
         ],
+       }, 
+       {
+        type: 'category',
+        label: 'Drift',
+        items: [
+          'cli/drift/overview',
+          'cli/drift/configuration'
+        ],
        },
        {
         type: 'category',
@@ -87,6 +95,8 @@ module.exports = {
         label: 'Commands',
         items: [
           'cli/commands/completion',
+          'cli/commands/drift',
+          'cli/commands/drift-scan',
           'cli/commands/fetch',
           'cli/commands/init',
           'cli/commands/options',
