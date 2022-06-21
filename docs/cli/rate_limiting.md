@@ -30,7 +30,7 @@ provider "aws" {
   resources = [
     "*"
   ]
-  // Limit cloudquery to limit maximum spwaned goroutines for fetching to 5000.
+  // Limit cloudquery to limit maximum spawned goroutines for fetching to 5000.
   max_goroutines = 5000
 }
 ```
