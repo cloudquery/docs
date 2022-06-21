@@ -4,7 +4,7 @@ CloudQuery collects anonymized usage statistics and crash reports. Crash reports
 
 ## What is Stored
 
-- Which operation (fetch, policy, drift, etc.) was executed
+- Which operation (fetch, policy, etc.) was executed
 - How long the operation took and whether it succeeded
 - Whether you're running CloudQuery in a CI environment
 - CloudQuery version used, build-date and commit id
