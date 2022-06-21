@@ -35,7 +35,7 @@ cloudquery {
 
 The provider block must be specified one or more times, and should be first specified in the `cloudquery` block.
 
-Each provider has the following blocks that can be set: 
+Each provider has the following blocks that can be set:
 
 * `configuration` - The arguments are different from provider to provider and their documentation can be found in [CloudQuery Hub](https://hub.cloudquery.io).
 
