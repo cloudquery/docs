@@ -38,7 +38,7 @@ This block is merely an example and there are other options. Let's go over the s
 
 ### Terraform Block
 
-The `terraform` block defines the location to your [Terraform](https://www.terraform.io/) TFState files. This block is not used if you specify the TFState file or files in the CLI when invoking `drift scan`.
+The `terraform` block defines the location to your [Terraform](https://www.terraform.io) TFState files. This block is not used if you specify the TFState file or files in the CLI when invoking `drift scan`.
 
 In the example it's apparent that we support two separate backend types, called `local` and `s3`. The local backend, as the name would suggest, reads the files from the local filesystem. Just fill in the `files` with the list of TFState files you have.
 
