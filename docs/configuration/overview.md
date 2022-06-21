@@ -39,7 +39,7 @@ Each provider has the following blocks that can be set:
 
 * `configuration` - The arguments are different from provider to provider and their documentation can be found in [CloudQuery Hub](https://hub.cloudquery.io).
 
-* `resources` - A list of resources to to fetch configuration and metadata for. You can specify all supported resources by providing `*` as the first value
+* `resources` - A list of resources to fetch configuration and metadata for. You can specify all supported resources by providing `*` as the first value
 * `alias` **(Optional)** - A unique identifier for the provider so that you can have multiple instances for the same provider
 <!-- * `env` **(Optional)** -  -->
 * `max_goroutines` **(Optional)** - Specify an integer greater than 0 in order to limit the number Go routines created by cloudquery. CloudQuery will attempt to use all resources available but will try and factor in CPU and File descriptor limitations. This is useful for providers that have low concurrency thresholds and for compute resources that have minimal memory and CPU available
