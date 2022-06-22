@@ -57,7 +57,6 @@ Grafana
 CloudFormation
 Okta
 browsable
-boldstart
 Yandex
 queryable
 Cybersecurity
