@@ -74,3 +74,5 @@ Datasource
 Walkthrough
 walkthrough
 Tailscale
+Fastly
+Boldstart
