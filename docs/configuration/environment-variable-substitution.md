@@ -21,10 +21,9 @@ cloudquery:
 
 providers:
   - name: aws
-    configuration:
-      accounts:
-        - name: "<YOUR ID>"
-          role_arn: "${ARN}"
+    accounts:
+      - name: "<YOUR ID>"
+        role_arn: "${ARN}"
 ```
 
 Note that only environment variables starting with `CQ_VAR` are available for use in `config.yml`, and their prefix is removed.

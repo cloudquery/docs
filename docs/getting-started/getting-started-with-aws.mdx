@@ -140,10 +140,9 @@ or, configure your desired profile in the `local_profile` field of your CloudQue
 ```yml title="config.yml"
 providers:
   - name: "aws"
-    configuration:
-      accounts:
-        - name: "<account_alias>"
-          local_profile: "myprofile"
+    accounts:
+      - name: "<account_alias>"
+        local_profile: "myprofile"
     ...
   ...
 ```

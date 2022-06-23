@@ -8,13 +8,12 @@ provider block as following:
 ```yml
 providers:
   - name: aws
-    configuration:
-      aws_debug: false
-  // list of resources to fetch
-  resources:
-    - "*"
-  // Limit provider to fetch only 5 resources at a given time
-  max_parallel_resource_fetch_limit: 5
+    aws_debug: false
+    // list of resources to fetch
+    resources:
+      - "*"
+    // Limit provider to fetch only 5 resources at a given time
+    max_parallel_resource_fetch_limit: 5
 ```
 
 Another global setting is `max_goroutines` by default cloudquery sets this limit based on the current machine's specs based on the number of available cores. This flag can be added to any provider block to override the default cloudquery set limit.
@@ -22,13 +21,12 @@ Another global setting is `max_goroutines` by default cloudquery sets this limit
 ```yml
 providers:
   - name: aws
-    configuration:
-      aws_debug: false
-  // list of resources to fetch
-  resources:
-    - "*"
-  // Limit cloudquery to limit maximum spawned goroutines for fetching to 5000.
-  max_goroutines: 5000
+    aws_debug: false
+    // list of resources to fetch
+    resources:
+      - "*"
+    // Limit cloudquery to limit maximum spawned goroutines for fetching to 5000.
+    max_goroutines: 5000
 
 ```
 

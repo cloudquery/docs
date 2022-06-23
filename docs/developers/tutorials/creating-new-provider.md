@@ -76,7 +76,6 @@ type Config struct {
 }
 func (c Config) Example() string {
 	return `
-configuration:
   // Add this line    
 	// api_key: ${your_env_variable}
   // api_key: static_api_key
