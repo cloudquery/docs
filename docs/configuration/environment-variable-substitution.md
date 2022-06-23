@@ -13,14 +13,14 @@ And use it inside `config.yml`:
 ```yml
 cloudquery:
   providers:
-    - name: "aws"
+    - name: aws
       version: "${AWS_VERSION}"
 
   connection:
     dsn: "${DSN}"
 
 providers:
-  - name: "aws"
+  - name: aws
     configuration:
       accounts:
         - name: "<YOUR ID>"

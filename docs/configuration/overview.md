@@ -9,16 +9,16 @@ The `cloudquery` block must be specified exactly once per `config.yml`. This usu
 ```yml
 cloudquery:
   connection:
-    type: "postgres"
-    username: "postgres"
-    password: "pass"
-    host: "localhost"
+    type: postgres
+    username: postgres
+    password: pass
+    host: localhost
     port: 5432
-    database: "postgres"
-    sslmode: "disable"
+    database: postgres
+    sslmode: disable
 
     # old format
-    # dsn = "postgres://postgres:pass@localhost:5432/postgres?sslmode=disable"
+    # dsn: "postgres://postgres:pass@localhost:5432/postgres?sslmode=disable"
 ```
 
 ### Arguments
