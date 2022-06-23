@@ -143,7 +143,13 @@ cloudquery:
       version: "latest"
 
   connection:
-    dsn: "<PostgreSQL_DSN>"
+    type: postgres
+    username: postgres
+    password: pass
+    host: localhost
+    port: 5432
+    database: postgres
+    sslmode: disable
 
 providers:
   - name: "aws"

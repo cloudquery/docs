@@ -38,7 +38,13 @@ cloudquery:
   ...
 
   connection:
-    dsn: "host=localhost user=postgres password=pass database=postgres port=5432"
+    type: postgres
+    username: postgres
+    password: pass
+    host: localhost
+    port: 5432
+    database: postgres
+    sslmode: disable
 ```
 
 </TabItem>
