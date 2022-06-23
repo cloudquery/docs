@@ -57,7 +57,6 @@ Grafana
 CloudFormation
 Okta
 browsable
-boldstart
 Yandex
 queryable
 Cybersecurity
@@ -74,3 +73,5 @@ Datasource
 Walkthrough
 walkthrough
 Tailscale
+Fastly
+Boldstart
