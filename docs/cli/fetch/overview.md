@@ -15,30 +15,26 @@ For local, you can use the following docker command:
 docker run -p 5432:5432 -e POSTGRES_PASSWORD=pass -d postgres
 ```
 
-### Generate `config.hcl`
+### Generate `config.yml`
 
-An initial `config.hcl` can be generated via `cloudquery init [provider]` (`provider` can be `aws`, `gcp` - see all options at <https://hub.cloudquery.io>).
+An initial `config.yml` can be generated via `cloudquery init [provider]` (`provider` can be `aws`, `gcp` - see all options at <https://hub.cloudquery.io>).
 
 If you are using an existing database, you will have to update the `connection` section
 in config.hcl:
 
-```hcl
-cloudquery {
-  provider "aws" {
-    source  = ""
-    version = "latest"
-  }
-
-  connection {
-    type = "postgres"
-    username = "postgres"
-    password = "pass"
-    host = "localhost"
-    port = 5432
-    database = "postgres"
-    # sslmode = "disable"
-  }
-}
+```yml
+cloudquery:
+    providers:
+        - name: aws
+          version: latest
+    connection:
+        type: postgres
+        username: postgres
+        password: pass
+        host: localhost
+        port: 5432
+        database: postgres
+        sslmode: disable
 ```
 
 ### Fetch

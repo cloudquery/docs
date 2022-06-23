@@ -1,30 +1,24 @@
 # Overview
 
-This is an overview of the syntax and configuration options of CloudQuery's main configuration file `config.hcl`.
-
-## HCL Overview
-
-Similarly to terraform we use HashiCorp [HCL configuration language](https://github.com/hashicorp/hcl) (You can read about why [here](https://github.com/hashicorp/hcl#why)).
+This is an overview of the syntax and configuration options of CloudQuery's main configuration file `config.yml`.
 
 ## Main CloudQuery block
 
-The `cloudquery` block must be specified exactly once per `config.hcl`. This usually looks like:
+The `cloudquery` block must be specified exactly once per `config.yml`. This usually looks like:
 
-```hcl
-cloudquery {
-  connection {
-    type = "postgres"
-    username = "postgres"
-    password = "pass"
-    host = "localhost"
-    port = 5432
-    database = "postgres"
-    sslmode = "disable"
+```yml
+cloudquery:
+  connection:
+    type: "postgres"
+    username: "postgres"
+    password: "pass"
+    host: "localhost"
+    port: 5432
+    database: "postgres"
+    sslmode: "disable"
 
     # old format
     # dsn = "postgres://postgres:pass@localhost:5432/postgres?sslmode=disable"
-  } 
-}
 ```
 
 ### Arguments

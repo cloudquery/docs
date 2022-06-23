@@ -127,7 +127,6 @@ module.exports = {
           items: [
               'configuration/overview',
               'configuration/environment-variable-substitution',
-              'configuration/file-backed-variable-values',
               'configuration/providers',
               'configuration/proxy-configuration'
           ]

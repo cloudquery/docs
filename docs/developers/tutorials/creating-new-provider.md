@@ -56,7 +56,7 @@ go get github.com/google/go-github/v40
 
 ### Define Provider Configuration
 
-Each provider defines set of `required` or `optional` arguments that can be passed by a user in the `config.hcl` block.
+Each provider defines set of `required` or `optional` arguments that can be passed by a user in the `config.yml` block.
 
 In our case, to initialize an [authenticated](https://github.com/google/go-github#authentication) GitHub API client you will need an AccessToken provided by the user.
 
@@ -75,17 +75,17 @@ type Config struct {
 	}
 }
 func (c Config) Example() string {
-	return `configuration {
-    // Add this line    
-	// api_key = ${your_env_variable}
-    // api_key = static_api_key
-}
+	return `
+configuration:
+  // Add this line    
+	// api_key: ${your_env_variable}
+  // api_key: static_api_key
 `
 ```
 
-`Config` will be automatically parsed by CloudQuery SDK, you just need to define the name via the `hcl` tag. We will also make it optional as we want also to support default environment variables.
+`Config` will be automatically parsed by CloudQuery SDK, you just need to define the name via the `yml` tag. We will also make it optional as we want also to support default environment variables.
 
-The `Example` function returns an example `config.hcl` when you will run `cloudquery init github`. The `configuration` is mostly commented out as the `api_key` is optional (we want to support `GITHUB_TOKEN` env variable by default).
+The `Example` function returns an example `config.yml` when you will run `cloudquery init github`. The `configuration` is mostly commented out as the `api_key` is optional (we want to support `GITHUB_TOKEN` env variable by default).
 
 #### Initialize GitHub API Client
 

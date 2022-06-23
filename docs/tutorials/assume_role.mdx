@@ -130,39 +130,32 @@ aws iam attach-user-policy --user-name <SourceAccountUserName> --policy-arn "arn
 
 Now that all AWS permissions are ready, you need to configure CloudQuery to assume-role into the target accounts.
 
-Your `config.hcl` file should look similar to the following (call `cloudquery init aws` if you don't have one yet).
+Your `config.yml` file should look similar to the following (call `cloudquery init aws` if you don't have one yet).
 Remember to replace `<TargetAccountAId>`, `<TargetAccountBId>`, and `<PostgreSQL_DSN>` with the appropriate values:
 
-```hcl title="config.hcl"
-cloudquery {
+```yml title="config.yml"
+cloudquery:
   ...
   
-  provider "aws" {
-    source = "cloudquery/aws"
-    version = "latest"
-  }
+  providers:
+    - name: "aws"
+      source: "cloudquery/aws"
+      version: "latest"
 
-  connection {
-    dsn = "<PostgreSQL_DSN>"
-  }
-}
+  connection:
+    dsn: "<PostgreSQL_DSN>"
 
-provider "aws" {
+providers:
+  - name: "aws"
   ...
 
-  configuration {
-    accounts "target_account_a" {
-      role_arn = "arn:aws:iam::<TargetAccountAId>:role/CloudQueryFetchRole"
-    }
+  configuration:
+    accounts:
+      - name: "target_account_a"
+        role_arn: "arn:aws:iam::<TargetAccountAId>:role/CloudQueryFetchRole"
+      - name: "target_account_b"
+        role_arn: "arn:aws:iam::<TargetAccountBId>:role/CloudQueryFetchRole"
 
-    accounts "target_account_b" {
-      role_arn = "arn:aws:iam::<TargetAccountBId>:role/CloudQueryFetchRole"
-    }
-    ...
-  }
-
-  ...
-}
 ```
 
 
