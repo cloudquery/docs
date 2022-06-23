@@ -6,7 +6,7 @@ CloudQuery is an open-source cloud asset inventory powered by SQL, and as such, 
 
 ### Sync (Upgrade/Downgrade) providers
 
-The following command will upgrade or downgrade the provider to the version defined in our `config.yml`, if the version is defined as `latest` the latest version will downloaded and the provider upgraded to the final schema version.
+The following command will upgrade or downgrade the provider to the version defined in our `config.yml`, if the version is defined as `latest` the latest version will be downloaded and the provider migrated to the latest schema version.
 
 ```bash
 cloudquery provider sync aws
