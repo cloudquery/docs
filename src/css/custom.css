@@ -5,14 +5,14 @@
  * work well for content-centric websites.
  */
 
-@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&family=Source+Sans+Pro:wght@400;600;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro&family=Source+Sans+Pro:wght@400;600;900&display=swap");
 
 :root {
-  --ifm-font-family-base: 'Source Sans Pro', sans-serif;
-  --ifm-font-family-monospace: 'Source Code Pro', monospace;
+  --ifm-font-family-base: "Source Sans Pro", sans-serif;
+  --ifm-font-family-monospace: "Source Code Pro", monospace;
 }
 
-:root[data-theme='dark'] {
+:root[data-theme="dark"] {
   --ifm-color-primary: #25c2a0;
   --ifm-color-primary-dark: rgb(33, 175, 144);
   --ifm-color-primary-darker: rgb(31, 165, 136);
@@ -23,8 +23,8 @@
   --ifm-code-font-size: 95%;
 }
 
-:root[data-theme='light'] {
-  --ifm-color-primary: #2EA87F;
+:root[data-theme="light"] {
+  --ifm-color-primary: #2ea87f;
   --ifm-color-primary-dark: rgb(33, 175, 144);
   --ifm-color-primary-darker: rgb(31, 165, 136);
   --ifm-color-primary-darkest: rgb(26, 136, 112);
@@ -41,11 +41,18 @@
   padding: 0 var(--ifm-pre-padding);
 }
 
-html[data-theme='dark'] .docusaurus-highlight-code-line {
+html[data-theme="dark"] .docusaurus-highlight-code-line {
   background-color: rgba(0, 0, 0, 0.3);
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 a {
   font-weight: 600;
+}
+div[class^="announcementBar_"] {
+  height: auto;
+  font-size: 1rem;
+}
+div[class^="announcementBarContent_"] {
+  font-size: 1rem;
 }
