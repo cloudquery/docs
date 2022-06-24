@@ -19,8 +19,8 @@ module.exports = {
   themeConfig: {
     announcementBar: {
       id: "give_a_star",
-      content: `⭐️ If you like CloudQuery, please 
-        <a target="_blank" rel="noopener noreferrer" href="https://github.com/cloudquery/cloudquery/">star the project on GitHub</a>
+      content: `⭐️ If you like CloudQuery, give it a star on
+        <a target="_blank" rel="noopener noreferrer" href="https://github.com/cloudquery/cloudquery/">GitHub</a>
         and follow us on <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/cloudquery">Twitter ${TwitterSvg}</a> `,
     },
     colorMode: {
