@@ -73,7 +73,7 @@ div[class^="announcementBar_"] {
     var(--site-announcement-bar-stripe-color2) 40px
   );
   font-weight: bold;
-  letter-spacing: 0.025em;
+  font-family: system-ui;
 }
 
 div[class^="announcementBarContent_"] a {
