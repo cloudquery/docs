@@ -16,9 +16,9 @@
     "lint:js": "eslint src"
   },
   "dependencies": {
-    "@docusaurus/core": "2.0.0-beta.4",
-    "@docusaurus/preset-classic": "2.0.0-beta.4",
-    "@docusaurus/theme-search-algolia": "2.0.0-beta.9",
+    "@docusaurus/core": "^2.0.0-beta.21",
+    "@docusaurus/preset-classic": "^2.0.0-beta.21",
+    "@docusaurus/theme-search-algolia": "^2.0.0-beta.21",
     "@mdx-js/react": "1.6.22",
     "@svgr/webpack": "5.5.0",
     "clsx": "1.1.1",
