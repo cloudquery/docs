@@ -8,9 +8,9 @@ CloudQuery uses a HCL file as the primary means of configuration, you can execut
 
 ```docker
 docker run \
-  -v <ABSOLUTE PATH TO CONFIG>/config.hcl:/config/config.hcl \
+  -v <ABSOLUTE PATH TO CONFIG>/config.yml:/config/config.yml \
   ghcr.io/cloudquery/cloudquery:latest \
-  fetch --config /config/config.hcl
+  fetch --config /config/config.yml
 ```
 
 As with running any `cloudquery` command on your CLI you can override the config with the [optional flags](commands/options) with the docker container. You will also need to make sure you load any ENV variables for providers, such as your `AWS_*` keys etc.
@@ -38,7 +38,7 @@ Depending on your operating system, the built components maybe different between
 
 ## Fetching data
 
-For the specifics of how `cloudquery fetch` works, and what additional flags it uses please consult the [command page](commands/fetch). The command will check the `config.hcl` provided and proceed to download any providers defined, uploading the schema to the database, and retrieving the service data from the provider. An example of this command using it with AWS would be:
+For the specifics of how `cloudquery fetch` works, and what additional flags it uses please consult the [command page](commands/fetch). The command will check the `config.yml` provided and proceed to download any providers defined, uploading the schema to the database, and retrieving the service data from the provider. An example of this command using it with AWS would be:
 
 ```docker
 docker run \
@@ -62,7 +62,7 @@ docker run \
   -v <PATH TO CACHE>/.cq:/data/.cq \
   -v <PATH TO CONFIG>/config.hcl:/config/config.hcl \
   ghcr.io/cloudquery/cloudquery:latest \
-  policy download aws-cis-1.2.0 --config /config/config.hcl
+  policy download aws-cis-1.2.0 --config /config/config.yml
     --data-dir /data/.cq
 ```
 
