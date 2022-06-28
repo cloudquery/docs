@@ -1,13 +1,16 @@
 # Overview
 
-This is an overview of the syntax and configuration options of CloudQuery's main configuration file `config.yml`.
+This is an overview of the configuration options of CloudQuery's main configuration file `cloudquery.yml`.
 
 ## Main CloudQuery block
 
-The `cloudquery` block must be specified exactly once per `config.yml`. This usually looks like:
+The `cloudquery` block must be specified exactly once per `cloudquery.yml`. This usually looks like:
 
 ```yml
 cloudquery:
+  providers:
+    - name: aws
+      version: latest
   connection:
     type: postgres
     username: postgres
@@ -21,9 +24,23 @@ cloudquery:
     # dsn: "postgres://postgres:pass@localhost:5432/postgres?sslmode=disable"
 ```
 
-### Arguments
+### Connection Block
+This block is a map of values that defines the connections details to your PostgreSQL database.
+* **`type`** (required) - Type of database that CloudQuery will connect to. Only valid value is `postgres`
+* **`username`** (required) - Username that CloudQuery will use when interacting with the Postgres database
+* **`password`** (required) - Password for user that CloudQuery will use to authenticate into the Postgres database
+* **`host`** (required) - Hostname or IP address of Postgres database
+* **`port`** (required) - Port of the Postgres database that CloudQuery will connect to
+* **`database`** (required) - Name of the Postgres database that CloudQuery will connect to
+* **`sslmode`** (required) - Postgres setting for specifying the level of security you want to enforce in the connection between CloudQuery and your database. If you are running CloudQuery locally in a docker container the typical value is `disable`. Other valid options include: `allow`, `prefer`, `require`, `verify-ca`, `verify-full`
 
-* **`connection`** (required) - defines the connections details to your PostgreSQL database.
+
+### Providers Block
+This is a list of objects that defines which providers and the corresponding versions that CloudQuery should download and ensure are downloaded and ready to be invoked
+
+  * `name` - Name of the provider you want to use. Should be in the form `organization/name` if no organization is set then it will assume the organization is `cloudquery`  
+  * `source` **(Optional)** - By default CloudQuery will assume the location is `github.com/organization/cq-provider-<name>` (where the `<name>` comes from the `name` attribute)  unless user specifies a different location.
+  * `version` - Based on Git tags of the repo. User can define either a specific tagged version or `latest`
 
 ## Provider Block
 
@@ -32,7 +49,6 @@ The provider block must be specified one or more times, and should be first spec
 Each provider has the following blocks that can be set:
 
 * `configuration` - The arguments are different from provider to provider and their documentation can be found in [CloudQuery Hub](https://hub.cloudquery.io).
-
 * `resources` - A list of resources to fetch configuration and metadata for. You can specify all supported resources by providing `*` as the first value.
 * `alias` **(Optional)** - A unique identifier for the provider so that you can have multiple instances for the same provider
 <!-- * `env` **(Optional)** -  -->
