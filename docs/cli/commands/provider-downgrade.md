@@ -1,6 +1,6 @@
 # provider downgrade
 
-Downgrades one or more providers schema version based on config.hcl
+Downgrades one or more providers schema version based on `cloudquery.yml`
 
 ## Usage
 

@@ -1,10 +1,10 @@
 # Overview
 
-This is an overview of the syntax and configuration options of CloudQuery's main configuration file `config.yml`.
+This is an overview of the syntax and configuration options of CloudQuery's main configuration file `cloudquery.yml`.
 
 ## Main CloudQuery block
 
-The `cloudquery` block must be specified exactly once per `config.yml`. This usually looks like:
+The `cloudquery` block must be specified exactly once per `cloudquery.yml`. This usually looks like:
 
 ```yml
 cloudquery:

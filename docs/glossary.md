@@ -10,7 +10,7 @@ The [CloudQuery SDK](https://github.com/cloudquery/cq-provider-sdk) is the open-
 
 ## Fetch
 
-Fetch is both the CLI command and the process when CloudQuery extracts all the configured resources in `config.yml`, transforms them, and loads them into the database.
+Fetch is both the CLI command and the process when CloudQuery extracts all the configured resources in `cloudquery.yml`, transforms them, and loads them into the database.
 
 ## Policy
 
@@ -34,6 +34,6 @@ Developing new provider
 
 ## Resource
 
-The fetch command is working on a list of resources defined in each provider (in `config.yml`).
+The fetch command is working on a list of resources defined in each provider (in `cloudquery.yml`).
 
 For example, `ec2_instances` is a resource in `aws` provider.

@@ -1,6 +1,6 @@
 # init
 
-Generates initial `config.hcl` for fetch command.
+Generates initial `cloudquery.yml` for fetch command.
 
 ## Usage
 
@@ -9,10 +9,10 @@ Generates initial `config.hcl` for fetch command.
 ## Examples
 
 ```bash
-# Downloads AWS provider and generates config.hcl for AWS provider
+# Downloads AWS provider and generates cloudquery.yml for AWS provider
 cloudquery init aws
 
-# Downloads AWS, GCP providers and generates one config.hcl with both providers
+# Downloads AWS, GCP providers and generates one cloudquery.yml with both providers
 cloudquery init aws gcp
 ```
 

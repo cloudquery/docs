@@ -15,12 +15,12 @@ For local, you can use the following docker command:
 docker run -p 5432:5432 -e POSTGRES_PASSWORD=pass -d postgres
 ```
 
-### Generate `config.yml`
+### Generate `cloudquery.yml`
 
-An initial `config.yml` can be generated via `cloudquery init [provider]` (`provider` can be `aws`, `gcp` - see all options at <https://hub.cloudquery.io>).
+An initial `cloudquery.yml` can be generated via `cloudquery init [provider]` (`provider` can be `aws`, `gcp` - see all options at <https://hub.cloudquery.io>).
 
 If you are using an existing database, you will have to update the `connection` section
-in config.hcl:
+in `cloudquery.yml`:
 
 ```yml
 cloudquery:
@@ -39,7 +39,7 @@ cloudquery:
 
 ### Fetch
 
-Once `config.hcl` is generated, run the following command to fetch the resources. \(You need to be authenticated — see relevant section under each provider\):
+Once `cloudquery.yml` is generated, run the following command to fetch the resources. \(You need to be authenticated — see relevant section under each provider\):
 
 ```text
 cloudquery fetch

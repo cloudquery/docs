@@ -1,6 +1,6 @@
 # provider download
 
-Downloads all providers specified in config.hcl
+Downloads all providers specified in `cloudquery.yml`
 
 ## Usage
 
