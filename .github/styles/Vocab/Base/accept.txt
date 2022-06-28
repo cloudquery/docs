@@ -76,3 +76,4 @@ Tailscale
 Fastly
 Boldstart
 Steampipe
+dbt
