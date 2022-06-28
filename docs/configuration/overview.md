@@ -68,6 +68,7 @@ providers:
 A list of objects that represent a provider that will be configured.
 
 Each provider has the following blocks that can be set:
+
 * `name` - The name of the provider that corresponds to a named provider specified in `cloudquery.providers`
 * `configuration` - The arguments are different from provider to provider and their documentation can be found in [CloudQuery Hub](https://hub.cloudquery.io).
 * `resources` - A list of resources to fetch configuration and metadata for. You can specify all supported resources by providing `*` as the first value.
