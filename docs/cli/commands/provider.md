@@ -9,13 +9,13 @@ cloudquery provider [command]
 
 Examples:
 
-  # Downloads all providers specified in config.hcl:
+  # Downloads all providers specified in cloudquery.yml:
   cloudquery provider download
-  # Upgrades all providers specified in config.hcl
+  # Upgrades all providers specified in cloudquery.yml
   cloudquery provider upgrade
   # Upgrade one or more providers
   cloudquery provider upgrade aws
-  # Downgrades all providers specified in config.hcl
+  # Downgrades all providers specified in cloudquery.yml
   cloudquery provider downgrade
   # Downgrades one or more providers
   cloudquery provider downgrade aws, gcp
@@ -29,10 +29,10 @@ Examples:
 
 ```text
 build-schema Builds provider schema on database
-downgrade    Downgrades one or more providers schema version based on config.hcl
-download     Downloads all providers specified in config.hcl.
+downgrade    Downgrades one or more providers schema version based on cloudquery.yml
+download     Downloads all providers specified in cloudquery.yml.
 drop         Drops provider schema from database
-upgrade      Upgrades one or more providers schema version based on config.hcl
+upgrade      Upgrades one or more providers schema version based on cloudquery.yml
 ```
 
 ## Additional Help Topics
