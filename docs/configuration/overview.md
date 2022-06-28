@@ -49,11 +49,17 @@ providers:
   - name: <provider-name>
     configurations:
       \\ This will be provider specific configurations
-    alias: <unique identifier>
+    alias: <unique_identifier>
     resources:
       - "*"
     skip_resources:
       - "slow.resource_1"
+  - name: <provider-name>
+    configurations:
+      \\ This will be provider specific configurations
+    alias: <unique_identifier_2>
+    resources:
+      - "*"
 ```
 
 ### `providers`
@@ -72,5 +78,5 @@ Each provider has the following blocks that can be set:
 * `skip_resources` **(Optional)** - A list of resources that should be explicitly skipped. This can help if you are using a `*` or dynamically generating the `resources` value.
 
 :::tip
-You can have multiple providers of the same type specified here. For example, this can be useful if you want to fetch data from different accounts and you don't have cross-account access.
+You can have multiple providers of the same type specified here as long as you specify an alias like the example above. This can be useful if you want to fetch data with different rate limiting parameters.
 :::
