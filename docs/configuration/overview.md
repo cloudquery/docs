@@ -23,6 +23,7 @@ cloudquery:
 ```
 
 ### `cloudquery.connection`
+
 A map of values that defines the connections details to your PostgreSQL database.
 * **`type`** (required) - Type of database that CloudQuery will connect to. Only valid value is `postgres`
 * **`username`** (required) - Username that CloudQuery will use when interacting with the Postgres database
@@ -34,6 +35,7 @@ A map of values that defines the connections details to your PostgreSQL database
 
 
 ### `cloudquery.providers`
+
 A list of objects that defines which providers and the corresponding versions that CloudQuery should download and ensure are downloaded and ready to be invoked:
 
 * **`name`** - Name of the provider you want to use. Should be in the form `organization/name` if no organization is set then it will assume the organization is `cloudquery`  
