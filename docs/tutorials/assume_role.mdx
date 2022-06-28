@@ -130,10 +130,10 @@ aws iam attach-user-policy --user-name <SourceAccountUserName> --policy-arn "arn
 
 Now that all AWS permissions are ready, you need to configure CloudQuery to assume-role into the target accounts.
 
-Your `config.yml` file should look similar to the following (call `cloudquery init aws` if you don't have one yet).
+Your `cloudquery.yml` file should look similar to the following (call `cloudquery init aws` if you don't have one yet).
 Remember to replace `<TargetAccountAId>`, `<TargetAccountBId>`, and `<PostgreSQL_DSN>` with the appropriate values:
 
-```yml title="config.yml"
+```yml title="cloudquery.yml"
 cloudquery:
   ...
   
