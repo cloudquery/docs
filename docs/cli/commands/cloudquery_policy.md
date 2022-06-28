@@ -1,3 +1,8 @@
+---
+id: "cloudquery policy"
+hide_title: true
+sidebar_label: "policy"
+---
 ## cloudquery policy
 
 Download and run CloudQuery policy

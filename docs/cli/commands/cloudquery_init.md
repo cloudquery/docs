@@ -1,3 +1,8 @@
+---
+id: "cloudquery init"
+hide_title: true
+sidebar_label: "init"
+---
 ## cloudquery init
 
 Generate initial config.hcl for fetch command

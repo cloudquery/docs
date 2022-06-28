@@ -1,3 +1,8 @@
+---
+id: "cloudquery policy validate"
+hide_title: true
+sidebar_label: "policy validate"
+---
 ## cloudquery policy validate
 
 Validate policy for any issues and diagnostics

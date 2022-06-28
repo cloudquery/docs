@@ -1,3 +1,8 @@
+---
+id: "cloudquery provider sync"
+hide_title: true
+sidebar_label: "provider sync"
+---
 ## cloudquery provider sync
 
 Download the providers specified in config and re-create their database schema

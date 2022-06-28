@@ -1,3 +1,8 @@
+---
+id: "cloudquery policy download"
+hide_title: true
+sidebar_label: "policy download"
+---
 ## cloudquery policy download
 
 Download a policy from the CloudQuery Policy Hub

@@ -1,3 +1,8 @@
+---
+id: "cloudquery provider download"
+hide_title: true
+sidebar_label: "provider download"
+---
 ## cloudquery provider download
 
 Downloads all providers specified in config.hcl.

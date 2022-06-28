@@ -1,3 +1,8 @@
+---
+id: "cloudquery policy describe"
+hide_title: true
+sidebar_label: "policy describe"
+---
 ## cloudquery policy describe
 
 Describe CloudQuery policy

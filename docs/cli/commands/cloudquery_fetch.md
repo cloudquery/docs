@@ -1,3 +1,8 @@
+---
+id: "cloudquery fetch"
+hide_title: true
+sidebar_label: "fetch"
+---
 ## cloudquery fetch
 
 Fetch resources from configured providers

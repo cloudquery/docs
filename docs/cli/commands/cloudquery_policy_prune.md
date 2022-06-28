@@ -1,3 +1,8 @@
+---
+id: "cloudquery policy prune"
+hide_title: true
+sidebar_label: "policy prune"
+---
 ## cloudquery policy prune
 
 Prune policy executions from the database which are older than the relative time specified

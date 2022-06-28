@@ -1,3 +1,8 @@
+---
+id: "cloudquery completion"
+hide_title: true
+sidebar_label: "completion"
+---
 ## cloudquery completion
 
 Generate completion script (run --help for full instructions)

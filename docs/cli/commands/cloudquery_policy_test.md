@@ -1,3 +1,8 @@
+---
+id: "cloudquery policy test"
+hide_title: true
+sidebar_label: "policy test"
+---
 ## cloudquery policy test
 
 Tests policy against a precompiled set of database snapshots

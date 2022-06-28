@@ -1,3 +1,8 @@
+---
+id: "cloudquery policy run"
+hide_title: true
+sidebar_label: "policy run"
+---
 ## cloudquery policy run
 
 Executes a policy on CloudQuery database

@@ -1,3 +1,8 @@
+---
+id: "cloudquery policy snapshot"
+hide_title: true
+sidebar_label: "policy snapshot"
+---
 ## cloudquery policy snapshot
 
 Take database snapshot of all tables included in a CloudQuery policy
