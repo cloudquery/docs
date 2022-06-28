@@ -33,14 +33,13 @@ A map of values that defines the connections details to your PostgreSQL database
 * **`database`** (required) - Name of the Postgres database that CloudQuery will connect to
 * **`sslmode`** (required) - Postgres setting for specifying the level of security you want to enforce in the connection between CloudQuery and your database. If you are running CloudQuery locally in a docker container the typical value is `disable`. Other valid options include: `allow`, `prefer`, `require`, `verify-ca`, `verify-full`
 
-
 ### `cloudquery.providers`
 
 A list of objects that defines which providers and the corresponding versions that CloudQuery should download and ensure are downloaded and ready to be invoked:
 
 * **`name`** - Name of the provider you want to use. Should be in the form `organization/name` if no organization is set then it will assume the organization is `cloudquery`  
 * **`source`** **(Optional)** - By default CloudQuery will assume the location is `github.com/organization/cq-provider-<name>` (where the `<name>` comes from the `name` attribute)  unless user specifies a different location.
-* **`version`** - Based on Git tags of the repo. User can define either a specific tagged version or `latest`
+* **`version`** - Based on Git tags of the repository. User can define either a specific tagged version or `latest`
 
 ## Main Providers Block
 
