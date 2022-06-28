@@ -214,7 +214,7 @@ module.exports = {
         'cq_vs_others/aws_config',
         'cq_vs_others/google_cloud_asset_inventory',
         'cq_vs_others/cspms',
-        'cq_vs_others/cteampipe'
+        'cq_vs_others/steampipe'
       ],
     },
     {
