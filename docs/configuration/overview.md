@@ -25,6 +25,7 @@ cloudquery:
 ### `cloudquery.connection`
 
 A map of values that defines the connections details to your PostgreSQL database.
+
 * **`type`** (required) - Type of database that CloudQuery will connect to. Only valid value is `postgres`
 * **`username`** (required) - Username that CloudQuery will use when interacting with the Postgres database
 * **`password`** (required) - Password for user that CloudQuery will use to authenticate into the Postgres database
