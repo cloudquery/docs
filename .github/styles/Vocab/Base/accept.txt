@@ -36,6 +36,7 @@ README
 architected
 anonymized
 hostname
+Hostname
 tfstate
 TFState
 TFstate
