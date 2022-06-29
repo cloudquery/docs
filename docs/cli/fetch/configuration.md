@@ -16,10 +16,11 @@ Each provider defines a set of relational tables that can also be found on the [
 
 Inside the cloudquery main block you need to add
 
-```hcl
-provider "aws" {
-    version = "latest"
-}
+```yml
+cloudquery:
+    providers:
+        - name: aws
+          version: latest
 ```
 
 Default configuration for a specific provider can always be generated via `cloudquery init [provider]`

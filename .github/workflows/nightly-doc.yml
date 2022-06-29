@@ -1,0 +1,32 @@
+name: nightly-doc
+on:
+  schedule:
+    cron: "0 0 * * *"
+    timezone: "America/New_York"
+  workflow_dispatch:
+jobs:
+  doc-generate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: cloudquery/setup-cloudquery@v1
+        name: Setup CloudQuery
+        with:
+          version: latest
+      - name: Re-generate docs
+        run: |
+          cd docs/cli/commands
+          cloudquery doc
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v4
+        with:
+          # required so the PR triggers workflow runs
+          token: ${{ secrets.GH_CQ_BOT }}
+          branch: docs/cli-markdown
+          base: main
+          title: "doc: Update CLI commands docs"
+          commit-message: "doc: Update CLI commands docs"
+          body: This PR was created by a scheduled workflow to sync regenerate CLI markdown
+          labels: automerge
+          author: cq-bot <cq-bot@users.noreply.github.com>

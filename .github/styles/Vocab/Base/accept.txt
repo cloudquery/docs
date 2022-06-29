@@ -36,12 +36,14 @@ README
 architected
 anonymized
 hostname
+Hostname
 tfstate
 TFState
 TFstate
 hyperfunctions
 PowerShell
 powershell
+Powershell
 Zsh
 backoff
 subpolicy
@@ -75,3 +77,7 @@ walkthrough
 Tailscale
 Fastly
 Boldstart
+precompiled
+zsh
+Steampipe
+dbt
