@@ -81,3 +81,4 @@ precompiled
 zsh
 Steampipe
 dbt
+compinit
