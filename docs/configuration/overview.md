@@ -26,13 +26,13 @@ cloudquery:
 
 A map of values that defines the connections details to your PostgreSQL database.
 
-* **`type`** (required) - Type of database that CloudQuery will connect to. Only valid value is `postgres`
-* **`username`** (required) - Username that CloudQuery will use when interacting with the Postgres database
-* **`password`** (required) - Password for user that CloudQuery will use to authenticate into the Postgres database
-* **`host`** (required) - Hostname or IP address of Postgres database
-* **`port`** (required) - Port of the Postgres database that CloudQuery will connect to
-* **`database`** (required) - Name of the Postgres database that CloudQuery will connect to
-* **`sslmode`** (required) - Postgres setting for specifying the level of security you want to enforce in the connection between CloudQuery and your database. If you are running CloudQuery locally in a docker container the typical value is `disable`. Other valid options include: `allow`, `prefer`, `require`, `verify-ca`, `verify-full`
+* **`type`** **(required)** - Type of database that CloudQuery will connect to. Only valid value is `postgres`
+* **`username`** **(required)** - Username that CloudQuery will use when interacting with the Postgres database
+* **`password`** **(required)** - Password for user that CloudQuery will use to authenticate into the Postgres database
+* **`host`** **(required)** - Hostname or IP address of Postgres database
+* **`port`** **(optional)** - Port of the Postgres database that CloudQuery will connect to. Default value is `5432`
+* **`database`** (required)** - Name of the Postgres database that CloudQuery will connect to
+* **`sslmode`** (required)** - Postgres setting for specifying the level of security you want to enforce in the connection between CloudQuery and your database. If you are running CloudQuery locally in a docker container the typical value is `disable`. Other valid options include: `allow`, `prefer`, `require`, `verify-ca`, `verify-full`
 
 ### `cloudquery.providers`
 
