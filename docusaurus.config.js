@@ -50,8 +50,9 @@ module.exports = {
         },
         {
           href: "https://github.com/cloudquery/cloudquery",
-          label: "GitHub",
           position: "right",
+          className: "header-github-link",
+          "aria-label": "GitHub repository",
         },
       ],
     },
@@ -119,7 +120,7 @@ module.exports = {
   },
   presets: [
     [
-      "@docusaurus/preset-classic",
+      "classic",
       {
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
