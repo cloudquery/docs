@@ -16,7 +16,7 @@ jobs:
       - name: Re-generate docs
         run: |
           cd docs/cli/commands
-          cloudquery doc
+          cloudquery doc .
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4
         with:
