@@ -61,7 +61,11 @@ html[data-theme="dark"] .docusaurus-highlight-code-line {
 }
 
 html[data-theme="dark"] .alert {
-  background-color: var(--ifm-background-surface-color);
+  --ifm-alert-background-color: var(--ifm-background-surface-color);
+}
+
+html[data-theme="dark"] .footer {
+  --ifm-footer-background-color: var(--ifm-background-surface-color);
 }
 
 a {
