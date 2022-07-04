@@ -1,22 +1,25 @@
 ---
-id: "cloudquery"
+id: "completion"
 hide_title: true
-sidebar_label: "cloudquery"
+sidebar_label: "completion"
 ---
-## cloudquery
+## cloudquery completion
 
-CloudQuery CLI
+Generate the autocompletion script for the specified shell
 
 ### Synopsis
 
-CloudQuery CLI
+Generate the autocompletion script for cloudquery for the specified shell.
+See each sub-command's help for details on how to use the generated script.
 
-Query your cloud assets & configuration with SQL for monitoring security, compliance & cost purposes.
-
-Find more information at:
-	https://docs.cloudquery.io
 
 ### Options
+
+```
+  -h, --help   help for completion
+```
+
+### Options inherited from parent commands
 
 ```
       --config string               path to configuration file. can be generated with 'init {provider}' command (env: CQ_CONFIG_PATH) (default "./cloudquery.yml")
@@ -27,7 +30,6 @@ Find more information at:
       --enable-file-logging         enable file logging (default true)
       --encode-json                 enable JSON log format, instead of key/value
       --force-drop                  when upgrading schema, force dropping of any dependent views
-  -h, --help                        help for cloudquery
       --log-directory string        set output directory for logs (default ".")
       --log-file string             set output filename for logs (default "cloudquery.log")
       --max-age int                 set max age in days to keep a logfile (default 3)
@@ -42,11 +44,9 @@ Find more information at:
 
 ### SEE ALSO
 
-* [cloudquery completion](cloudquery_completion.md)	 - Generate the autocompletion script for the specified shell
-* [cloudquery fetch](cloudquery_fetch.md)	 - Fetch resources from configured providers
-* [cloudquery init](cloudquery_init.md)	 - Generate initial cloudquery.yml for fetch command
-* [cloudquery options](cloudquery_options.md)	 - Prints list of global CLI options (applies to all commands)
-* [cloudquery policy](cloudquery_policy.md)	 - Download and run CloudQuery policy
-* [cloudquery provider](cloudquery_provider.md)	 - Top-level command to interact with providers.
-* [cloudquery version](cloudquery_version.md)	 - Print full version info of cloudquery
+* [cloudquery](cloudquery.md)	 - CloudQuery CLI
+* [cloudquery completion bash](cloudquery_completion_bash.md)	 - Generate the autocompletion script for bash
+* [cloudquery completion fish](cloudquery_completion_fish.md)	 - Generate the autocompletion script for fish
+* [cloudquery completion powershell](cloudquery_completion_powershell.md)	 - Generate the autocompletion script for powershell
+* [cloudquery completion zsh](cloudquery_completion_zsh.md)	 - Generate the autocompletion script for zsh
 
