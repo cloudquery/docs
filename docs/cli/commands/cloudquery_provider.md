@@ -59,5 +59,4 @@ Top-level command to interact with providers.
 * [cloudquery provider drop](cloudquery_provider_drop.md)	 - Drops provider schema from database
 * [cloudquery provider purge](cloudquery_provider_purge.md)	 - Remove stale resources from one or more providers in database
 * [cloudquery provider sync](cloudquery_provider_sync.md)	 - Download the providers specified in config and re-create their database schema
-* [cloudquery provider sync](cloudquery_provider_sync.md)	 - Download the providers specified in config and re-create their database schema
 
