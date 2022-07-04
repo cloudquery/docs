@@ -42,9 +42,8 @@ Find more information at:
 
 ### SEE ALSO
 
-* [cloudquery completion](cloudquery_completion.md)	 - Generate the autocompletion script for the specified shell
 * [cloudquery fetch](cloudquery_fetch.md)	 - Fetch resources from configured providers
-* [cloudquery init](cloudquery_init.md)	 - Generate initial config.hcl for fetch command
+* [cloudquery init](cloudquery_init.md)	 - Generate initial cloudquery.yml for fetch command
 * [cloudquery options](cloudquery_options.md)	 - Prints list of global CLI options (applies to all commands)
 * [cloudquery policy](cloudquery_policy.md)	 - Download and run CloudQuery policy
 * [cloudquery provider](cloudquery_provider.md)	 - Top-level command to interact with providers.

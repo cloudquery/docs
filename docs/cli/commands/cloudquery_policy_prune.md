@@ -19,8 +19,8 @@ cloudquery policy prune [flags]
 
 ```
 
-  # Prune the policy executions which are older than the relative time specified
-  cloudquery policy prune 24h
+# Prune the policy executions which are older than the relative time specified
+cloudquery policy prune 24h
 ```
 
 ### Options

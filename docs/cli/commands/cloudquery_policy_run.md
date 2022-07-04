@@ -19,21 +19,21 @@ cloudquery policy run <policy> [flags]
 
 ```
 
-	# Run an official policy
-	# Official policies are available on our hub: https://hub.cloudquery.io/policies
-	cloudquery policy run aws
+# Run an official policy
+# Official policies are available on our hub: https://hub.cloudquery.io/policies
+cloudquery policy run aws
 
-	# Run a sub-policy of an official policy
-	cloudquery policy run aws//cis_v1.2.0
+# Run a sub-policy of an official policy
+cloudquery policy run aws//cis_v1.2.0
 
-	# Run a policy from a GitHub repository
-	cloudquery policy run github.com/<repo-owner>/<repo-name>
+# Run a policy from a GitHub repository
+cloudquery policy run github.com/<repo-owner>/<repo-name>
 
-	# Run a policy from a local directory
-	cloudquery policy run ./<path-to-local-directory>
+# Run a policy from a local directory
+cloudquery policy run ./<path-to-local-directory>
 
-	# See https://hub.cloudquery.io for additional policies
-	# See https://docs.cloudquery.io/docs/tutorials/policies/policies-overview for instructions on writing policies
+# See https://hub.cloudquery.io for additional policies
+# See https://docs.cloudquery.io/docs/tutorials/policies/policies-overview for instructions on writing policies
 ```
 
 ### Options

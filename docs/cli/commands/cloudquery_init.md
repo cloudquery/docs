@@ -5,11 +5,11 @@ sidebar_label: "init"
 ---
 ## cloudquery init
 
-Generate initial config.hcl for fetch command
+Generate initial cloudquery.yml for fetch command
 
 ### Synopsis
 
-Generate initial config.hcl for fetch command
+Generate initial cloudquery.yml for fetch command
 
 ```
 cloudquery init [choose one or more providers (aws gcp azure okta ...)] [flags]
@@ -19,10 +19,10 @@ cloudquery init [choose one or more providers (aws gcp azure okta ...)] [flags]
 
 ```
 
-  # Downloads aws provider and generates config.hcl for aws provider
+  # Downloads aws provider and generates cloudquery.yml for aws provider
   cloudquery init aws
 
-  # Downloads aws,gcp providers and generates one config.hcl with both providers
+  # Downloads aws,gcp providers and generates one cloudquery.yml with both providers
   cloudquery init aws gcp
 ```
 

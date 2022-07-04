@@ -19,9 +19,9 @@ cloudquery policy test [flags]
 
 ```
 
-  # Download & Run the policies defined in your config
-  cloudquery policy test path/to/policy.hcl path/to/snapshot/dir selector
-	
+	# Download & Run the policies defined in your config
+	cloudquery policy test path/to/policy.hcl path/to/snapshot/dir selector
+		
 ```
 
 ### Options
