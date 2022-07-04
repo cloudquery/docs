@@ -19,17 +19,18 @@ cloudquery policy describe [flags]
 
 ```
 
-  # Describe official policy
-  cloudquery policy describe aws
-  
-  # The following will be the same as above
-  # Official policies are hosted here: https://github.com/cloudquery-policies
-  cloudquery policy describe aws//cis-1.2.0
-	
-  # Describe community policy
-  cloudquery policy describe github.com/COMMUNITY_GITHUB_ORG/aws
+# Describe official policy
+cloudquery policy describe aws
 
-  # See https://hub.cloudquery.io for additional policies.
+# The following will be the same as above
+# Official policies are hosted here: https://github.com/cloudquery-policies
+cloudquery policy describe aws//cis-1.2.0
+
+# Describe community policy
+cloudquery policy describe github.com/COMMUNITY_GITHUB_ORG/aws
+
+# See https://hub.cloudquery.io for additional policies.
+
 ```
 
 ### Options
