@@ -17,6 +17,8 @@ jobs:
           version: latest
       - name: Re-generate docs
         run: |
+          rm -rf docs/cli/commands
+          mkdir -p docs/cli/commands
           cd docs/cli/commands
           cloudquery doc .
       - name: Create Pull Request
