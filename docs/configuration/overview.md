@@ -19,7 +19,6 @@ cloudquery:
     port: 5432
     database: postgres
     sslmode: disable
-
 ```
 
 ### `cloudquery.connection`
