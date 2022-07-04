@@ -1,8 +1,10 @@
-name: nightly-doc
+name: Sync CLI docs
 on:
   schedule:
     - cron: "0 0 * * *"
   workflow_dispatch:
+  repository_dispatch:
+    types: [sync-docs]
 jobs:
   doc-generate:
     runs-on: ubuntu-latest
