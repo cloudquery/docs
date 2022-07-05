@@ -24,6 +24,7 @@ module.exports = {
         and follow us on <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/cloudqueryio">Twitter ${TwitterSvg}</a> `,
     },
     image: "img/cover.jpg",
+    metadata: [{ name: "twitter:card", content: "summary" }],
     colorMode: {
       // "light" | "dark"
       defaultMode: "dark",
