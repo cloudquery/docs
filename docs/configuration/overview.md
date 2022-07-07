@@ -48,7 +48,7 @@ The `providers` block at the root of the file must be defined exactly once. It s
 ```yml
 providers:
   - name: <provider-name>
-    configurations:
+    configuration:
       \\ This will be provider specific configurations
     alias: <unique_identifier>
     resources:
@@ -56,7 +56,7 @@ providers:
     skip_resources:
       - "slow.resource_1"
   - name: <provider-name>
-    configurations:
+    configuration:
       \\ This will be provider specific configurations
     alias: <unique_identifier_2>
     resources:
