@@ -10,7 +10,7 @@ const { CF_PAGES_BRANCH, CF_PAGES_URL } = process.env;
 module.exports = {
   title: "CloudQuery Docs",
   tagline: "the open-source cloud asset inventory powered by SQL",
-  url: CF_PAGES_BRANCH === "main" ? "https://docs.cloudquery.io" : CF_PAGES_URL,
+  url: CF_PAGES_BRANCH !== "main" ? CF_PAGES_URL : "https://docs.cloudquery.io",
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
