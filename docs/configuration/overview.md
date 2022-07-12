@@ -17,6 +17,7 @@ cloudquery:
     password: pass
     host: localhost
     port: 5432
+    schema: public
     database: postgres
     sslmode: disable
 ```
