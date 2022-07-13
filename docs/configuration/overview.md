@@ -17,6 +17,7 @@ cloudquery:
     password: pass
     host: localhost
     port: 5432
+    schema: public
     database: postgres
     sslmode: disable
 ```
@@ -30,6 +31,7 @@ A map of values that defines the connections details to your PostgreSQL database
 * **`password`** **(required)** - Password for user that CloudQuery will use to authenticate into the Postgres database
 * **`host`** **(required)** - Hostname or IP address of Postgres database
 * **`port`** **(optional)** - Port of the Postgres database that CloudQuery will connect to. Default value is `5432`
+* **`schema`** **(optional)** - The name of the schema that CloudQuery will use. Default value is `public`
 * **`database`** **(required)** - Name of the Postgres database that CloudQuery will connect to
 * **`sslmode`** **(required)** - Postgres setting for specifying the level of security you want to enforce in the connection between CloudQuery and your database. If you are running CloudQuery locally in a docker container the typical value is `disable`. Other valid options include: `allow`, `prefer`, `require`, `verify-ca`, `verify-full`
 
