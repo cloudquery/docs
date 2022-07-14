@@ -16,9 +16,9 @@
     "lint:js": "eslint src"
   },
   "dependencies": {
-    "@docusaurus/core": "^2.0.0-beta.21",
-    "@docusaurus/preset-classic": "^2.0.0-beta.21",
-    "@docusaurus/theme-search-algolia": "^2.0.0-beta.21",
+    "@docusaurus/core": "2.0.0-rc.1",
+    "@docusaurus/preset-classic": "2.0.0-rc.1",
+    "@docusaurus/theme-search-algolia": "2.0.0-rc.1",
     "@mdx-js/react": "1.6.22",
     "@svgr/webpack": "6.2.1",
     "clsx": "1.2.1",
@@ -42,7 +42,7 @@
     ]
   },
   "devDependencies": {
-    "@docusaurus/eslint-plugin": "^2.0.0-beta.21",
+    "@docusaurus/eslint-plugin": "2.0.0-rc.1",
     "eslint": "8.19.0",
     "eslint-plugin-react": "^7.30.0",
     "markdownlint-cli": "^0.31.1",
