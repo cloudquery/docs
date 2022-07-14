@@ -38,6 +38,7 @@ cloudquery provider drop [provider] [flags]
       --max-age int                 set max age in days to keep a logfile (default 3)
       --max-backups int             set max number of rolled files to keep (default 3)
       --max-size int                set max size in MB of the logfile before it's rolled (default 30)
+      --no-provider-update          disable checking for new provider versions
       --no-telemetry                disable telemetry collection
       --no-verify                   disable plugins verification
       --reattach-providers string   path to reattach unmanaged plugins, mostly used for testing purposes (env: CQ_REATTACH_PROVIDERS)
