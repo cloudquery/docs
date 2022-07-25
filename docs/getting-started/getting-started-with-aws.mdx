@@ -13,7 +13,7 @@ import ExploreSection from './_getting-started-explore-section.mdx'
 
 ### Init command
 
-After installing CloudQuery, you need to generate a `config.hcl` file that will describe which cloud provider you want to use and which resources you want CloudQuery to ETL:
+After installing CloudQuery, you need to generate a `cloudquery.yml` file that will describe which cloud provider you want to use and which resources you want CloudQuery to ETL:
 
 ```bash
 cloudquery init aws
@@ -135,18 +135,17 @@ Then, you can either export the `AWS_PROFILE` environment variable:
 export AWS_PROFILE=myprofile
 ```
 
-or, configure your desired profile in the `local_profile` field of your CloudQuery `config.hcl`:
+or, configure your desired profile in the `local_profile` field of your CloudQuery `cloudquery.yml`:
 
-```hcl title="config.hcl"
-provider "aws" {
-  configuration {
-    accounts "<account_alias>" {
-      local_profile = "myprofile"
-    }
+```yml title="cloudquery.yml"
+providers:
+  - name: "aws"
+    configuration:
+      accounts:
+        - name: "<YOUR_ID>"
+          local_profile: "myprofile"
     ...
-  }
   ...
-}
 ```
 
 </TabItem>
@@ -167,7 +166,7 @@ If you have multiple AWS accounts/organizations, you can follow the steps set in
 
 ### Fetch Command
 
-Once `config.hcl` is generated and you are authenticated with AWS, run the following command to fetch the resources.
+Once `cloudquery.yml` is generated and you are authenticated with AWS, run the following command to fetch the resources.
 
 ```bash
 cloudquery fetch

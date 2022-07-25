@@ -22,13 +22,7 @@ Give developers, SREs, DevOps and security engineers a streamlined way to gain v
 
 Turn your security and compliance tasks into data problems and solve them with the best tools and practices in DataOps.
 
-Use [CloudQuery Policies](./cli/policy/overview) to codify, version control and automate your security and compliance rules with SQL.
-
-### IaC (Infrastructure-as-code) Drift Detection
-
-Ensure your cloud assets maintain their desired state.
-
-CloudQuery leverages its asset inventory to quickly detect drift against IaC (Terraform, more to come) which you can run both in the CI and locally.
+Use [CloudQuery Policies](./policies) to codify, version control and automate your security and compliance rules with SQL.
 
 ### Extendable
 

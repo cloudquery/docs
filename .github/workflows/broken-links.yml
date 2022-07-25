@@ -38,9 +38,13 @@ jobs:
 
       - name: Check for broken links
         run: |
+          set -o pipefail
+
           npx broken-link-checker -f -r -v -o \
             --exclude linkedin \
             --exclude "cloudquery.io/discord" \
             --exclude docs.cloudquery.io/cdn-cgi/l/email-protection \
+            --exclude pcisecuritystandards.org \
             --filter-level 3 \
-            ${{ steps.cf-pages.outputs.url }}/docs/intro
+            ${{ steps.cf-pages.outputs.url }}/docs/intro \
+            | grep -v '───OK───' | grep -v '──SKIP──'
