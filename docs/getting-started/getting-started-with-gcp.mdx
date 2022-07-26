@@ -1,9 +1,9 @@
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
-import DownloadSection from "./_getting-started-download-section.mdx";
-import SpawnSection from "./_getting-started-spawn-section.mdx";
-import ReadonlyTip from "./_getting-started-readonly-tip.mdx";
-import ExploreSection from "./_getting-started-explore-section.mdx";
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import DownloadSection from './_getting-started-download-section.mdx'
+import SpawnSection from './_getting-started-spawn-section.mdx'
+import ReadonlyTip from './_getting-started-readonly-tip.mdx'
+import ExploreSection from './_getting-started-explore-section.mdx'
 
 # Getting Started with GCP
 
@@ -79,7 +79,7 @@ cloudquery fetch
 
 ### Exploring and Running Queries
 
-<ExploreSection />
+<ExploreSection/>
 
 Schema and tables for GCP are available in [CloudQuery Hub](https://hub.cloudquery.io/providers/cloudquery/gcp/latest/schema).
 
@@ -95,14 +95,14 @@ WHERE iam_configuration_uniform_bucket_level_access_enabled = FALSE;
 
 ### Policy Command
 
-CloudQuery Policies allow users to write security, governance, cost, and compliance rules,
+CloudQuery Policies allow users to write security, governance, cost, and compliance rules, 
 using SQL as the query layer and HCL as the logical layer.
 
-All official and approved community policies are listed on [CloudQuery Hub](https://hub.cloudquery.io/policies).
+All official and approved community policies are listed on [CloudQuery Hub](https://hub.cloudquery.io/policies/cloudquery/gcp/latest).
 
 #### Execute a policy
 
-All official policies are hosted at https://github.com/cloudquery.
+All official policies are hosted at https://github.com/cloudquery-policies.
 
 ```bash
 cloudquery policy run gcp//cis_v1.2.0
