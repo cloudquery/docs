@@ -38,7 +38,8 @@ module.exports = {
       // title: "",
       logo: {
         alt: "CloudQuery Logo",
-        src: "img/cloudquery_logo_svg_dark_background.svg",
+        src: "img/cloudquery_logo_svg_light_background.svg",
+        srcDark: "img/cloudquery_logo_svg_dark_background.svg",
       },
       items: [
         // {
