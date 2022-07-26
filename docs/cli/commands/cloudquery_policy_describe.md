@@ -3,7 +3,6 @@ id: "policy_describe"
 hide_title: true
 sidebar_label: "policy describe"
 ---
-
 ## cloudquery policy describe
 
 Describe CloudQuery policy
@@ -24,7 +23,7 @@ cloudquery policy describe [flags]
 cloudquery policy describe aws
 
 # The following will be the same as above
-# Official policies are hosted here: https://github.com/cloudquery
+# Official policies are hosted here: https://github.com/cloudquery-policies
 cloudquery policy describe aws//cis-1.2.0
 
 # Describe community policy
@@ -66,4 +65,5 @@ cloudquery policy describe github.com/COMMUNITY_GITHUB_ORG/aws
 
 ### SEE ALSO
 
-- [cloudquery policy](cloudquery_policy.md) - Download and run CloudQuery policy
+* [cloudquery policy](cloudquery_policy.md)	 - Download and run CloudQuery policy
+
