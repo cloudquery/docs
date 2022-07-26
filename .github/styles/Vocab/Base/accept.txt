@@ -96,4 +96,7 @@ VPCs
 OUs
 OAuth
 GCP
+gcp
 IPs
+CQProvider
+PKs
