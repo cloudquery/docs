@@ -35,10 +35,10 @@ module.exports = {
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: "CloudQuery Docs",
+      // title: "",
       logo: {
         alt: "CloudQuery Logo",
-        src: "img/logo.svg",
+        src: "img/cloudquery_logo_svg_dark_background.svg",
       },
       items: [
         // {
