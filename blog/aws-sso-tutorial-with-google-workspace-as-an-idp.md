@@ -1,6 +1,5 @@
 ---
 title: AWS SSO Tutorial with Google Workspace (Gsuite) as an IdP Step-by-Step
-slug: aws-sso-tutorial-with-google-workspace-as-an-idp
 tags:
   - security
 date: '2021-10-26T00:00:00'
@@ -8,6 +7,7 @@ description: >-
   A tutorial walking you through setting up AWS Single Sign-On withGoogle
   Workspace as an IdP
 authors: mikeelsmore
+image: /img/blog_covers/aws-sso-with-google-workspaces.jpg
 ---
 
 AWS SSO and AWS Organization were released around 2017 and are probably the best way to manage AWS access at scale.

@@ -1,6 +1,5 @@
 ---
 title: Introducing AWS Resources View
-slug: aws-resources-view
 tags:
   - security
 date: '2022-05-24T00:00:00'
@@ -9,6 +8,7 @@ description: >-
   power of using a SQL database to create a single pane for all your fetched AWS
   resources.
 authors: roneliahu
+image: /img/blog_covers/aws-resources-view.jpg
 ---
 
 As of the writing of this blog, CloudQuery supports over 155 resources across 61 services in AWS! and many more in GCP, Azure, etc. Although this gives users the capabilities to answer many of their questions regarding your security, visibility and infrastructure, it would be great to have a single view of all your AWS resources, right?

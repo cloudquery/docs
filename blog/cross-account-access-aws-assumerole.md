@@ -1,6 +1,5 @@
 ---
 title: How to Setup Cross Account Access in AWS with AssumeRole
-slug: cross-account-access-aws-assumerole
 tags:
   - security
 date: '2022-06-14T00:00:00'
@@ -8,6 +7,7 @@ description: >-
   How to setup cross account access in AWS for variety of use-cases such as
   audit, security and compliance at scale.
 authors: benjamin
+image: /img/blog_covers/cross-account-access-aws-assumerole.jpg
 ---
 
 In this blog we will walk through how to create a role an external account that we want to AssumeRole into. In our example we will provide the new role in the external account with broad ReadOnly permissions (but you are free to change to whatever you want).

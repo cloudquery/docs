@@ -1,11 +1,11 @@
 ---
 title: Introducing CloudQuery SDK
-slug: introducing-cloudquery-sdk
 tags:
   - product
 date: '2021-04-07T00:00:00'
 description: Introducing simple and extensible SDK to query your cloud
 authors: yevgenypats
+image: /img/blog_covers/introducing-cloudquery-sdk.jpg
 ---
 
 Today we are pleased to announce the release of [CloudQuery SDK](https://github.com/cloudquery/cq-provider-sdk)!

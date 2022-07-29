@@ -1,11 +1,11 @@
 ---
 title: Inventory Microsoft Azure with CloudQuery
-slug: inventory-microsoft-azure-with-cloudquery
 tags:
   - guest
 date: '2021-11-30T00:00:00'
 description: Inventory Microsoft Azure with CloudQuery
 authors: giselatorres
+image: /img/blog_covers/inventory-microsoft-azure-with-cloudquery.png
 ---
 
 [Originally posted at [https://www.returngis.net/2021/11/haz-inventario-de-microsoft-azure-con-cloudquery/](https://www.returngis.net/2021/11/haz-inventario-de-microsoft-azure-con-cloudquery/)]

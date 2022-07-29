@@ -1,11 +1,11 @@
 ---
 title: Announcing CloudQuery Policies
-slug: announcing-cloudquery-policies
 tags:
   - announcement
 date: '2021-06-25T00:00:00'
 description: Announcing First Release of CloudQuery Policies
 authors: michelvocks
+image: /img/blog_covers/announcing-cloudquery-policies.jpg
 ---
 
 We are excited to announce the release of the CloudQuery Policies!

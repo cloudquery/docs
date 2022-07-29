@@ -1,6 +1,5 @@
 ---
 title: Our Open-Source Journey Building CloudQuery
-slug: our-open-source-journey-building-cloudquery
 tags:
   - security
 date: '2022-02-14T00:00:00'
@@ -9,6 +8,7 @@ description: >-
   asset inventory, as well as some of our product and technical decisions along
   the way.
 authors: yevgenypats
+image: /img/blog_covers/our-open-source-journey-building-cloudquery.jpg
 ---
 
 In this blog, we will share why we started CloudQuery as an open-source cloud asset inventory, as well as some of our product and technical decisions along the way.

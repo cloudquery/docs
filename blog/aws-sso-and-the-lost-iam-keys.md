@@ -1,11 +1,11 @@
 ---
 title: AWS SSO And The Lost IAM Keys
-slug: aws-sso-and-the-lost-iam-keys
 tags:
   - security
 date: '2021-08-20T00:00:00'
 description: AWS SSO and IAM Security Best Practices
 authors: yevgenypats
+image: /img/blog_covers/sso-and-the-lost-iam-keys.jpg
 ---
 
 [AWS SSO](https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html) is one of the best and most popular ways to centrally manage access of users/developers to AWS Accounts, especially when combined with [AWS Organizations](https://aws.amazon.com/organizations/) for multi-account access and management.

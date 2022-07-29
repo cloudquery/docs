@@ -1,6 +1,5 @@
 ---
 title: May 2022 Monthly Updates
-slug: 2022-may-monthly
 tags:
   - recap
 date: '2022-06-06T00:00:00'
@@ -8,6 +7,7 @@ description: >-
   CloudQuery Monthly Newsletter, May 2022. Updates to features, providers,
   deployment and new blog posts.
 authors: benjamin
+image: /img/blog_covers/2022-may-monthly.jpg
 ---
 
 Welcome to CloudQuery’s latest product news! This month we’ve been heads-down working on some new features but most

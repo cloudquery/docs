@@ -1,11 +1,11 @@
 ---
 title: Keyless access to AWS in GitHub Actions with OIDC
-slug: keyless-access-to-aws-in-github-actions-with-oidc
 tags:
   - security
 date: '2022-03-28T00:00:00'
 description: A guide to configuring OpenID Connect access to AWS from GitHub Actions
 authors: mikeelsmore
+image: /img/blog_covers/keyless-access-to-aws-in-github-actions-with-oidc.jpg
 ---
 
 With this blog, we will show you how to access your AWS environment without storing IAM credentials in GitHub by using OpenID Connect (OIDC).

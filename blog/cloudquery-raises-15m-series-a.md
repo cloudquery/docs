@@ -1,6 +1,5 @@
 ---
 title: CloudQuery raises $15M to rebuild the cloud security stack
-slug: cloudquery-raises-15m-series-a
 tags:
   - announcement
 date: '2022-06-22T00:00:00'
@@ -9,6 +8,7 @@ description: >-
   Boldstart, Mango Capital, Work-Bench and Haystack + amazing angel investors
   from the industry.
 authors: yevgenypats
+image: /img/blog_covers/cloudquery-raises-15m-series-a.jpg
 ---
 
 Today, we announce that we raised $15M Series A round led by Tiger Global, with participation from our existing investors: Boldstart, Mango Capital, Work-Bench and Haystack alongside amazing angel investors from the industry.

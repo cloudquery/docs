@@ -1,11 +1,11 @@
 ---
 title: Announcing CloudQuery Hub
-slug: announcing-cloudquery-hub
 tags:
   - announcement
 date: '2021-06-17T00:00:00'
 description: Announcing First Release of CloudQuery Hub
 authors: roneliahu
+image: /img/blog_covers/announcing-cloudquery-hub.jpg
 ---
 
 Today, we're excited to announce the availability of [CloudQuery Hub](https://hub.cloudquery.io).

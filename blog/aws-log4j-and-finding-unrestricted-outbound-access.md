@@ -1,6 +1,5 @@
 ---
 title: 'AWS, Log4j and Finding Unrestricted Outbound Access'
-slug: aws-log4j-and-finding-unrestricted-outbound-access
 tags:
   - security
 date: '2021-12-15T00:00:00'
@@ -9,6 +8,7 @@ description: >-
   ever the importance of setting network controls & policies not only on inbound
   traffic but also on outbound traffic.
 authors: benjamin
+image: /img/blog_covers/aws-log4j-and-finding-unrestricted-outbound-access.png
 ---
 
 The Log4shell (log4j) vulnerability (CVE-2021-44228) emphasized more than ever the importance of setting network controls & policies not only on inbound traffic but also on outbound traffic.

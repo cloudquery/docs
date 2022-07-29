@@ -2,7 +2,6 @@
 title: >-
   How to Build Open Source Cloud Asset Inventory with CloudQuery and AWS
   QuickSight
-slug: cloud-asset-inventory-cloudquery-aws-quicksight
 tags:
   - tutorial
 date: '2022-06-01T00:00:00'
@@ -10,6 +9,7 @@ description: >-
   How to setup CloudQuery to build your cloud asset inventory in PostgreSQL and
   connect it to AWS QuickSight for visualization, monitoring and reporting.
 authors: yevgenypats
+image: /img/blog_covers/cloud-asset-inventory-cloudquery-aws-quicksight.jpg
 ---
 
 In this blog post, we will walk you through how to setup CloudQuery to build your cloud asset inventory in PostgreSQL and connect it to [AWS QuickSight](https://aws.amazon.com/quicksight/) for visualization, monitoring and reporting.

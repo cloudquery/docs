@@ -1,6 +1,5 @@
 ---
 title: Releasing CloudQuery v0.20.0
-slug: releasing-cloudquery-0.20.0
 tags:
   - announcement
 date: '2022-01-26T00:00:00'
@@ -8,6 +7,7 @@ description: >-
   Releasing CloudQuery v0.20.0, find out what's happened and how it'll effect
   you.
 authors: roneliahu
+image: /img/blog_covers/releasing-cloudquery-v0.20.0.jpg
 ---
 
 ## v0.20.0 - Improved migrations, new protocol and stability

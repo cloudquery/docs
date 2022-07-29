@@ -1,6 +1,5 @@
 ---
 title: Open Source Cloud Asset Inventory with Yevgeny Pats @ Software Engineer Daily
-slug: podcast-software-engineer-daily
 tags:
   - guest
 date: '2022-06-14T00:00:00'
@@ -9,6 +8,7 @@ description: >-
   discuss CloudQuery, Yevgeny’s entrepreneurial background and raising funding
   with an open source project.
 authors: yevgenypats
+image: /img/blog_covers/podcast-software-engineer-daily.jpg
 ---
 
 ### Play podcast at:
