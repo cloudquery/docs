@@ -50,7 +50,7 @@ module.exports = {
         { to: "https://www.cloudquery.io", label: "Home", position: "right" },
         { to: "https://hub.cloudquery.io", label: "Hub", position: "right" },
         {
-          to: "https://www.cloudquery.io/blog",
+          to: "blog",
           label: "Blog",
           position: "right",
         },
@@ -135,12 +135,11 @@ module.exports = {
             CF_PAGES_BRANCH || "main"
           }/`,
         },
-        // blog: {
-        //   showReadingTime: true,
-        //   // Please change this to your repo.
-        //   editUrl:
-        //     'https://github.com/cloudquery/docs/edit/master/website/blog/',
-        // },
+        blog: {
+          showReadingTime: true,
+          // Please change this to your repo.
+          editUrl: "https://github.com/cloudquery/docs/edit/master/blog/",
+        },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
         },
