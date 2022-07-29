@@ -5,10 +5,7 @@ tags:
   - announcement
 date: '2021-06-17T00:00:00'
 description: Announcing First Release of CloudQuery Hub
-authors:
-  name: Ron Eliahu
-  url: 'https://twitter.com/p0werhead'
-  image_url: /img/avatars/roneliahu.jpg
+authors: roneliahu
 ---
 
 Today, we're excited to announce the availability of [CloudQuery Hub](https://hub.cloudquery.io).

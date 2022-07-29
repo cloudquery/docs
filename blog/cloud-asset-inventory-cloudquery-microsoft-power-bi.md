@@ -9,10 +9,7 @@ date: '2022-07-10T20:00:00.000'
 description: >-
   How to setup CloudQuery to build your cloud asset inventory in PostgreSQL and
   connect it to Microsoft Power BI for visualization, monitoring and reporting.
-authors:
-  name: Itay Zagron
-  url: 'https://www.linkedin.com/in/zagron/'
-  image_url: /img/avatars/itay.jpg
+authors: itay
 ---
 
 In this blog post, we will walk you through how to setup CloudQuery to build your cloud asset inventory in PostgreSQL and connect it to [Microsoft Power BI](https://powerbi.microsoft.com/) for visualization, monitoring and reporting.

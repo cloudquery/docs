@@ -9,10 +9,7 @@ date: '2022-06-15T00:00:00'
 description: >-
   How to setup CloudQuery to build your cloud asset inventory in PostgreSQL and
   connect it to Google Data Studio for visualization, monitoring and reporting.
-authors:
-  name: Itay Zagron
-  url: 'https://www.linkedin.com/in/zagron/'
-  image_url: /img/avatars/itay.jpg
+authors: itay
 ---
 
 In this blog post, we will walk you through how to setup CloudQuery to build your cloud asset inventory in PostgreSQL and connect it to [Google Data Studio](https://marketingplatform.google.com/about/data-studio/) for visualization, monitoring and reporting.

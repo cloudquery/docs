@@ -7,10 +7,7 @@ date: '2022-03-30T00:00:00'
 description: >-
   Highlight the improvements to the CloudQuery AWS Provider that have landed in
   the first quarter of 2022.
-authors:
-  name: Ben Bernays
-  url: 'https://twitter.com/bbernays'
-  image_url: /img/avatars/benjamin.jpg
+authors: benjamin
 ---
 
 ## Q1 2022

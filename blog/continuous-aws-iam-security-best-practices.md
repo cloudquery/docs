@@ -7,10 +7,7 @@ date: '2021-03-15T00:00:00'
 description: >-
   Walkthrough on how to automate, validate and monitor AWS IAM Security best
   practices with CloudQuery
-authors:
-  name: Yevgeny Pats
-  url: 'https://twitter.com/yevgenypats'
-  image_url: /img/avatars/yevgenypats.jpg
+authors: yevgenypats
 ---
 
 There are some great guides on the internet for AWS Security best practices (both official and unofficial).

@@ -7,10 +7,7 @@ date: '2021-10-26T00:00:00'
 description: >-
   A tutorial walking you through setting up AWS Single Sign-On withGoogle
   Workspace as an IdP
-authors:
-  name: Mike Elsmore
-  url: 'https://twitter.com/ukmadlz'
-  image_url: /img/avatars/mikeelsmore.png
+authors: mikeelsmore
 ---
 
 AWS SSO and AWS Organization were released around 2017 and are probably the best way to manage AWS access at scale.

@@ -8,10 +8,7 @@ description: >-
   Series A, led by Tiger Global with participation from our existing investors:
   Boldstart, Mango Capital, Work-Bench and Haystack + amazing angel investors
   from the industry.
-authors:
-  name: Yevgeny Pats
-  url: 'https://twitter.com/yevgenypats'
-  image_url: /img/avatars/yevgenypats.jpg
+authors: yevgenypats
 ---
 
 Today, we announce that we raised $15M Series A round led by Tiger Global, with participation from our existing investors: Boldstart, Mango Capital, Work-Bench and Haystack alongside amazing angel investors from the industry.

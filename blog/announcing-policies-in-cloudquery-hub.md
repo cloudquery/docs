@@ -5,10 +5,7 @@ tags:
   - announcement
 date: '2021-08-09T00:00:00'
 description: Adding CQ Policies to CQ Hub
-authors:
-  name: Yevgeny Pats
-  url: 'https://twitter.com/yevgenypats'
-  image_url: /img/avatars/yevgenypats.jpg
+authors: yevgenypats
 ---
 
 Today, we’re excited to announce the availability of [CloudQuery Policies](https://www.cloudquery.io/blog/announcing-cloudquery-policies) in [CloudQuery Hub](https://hub.cloudquery.io/).

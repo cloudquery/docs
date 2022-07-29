@@ -5,10 +5,7 @@ tags:
   - announcement
 date: '2021-06-25T00:00:00'
 description: Announcing First Release of CloudQuery Policies
-authors:
-  name: Michel Vocks
-  url: 'https://twitter.com/michelvocks'
-  image_url: /img/avatars/michelvocks.jpg
+authors: michelvocks
 ---
 
 We are excited to announce the release of the CloudQuery Policies!

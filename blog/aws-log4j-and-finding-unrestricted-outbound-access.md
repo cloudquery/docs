@@ -8,10 +8,7 @@ description: >-
   The Log4jshell (log4j) vulnerability (CVE-2021-44228) emphasized more than
   ever the importance of setting network controls & policies not only on inbound
   traffic but also on outbound traffic.
-authors:
-  name: Benjamin Bernays
-  url: 'https://twitter.com/bbernays'
-  image_url: /img/avatars/benjamin.jpg
+authors: benjamin
 ---
 
 The Log4shell (log4j) vulnerability (CVE-2021-44228) emphasized more than ever the importance of setting network controls & policies not only on inbound traffic but also on outbound traffic.

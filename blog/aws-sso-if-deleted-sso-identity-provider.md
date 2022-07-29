@@ -7,10 +7,7 @@ date: '2022-05-16T00:00:00'
 description: >-
   Tutorial: what to do if you accidentally deleted the *_DO_NO_DELETE identity
   provider from an org account which is used by AWS SSO
-authors:
-  name: Yevgeny Pats
-  url: 'https://twitter.com/yevgenypats'
-  image_url: /img/avatars/yevgenypats.jpg
+authors: yevgenypats
 ---
 
 In this short tutorial we will go through what to do if you accidentally deleted the `AWSSSO_asd123456678_DO_NO_DELETE` identity provider from an org account which is used by AWS SSO (take a look at our previous blog setting up [AWS SSO with Google Workspace](https://www.cloudquery.io/blog/aws-sso-tutorial-with-google-workspace-as-an-idp)).

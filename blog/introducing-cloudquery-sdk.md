@@ -5,10 +5,7 @@ tags:
   - product
 date: '2021-04-07T00:00:00'
 description: Introducing simple and extensible SDK to query your cloud
-authors:
-  name: Yevgeny Pats
-  url: 'https://twitter.com/yevgenypats'
-  image_url: /img/avatars/yevgenypats.jpg
+authors: yevgenypats
 ---
 
 Today we are pleased to announce the release of [CloudQuery SDK](https://github.com/cloudquery/cq-provider-sdk)!

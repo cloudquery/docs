@@ -7,10 +7,7 @@ date: '2022-07-13T22:00:00.000'
 description: >-
   Tutorial for setting up AWS IAM permissions in an AWS Organization so that
   CloudQuery can fetch all resources in all accounts
-authors:
-  name: Ben Bernays
-  url: 'https://twitter.com/bbernays'
-  image_url: /img/avatars/benjamin.jpg
+authors: benjamin
 ---
 
 CloudQuery makes fetching resources from your entire organization simple as long as you have the proper IAM trust relationships and permissions setup. In this blog post we will walk through one way of setting up these permissions so that you can have access to all of your configuration data in a single queryable database.

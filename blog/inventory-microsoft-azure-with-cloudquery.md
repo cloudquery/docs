@@ -5,10 +5,7 @@ tags:
   - guest
 date: '2021-11-30T00:00:00'
 description: Inventory Microsoft Azure with CloudQuery
-authors:
-  name: Gisela Torres
-  url: 'https://twitter.com/0gis0'
-  image_url: /img/avatars/giselatorres.jpeg
+authors: giselatorres
 ---
 
 [Originally posted at [https://www.returngis.net/2021/11/haz-inventario-de-microsoft-azure-con-cloudquery/](https://www.returngis.net/2021/11/haz-inventario-de-microsoft-azure-con-cloudquery/)]

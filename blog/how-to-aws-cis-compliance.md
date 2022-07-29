@@ -7,10 +7,7 @@ date: '2021-02-15T00:00:00'
 description: >-
   Learn how to run AWS CIS benchmark with CloudQuery using customizable SQL
   statements.
-authors:
-  name: Yevgeny Pats
-  url: 'https://twitter.com/yevgenypats'
-  image_url: /img/avatars/yevgenypats.jpg
+authors: yevgenypats
 ---
 
 ## Intro

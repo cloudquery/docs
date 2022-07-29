@@ -7,10 +7,7 @@ date: '2022-01-26T00:00:00'
 description: >-
   Releasing CloudQuery v0.20.0, find out what's happened and how it'll effect
   you.
-authors:
-  name: Ron Eliahu
-  url: 'https://twitter.com/p0werhead'
-  image_url: /img/avatars/roneliahu.jpg
+authors: roneliahu
 ---
 
 ## v0.20.0 - Improved migrations, new protocol and stability

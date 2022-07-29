@@ -5,10 +5,7 @@ tags:
   - announcement
 date: '2021-12-05T00:00:00'
 description: Announcing CloudQuery History
-authors:
-  name: Ron Eliahu
-  url: 'https://twitter.com/p0werhead'
-  image_url: /img/avatars/roneliahu.jpg
+authors: roneliahu
 ---
 
 **This feature was deprecated, [see blog post](https://www.cloudquery.io/blog/migration-and-history-deprecation).**

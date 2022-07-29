@@ -8,10 +8,7 @@ description: >-
   Podcast episode with Yevgeny Pats hosted by Alex DeBrie. In this episode we’ll
   discuss CloudQuery, Yevgeny’s entrepreneurial background and raising funding
   with an open source project.
-authors:
-  name: Yevgeny Pats
-  url: 'https://twitter.com/yevgenypats'
-  image_url: /img/avatars/yevgenypats.jpg
+authors: yevgenypats
 ---
 
 ### Play podcast at:

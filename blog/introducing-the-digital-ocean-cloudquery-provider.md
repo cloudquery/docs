@@ -8,10 +8,7 @@ description: >-
   CloudQuery is an open-source, extensible framework that gives you a
   single-pane-of-glass to your cloud-infrastructure using SQL. Today, we are
   happy to announce the release of the DigitalOcean Provider for CloudQuery.
-authors:
-  name: Ron Eliahu
-  url: 'https://twitter.com/p0werhead'
-  image_url: /img/avatars/roneliahu.jpg
+authors: roneliahu
 ---
 
 CloudQuery is an open-source, extendable framework that gives you a single-pane-of-glass to your cloud-infrastructure using SQL. Today, we are happy to announce the release of the DigitalOcean Provider for CloudQuery.

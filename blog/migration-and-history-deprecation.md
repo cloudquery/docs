@@ -7,10 +7,7 @@ date: '2022-05-23T00:00:00'
 description: >-
   This is a short note that v0.24.0 is deprecating migrations from cloudquery
   together with history.
-authors:
-  name: Yevgeny Pats
-  url: 'https://twitter.com/yevgenypats'
-  image_url: /img/avatars/yevgenypats.jpg
+authors: yevgenypats
 ---
 
 This is a short note that v0.24.0 is deprecating migrations from cloudquery together with history.

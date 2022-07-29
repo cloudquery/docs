@@ -5,10 +5,7 @@ tags:
   - security
 date: '2022-03-28T00:00:00'
 description: A guide to configuring OpenID Connect access to AWS from GitHub Actions
-authors:
-  name: Mike Elsmore
-  url: 'https://twitter.com/ukmadlz'
-  image_url: /img/avatars/mikeelsmore.png
+authors: mikeelsmore
 ---
 
 With this blog, we will show you how to access your AWS environment without storing IAM credentials in GitHub by using OpenID Connect (OIDC).

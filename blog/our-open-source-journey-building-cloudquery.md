@@ -8,10 +8,7 @@ description: >-
   In this blog, we will share why we started CloudQuery as an open-source cloud
   asset inventory, as well as some of our product and technical decisions along
   the way.
-authors:
-  name: Yevgeny Pats
-  url: 'https://twitter.com/yevgenypats'
-  image_url: /img/avatars/yevgenypats.jpg
+authors: yevgenypats
 ---
 
 In this blog, we will share why we started CloudQuery as an open-source cloud asset inventory, as well as some of our product and technical decisions along the way.
