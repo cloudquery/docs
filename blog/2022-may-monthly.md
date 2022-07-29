@@ -14,6 +14,7 @@ Welcome to CloudQuery’s latest product news! This month we’ve been heads-dow
 importantly making CloudQuery easier to use no matter if you are a developer/contributor or an operator i.e -
 DevOps/SRE/Security team.
 
+<!--truncate-->
 ## 📈 High Level Metrics
 
 - Number of Releases: 26

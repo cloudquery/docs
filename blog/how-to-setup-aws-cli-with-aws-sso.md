@@ -12,6 +12,7 @@ AWS SSO makes it easy to centrally manage SSO Access to multiple AWS accounts, m
 
 AWS CLI added support for SSO [late 2019](https://aws.amazon.com/blogs/developer/aws-cli-v2-now-supports-aws-single-sign-on/) so you can use it seamlessly in your developer workflow from the CLI without going to the developers portal every time and paste short-lived credentials to the console.
 
+<!--truncate-->
 ## Prerequisite
 
 ### Setup AWS SSO with an IDP

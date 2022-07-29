@@ -19,6 +19,7 @@ As with any security guidelines, what is missing, or up to the user/security tea
 
 CloudQuery policies gives you a powerful way to automate, customize, codify, and run your cloud security & compliance continuously with HCL and SQL.
 
+<!--truncate-->
 ## Overview
 
 CloudQuery NSA and CISA Kubernetes Hardening Guidance Policy contains more than 60 checks and is available on [GitHub](https://github.com/cloudquery-policies/k8s/tree/main/nsa_cisa_v1). The documentation for all the checks and queries is available on [GitHub](https://github.com/cloudquery/cq-provider-k8s/tree/main/policies)

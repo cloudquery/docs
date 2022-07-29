@@ -14,6 +14,7 @@ CloudQuery brings the power of SQL to your cloud infrastructure, providing easy 
 
 The new CloudQuery Policies feature brings policy-as-code to the CloudQuery ecosystem. CQ Policies enable users to codify, version and run security, governance, cost and compliance rules, using SQL as the query layer and HCL as the logical layer.
 
+<!--truncate-->
 ## What’s inside?
 
 - **HCL support**: Policies can be written in HCL and/or JSON as the logical layer and SQL as the query layer.

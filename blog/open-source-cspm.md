@@ -12,6 +12,7 @@ In this blog post, we will walk you through how to set up [CloudQuery](https://g
 
 CSPMs are probably the biggest offenders of yet another dashboard and here in CloudQuery we believe it’s time to unbundle those and apply the best practices in data engineering and the modern data stack to cloud security.
 
+<!--truncate-->
 ## General Architecture
 
 - **ETL (Extract-Transform-Load) ingestion layer:** [CloudQuery](https://github.com/cloudquery/cloudquery)

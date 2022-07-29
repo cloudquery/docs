@@ -17,6 +17,7 @@ let alone how to continuously monitor those best practices to make sure all your
 
 In this blog post we will go through the official security IAM best practices, and we'll show how to validate and monitor them using SQL statements with CloudQuery.
 
+<!--truncate-->
 ## Account Setup
 
 You can run all the following commands on a single AWS account. You can also run them on multiple accounts in parallel, using an account that can assume-role into all your other relevant accounts.

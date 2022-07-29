@@ -16,6 +16,7 @@ Today we are excited to announce the release of CloudQuery History in alpha! Clo
 
 Achieving better visibility into your cloud infrastructure is key in maintaining security, compliance, cost and operational efficiency, and this is why we started CloudQuery in the [first](https://www.cloudquery.io/blog/announcing-cloudquery-seed-funding) place. Maintaining a historical record of your cloud infrastructure configuration is an integral part of your cloud environment lifecycle.
 
+<!--truncate-->
 ## Why TimescaleDB?
 
 [TimescaleDB](https://www.timescale.com/) is an open-source relational database with support for time-series data. It uses SQL and works as an extension to PostgreSQL. This ensures all current CloudQuery features such as policies and providers continue to work seamlessly and get out-of-the-box support for historical snapshots!

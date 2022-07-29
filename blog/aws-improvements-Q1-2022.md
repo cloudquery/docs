@@ -10,6 +10,7 @@ authors: benjamin
 image: /img/blog_covers/aws-improvements-Q1-2022.png
 ---
 
+<!--truncate-->
 ## Q1 2022
 
 We want to highlight some of the features that we have released that will improve the usability for CloudQuery users looking to catalog their AWS assets.

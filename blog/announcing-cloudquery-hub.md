@@ -14,6 +14,7 @@ In the 6 month since CloudQuery release, we saw amazing growth and adoption from
 
 Two months ago we released [CloudQuery SDK](https://www.cloudquery.io/blog/introducing-cloudquery-sdk) to enable developers easily [extend](https://docs.cloudquery.io/docs/developers/developing-new-provider) cloudquery with their own maintained providers. As a natural next step we are releasing [CloudQuery Hub](https://hub.cloudquery.io).
 
+<!--truncate-->
 ## What is CloudQuery Hub?
 
 CloudQuery Hub provides Documentation, collaboration and workflow for developers, SREs and users. A few key features that we rolled-out with our first version includes:

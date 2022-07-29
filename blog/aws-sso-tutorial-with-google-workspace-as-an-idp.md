@@ -24,6 +24,7 @@ This is a huge security and operational win, some highlights:
 
 In this article we, will go through a step-by-step guide to set-up AWS SSO with Google Workspace (previously G Suite) as an IdP. If you are using Google Workspace and use it as your central directory, this is the guide for you.
 
+<!--truncate-->
 ## Prerequisite
 
 You should have the [AWS Organization](https://aws.amazon.com/organizations/) (If you are not using it, This service combined with AWS SSO is a real game changer) set-up.

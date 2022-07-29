@@ -137,9 +137,13 @@ module.exports = {
         },
         blog: {
           showReadingTime: true,
-          // Please change this to your repo.
-          editUrl: "https://github.com/cloudquery/docs/edit/master/blog/",
-          postsPerPage: 4,
+          postsPerPage: 5,
+          feedOptions: {
+            copyright: `© ${new Date().getFullYear()} CloudQuery inc.`,
+          },
+          blogTitle: "CloudQuery Blog: Cloud Infrastructure and Security",
+          blogDescription:
+            "The latest news and announcements about CloudQuery, our products, and our ecosystem, as well as voices from across our community",
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),

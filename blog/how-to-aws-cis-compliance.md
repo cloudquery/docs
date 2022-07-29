@@ -10,6 +10,7 @@ authors: yevgenypats
 image: /img/blog_covers/how-to-aws-cis-compliance.jpg
 ---
 
+<!--truncate-->
 ## Intro
 
 **[The AWS CIS benchmarks](https://www.cisecurity.org/benchmark/amazon_web_services/)** are a set of well-known configuration best-practices that helps companies improve their AWS security posture and comply with various compliance framework like (SOC2, etc.).

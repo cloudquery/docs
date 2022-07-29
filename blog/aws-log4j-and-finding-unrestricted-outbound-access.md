@@ -19,6 +19,7 @@ In this blog we will go through:
 - What are the possible ways to expose different AWS resources to the internet via outbound access?.
 - How to find resources unrestricted outbound with CloudQuery open-source cloud asset inventory. This will help both to prioritize updates in the current situation as well as help apply network best practices in general.
 
+<!--truncate-->
 ## Log4j Vulnerability and Exploitability
 
 The vulnerability in the popular log4j library is a critical remote code execution described in a simple and understandable way in the [Swiss Government Emergency and Response site](https://www.govcert.ch/blog/zero-day-exploit-targeting-popular-java-library-log4j/). The main takeaway here is that for an application to be exploitable it has to answer 3 requirements:

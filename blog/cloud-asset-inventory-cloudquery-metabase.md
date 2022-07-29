@@ -12,6 +12,7 @@ image: /img/blog_covers/cloud-asset-inventory-cloudquery-metabase.jpg
 
 In this blog post, we will walk you through how to setup CloudQuery to build your cloud asset inventory in PostgreSQL and connect it to [Metabase](https://www.metabase.com/) for visualization, monitoring and reporting.
 
+<!--truncate-->
 ## General Architecture
 
 - **ETL (Extract-Transform-Load) ingestion layer:** [CloudQuery](https://github.com/cloudquery/cloudquery)

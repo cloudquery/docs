@@ -16,6 +16,7 @@ Deleting the `AWSSSO_1233424_DO_NOT_DELETE` identity provider will prevent you f
 
 ![IAM identity providers](/img/blog/aws-sso-if-deleted-sso-identity-provider/iam_screen.png)
 
+<!--truncate-->
 ## Regaining Access
 
 1. If you deleted the identity provider in your root account where your [AWS SSO](https://aws.amazon.com/single-sign-on/) is managed you will need to login with the root account.

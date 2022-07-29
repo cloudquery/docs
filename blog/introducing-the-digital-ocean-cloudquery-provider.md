@@ -17,6 +17,7 @@ DigitalOcean is a cloud-provider that is popular both with small and larger comp
 
 In this short tutorial, we will install CloudQuery and use it to fetch a DigitalOcean resources. Then, we will use SQL to get visibility into security, compliance and cost-management in DigitalOcean.
 
+<!--truncate-->
 ## Setup
 
 First we need to [download](https://github.com/cloudquery/cloudquery/releases) our pre-compiled CloudQuery binary, we can also download it with the following brew command:

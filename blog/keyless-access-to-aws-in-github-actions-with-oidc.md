@@ -10,6 +10,7 @@ image: /img/blog_covers/keyless-access-to-aws-in-github-actions-with-oidc.jpg
 
 With this blog, we will show you how to access your AWS environment without storing IAM credentials in GitHub by using OpenID Connect (OIDC).
 
+<!--truncate-->
 ## What is OpenID Connect?
 
 OpenID Connect has been around since 2014, and in reality, it’s a simplified identity layer on top of the OAuth 2.0 protocol. This gives your clients and applications an easy process to authenticate against an Authorization Server and get information about the end-users (in this case AWS) but in a process flow that’s easier for applications to do so. For a deeper look into OpenID Connect check out [https://openid.net/connect/](https://openid.net/connect/).

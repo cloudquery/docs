@@ -12,6 +12,7 @@ image: /img/blog_covers/inventory-microsoft-azure-with-cloudquery.png
 
 I have recently discovered a tool that in different scenarios, especially in the inventory, can be useful to us. It's called [CloudQuery](https://www.cloudquery.io/) and it allows you to export the data of the resources of your subscriptions, from the different cloud providers, to be able to execute queries on it by **launching SQL statements**, since the result is stored in a Postgres. In this article I tell you how to configure it for Microsoft Azure.
 
+<!--truncate-->
 ## Install CloudQuery
 
 The first thing you need to do is install the CloudQuery tool on your machine. In my case I am using Mac, so I have run the following command using [Homebrew](https://brew.sh/):

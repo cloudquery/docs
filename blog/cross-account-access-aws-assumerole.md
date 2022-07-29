@@ -14,6 +14,7 @@ In this blog we will walk through how to create a role an external account that 
 
 ![AWS Schema](/img/blog/cross-account-access-aws-assumerole/scheme.png)
 
+<!--truncate-->
 ## Introduction to AWS IAM
 
 If you are familiar AWS IAM feel free to skip this section. But here is a quick recap: AWS IAM is the underlying service that AWS services rely on for authorization. While there are many ways of getting valid AWS credentials (setting up AWS SSO) this blog is going to focus on how you can use those credentials once you have them. Before we dive in a few high level concepts that we need to clarify:

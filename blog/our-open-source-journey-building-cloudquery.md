@@ -13,6 +13,7 @@ image: /img/blog_covers/our-open-source-journey-building-cloudquery.jpg
 
 In this blog, we will share why we started CloudQuery as an open-source cloud asset inventory, as well as some of our product and technical decisions along the way.
 
+<!--truncate-->
 ## CloudQuery: Backstory
 
 Before I jump into the technical and product discussion, I want to give a personal context: As someone who has been in the security industry for more than a decade,

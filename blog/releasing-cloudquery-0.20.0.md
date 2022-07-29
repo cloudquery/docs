@@ -10,6 +10,7 @@ authors: roneliahu
 image: /img/blog_covers/releasing-cloudquery-v0.20.0.jpg
 ---
 
+<!--truncate-->
 ## v0.20.0 - Improved migrations, new protocol and stability
 
 ### TL;DR 📕

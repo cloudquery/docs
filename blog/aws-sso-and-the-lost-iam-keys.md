@@ -12,6 +12,7 @@ image: /img/blog_covers/sso-and-the-lost-iam-keys.jpg
 
 AWS SSO Usually integrates with an IDP (like, [Okta](https://aws.amazon.com/blogs/aws/single-sign-on-between-okta-universal-directory-and-aws/), [G Suite](https://aws.amazon.com/blogs/security/how-to-use-g-suite-as-external-identity-provider-aws-sso/), [AzureAD](https://docs.microsoft.com/en-us/azure/active-directory/saas-apps/amazon-web-service-tutorial)). This approach has many benefits, for instance: Only users that are in your Okta, G Suite, AzureAD directory can access the AWS accounts. Authentication and MFA is managed centrally at IDP level. Any user that leaves the organisation is also automatically revoked access from AWS.
 
+<!--truncate-->
 ## The lost IAM Keys
 
 One issue that remains from the access and security perspective is the handling of IAM Keys. IAM Keys can be created by users in the IAM Console for `dev/test/prod` purposes.

@@ -19,6 +19,7 @@ We’ve learned a couple of major things:
 
 Our first try wasn't perfect but it enabled us to understand the meta problem we want to solve which is data ingestion, and transformation of IaC framework to CloudQuery schema. We are going to give it another shot in future releases once CloudQuery gets to a more mature place as we want to focus more on stability and other framework improvements before we want to commit maintaining this kind of mapping for all resources.
 
+<!--truncate-->
 ## What will change
 
 - We removed the drift commands from CloudQuery in `v0.27.0`, you can continue to use drift if you use earlier versions of CloudQuery.

@@ -23,6 +23,7 @@ This is what you will get:
 - Reuse your current (assuming you use Grafana) visualization, monitoring and alerting workflows - send reports and alerts via email, slack.
 - 3 out-of-the-box [Grafana Dashboards](https://github.com/cloudquery/grafana-dashboards) filterable asset inventory dashboards for AWS and GCP including security & compliance dashboards.
 
+<!--truncate-->
 ## Running
 
 To try out the below dashboards (or build a custom one) you will need to connect the same PostgreSQL used by CloudQuery to Grafana as a [datasource](https://grafana.com/docs/grafana/latest/datasources/postgres/).

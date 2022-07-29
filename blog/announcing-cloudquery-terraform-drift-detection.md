@@ -16,6 +16,7 @@ We are excited to announce the first release of CloudQuery Terraform drift detec
 
 In this blog we’ll talk a bit about what is infrastructure drift and why we decided to release this feature on top of our open-source cloud asset inventory platform.
 
+<!--truncate-->
 ## What is (infrastructure) drift?
 
 Infrastructure drift is when your infrastructure state is not as described in your IaC (Infrastructure-as-code), i.e Terraform, Pulumi, CloudFormation.

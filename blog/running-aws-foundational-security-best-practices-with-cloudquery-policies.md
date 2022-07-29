@@ -19,6 +19,7 @@ The new AWS Foundational Security Best Practices CloudQuery policy gives you a p
 
 The CloudQuery AWS Foundational Security Policy covers 200+ checks - you can review them on [GitHub](https://github.com/cloudquery-policies/aws/tree/main/foundational_security) or review them in the [GitHub](https://github.com/cloudquery/cq-provider-aws/tree/main/policies/foundational_security).
 
+<!--truncate-->
 ## Prerequisites
 
 Please follow the [Getting Started](https://docs.cloudquery.io/docs/getting-started/getting-started-with-aws) documentation on how to install cloudquery, and `fetch` your AWS configuration into a PostgreSQL database.

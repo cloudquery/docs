@@ -19,6 +19,7 @@ We made a few decisions like using SQL as a query and policy engine so developer
 CloudQuery grew over 1.3K stars in under 5 months!
 This led us to develop a better and simpler way to extend CloudQuery with new resources and customs providers.
 
+<!--truncate-->
 ## Enter CloudQuery SDK
 
 So far adding support for new cloud providers and resources to CloudQuery required developers to implement **ET** (In **ETL** - Extract, Transform, Load).

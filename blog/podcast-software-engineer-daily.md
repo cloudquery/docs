@@ -11,6 +11,7 @@ authors: yevgenypats
 image: /img/blog_covers/podcast-software-engineer-daily.jpg
 ---
 
+<!--truncate-->
 ### Play podcast at:
 
 - [Software Engineering Daily podcast website](https://softwareengineeringdaily.com/2022/06/10/open-source-cloud-asset-management-with-yevgeny-pats/)

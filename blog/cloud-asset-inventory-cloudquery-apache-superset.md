@@ -15,6 +15,7 @@ image: /img/blog_covers/cloud-asset-inventory-cloudquery-apache-superset.jpg
 
 In this blog post, we will walk you through how to setup CloudQuery to build your cloud asset inventory in PostgreSQL and connect it to [Apache Superset](https://superset.apache.org/) (or a hosted version such as [preset.io](https://preset.io)) for visualization, monitoring and reporting.
 
+<!--truncate-->
 ## General Architecture
 
 - **ETL (Extract-Transform-Load) ingestion layer:** [CloudQuery](https://github.com/cloudquery/cloudquery)

@@ -12,6 +12,7 @@ Today, we announced that CloudQuery has raised $3.5 million in seed funding led 
 
 [CloudQuery](https://github.com/cloudquery/cloudquery) is the open-source cloud asset inventory powered by SQL, enabling developers to assess, audit, and monitor the configuration of your cloud assets.
 
+<!--truncate-->
 ## CloudQuery Story
 
 CloudQuery came into the world from our personal pain. As developers in various roles we interacted with cloud infrastructure across security, SRE, DevOps, development. Often for both basic and complex tasks we couldn’t find the right abstraction layer and always had to fallback to writing the same code over and over again. Just a few examples to keep it short but concrete:

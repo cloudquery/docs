@@ -14,6 +14,7 @@ This is a short note that v0.24.0 is deprecating migrations from cloudquery toge
 
 Late last year we introduced experimental support of historical data with TimescaleDB [(See the blog post)](https://www.cloudquery.io/blog/announcing-cloudquery-history). Giving it a try we learned that maintaining full migrations for every single table is impossible and also affects developer experience of both third-party providers, ours internally and contributors.
 
+<!--truncate-->
 ## What will change
 
 - We removed both the migration and history support with timescale which should help with developer experience but also we will be looking into implementing history support either for specific tables or views such as a global inventory view together with potential support for data warehouses such as BigQuery, Redshift, Snowflake.

@@ -14,6 +14,7 @@ Less than two months ago we introduced [CloudQuery Hub](https://www.cloudquery.i
 
 Last month we introduced [CloudQuery Policies](https://www.cloudquery.io/blog/announcing-cloudquery-policies) that brought policy-as-code to the CloudQuery ecosystem. CQ Policies enable users to codify, version and run security, governance, cost and compliance rules, using SQL as the query layer and HCL as the logical layer.
 
+<!--truncate-->
 ## What’s Inside CloudQuery Policy Hub?
 
 As a natural next step we created a link between the two to enable users to browse, install and share CQ Policies on CQ Hub. Together with this release we also open-sourced three frequently asked policies: [AWS CIS 1.2.0](https://github.com/cloudquery/cq-provider-aws/tree/main/policies/cis_v1.2.0), [Azure CIS 1.3.0](https://github.com/cloudquery/cq-provider-azure/tree/main/policies/cis_v1.3.0), [GCP CIS 1.2.0](https://github.com/cloudquery/cq-provider-gcp/tree/main/policies/cis_v1.2.0).

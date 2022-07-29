@@ -15,6 +15,7 @@ As of the writing of this blog, CloudQuery supports over 155 resources across 61
 
 So here at CloudQuery we built a simple `aws_resources` view, to demonstrate the power of using a SQL database to create a single pane for all your fetched AWS resources. The `aws_resources` view allows us to ask questions on all our resources allowing us to filter by service, region, account and more!
 
+<!--truncate-->
 ## Getting Started
 
 As always, before we create this view, you should check out our [getting-started with AWS](https://docs.cloudquery.io/docs/getting-started/getting-started-with-aws) guide, and make sure you executed a fetch.
