@@ -139,6 +139,7 @@ module.exports = {
           showReadingTime: true,
           // Please change this to your repo.
           editUrl: "https://github.com/cloudquery/docs/edit/master/blog/",
+          postsPerPage: 4,
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
