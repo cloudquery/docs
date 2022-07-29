@@ -139,8 +139,12 @@ module.exports = {
           showReadingTime: true,
           postsPerPage: 5,
           feedOptions: {
+            title: "CloudQuery Blog: Cloud Infrastructure and Security",
+            description:
+              "The latest news and announcements about CloudQuery, our products, and our ecosystem, as well as voices from across our community",
             copyright: `© ${new Date().getFullYear()} CloudQuery inc.`,
           },
+          blogSidebarCount: 10,
           blogTitle: "CloudQuery Blog: Cloud Infrastructure and Security",
           blogDescription:
             "The latest news and announcements about CloudQuery, our products, and our ecosystem, as well as voices from across our community",
