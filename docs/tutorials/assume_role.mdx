@@ -153,12 +153,13 @@ cloudquery:
 
 providers:
   - name: "aws"
-  ...
-    accounts:
-      - name: "target_account_a"
-        role_arn: "arn:aws:iam::<TargetAccountAId>:role/CloudQueryFetchRole"
-      - name: "target_account_b"
-        role_arn: "arn:aws:iam::<TargetAccountBId>:role/CloudQueryFetchRole"
+    ...
+    configuration:
+      accounts:
+        - account_name: "target_account_a"
+          role_arn: "arn:aws:iam::<TargetAccountAId>:role/CloudQueryFetchRole"
+        - account_name: "target_account_b"
+          role_arn: "arn:aws:iam::<TargetAccountBId>:role/CloudQueryFetchRole"
 
 ```
 

@@ -35,16 +35,6 @@ module.exports = {
       label: 'Tutorials',
       items: [
         {
-          type: 'category',
-          label: 'Writing Your Own Policies',
-          items: [
-            'tutorials/policies/policies-overview',
-            'tutorials/policies/writing-your-first-policy',
-            'tutorials/policies/views',
-            'tutorials/policies/subpolicies',
-          ],
-        },
-        {
           type: 'doc',
           label: 'Fetching From Multiple AWS Accounts With AssumeRole',
           id: 'tutorials/assume_role',
@@ -62,17 +52,6 @@ module.exports = {
         items: [
           'cli/fetch/overview',
           'cli/fetch/configuration'
-        ],
-       },
-       {
-        type: 'category',
-        label: 'Policy',
-        items: [
-          'cli/policy/overview',
-          'cli/policy/language',
-          'cli/policy/sources',
-          'cli/policy/storage',
-          'cli/policy/testing',
         ],
        },
        {
@@ -108,16 +87,21 @@ module.exports = {
       }
       ],
     },
-      {
-          type: 'category',
-          label: 'Configuration',
-          items: [
-              'configuration/overview',
-              'configuration/environment-variable-substitution',
-              'configuration/providers',
-              'configuration/proxy-configuration'
-          ]
-      },
+    {
+        type: 'category',
+        label: 'Configuration',
+        items: [
+            'configuration/overview',
+            'configuration/environment-variable-substitution',
+            'configuration/providers',
+            'configuration/proxy-configuration'
+        ]
+    },
+    {
+      type: 'doc',
+      label: 'Policies',
+      id: 'policies',
+    },
     {
       type: 'doc',
       label: 'Deployment',
