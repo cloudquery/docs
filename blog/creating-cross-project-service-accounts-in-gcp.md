@@ -2,12 +2,12 @@
 title: Creating a Cross Project (or Account) Service Account in GCP Step-by-Step
 tags:
   - security
-date: '2021-11-09T00:00:00'
+date: "2021-11-09T00:00:00"
 description: >-
   A walkthrough to add Service Accounts in Google Cloud Platform and make them
   cross-project
 authors: mikeelsmore
-image: /img/blog_covers/creating-cross-project-service-accounts-in-gcp.png
+image: /img/blog_covers/creating-cross-project-service-accounts-in-gcp.jpg
 ---
 
 In Google Cloud Platform (GCP) it is common to have multiple projects for different environments (like `dev`, `staging`, `prod`, `prod-team1`, etc.). It is also a common use-case to have one set of credentials (service account) to access multiple accounts, For example:
@@ -18,6 +18,7 @@ In Google Cloud Platform (GCP) it is common to have multiple projects for differ
 In this tutorial we will show you how to create one service account in GCP that can access multiple projects either under the same organization/account or even completely different accounts (for AWS users this is the GCP's assume role equivalent).
 
 <!--truncate-->
+
 ## How do you set up a Service Account in GCP?
 
 Assuming you’ve got your project setup (we are going to use Project A & Project B to test all this), you’ll want to navigate to Project A and then do the following steps:

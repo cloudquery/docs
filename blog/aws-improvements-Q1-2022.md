@@ -7,7 +7,7 @@ description: >-
   Highlight the improvements to the CloudQuery AWS Provider that have landed in
   the first quarter of 2022.
 authors: benjamin
-image: /img/blog_covers/aws-improvements-Q1-2022.png
+image: /img/blog_covers/aws-improvements-Q1-2022.jpg
 ---
 
 <!--truncate-->

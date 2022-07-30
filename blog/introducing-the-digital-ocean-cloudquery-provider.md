@@ -8,7 +8,7 @@ description: >-
   single-pane-of-glass to your cloud-infrastructure using SQL. Today, we are
   happy to announce the release of the DigitalOcean Provider for CloudQuery.
 authors: roneliahu
-image: /img/blog_covers/introducing-the-digital-ocean-cloudquery-provider.png
+image: /img/blog_covers/introducing-the-digital-ocean-cloudquery-provider.jpg
 ---
 
 CloudQuery is an open-source, extendable framework that gives you a single-pane-of-glass to your cloud-infrastructure using SQL. Today, we are happy to announce the release of the DigitalOcean Provider for CloudQuery.

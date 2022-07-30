@@ -5,7 +5,7 @@ tags:
 date: '2021-11-11T00:00:00'
 description: CloudQuery raises $3.5 million in seed funding within our first year
 authors: yevgenypats
-image: /img/blog_covers/announcing-cloudquery-seed-funding.png
+image: /img/blog_covers/announcing-cloudquery-seed-funding.jpg
 ---
 
 Today, we announced that CloudQuery has raised $3.5 million in seed funding led by [Boldstart Ventures](https://boldstart.vc/), with participation from [work-bench](https://work-bench.com/), [Mango Capital](https://www.linkedin.com/company/mangocapital/) and [Haystack](https://haystack.vc/). We’d love to share a bit about CloudQuery, our journey, and what the future holds for our open-source project and the community.

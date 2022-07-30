@@ -6,7 +6,7 @@ date: '2021-11-15T00:00:00'
 description: Visualise the cloud asset inventory from CloudQuery with Grafana
 authors: yevgenypats
 image: >-
-  /img/blog_covers/open-source-cloud-asset-inventory-with-cloudquery-and-grafana.png
+  /img/blog_covers/open-source-cloud-asset-inventory-with-cloudquery-and-grafana.jpg
 ---
 
 In this blog post you will learn how to build an open-source cloud asset inventory with CloudQuery and Grafana.

@@ -5,7 +5,7 @@ tags:
 date: '2021-11-16T00:00:00'
 description: Use CloudQuery to detect IaC drift locally and in Continuos Integration (CI)
 authors: yevgenypats
-image: /img/blog_covers/announcing-cloudquery-terraform-drift-detection.png
+image: /img/blog_covers/announcing-cloudquery-terraform-drift-detection.jpg
 ---
 
 **This feature was deprecated, [see blog post](https://www.cloudquery.io/blog/terraform-drift-deprecation).**
