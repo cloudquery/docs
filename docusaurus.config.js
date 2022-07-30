@@ -50,7 +50,7 @@ module.exports = {
         { to: "https://www.cloudquery.io", label: "Home", position: "right" },
         { to: "https://hub.cloudquery.io", label: "Hub", position: "right" },
         {
-          to: "https://www.cloudquery.io/blog",
+          to: "blog",
           label: "Blog",
           position: "right",
         },
@@ -135,12 +135,20 @@ module.exports = {
             CF_PAGES_BRANCH || "main"
           }/`,
         },
-        // blog: {
-        //   showReadingTime: true,
-        //   // Please change this to your repo.
-        //   editUrl:
-        //     'https://github.com/cloudquery/docs/edit/master/website/blog/',
-        // },
+        blog: {
+          showReadingTime: true,
+          postsPerPage: 5,
+          feedOptions: {
+            title: "CloudQuery Blog: Cloud Infrastructure and Security",
+            description:
+              "The latest news and announcements about CloudQuery, our products, and our ecosystem, as well as voices from across our community",
+            copyright: `© ${new Date().getFullYear()} CloudQuery inc.`,
+          },
+          blogSidebarCount: 10,
+          blogTitle: "CloudQuery Blog: Cloud Infrastructure and Security",
+          blogDescription:
+            "The latest news and announcements about CloudQuery, our products, and our ecosystem, as well as voices from across our community",
+        },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
         },
