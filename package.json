@@ -43,7 +43,7 @@
   },
   "devDependencies": {
     "@docusaurus/eslint-plugin": "2.0.0-rc.1",
-    "eslint": "8.19.0",
+    "eslint": "8.21.0",
     "eslint-plugin-react": "^7.30.0",
     "markdownlint-cli": "^0.31.1",
     "broken-link-checker": "^0.7.8"
